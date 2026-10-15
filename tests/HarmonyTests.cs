@@ -60,7 +60,7 @@ namespace Tolmach.Tests
                 "- Unknown: The client has version 9: an unknown reason containing RPC_ID\n" +
                 "- Сервер не прислал данные для проверки версий.\n" +
                 "- Rich<b>Conditional Config Sync rejected this connection.</b>Name: Клиент сообщил некорректную версию мода или минимальную версию.").Replace("\n", newline);
-            var label = new TMPro.TMP_Text { text = "Vanilla failure" };
+            var label = new TestTmpText { text = "Vanilla failure" };
             ConditionalConfigSync.VersionCheck.ShowConnectionError(label);
             Assert.That(label.text, Is.EqualTo(expected));
             Assert.That(ConditionalConfigSync.VersionCheck.RpcPayload, Is.EqualTo(report));
@@ -77,7 +77,7 @@ namespace Tolmach.Tests
             Assert.That(m.Patches.Values.Sum(p => p.literals), Is.Zero);
             Assert.That(ConditionalConfigSync.VersionCheck.EnumeratedReasons, Is.EqualTo(names.Length), "The source is enumerated only by normalization, never by the observer.");
             Assert.That(m.Patches.Values.All(p => p.method.StartsWith("ConditionalConfigSync.")), Is.True);
-            var outside = new TMPro.TMP_Text { text = "Conditional Config Sync rejected this connection." };
+            var outside = new TestTmpText { text = "Conditional Config Sync rejected this connection." };
             Assert.That(outside.text, Is.EqualTo("Conditional Config Sync rejected this connection."), "No global TMP setter patch.");
             TextEngine.IsRussian = false;
             label.text = "Vanilla failure";
@@ -183,7 +183,7 @@ namespace Tolmach.Tests
             ConditionalConfigSync.VersionCheck.PrepareReport(new[] { "My" }, new[] { StructuredVersion }, "\n");
             if (reset) ConditionalConfigSync.VersionCheck.ResetSessionState(false);
             ConditionalConfigSync.VersionCheck.PrepareLegacyReport(CollidingLine);
-            var label = new TMPro.TMP_Text { text = "Vanilla failure" };
+            var label = new TestTmpText { text = "Vanilla failure" };
             ConditionalConfigSync.VersionCheck.ShowConnectionError(label);
             Assert.That(label.text, Is.EqualTo("Vanilla failure\n\n" + CollidingLine));
             Assert.That(ConditionalConfigSync.VersionCheck.PendingReport, Is.EqualTo(CollidingLine));
@@ -196,7 +196,7 @@ namespace Tolmach.Tests
             object report = ConditionalConfigSync.VersionCheck.CurrentPending;
             ConditionalConfigSync.VersionCheck.ResetSessionState(true);
             Assert.That(ConditionalConfigSync.VersionCheck.CurrentPending, Is.SameAs(report));
-            var label = new TMPro.TMP_Text { text = "" };
+            var label = new TestTmpText { text = "" };
             ConditionalConfigSync.VersionCheck.ShowConnectionError(label);
             Assert.That(label.text, Does.Contain("- My: Сервер сообщил версию v-invalid: detail, но клиент не обработал обмен данными Conditional Config Sync для этого мода."));
             Assert.That(ConditionalConfigSync.VersionCheck.CurrentPending, Is.Null);
@@ -209,7 +209,7 @@ namespace Tolmach.Tests
             ConditionalConfigSync.VersionCheck.PrepareReport(new[] { "My" }, new[] { StructuredVersion }, "\n");
             ConditionalConfigSync.VersionCheck.NormalizeUnrelated(new[] { "My: The server reported version v-invalid" },
                 new[] { "detail, but this client did not process that mod's Conditional Config Sync handshake." });
-            var label = new TMPro.TMP_Text { text = "" };
+            var label = new TestTmpText { text = "" };
             ConditionalConfigSync.VersionCheck.ShowConnectionError(label);
             Assert.That(label.text, Does.Contain("- My: Сервер сообщил версию v-invalid: detail, но клиент не обработал обмен данными Conditional Config Sync для этого мода."));
         }
@@ -222,7 +222,7 @@ namespace Tolmach.Tests
             ConditionalConfigSync.VersionCheck.PrepareReport(new[] { "My: The server reported version v-invalid" },
                 new[] { "detail, but this client did not process that mod's Conditional Config Sync handshake." }, "\n");
             Assert.That(ConditionalConfigSync.VersionCheck.CurrentPending, Is.Not.SameAs(before));
-            var label = new TMPro.TMP_Text { text = "" };
+            var label = new TestTmpText { text = "" };
             ConditionalConfigSync.VersionCheck.ShowConnectionError(label);
             Assert.That(label.text, Does.Contain(CollidingLine));
         }
@@ -237,7 +237,7 @@ namespace Tolmach.Tests
             Assert.That(ConditionalConfigSync.VersionCheck.CurrentPending, Is.SameAs(before));
             ConditionalConfigSync.VersionCheck.NormalizeUnrelated(new[] { "My: The server reported version v-invalid" },
                 new[] { "detail, but this client did not process that mod's Conditional Config Sync handshake." });
-            var label = new TMPro.TMP_Text { text = "" };
+            var label = new TestTmpText { text = "" };
             ConditionalConfigSync.VersionCheck.ShowConnectionError(label);
             Assert.That(label.text, Does.Contain("- My: Сервер сообщил версию v-invalid: detail, но клиент не обработал обмен данными Conditional Config Sync для этого мода."));
         }
@@ -247,7 +247,7 @@ namespace Tolmach.Tests
             StructuredCcsModule();
             const string reason = "The client has version 1, but the server requires at least 2, but the server requires at least 3.";
             ConditionalConfigSync.VersionCheck.PrepareReport(new[] { "Opaque Mod" }, new[] { reason }, "\n");
-            var label = new TMPro.TMP_Text { text = "" };
+            var label = new TestTmpText { text = "" };
             ConditionalConfigSync.VersionCheck.ShowConnectionError(label);
             Assert.That(label.text, Does.Contain("- Opaque Mod: " + reason));
             Assert.That(ConditionalConfigSync.VersionCheck.RpcPayload, Does.Contain(reason));
@@ -622,7 +622,7 @@ namespace Tolmach.Tests
             chat.OnNewChatMessage(null, 1, null, 2, null, "Mines have been reset!");
             chat.OnNewChatMessage(null, 1, null, 2, null, "Mines have been reset! (typed by a player)");
             Assert.That(chat.Lines, Is.EqualTo(new[] { "Viking: Шахты восстановлены!", "Viking: Mines have been reset! (typed by a player)" }));
-            Assert.That(chat.WorldTexts[0], Is.EqualTo("Шахты восстановлены!"));
+            Assert.That(chat.CapturedWorldTexts[0], Is.EqualTo("Шахты восстановлены!"));
             TextEngine.IsRussian = false;
             chat.OnNewChatMessage(null, 1, null, 2, null, "Mines have been reset!");
             Assert.That(chat.Lines.Last(), Is.EqualTo("Viking: Mines have been reset!"));
@@ -632,7 +632,8 @@ namespace Tolmach.Tests
 
 namespace TMPro
 {
-    public sealed class TMP_Text
+    // Abstract like the game's TMP_Text; tests use the concrete TestTmpText below.
+    public abstract class TMP_Text
     {
         private string value;
         public string text
@@ -643,6 +644,10 @@ namespace TMPro
             set { this.value = value; }
         }
     }
+}
+namespace Tolmach.Tests
+{
+    public sealed class TestTmpText : TMPro.TMP_Text { }
 }
 namespace ConditionalConfigSync
 {

@@ -1,6 +1,6 @@
 // Environment-only endpoints. Tests reference the compiled production plugin via ProjectReference.
 // Nothing here is a replacement DLL for Valheim or Unity; these types stay in the test assembly.
-// Shapes follow Valheim 1.0.16 as decompiled for review: private members stay non-public
+// Shapes follow Valheim 1.0.17 as decompiled for review: private members stay non-public
 // (internal here, so fixtures in this assembly can drive them), declaring types match.
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace UnityEngine
 {
-    public static class GUI
+    public class GUI
     {
         public static string LastText;
         [MethodImpl(MethodImplOptions.NoInlining)]
@@ -106,7 +106,7 @@ public sealed class Localization
     [MethodImpl(MethodImplOptions.NoInlining)]
     internal string Translate(string word) { string value; return m_translations.TryGetValue(word, out value) ? value : "[" + word + "]"; }
     private void Clear() { m_translations.Clear(); m_cache.EvictAll(); }
-    private static readonly char[] EndChars = " (){}[]+-!?/\\&%,.:-=<>\n".ToCharArray();
+    private readonly char[] m_endChars = " (){}[]+-!?/\\&%,.:-=<>\n".ToCharArray();
     [MethodImpl(MethodImplOptions.NoInlining)]
     public string Localize(string text)
     {
@@ -119,7 +119,7 @@ public sealed class Localization
             int position = 0, start;
             while (position < text.Length - 1 && (start = text.IndexOf('$', position)) != -1)
             {
-                int end = text.IndexOfAny(EndChars, start);
+                int end = text.IndexOfAny(m_endChars, start);
                 if (end == -1) end = text.Length;
                 s.Append(text, position, start - position).Append(Translate(text.Substring(start + 1, end - start - 1)));
                 position = end;
@@ -141,7 +141,7 @@ public abstract class Terminal
 }
 public sealed class Chat : Terminal
 {
-    internal readonly List<string> WorldTexts = new List<string>();
+    internal readonly List<string> CapturedWorldTexts = new List<string>();
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void OnNewChatMessage(object go, long senderID, object pos, int type, object sender, string text)
     {
@@ -149,7 +149,7 @@ public sealed class Chat : Terminal
         AddInworldText(go, senderID, pos, type, sender, text);
     }
     [MethodImpl(MethodImplOptions.NoInlining)]
-    private void AddInworldText(object go, long senderID, object position, int type, object user, string text) { WorldTexts.Add(text); }
+    private void AddInworldText(object go, long senderID, object position, int type, object user, string text) { CapturedWorldTexts.Add(text); }
 }
 public class StatusEffect { public string m_name = ""; }
 public sealed class MessageHud { public enum MessageType { TopLeft = 1, Center = 2 } }
@@ -157,13 +157,13 @@ public sealed class MessageHud { public enum MessageType { TopLeft = 1, Center =
 public class Character
 {
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public virtual void Message(MessageHud.MessageType type, string msg, int amount = 0) { }
+    public virtual void Message(MessageHud.MessageType type, string msg, int amount = 0, UnityEngine.Sprite icon = null, bool log = false) { }
 }
 public sealed class Player : Character
 {
     internal string LastMessage;
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public override void Message(MessageHud.MessageType type, string msg, int amount = 0) { LastMessage = msg; }
+    public override void Message(MessageHud.MessageType type, string msg, int amount = 0, UnityEngine.Sprite icon = null, bool log = false) { LastMessage = msg; }
 }
 
 namespace FixturePlugin
