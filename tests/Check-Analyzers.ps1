@@ -34,7 +34,7 @@ try {
     foreach ($control in $controls.GetEnumerator()) {
         $build = Join-Path $WorkDirectory $control.Key
         $arguments = @('build',$Project,'-c','Release','--artifacts-path',$build,
-            "-p:AgentLabBuildRoot=$build","-p:LivingWorldTemp=$build","-p:EarlyCheckControl=$($control.Key)") + $properties
+            "-p:EarlyCheckControl=$($control.Key)") + $properties
         $log = & $DotnetExecutable @arguments 2>&1 | Out-String
         $code = $LASTEXITCODE
         [IO.File]::WriteAllText((Join-Path $WorkDirectory ($control.Key + '.log')), $log, [Text.UTF8Encoding]::new($false))
