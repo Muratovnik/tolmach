@@ -16,7 +16,7 @@
   `Newtonsoft.Json.dll` 13.x. Ссылки на эти файлы заданы в `build/RuntimeReferences.props`.
 - Python 3.10+ для проверки данных.
 - Для выпуска: Python 3.11+, [uv](https://docs.astral.sh/uv/) и GitHub CLI 2.98+ с
-  правом записи в репозиторий. release-kit 0.31.0 закреплён в `.github/relkit.pyz`.
+  правом записи в репозиторий. release-kit 0.33.0 закреплён в `.github/relkit.pyz`.
 
 Зависимости разработки зафиксированы: Microsoft.NETFramework.ReferenceAssemblies 1.0.3,
 NUnit 3.14.0, NUnit3TestAdapter 4.6.0, Microsoft.NET.Test.Sdk 17.11.1 и Thunderstore
@@ -229,9 +229,10 @@ push (см. [ниже](#хук-перед-push)).
 ## Хук перед push
 
 Выпуск требует хук release-kit в `.git/hooks/pre-push` (`require_guard` и `owner_audit`
-в `relkit.toml`). Перед каждым push хук проверяет всю историю, в том числе по приватным
+в `relkit.toml`). Перед каждым push хук проверяет публикуемые коммиты, в том числе по приватным
 правилам владельца: точным значениям и шаблонам, которым нельзя попадать в публичный
-репозиторий. Эти правила не хранятся в репозитории. Хук также закрепляет хеши
+репозиторий. Эти правила не хранятся в репозитории. Всю историю проверяют выпуск и
+`python .github/relkit.pyz audit --history --owner`. Хук также закрепляет хеши
 `relkit.toml`, `.betterleaks.toml` и `.github/relkit.pyz` и отказывает, если они
 изменились без его обновления.
 
