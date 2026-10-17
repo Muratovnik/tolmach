@@ -8,7 +8,8 @@
     "balrond.astafaraios.BalrondHumanoidRandomizer"
   ],
   "namespaces": [
-    "BalrondHumanoidRandomizer"
+    "BalrondHumanoidRandomizer",
+    "ServerSync"
   ],
   "words": {},
   "englishWords": {},
@@ -21,6 +22,34 @@
       "method": "FindItemToSteal",
       "values": {
         " was stolen!": " украли!"
+      }
+    },
+    {
+      "type": "ServerSync.VersionCheck",
+      "method": "ErrorServer",
+      "values": {
+        "Disconnect: The client (": "Отключение: у клиента (",
+        ") doesn't have the correct ": ") неподходящая версия ",
+        " version ": " — нужна версия "
+      }
+    },
+    {
+      "type": "ServerSync.VersionCheck",
+      "method": "ErrorClient",
+      "values": {
+        " is not installed on the server.": " не установлен на сервере.",
+        " needs to be at least version ": " — нужна версия не ниже ",
+        ". You have version ": ". У вас версия ",
+        " may not be higher than version ": " — версия должна быть не выше "
+      }
+    },
+    {
+      "type": "ServerSync.VersionCheck",
+      "method": "ShowConnectionError",
+      "values": {
+        "\nServer expects you to have ": "\nСервер требует установить ",
+        " (Version: ": " (версия: ",
+        ") installed.": ")."
       }
     }
   ],

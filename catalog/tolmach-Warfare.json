@@ -817,7 +817,45 @@
     "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "namespaces": [
-    "Warfare"
+    "Warfare",
+    "ServerSync"
   ],
-  "pluginVersion": "1.9.5"
+  "pluginVersion": "1.9.5",
+  "literals": [
+    {
+      "type": "Warfare.RpcHandlers",
+      "method": "RPC_Warfare_Version",
+      "values": {
+        "Warfare Installed: 1.9.5\n Needed: ": "Warfare: установлена версия 1.9.5\n Требуется: "
+      }
+    },
+    {
+      "type": "ServerSync.VersionCheck",
+      "method": "ErrorServer",
+      "values": {
+        "Disconnect: The client (": "Отключение: у клиента (",
+        ") doesn't have the correct ": ") неподходящая версия ",
+        " version ": " — нужна версия "
+      }
+    },
+    {
+      "type": "ServerSync.VersionCheck",
+      "method": "ErrorClient",
+      "values": {
+        " is not installed on the server.": " не установлен на сервере.",
+        " needs to be at least version ": " — нужна версия не ниже ",
+        ". You have version ": ". У вас версия ",
+        " may not be higher than version ": " — версия должна быть не выше "
+      }
+    },
+    {
+      "type": "ServerSync.VersionCheck",
+      "method": "ShowConnectionError",
+      "values": {
+        "\nServer expects you to have ": "\nСервер требует установить ",
+        " (Version: ": " (версия: ",
+        ") installed.": ")."
+      }
+    }
+  ]
 }

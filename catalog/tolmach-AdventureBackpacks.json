@@ -9,7 +9,8 @@
   ],
   "namespaces": [
     "Vapok.Common.Managers.Skill",
-    "Vapok.Common.Managers.Splash"
+    "Vapok.Common.Managers.Splash",
+    "AdventureBackpacks.Assets.Factories"
   ],
   "words": {
     "item_friendlyskeletonwand_spectralshroud_backpack": "Призрачный саван с хранилищем",
@@ -29,7 +30,10 @@
     "vapok_mod_se_cold_immunity": "Cold Immunity",
     "vapok_mod_no_inception5": "Thor has stripped you of your powers!!"
   },
-  "texts": {},
+  "texts": {
+    "A quality-of-life combat mod that automatically equips and manages shields during combat situations.": "Боевой мод для удобства: сам надевает щит и управляет им в бою.",
+    "A feature-rich backpack progression system with custom models, effects, and inventory mechanics.": "Развитие рюкзаков с множеством возможностей: свои модели, эффекты и механики инвентаря."
+  },
   "patterns": [],
   "returns": [],
   "literals": [
@@ -62,6 +66,25 @@
       "values": {
         "</b></color> <color=#64f0fc>[ vapok.io/privacy-policy ]</color>  <color=#48607a>|</color>  <color=#ffffff><b>DOC:</b></color> <color=#64f0fc>[ PRIVACY ]</color>": "</b></color> <color=#64f0fc>[ vapok.io/privacy-policy ]</color>  <color=#48607a>|</color>  <color=#ffffff><b>ДОКУМЕНТ:</b></color> <color=#64f0fc>[ КОНФИДЕНЦИАЛЬНОСТЬ ]</color>",
         "VIEW: [ <color=#00f59b>TERMINAL</color> ]": "ВИД: [ <color=#00f59b>ТЕРМИНАЛ</color> ]"
+      }
+    },
+    {
+      "type": "Vapok.Common.Managers.Splash.SplashGamepadController",
+      "method": "UpdateLegend",
+      "values": {
+        "</color> <color=#c8d6e5>Back to Mods</color>      <color=#64f0fc>": "</color> <color=#c8d6e5>Назад к модам</color>      <color=#64f0fc>",
+        "</color> <color=#c8d6e5>Scroll Policy</color>": "</color> <color=#c8d6e5>Прокрутка политики</color>",
+        "</color> <color=#c8d6e5>Select / Toggle</color>      <color=#64f0fc>": "</color> <color=#c8d6e5>Выбрать / переключить</color>      <color=#64f0fc>",
+        "</color> <color=#c8d6e5>Close</color>      <color=#64f0fc>": "</color> <color=#c8d6e5>Закрыть</color>      <color=#64f0fc>",
+        "</color> <color=#c8d6e5>Navigate</color>      <color=#64f0fc>": "</color> <color=#c8d6e5>Перемещение</color>      <color=#64f0fc>",
+        "</color> <color=#c8d6e5>Scroll</color>": "</color> <color=#c8d6e5>Прокрутка</color>"
+      }
+    },
+    {
+      "type": "AdventureBackpacks.Assets.Factories.BackpackFactory+<>c__DisplayClass7_0",
+      "method": "<ResolveModelBundle>b__0",
+      "values": {
+        "Adventure Backpacks: Game restart required for model changes to take effect.": "Adventure Backpacks: чтобы сменить модель, перезапустите игру."
       }
     }
   ],

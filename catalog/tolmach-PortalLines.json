@@ -26,5 +26,74 @@
   "namespaces": [
     "PortalLines"
   ],
-  "pluginVersion": "0.9.0"
+  "pluginVersion": "0.9.0",
+  "literals": [
+    {
+      "type": "PortalLines.UI.RouteInput",
+      "method": "Describe",
+      "values": {
+        "<b>Route</b>  <alpha=#99>": "<b>Маршрут</b>  <alpha=#99>",
+        "planning…": "расчет…",
+        "shift-right-click clears": "Shift + ПКМ — сбросить",
+        "<alpha=#99>finding a way round the water…": "<alpha=#99>поиск пути в обход воды…",
+        "Walk ": "Пешком ",
+        "\n<alpha=#99>no portal saves any walking": "\n<alpha=#99>порталы не сокращают путь",
+        " portal hop": " переход через портал",
+        " portal hops": " перехода через порталы",
+        " direct)": " напрямую)",
+        "(no tag)": "(без метки)",
+        "  <alpha=#99>presumed": "  <alpha=#99>предположительно"
+      }
+    },
+    {
+      "type": "PortalLines.UI.RouteInput",
+      "method": "AppendWater",
+      "values": {
+        " water)": " по воде)"
+      }
+    },
+    {
+      "type": "PortalLines.UI.RouteInput",
+      "method": "Dist",
+      "values": {
+        " km": " км",
+        " m": " м"
+      }
+    },
+    {
+      "type": "PortalLines.UI.PortalHover",
+      "method": "Describe",
+      "values": {
+        "(no tag)": "(без метки)",
+        "  <alpha=#99>stone portal": "  <alpha=#99>каменный портал",
+        "Linked": "Связан",
+        "Presumed link": "Предполагаемая связь",
+        ">Not connected</color>: tag used by ": ">Не связан</color>: порталов с этой меткой: ",
+        " portals, only one pair can connect": " (связаться может только одна пара)",
+        "Linked, partner not received yet": "Связан, второй портал еще не получен",
+        ">Not connected</color>": ">Не связан</color>",
+        " from you": " от вас",
+        "\n<alpha=#99>Remembered, last seen ": "\n<alpha=#99>Запомнен, последний раз виден "
+      }
+    },
+    {
+      "type": "PortalLines.UI.PortalHover",
+      "method": "Ago",
+      "values": {
+        "just now": "только что",
+        " min ago": " мин назад",
+        " h ago": " ч назад",
+        " d ago": " дн. назад"
+      }
+    },
+    {
+      "type": "PortalLines.Core.PortalRegistry",
+      "method": "Scan",
+      "values": {
+        "one end's copy is stale, refreshing": "данные одного из порталов устарели, обновляются",
+        "remembered pair, not confirmed this session": "запомненная пара, в этом сеансе не подтверждена",
+        "only two portals with this tag": "с этой меткой только два портала"
+      }
+    }
+  ]
 }

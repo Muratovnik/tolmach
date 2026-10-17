@@ -672,6 +672,54 @@
         "Run stamina use": "Расход выносливости при беге",
         "Damage mods: ": "Модификаторы урона: "
       }
+    },
+    {
+      "type": "More_World_Locations_AIO.RpcHandlers",
+      "method": "RPC_More_World_Locations_AIO_Version",
+      "values": {
+        "More_World_Locations_AIO Installed: 5.2.2\n Needed: ": "More_World_Locations_AIO: установлена версия 5.2.2\n Требуется: "
+      }
+    },
+    {
+      "type": "More_World_Locations_AIO.Shrines.FortressTributeShrine",
+      "method": "GetHoverName",
+      "values": {
+        "Plains challenge shrine": "Святилище испытаний Равнин"
+      }
+    },
+    {
+      "type": "More_World_Locations_AIO.Shrines.FortressTributeShrine",
+      "method": "GetHoverText",
+      "values": {
+        "Challenge in progress": "Идет испытание",
+        "[<color=yellow><b>$KEY_Use</b></color>] Offer {0} $item_resin (Black Forest)\nUse {1} of a tribute item to select another tier.": "[<color=yellow><b>$KEY_Use</b></color>] Поднести $item_resin — {0} шт. (Черный лес)\nЧтобы выбрать другой уровень, используйте {1} шт. другого подношения."
+      }
+    },
+    {
+      "type": "More_World_Locations_AIO.Shrines.FortressTributeShrine",
+      "method": "Offer",
+      "values": {
+        "A challenge is already in progress.": "Испытание уже идет.",
+        "You need {0} {1}.": "Нужно {0} шт.: {1}."
+      }
+    },
+    {
+      "type": "More_World_Locations_AIO.Shrines.FortressTributeShrine",
+      "method": "UseItem",
+      "values": {
+        "Offer {0} resin, guck, crystal, black metal, seeker meat, soft tissue, charred bone, seal fat, amber or ruby.": "Поднесите {0} шт. смолы, слизи, кристаллов, черного металла, мяса искателя, мягкой ткани, обугленных костей, жира тюленя, янтаря или рубинов."
+      }
+    },
+    {
+      "type": "More_World_Locations_AIO.Shrines.FortressTributeShrine+<StartOffering>d__28",
+      "method": "MoveNext",
+      "values": {
+        "The ": "Испытание ",
+        " challenge is unavailable. Your offering was not consumed.": " — недоступно. Подношение не израсходовано.",
+        "The challenge could not start. Your offering was not consumed.": "Не удалось начать испытание. Подношение не израсходовано.",
+        "The shrine has no clear spawn points.": "У святилища нет свободных точек появления.",
+        "The shrine is busy. Try again.": "Святилище занято. Попробуйте еще раз."
+      }
     }
   ]
 }
