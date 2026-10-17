@@ -1,0 +1,33 @@
+{
+  "id": "ForestGammeltroll",
+  "package": "Voxx-ForestGammeltroll",
+  "version": "1.0.1",
+  "pluginVersion": "1.0.1",
+  "assembly": "ForestGammeltroll",
+  "guids": [
+    "com.voxxsidus.forestgammeltroll"
+  ],
+  "namespaces": [],
+  "words": {
+    "enemy_forestgammeltroll": "Лесной гаммельтролль",
+    "piece_forestgammeltroll_petrified": "Окаменевший лесной гаммельтролль"
+  },
+  "englishWords": {
+    "enemy_forestgammeltroll": "Forest Gammeltroll",
+    "piece_forestgammeltroll_petrified": "Petrified Forest Gammeltroll"
+  },
+  "texts": {},
+  "patterns": [],
+  "returns": [],
+  "prefabs": [],
+  "sourceFiles": [
+    "source-evidence/profile-updates/Voxx-ForestGammeltroll-1.0.1/ForestGammeltroll/ForestGammeltroll/ForestGammeltroll.cs",
+    "source-evidence/profile-updates/Voxx-ForestGammeltroll-1.0.1/ForestGammeltroll/ForestGammeltroll/ForestTrollCreature.cs",
+    "source-evidence/profile-updates/Voxx-ForestGammeltroll-1.0.1/ForestGammeltroll/ForestGammeltroll/PetrifiedRemains.cs",
+    "source-evidence/profile-updates/Voxx-ForestGammeltroll-1.0.1/il/ForestGammeltroll.il"
+  ],
+  "notes": [
+    "English comes from two Jotunn AddTranslation calls in ForestGammeltroll.Awake: the creature name and the petrified remains (MineRock5 and HoverText).",
+    "The test spawn console command and PrefabDumper output are console and developer text and stay English."
+  ]
+}

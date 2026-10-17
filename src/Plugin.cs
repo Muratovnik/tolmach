@@ -116,6 +116,10 @@ namespace Tolmach
     [BepInDependency("_shudnal.ConfigurationManager", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("_shudnal.ConditionalConfigSync", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("MidnightsFX.AsyncSave", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("elric.Fertilizer", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.voxxsidus.forestgammeltroll", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("vapok.mods.shieldmebruh", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("TheLionCid.WhySleepAlone", BepInDependency.DependencyFlags.SoftDependency)]
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string PluginId = "muratovnik.tolmach";

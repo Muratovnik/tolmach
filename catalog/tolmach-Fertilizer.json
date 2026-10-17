@@ -1,0 +1,50 @@
+{
+  "id": "Fertilizer",
+  "package": "Dwarf_Haven_Games-Fertilizer",
+  "version": "1.3.0",
+  "pluginVersion": "1.3.0",
+  "assembly": "Fertilizer",
+  "guids": [
+    "elric.Fertilizer"
+  ],
+  "namespaces": [],
+  "words": {
+    "ammo_fertilizer": "Удобрение",
+    "jelaw_fertilize": "Подкормка",
+    "jelaw_already_fertilized": "Уже подкормлено",
+    "jelaw_fertilize_desc": "Рассыпает выбранную костную муку. Чем выше навык «Земледелие», тем больше площадь.",
+    "jelaw_bonemeal": "Костная мука",
+    "jelaw_bonemeal_desc": "Молотая кость. Немного ускоряет рост посевов.",
+    "jelaw_bonemeal_enriched": "Обогащенная костная мука",
+    "jelaw_bonemeal_enriched_desc": "Костная мука, смолотая с клыком и углем.",
+    "jelaw_bonemeal_enhanced": "Усиленная костная мука",
+    "jelaw_bonemeal_enhanced_desc": "Костная мука, смолотая с обугленной костью и живицей."
+  },
+  "englishWords": {
+    "ammo_fertilizer": "Fertilizer",
+    "jelaw_fertilize": "Fertilize",
+    "jelaw_already_fertilized": "Already Fertilized",
+    "jelaw_fertilize_desc": "Spreads the selected bone meal. Covers a wider area as Farming rises.",
+    "jelaw_bonemeal": "Bone Meal",
+    "jelaw_bonemeal_desc": "Ground bone. Hastens a crop a little.",
+    "jelaw_bonemeal_enriched": "Enriched Bone Meal",
+    "jelaw_bonemeal_enriched_desc": "Bone meal ground with fang and charcoal.",
+    "jelaw_bonemeal_enhanced": "Enhanced Bone Meal",
+    "jelaw_bonemeal_enhanced_desc": "Bone meal ground with charred bone and sap."
+  },
+  "texts": {},
+  "patterns": [],
+  "returns": [],
+  "prefabs": [],
+  "sourceFiles": [
+    "source-evidence/profile-updates/Dwarf_Haven_Games-Fertilizer-1.3.0/Fertilizer/Fertilizer/Plugin.cs",
+    "source-evidence/profile-updates/Dwarf_Haven_Games-Fertilizer-1.3.0/Fertilizer/Fertilizer/Tier.cs",
+    "source-evidence/profile-updates/Dwarf_Haven_Games-Fertilizer-1.3.0/Fertilizer/Fertilizer/FertilizerPiece.cs",
+    "source-evidence/profile-updates/Dwarf_Haven_Games-Fertilizer-1.3.0/Fertilizer/Fertilizer/PlantHoverTextPatch.cs",
+    "source-evidence/profile-updates/Dwarf_Haven_Games-Fertilizer-1.3.0/il/Fertilizer.il"
+  ],
+  "notes": [
+    "English comes from Plugin.AddLocalization, which registers ten keys in the plugin's Jotunn CustomLocalization; tier names and descriptions come from Tier.All.",
+    "The plant hover suffix appends Tier.DisplayName (a static-initializer string) after vanilla localization in a Harmony postfix, so it has no display sink and stays English."
+  ]
+}

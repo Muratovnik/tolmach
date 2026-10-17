@@ -20,7 +20,8 @@
       "type": "NetworkPerformanceSystem.Runtime.GhostWatchdog",
       "method": "Warn",
       "values": {
-        "Lost contact with the server - reconnecting ({0:F0}s)": "Потеряна связь с сервером — переподключение ({0:F0} с)"
+        "Lost contact with the server - reconnecting ({0:F0}s)": "Потеряна связь с сервером — переподключение ({0:F0} с)",
+        "The host's game is in the background - waiting for it ({0:F0}s)": "Игра хоста в фоновом режиме — ожидание ({0:F0} с)"
       }
     },
     {
@@ -35,7 +36,8 @@
       "method": "Trip",
       "values": {
         "Lost connection to the server.\n\nYou were returned to the menu rather than left playing a world the server is no longer part of. Progress made after contact was lost did not reach it.": "Соединение с сервером потеряно.\n\nВас вернуло в меню, чтобы вы не играли в мире, от которого сервер уже отключился. Сделанное после потери связи на сервер не попало.",
-        "Lost connection to the server - returning to the menu": "Соединение с сервером потеряно — возврат в меню"
+        "Lost connection to the server - returning to the menu": "Соединение с сервером потеряно — возврат в меню",
+        "Lost connection to the server.\n\nThe host's game went into the background and did not come back in time. Progress made after contact was lost did not reach it.": "Соединение с сервером потеряно.\n\nИгра хоста ушла в фоновый режим и не вернулась вовремя. Сделанное после потери связи на сервер не попало."
       }
     }
   ],

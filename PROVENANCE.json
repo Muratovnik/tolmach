@@ -743,6 +743,22 @@
       ]
     },
     {
+      "id": "Fertilizer",
+      "package": "Dwarf_Haven_Games-Fertilizer",
+      "version": "1.3.0",
+      "status_in_archive": "Installed profile exact DLL/source audit 2026-10-17; game not run.",
+      "source_root": "source-evidence/profile-updates/Dwarf_Haven_Games-Fertilizer-1.3.0",
+      "binary_identities": [
+        {
+          "mod": "Dwarf_Haven_Games-Fertilizer-1.3.0",
+          "enabled": true,
+          "profile_path": "BepInEx/plugins/Dwarf_Haven_Games-Fertilizer/Fertilizer.dll",
+          "size": 24576,
+          "sha256": "4f15f86deb0c2fc4d175e1f99220a641dab8b015b08b079157eabd6212acb8cf"
+        }
+      ]
+    },
+    {
       "id": "FirstPersonMode",
       "package": "Azumatt-FirstPersonMode",
       "version": "1.3.12",
@@ -789,6 +805,22 @@
           "profile_path": "BepInEx/plugins/Smoothbrain-StaminaRegenerationFromFood/FoodStaminaRegen.dll",
           "size": 273920,
           "sha256": "82f3939e43aaf5f2545985f40b364cc81af13f769ab78f7824dc0c59e781c9f5"
+        }
+      ]
+    },
+    {
+      "id": "ForestGammeltroll",
+      "package": "Voxx-ForestGammeltroll",
+      "version": "1.0.1",
+      "status_in_archive": "Installed profile exact DLL/source audit 2026-10-17; game not run.",
+      "source_root": "source-evidence/profile-updates/Voxx-ForestGammeltroll-1.0.1",
+      "binary_identities": [
+        {
+          "mod": "Voxx-ForestGammeltroll-1.0.1",
+          "enabled": true,
+          "profile_path": "BepInEx/plugins/Voxx-ForestGammeltroll/ForestGammeltroll.dll",
+          "size": 52224,
+          "sha256": "cc4a80a51aa5bb0708e5fc30763ef6c6f0b83c8ed0da32490a56818f6695809d"
         }
       ]
     },
@@ -1324,6 +1356,22 @@
       ]
     },
     {
+      "id": "ShieldMeBruh",
+      "package": "Vapok-ShieldMeBruh",
+      "version": "2.1.5",
+      "status_in_archive": "Installed profile exact DLL/source audit 2026-10-17; game not run.",
+      "source_root": "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5",
+      "binary_identities": [
+        {
+          "mod": "Vapok-ShieldMeBruh-2.1.5",
+          "enabled": true,
+          "profile_path": "BepInEx/plugins/Vapok-ShieldMeBruh/ShieldMeBruh.dll",
+          "size": 613376,
+          "sha256": "847b92602de6e316f059c7c51451d1b118ae47894b314ae7c92ecdc59b9b68ce"
+        }
+      ]
+    },
+    {
       "id": "SNEAKer",
       "package": "blacks7ar-SNEAKer",
       "version": "1.1.8",
@@ -1756,6 +1804,22 @@
       ],
       "previous_version": "1.9.4",
       "archived_version": "1.9.4"
+    },
+    {
+      "id": "WhySleepAlone",
+      "package": "TheLionCid-WhySleepAlone",
+      "version": "1.0.3",
+      "status_in_archive": "Installed profile exact DLL/source audit 2026-10-17; game not run.",
+      "source_root": "source-evidence/profile-updates/TheLionCid-WhySleepAlone-1.0.3",
+      "binary_identities": [
+        {
+          "mod": "TheLionCid-WhySleepAlone-1.0.3",
+          "enabled": true,
+          "profile_path": "BepInEx/plugins/TheLionCid-WhySleepAlone/WhySleepAlone/WhySleepAlone.dll",
+          "size": 130048,
+          "sha256": "99dbcc2b0f098a3a6038fa3d98e674cb42d570d809bc9e303ed42bf3ea7f604f"
+        }
+      ]
     },
     {
       "id": "WieldEquipmentWhileSwimming",
@@ -2756,6 +2820,182 @@
       "WorldEditCommands"
     ],
     "source_evidence": "Exact installed DLLs decompiled with ILSpy 11.1. Binary equality is not a game behavior test.",
-    "game_version": "1.0.20"
+    "game_version": "1.0.20",
+    "new_modules": [
+      "Fertilizer",
+      "ForestGammeltroll",
+      "ShieldMeBruh",
+      "WhySleepAlone"
+    ],
+    "no_catalog_audit": [
+      {
+        "package": "A2-No_Startup_Logo",
+        "version": "1.1.4",
+        "audit_scope": "Removes the startup logo; no player-visible strings.",
+        "binary_identities": [
+          {
+            "mod": "A2-No_Startup_Logo-1.1.4",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/A2-No_Startup_Logo/A2.NoStartupLogo.dll",
+            "size": 7168,
+            "sha256": "1ee65f1ad25e6e02888841bf068c419ff662407f471c27b2e8d9d2ad6da83c3c"
+          }
+        ]
+      },
+      {
+        "package": "Ezomic-Sinka",
+        "version": "1.3.0",
+        "audit_scope": "Log lines and config descriptions only (F1, excluded scope).",
+        "binary_identities": [
+          {
+            "mod": "Ezomic-Sinka-1.3.0",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/Ezomic-Sinka/Sinka/Sinka.dll",
+            "size": 51200,
+            "sha256": "25608c263cf6e0341acc198de6166f8536ae594571fc79468b7bdfbd48651153"
+          }
+        ]
+      },
+      {
+        "package": "Goldenrevolver-Instantly_Destroy_Boats_And_Carts",
+        "version": "1.0.5",
+        "audit_scope": "Only the version changed since the audited 1.0.4; config text and technical IDs.",
+        "binary_identities": [
+          {
+            "mod": "Goldenrevolver-Instantly_Destroy_Boats_And_Carts-1.0.5",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/Goldenrevolver-Instantly_Destroy_Boats_And_Carts/InstantlyDestroyBoatsAndCarts.dll",
+            "size": 8704,
+            "sha256": "c4e02becfc4820fa4bb4baadf4af1fe8041a96e3dd3b034a5b1b3590665741cf"
+          }
+        ]
+      },
+      {
+        "package": "Goldenrevolver-Sneak_Camera_and_Collision_Height",
+        "version": "1.0.3",
+        "audit_scope": "Only the version changed since the audited 1.0.2; config text only.",
+        "binary_identities": [
+          {
+            "mod": "Goldenrevolver-Sneak_Camera_and_Collision_Height-1.0.3",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/Goldenrevolver-Sneak_Camera_and_Collision_Height/SneakCameraAndCollision.dll",
+            "size": 9728,
+            "sha256": "4e942413b64be9dd997ec9180fb58d445dde9d66e0680a455874575abf6817a1"
+          }
+        ]
+      },
+      {
+        "package": "hvalch-Unhindered",
+        "version": "0.3.0",
+        "audit_scope": "Movement physics; config descriptions, log and debug lines only.",
+        "binary_identities": [
+          {
+            "mod": "hvalch-Unhindered-0.3.0",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/hvalch-Unhindered/Unhindered.dll",
+            "size": 27136,
+            "sha256": "8dd0de63ecf862c753fa92966872f2d6dd58e0e440a9333fb425010bf70ca04d"
+          }
+        ]
+      },
+      {
+        "package": "Ivvty-SteadyFrame",
+        "version": "1.0.5",
+        "audit_scope": "Config and diagnostics written to the log; no screen output.",
+        "binary_identities": [
+          {
+            "mod": "Ivvty-SteadyFrame-1.0.5",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/Ivvty-SteadyFrame/SteadyFrame.dll",
+            "size": 167936,
+            "sha256": "6a51e7fcfc2b2171089e7a2b13c2f07b582206d5ce3ef1db8efbb108483a5882"
+          }
+        ]
+      },
+      {
+        "package": "MidnightMods-ImpactfulSkills",
+        "version": "0.23.0",
+        "audit_scope": "Ships a complete Russian table of its own; Tolmach only fills gaps and none exist.",
+        "binary_identities": [
+          {
+            "mod": "MidnightMods-ImpactfulSkills-0.23.0",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/MidnightMods-ImpactfulSkills/ImpactfulSkills.dll",
+            "size": 467968,
+            "sha256": "5b9cd6a20531e33bce52e4efd37631a82b0f0aa40d66860d8e1cddc597736f66"
+          }
+        ]
+      },
+      {
+        "package": "MidnightMods-StarLevelSystem",
+        "version": "1.26.2",
+        "audit_scope": "Ships a complete Russian table of its own; Tolmach only fills gaps and none exist.",
+        "binary_identities": [
+          {
+            "mod": "MidnightMods-StarLevelSystem-1.26.2",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/MidnightMods-StarLevelSystem/StarLevelSystem.dll",
+            "size": 4579328,
+            "sha256": "f201842ba0e9cb10392a0eb0568c84301471a92b9936274dad2acd4f49b11b3f"
+          }
+        ]
+      },
+      {
+        "package": "Mobrin-GroupHUD",
+        "version": "0.65.1",
+        "audit_scope": "Built-in Russian covers all 136 keys used by its Tr/T calls.",
+        "binary_identities": [
+          {
+            "mod": "Mobrin-GroupHUD-0.65.1",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/Mobrin-GroupHUD/GroupHUD.dll",
+            "size": 437760,
+            "sha256": "c9df0c4474c479226817781e230d63dcacd2b2046424efca8396eb000385dcbb"
+          }
+        ]
+      },
+      {
+        "package": "rauschekuh-CollateralDamage",
+        "version": "0.1.0",
+        "audit_scope": "Damage patches; the bundled OdinsMissingPatch CSV loader is unused and no translations.csv ships.",
+        "binary_identities": [
+          {
+            "mod": "rauschekuh-CollateralDamage-0.1.0",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/rauschekuh-CollateralDamage/CollateralDamage.dll",
+            "size": 39424,
+            "sha256": "8c5b08aff8a5bafcc561b47e73caaba310c48a32a550a31bb4662630f9a30190"
+          }
+        ]
+      },
+      {
+        "package": "Searica-BuildRestrictionTweaksSync",
+        "version": "1.4.0",
+        "audit_scope": "1.4.0 adds Deep North snow restriction configs and checks; the player sees only game placement hints.",
+        "binary_identities": [
+          {
+            "mod": "Searica-BuildRestrictionTweaksSync-1.4.0",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/Searica-BuildRestrictionTweaksSync/BuildRestrictionTweaksSync.dll",
+            "size": 20480,
+            "sha256": "b6fd2326ddc01a98d2271f8d2da89c37fde289e42230bc382a52450850a3c28d"
+          }
+        ]
+      },
+      {
+        "package": "shudnal-Compass",
+        "version": "1.1.3",
+        "audit_scope": "Config descriptions and log lines; pin names come from the game or the player.",
+        "binary_identities": [
+          {
+            "mod": "shudnal-Compass-1.1.3",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/shudnal-Compass/Compass.dll",
+            "size": 81408,
+            "sha256": "3407441d7e9764f3b6e7a8f56c038a40c4c586c1c10f8d6d928c50d0374804d5"
+          }
+        ]
+      }
+    ]
   }
 }

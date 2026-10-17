@@ -1,0 +1,63 @@
+{
+  "id": "ShieldMeBruh",
+  "package": "Vapok-ShieldMeBruh",
+  "version": "2.1.5",
+  "pluginVersion": "2.1.5",
+  "assembly": "ShieldMeBruh",
+  "guids": [
+    "vapok.mods.shieldmebruh"
+  ],
+  "namespaces": [
+    "Vapok.Common.Managers.Splash"
+  ],
+  "words": {},
+  "englishWords": {},
+  "texts": {
+    "A quality-of-life combat mod that automatically equips and manages shields during combat situations.": "Боевой мод для удобства: сам надевает щит и управляет им в бою."
+  },
+  "patterns": [],
+  "returns": [],
+  "prefabs": [],
+  "sourceFiles": [
+    "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/ShieldMeBruh/ShieldMeBruh/ShieldMeBruh.cs",
+    "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/ShieldMeBruh/Vapok.Common.Managers.Splash/SplashLocalization.cs",
+    "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/ShieldMeBruh/Vapok.Common.Managers.Splash/SplashModalComponent.cs",
+    "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/ShieldMeBruh/Vapok.Common.Managers.Splash/SplashGamepadController.cs",
+    "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/ShieldMeBruh/Vapok.Common.Managers.Splash/CyberTooltipTrigger.cs",
+    "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/resources/ShieldMeBruh.Translations.English.json",
+    "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/il/ShieldMeBruh.il"
+  ],
+  "notes": [
+    "The only player-facing text is the shared Vapok startup splash: SplashLocalization already carries the mod's own Russian, so this covers the hard-coded rest; the embedded English translation table is empty.",
+    "The tagline is set in ShieldMeBruh.Awake before Tolmach patches and is translated at the TMP set_text sink of SplashModalComponent.CreateText; the other strings are exact literals of their display methods, the first two worded as in the AdventureBackpacks catalog."
+  ],
+  "literals": [
+    {
+      "type": "Vapok.Common.Managers.Splash.CyberTooltipTrigger",
+      "method": "ShowTooltip",
+      "values": {
+        "<color=#64f0fc><b>[ ! ] DATA DISCLOSURE:</b></color>\n<color=#c8dbee>": "<color=#64f0fc><b>[ ! ] СБОР ДАННЫХ:</b></color>\n<color=#c8dbee>"
+      }
+    },
+    {
+      "type": "Vapok.Common.Managers.Splash.SplashModalComponent",
+      "method": "ShowPrivacyOverlay",
+      "values": {
+        "</b></color> <color=#64f0fc>[ vapok.io/privacy-policy ]</color>  <color=#48607a>|</color>  <color=#ffffff><b>DOC:</b></color> <color=#64f0fc>[ PRIVACY ]</color>": "</b></color> <color=#64f0fc>[ vapok.io/privacy-policy ]</color>  <color=#48607a>|</color>  <color=#ffffff><b>ДОКУМЕНТ:</b></color> <color=#64f0fc>[ КОНФИДЕНЦИАЛЬНОСТЬ ]</color>",
+        "VIEW: [ <color=#00f59b>TERMINAL</color> ]": "ВИД: [ <color=#00f59b>ТЕРМИНАЛ</color> ]"
+      }
+    },
+    {
+      "type": "Vapok.Common.Managers.Splash.SplashGamepadController",
+      "method": "UpdateLegend",
+      "values": {
+        "</color> <color=#c8d6e5>Back to Mods</color>      <color=#64f0fc>": "</color> <color=#c8d6e5>Назад к модам</color>      <color=#64f0fc>",
+        "</color> <color=#c8d6e5>Scroll Policy</color>": "</color> <color=#c8d6e5>Прокрутка политики</color>",
+        "</color> <color=#c8d6e5>Select / Toggle</color>      <color=#64f0fc>": "</color> <color=#c8d6e5>Выбрать / переключить</color>      <color=#64f0fc>",
+        "</color> <color=#c8d6e5>Close</color>      <color=#64f0fc>": "</color> <color=#c8d6e5>Закрыть</color>      <color=#64f0fc>",
+        "</color> <color=#c8d6e5>Navigate</color>      <color=#64f0fc>": "</color> <color=#c8d6e5>Перемещение</color>      <color=#64f0fc>",
+        "</color> <color=#c8d6e5>Scroll</color>": "</color> <color=#c8d6e5>Прокрутка</color>"
+      }
+    }
+  ]
+}
