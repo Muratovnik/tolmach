@@ -68,7 +68,7 @@ public sealed class Localization
     internal static readonly Dictionary<string, Dictionary<string, string>> Resources = new Dictionary<string, Dictionary<string, string>>();
     internal static string SelectedLanguage = "English";
     private static Localization m_instance;
-    private readonly Dictionary<string, string> m_translations = new Dictionary<string, string>();
+    private Dictionary<string, string> m_translations = new Dictionary<string, string>();
     private readonly LruCache m_cache = new LruCache();
     internal readonly List<string> AddedKeys = new List<string>();
     internal int CacheClears { get { return m_cache.Clears; } }
@@ -84,6 +84,13 @@ public sealed class Localization
     }
     // Mods (SkillManager) construct extra instances; the constructor still loads the player's language.
     internal static Localization CreateDetachedForTests() { return new Localization(); }
+    // LocalizationCache returns its cached dictionary, the main instance's own, to every new instance.
+    internal static Localization CreateSharingMainTableForTests()
+    {
+        Localization extra = new Localization();
+        extra.m_translations = instance.m_translations;
+        return extra;
+    }
     internal static void ResetForTests() { m_instance = null; SelectedLanguage = "English"; Resources.Clear(); }
     public string GetSelectedLanguage() { return SelectedLanguage; }
     public void SetLanguage(string language)

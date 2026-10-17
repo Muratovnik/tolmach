@@ -10,6 +10,7 @@ namespace Tolmach
     // Fill-only policy over Valheim's Translate/AddWord API, not a second dictionary
     // implementation. The sole private game member used for mutation is the cache's
     // existing EvictAll API: this snapshot exposes no public invalidation method.
+    // The private m_translations is only compared by reference, never read or written.
     internal static class LocalizationBridge
     {
         private sealed class LanguageState { internal string Language; }
@@ -127,29 +128,54 @@ namespace Tolmach
         }
         internal static bool ShouldFill(string current, string english, string key)
         {
-            return String.IsNullOrEmpty(current) || current == english || current == key || current == "$" + key || current == "[" + key + "]" || current == "[$" + key + "]";
+            return current == english || IsPlaceholder(current, key);
         }
         private static string CurrentWord(object instance, string key)
         {
             return (string)translate.Invoke(instance, new object[] { key });
         }
-        private static void BeforeAddWord(object __instance, string __0, ref string __1, out bool __state)
+        private static bool BeforeAddWord(object __instance, string __0, ref string __1, out bool __state)
         {
             __state = false;
-            if (Language(__instance) != "Russian" || String.IsNullOrEmpty(__0)) return;
+            if (String.IsNullOrEmpty(__0)) return true;
+            object owner = __instance;
+            if (SharesMainTable(__instance))
+            {
+                // A localization cache (LocalizationCache) can hand a mod's separate English
+                // instance the main dictionary itself. Its writes are meant for that instance
+                // only: they must not replace the text the player sees.
+                if (!IsPlaceholder(CurrentWord(__instance, __0), __0)) return false;
+                owner = Main;
+            }
+            if (Language(owner) != "Russian") return true;
             string ru, en;
-            if (!Russian.TryGetValue(__0, out ru) || !English.TryGetValue(__0, out en)) return;
-            string current = CurrentWord(__instance, __0);
+            if (!Russian.TryGetValue(__0, out ru) || !English.TryGetValue(__0, out en)) return true;
+            string current = CurrentWord(owner, __0);
             // A replaceNative key always takes our value: the mod's own Russian for it is a known mistake.
             if (Replacing.Contains(__0)) __1 = ru;
             // Native scope registration can feed our Russian value back into AddWord.
             // It must not replace an existing third-party Russian translation.
             else if (__1 == ru || ShouldFill(__1, en, __0)) __1 = ShouldFill(current, en, __0) ? ru : current;
             __state = !injecting && current != __1;
+            return true;
         }
         private static void AfterAddWord(object __instance, bool __state)
         {
-            if (__state) InvalidateCache(__instance);
+            if (!__state) return;
+            InvalidateCache(__instance);
+            if (SharesMainTable(__instance)) InvalidateCache(Main);
+        }
+        // True for another Localization instance whose dictionary is the main one (read only).
+        private static bool SharesMainTable(object instance)
+        {
+            object main = Main;
+            if (instance == null || main == null || Object.ReferenceEquals(instance, main)) return false;
+            object table = RuntimeAccess.Read(instance, "m_translations");
+            return table != null && Object.ReferenceEquals(table, RuntimeAccess.Read(main, "m_translations"));
+        }
+        private static bool IsPlaceholder(string current, string key)
+        {
+            return String.IsNullOrEmpty(current) || current == key || current == "$" + key || current == "[" + key + "]" || current == "[$" + key + "]";
         }
         // Raw text is matched before the game resolves its "$word" tokens: stored strings such
         // as "$piece_workbench. ..." or "$enemy_greydwarf Guardian" keep their tokens, and the

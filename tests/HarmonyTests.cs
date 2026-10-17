@@ -560,6 +560,27 @@ namespace Tolmach.Tests
             Assert.That(main.Translate("skill_key"), Is.EqualTo("Навык"));
         }
         [Test]
+        public void EnglishInstanceSharingTheMainTableDoesNotOverwriteShownText()
+        {
+            // LocalizationCache gives a mod's separate English instance the main dictionary;
+            // the mod then writes its English words there (seen in game with OreMines on 1.0.20).
+            Module m = ViewModule(); m.words["mine_key"] = "Угольная шахта"; m.englishWords["mine_key"] = "Coal Mine";
+            Localization.SelectedLanguage = "Russian";
+            Localization main = Localization.instance;
+            InstallBridge(() => "Russian");
+            main.AddWord("piece_workbench", "Верстак");
+            LocalizationBridge.InjectMain();
+            Localization english = Localization.CreateSharingMainTableForTests();
+            english.SetupLanguage("English");
+            english.AddWord("mine_key", "Coal Mine");
+            english.AddWord("piece_workbench", "Workbench");
+            english.AddWord("new_key", "New word");
+            Assert.That(main.Localize("$mine_key"), Is.EqualTo("Угольная шахта"), "Our translation survives.");
+            Assert.That(main.Localize("$piece_workbench"), Is.EqualTo("Верстак"), "The game's own Russian survives too.");
+            Assert.That(main.Translate("new_key"), Is.EqualTo("New word"), "A key the table lacks is still added.");
+            Assert.That(TextEngine.IsRussian, Is.True);
+        }
+        [Test]
         public void LanguageChosenInsideTheGameConstructorIsAppliedOnRefresh()
         {
             // First launch: no stored preference yet, the game picks Russian from the system
