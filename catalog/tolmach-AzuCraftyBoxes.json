@@ -1,7 +1,7 @@
 {
   "id": "AzuCraftyBoxes",
   "package": "Azumatt-AzuCraftyBoxes",
-  "version": "1.8.27",
+  "version": "1.8.28",
   "assembly": "AzuCraftyBoxes",
   "guids": [
     "Azumatt.AzuCraftyBoxes"
@@ -58,22 +58,22 @@
   "returns": [],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes/AzuCraftyBoxesPlugin.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.Patches/FireplaceGetHoverTextPatch.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.Patches/TurretGetHoverTextPatch.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.Patches/OverrideHoverTextSg.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.Patches/OverrideHoverText.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.Patches/OverrideHoverTextFermenter.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.Patches/SE_ContainerPull.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/Backpacks/ItemContainer.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/ServerSync/VersionCheck.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes/RpcHandlers.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes/ShowConnectionError.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes/RegisterAndCheckVersion.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.csproj",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.il",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.Patches/ShieldGeneratorOnAddFuelPatch.cs",
-    "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.Patches/Turret_UseItem_Patch.cs"
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes/AzuCraftyBoxesPlugin.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.Patches/FireplaceGetHoverTextPatch.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.Patches/TurretGetHoverTextPatch.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.Patches/OverrideHoverTextSg.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.Patches/OverrideHoverText.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.Patches/OverrideHoverTextFermenter.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.Patches/SE_ContainerPull.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/Backpacks/ItemContainer.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/ServerSync/VersionCheck.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes/RpcHandlers.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes/ShowConnectionError.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes/RegisterAndCheckVersion.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.csproj",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.il",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.Patches/ShieldGeneratorOnAddFuelPatch.cs",
+    "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.Patches/Turret_UseItem_Patch.cs"
   ],
   "notes": [
     "version — версия пакета Gale; pluginVersion и assembly — метаданные приложенной декомпиляции. Игровой запуск не выполнен.",
@@ -82,7 +82,8 @@
     "ServerSync ErrorClient and ErrorServer source methods remain untranslated: their results are used in logs. Client errors translate only on TMP_Text.text assignment in ServerSync.VersionCheck.ShowConnectionError. ErrorServer is log-only. RPC version payloads, version comparisons, technical names and sender logs remain unchanged.",
     "The AzuCraftyBoxes Installed / Needed message translates only on TMP_Text.text assignment in AzuCraftyBoxes.ShowConnectionError.Postfix. RpcHandlers keeps the cached English ConnectionError, upstream version comparisons and logs; names and versions are opaque pattern arguments.",
     "Bulk-fuel and bulk-ammunition messages translate the remaining English items suffix at Character.Message in ShieldGeneratorOnAddFuelPatch.Prefix and Turret_UseItem_Patch.Prefix. The $msg_added game token and count remain unchanged; шт. avoids incorrect Russian declension for different counts.",
-    "Update keeps the shared Pull from containers? literal English for LogDebug. The default rich-text question translates as a scoped full line at Localization.Localize; simple question-plus-choice layouts use the scoped pattern. Colored choices are display-only literals. Arbitrary custom layouts outside these known forms are not covered."
+    "Update keeps the shared Pull from containers? literal English for LogDebug. The default rich-text question translates as a scoped full line at Localization.Localize; simple question-plus-choice layouts use the scoped pattern. Colored choices are display-only literals. Arbitrary custom layouts outside these known forms are not covered.",
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "literals": [
     {
@@ -161,7 +162,7 @@
     "Backpacks",
     "ServerSync"
   ],
-  "pluginVersion": "1.8.27",
+  "pluginVersion": "1.8.28",
   "rawTexts": {
     "Preventing Pulling": "Не брать из сундуков",
     "Prevents pulling from nearby containers & backpacks": "Предметы не берутся из ближайших сундуков и рюкзаков"

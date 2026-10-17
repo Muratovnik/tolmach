@@ -1,8 +1,8 @@
 {
   "id": "MyLittleUI",
   "package": "shudnal-MyLittleUI",
-  "version": "1.2.26",
-  "pluginVersion": "1.2.26",
+  "version": "1.2.31",
+  "pluginVersion": "1.2.31",
   "assembly": "MyLittleUI",
   "guids": [
     "shudnal.MyLittleUI"
@@ -1475,13 +1475,14 @@
   "literals": [],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.26/MyLittleUI/MyLittleUI/MyLittleUI.cs",
-    "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.26/MyLittleUI/MyLittleUI/InfoBlocks.cs",
-    "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.26/MyLittleUI.ldstr.il"
+    "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.31/MyLittleUI/MyLittleUI/MyLittleUI.cs",
+    "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.31/MyLittleUI/MyLittleUI/InfoBlocks.cs",
+    "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.31/MyLittleUI.ldstr.il"
   ],
   "notes": [
     "Almost all player text is vanilla $tokens passed to Localization.Localize; only the mod's own English is here.",
     "texts: default fuzzy clock words (config Info - Clock/Time fuzzy words, shown via TMP_Text.SetText when Time type = Fuzzy) and the default in-world ping text passed to Localize.",
-    "patterns: main-menu character stats lines \"<name>: <number>\" set on FejdStartup.m_csSourceInfo.text; covers the Kills/Crafts aliases and all 205 PlayerStatType counters in Valheim 1.0.16 (enum names split before every capital). Count/None are sentinel values absent from PlayerProfile stats. Numeric values remain opaque; no enum-name substitution or config change."
+    "patterns: main-menu character stats lines \"<name>: <number>\" set on FejdStartup.m_csSourceInfo.text; covers the Kills/Crafts aliases and all 205 PlayerStatType counters in Valheim 1.0.16 (enum names split before every capital). Count/None are sentinel values absent from PlayerProfile stats. Numeric values remain opaque; no enum-name substitution or config change.",
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ]
 }

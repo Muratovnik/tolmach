@@ -1,7 +1,7 @@
 {
   "id": "DynamicStorageMaterials",
   "package": "Muji-DynamicStorageMaterials",
-  "version": "1.0.2",
+  "version": "2.0.4",
   "assembly": "DynamicStorageMaterials",
   "guids": [
     "com.muji.DynamicStorageMaterials"
@@ -418,29 +418,30 @@
   ],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/AppearanceSettings.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/AppearanceSnapshot.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/ConfigurationManagerAttributes.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/DynamicStorageMaterialsPlugin.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/ForgeInventoryRestrictionPatches.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/ForgeItemRestriction.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/ForgePileCollisionProxy.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/ForgePileStageDefinitions.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/ForgeRestrictionRegistry.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/ForgeStorageCapacity.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/ForgeStorageCapacityPatches.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/ForgeVisualStack.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/MeshDebugMetadata.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/PileAppearancePreset.cs",
-    "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/PlacedAppearance.cs"
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/AppearanceSettings.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/AppearanceSnapshot.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/ConfigurationManagerAttributes.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/DynamicStorageMaterialsPlugin.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/ForgeInventoryRestrictionPatches.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/ForgeItemRestriction.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/ForgePileCollisionProxy.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/ForgePileStageDefinitions.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/ForgeRestrictionRegistry.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/ForgeStorageCapacity.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/ForgeStorageCapacityPatches.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/ForgeVisualStack.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/MeshDebugMetadata.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/PileAppearancePreset.cs",
+    "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/PlacedAppearance.cs"
   ],
   "notes": [
-    "Проверено по установленной DLL. Русская нативная локализация отсутствует. Имена и описания переводятся при показе; идентификаторы, сохраненные настройки, RPC и журналы не изменяются. Игровой запуск не выполнен."
+    "Проверено по установленной DLL. Русская нативная локализация отсутствует. Имена и описания переводятся при показе; идентификаторы, сохраненные настройки, RPC и журналы не изменяются. Игровой запуск не выполнен.",
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "namespaces": [
     "DynamicStorageMaterials"
   ],
-  "pluginVersion": "1.0.2",
+  "pluginVersion": "2.0.4",
   "rawTexts": {
     "Storage for Flint. Hold E to quickly stack matching items.": "Хранилище для кремня. Удерживайте E, чтобы быстро сложить подходящие предметы.",
     "Storage for Obsidian. Hold E to quickly stack matching items.": "Хранилище для обсидиана. Удерживайте E, чтобы быстро сложить подходящие предметы.",
@@ -583,7 +584,7 @@
       "type": "DynamicStorageMaterials.DynamicStorageMaterialsPlugin",
       "method": "AddDroppedModelDebugHover",
       "values": {
-        "\n<color=#8AD7FF>DSM DROPPED MODEL DEBUG — ": "\n<color=#8AD7FF>DSM ДИАГНОСТИКА МОДЕЛИ ПРЕДМЕТА — ",
+        "\n<color=#8AD7FF>DSM DROPPED MODEL DEBUG â€” ": "\n<color=#8AD7FF>DSM ДИАГНОСТИКА МОДЕЛИ ПРЕДМЕТА — ",
         "\nDropped rendered size: ": "\nОтображаемый размер предмета: ",
         "\nDSM Model Scale 1.0: ": "\nМасштаб модели DSM 1.0: "
       }

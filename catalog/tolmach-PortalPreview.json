@@ -1,8 +1,8 @@
 {
   "id": "PortalPreview",
   "package": "Ivvty-PortalPreview",
-  "version": "1.3.6",
-  "pluginVersion": "1.3.6",
+  "version": "1.4.0",
+  "pluginVersion": "1.4.0",
   "assembly": "PortalPreview",
   "guids": [
     "ru.ivest.portalpreview"
@@ -378,20 +378,21 @@
   "returns": [],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/FrozenPortals.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/HardwareProfile.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/PortalCleanup.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/PortalPreviewPlugin.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/DestinationLighting.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/SnapshotUpdates.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/HardwareProfileSetting.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/HiddenGeometryMode.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/PreviewQuality.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview.il"
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/FrozenPortals.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/HardwareProfile.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/PortalCleanup.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/PortalPreviewPlugin.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/DestinationLighting.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/SnapshotUpdates.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/HardwareProfileSetting.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/HiddenGeometryMode.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/PreviewQuality.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview.il"
   ],
   "notes": [
     "Перевод на границе вывода frozenportal: Terminal.AddString только в PortalPreview.FrozenPortals+<>c.<Initialize>b__49_0. Внутренние _status/LastError/WaitReason, параметры команд, метаданные ConfigEntry и идентификаторы остаются исходными.",
-    "Точные полные сообщения и шаблоны сводок команды, динамических состояний/причин захвата, ближайшего портала, оборудования, освещения и очистки. Вложенные сообщения явно типизированы; числовые поля и непрозрачные идентификаторы сохранены. Низкоуровневые исключения, probe и verbose debug log могут оставаться исходными. Игровой запуск не выполнен."
+    "Точные полные сообщения и шаблоны сводок команды, динамических состояний/причин захвата, ближайшего портала, оборудования, освещения и очистки. Вложенные сообщения явно типизированы; числовые поля и непрозрачные идентификаторы сохранены. Низкоуровневые исключения, probe и verbose debug log могут оставаться исходными. Игровой запуск не выполнен.",
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "literals": [
     {

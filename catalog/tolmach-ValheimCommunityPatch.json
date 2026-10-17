@@ -1,8 +1,8 @@
 {
   "id": "ValheimCommunityPatch",
   "package": "MidnightMods-ValheimCommunityPatch",
-  "version": "0.33.0",
-  "pluginVersion": "0.33.0",
+  "version": "0.36.1",
+  "pluginVersion": "0.36.1",
   "assembly": "ValheimCommunityPatch",
   "guids": [
     "MidnightsFX.ValheimCommunityPatch"
@@ -17,11 +17,12 @@
   "returns": [],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.33.0/ValheimCommunityPatch/ValheimCommunityPatch.cs",
-    "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.33.0/ValheimCommunityPatch.Patches.Performance/ZdoMemoryStats.cs"
+    "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.36.1/ValheimCommunityPatch/ValheimCommunityPatch.cs",
+    "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.36.1/ValheimCommunityPatch.Patches.Performance/ZdoMemoryStats.cs"
   ],
   "notes": [
-    "Английские консольные сообщения сверены с точной установленной DLL; русский перевод собственный."
+    "Английские консольные сообщения сверены с точной установленной DLL; русский перевод собственный.",
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "literals": [
     {

@@ -6,35 +6,37 @@
     {
       "id": "AchievementEnabler",
       "package": "MidnightMods-AchievementEnabler",
-      "version": "0.4.1",
-      "status_in_archive": "Installed profile exact source/literal audit 2026-10-07; game execution is separate.",
-      "source_root": "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.4.1",
+      "version": "0.5.1",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.5.1",
       "binary_identities": [
         {
-          "mod": "MidnightMods-AchievementEnabler-0.4.1",
+          "mod": "MidnightMods-AchievementEnabler-0.5.1",
           "enabled": true,
           "profile_path": "BepInEx/plugins/MidnightMods-AchievementEnabler/AchievementEnabler.dll",
-          "size": 31232,
-          "sha256": "63fae50601f54ed00e599f2547993303cd8c2ac5104e27eff1ecbb971726e2cd"
+          "size": 41984,
+          "sha256": "ef01b5d202f69d1f1910eb7c4180458f040f2bcdf44d4f62b8c0cd1639f95add"
         }
-      ]
+      ],
+      "previous_version": "0.4.1",
+      "archived_version": "0.4.1"
     },
     {
       "id": "AdventureBackpacks",
       "package": "Vapok-AdventureBackpacks",
-      "version": "2.2.10",
-      "status_in_archive": "Installed profile audited on 2026-10-07; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.2.10",
+      "version": "2.4.0",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0",
       "binary_identities": [
         {
-          "mod": "Vapok-AdventureBackpacks-2.2.10",
+          "mod": "Vapok-AdventureBackpacks-2.4.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Vapok-AdventureBackpacks/AdventureBackpacks.dll",
-          "size": 48930304,
-          "sha256": "dc7f0a600f194e4c108a86e9449157f55a83731c6ac325d660ae2118db29e56c"
+          "size": 12637696,
+          "sha256": "880274426d9a2af116c277950b32d20f55ea6970031fe82f4f2d277f6ccb9048"
         }
       ],
-      "previous_version": "2.2.5",
+      "previous_version": "2.2.10",
       "archived_version": "2.2.0"
     },
     {
@@ -72,34 +74,38 @@
     {
       "id": "Armory",
       "package": "Therzie-Armory",
-      "version": "1.4.2",
-      "status_in_archive": "not in archive (a profile mod outside the other pack's list); 1.4.2 decompiled from the profile on 2026-09-29",
-      "source_root": "source-evidence/profile-updates/Therzie-Armory-1.4.2",
+      "version": "1.4.3",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Therzie-Armory-1.4.3",
       "binary_identities": [
         {
-          "mod": "Therzie-Armory-1.4.2",
+          "mod": "Therzie-Armory-1.4.3",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Therzie-Armory/Armory.dll",
-          "size": 46128640,
-          "sha256": "37f31edcfdf44250b9819be998322794eb2b82d00d14e5bbc18b41483181dc2b"
+          "size": 46139904,
+          "sha256": "814a048fb46f3e32b24c017c07f1402430a0799b5977a8e06a47c6f316caea5b"
         }
-      ]
+      ],
+      "previous_version": "1.4.2",
+      "archived_version": "1.4.2"
     },
     {
       "id": "AsyncSave",
       "package": "MidnightMods-AsyncSave",
-      "version": "0.6.0",
-      "status_in_archive": "Installed profile audited on 2026-10-01; exact DLL identities and targeted English sources. Original archive remains historical evidence.",
-      "source_root": "source-evidence/current-profile/MidnightMods-AsyncSave-0.6.0",
+      "version": "0.6.1",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/MidnightMods-AsyncSave-0.6.1",
       "binary_identities": [
         {
-          "mod": "MidnightMods-AsyncSave-0.6.0",
+          "mod": "MidnightMods-AsyncSave-0.6.1",
           "enabled": true,
           "profile_path": "BepInEx/plugins/MidnightMods-AsyncSave/AsyncSave.dll",
           "size": 85504,
-          "sha256": "24249babfc7d0f09ac8e8877e42fc5497cc8596576843cc7cbbb8165b0f63920"
+          "sha256": "e17791b0fb31fb29e96b124142927aedb12ba2b1f3bc58bc24c21cd80f432415"
         }
-      ]
+      ],
+      "previous_version": "0.6.0",
+      "archived_version": "0.6.0"
     },
     {
       "id": "AzuAntiArthriticCrafting",
@@ -159,19 +165,19 @@
     {
       "id": "AzuCraftyBoxes",
       "package": "Azumatt-AzuCraftyBoxes",
-      "version": "1.8.27",
-      "status_in_archive": "Installed profile audited on 2026-10-02; exact DLL and targeted display/resource sources. No upstream binaries shipped.",
-      "source_root": "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes",
+      "version": "1.8.28",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28",
       "binary_identities": [
         {
-          "mod": "Azumatt-AzuCraftyBoxes-1.8.27",
+          "mod": "Azumatt-AzuCraftyBoxes-1.8.28",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Azumatt-AzuCraftyBoxes/AzuCraftyBoxes.dll",
-          "size": 701440,
-          "sha256": "432285a08aa0d43bbd89b36330bedc19cb6ea93aed439e493d0287edaecedeb4"
+          "size": 702464,
+          "sha256": "381883fe4625d1dd119bb425a2f3c7522457fbc08ae1db60159f8256de940d6e"
         }
       ],
-      "previous_version": "1.8.26",
+      "previous_version": "1.8.27",
       "license": {
         "status": "not_available",
         "package_license_file": null,
@@ -322,18 +328,20 @@
     {
       "id": "BetterArchery",
       "package": "ishid4-BetterArchery",
-      "version": "2.0.2",
-      "status_in_archive": "missing",
-      "source_root": "source-evidence/localization/c/47",
+      "version": "2.0.5",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/ishid4-BetterArchery-2.0.5",
       "binary_identities": [
         {
-          "mod": "ishid4-BetterArchery-2.0.2",
+          "mod": "ishid4-BetterArchery-2.0.5",
           "enabled": true,
           "profile_path": "BepInEx/plugins/ishid4-BetterArchery/BetterArchery.dll",
-          "size": 1281024,
-          "sha256": "941009c601f0386b1f843b3ead73d9e2df57ee85cdf0c8ea3306225de01a125d"
+          "size": 1286144,
+          "sha256": "86d9594c2151e2afe56b609e34cb398d27ea2e6bcba6ff360c12568bf1285c54"
         }
-      ]
+      ],
+      "previous_version": "2.0.2",
+      "archived_version": "2.0.2"
     },
     {
       "id": "BetterBeehives",
@@ -438,27 +446,27 @@
     {
       "id": "ConditionalConfigSync",
       "package": "shudnal-ConditionalConfigSync",
-      "version": "1.0.10",
-      "status_in_archive": "Installed profile audited on 2026-10-07; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/shudnal-ConditionalConfigSync-1.0.10",
+      "version": "1.0.11",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/shudnal-ConditionalConfigSync-1.0.11",
       "binary_identities": [
         {
-          "mod": "shudnal-ConditionalConfigSync-1.0.10",
+          "mod": "shudnal-ConditionalConfigSync-1.0.11",
           "enabled": true,
           "profile_path": "BepInEx/plugins/shudnal-ConditionalConfigSync/ConditionalConfigSync.dll",
-          "size": 250880,
-          "sha256": "3f9cd0d2b80ab14d289f4621f25c11c84045919cbad8013955450cf6e662ef4e"
+          "size": 251392,
+          "sha256": "9e3aa79de10b31a4ee06e7cd94faf46d87b3bf3ec64ea3d15b07a396836f8b8a"
         },
         {
-          "mod": "shudnal-ConditionalConfigSync-1.0.10",
+          "mod": "shudnal-ConditionalConfigSync-1.0.11",
           "enabled": true,
           "profile_path": "BepInEx/plugins/shudnal-ConditionalConfigSync/ConditionalConfigSync.Plugin.dll",
           "size": 13824,
-          "sha256": "a9508884c9a2dc6e1cf1a4d0c64f996d54a738c17d42f0bce612d4a4efbaf2d5"
+          "sha256": "9aa35c2ce769dfefb01bcdec77cf2c64227ce7c41b995a2b982516449c18290f"
         }
       ],
       "codeAssembly": "ConditionalConfigSync",
-      "previous_version": "1.0.9",
+      "previous_version": "1.0.10",
       "archived_version": "1.0.9"
     },
     {
@@ -619,20 +627,22 @@
     {
       "id": "DynamicStorageMaterials",
       "package": "Muji-DynamicStorageMaterials",
-      "version": "1.0.2",
-      "status_in_archive": "Installed profile audited on 2026-10-02; exact DLL and targeted display/resource sources. No upstream binaries shipped.",
-      "source_root": "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials",
+      "version": "2.0.4",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4",
       "binary_identities": [
         {
-          "mod": "Muji-DynamicStorageMaterials-1.0.2",
+          "mod": "Muji-DynamicStorageMaterials-2.0.4",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Muji-DynamicStorageMaterials/DynamicStorageMaterials/DynamicStorageMaterials.dll",
-          "size": 158208,
-          "sha256": "da445961aec2dd947ebb5c33038176a62b78afa5cfd9410073353b34b975561b"
+          "size": 863744,
+          "sha256": "97ab459cc33577692447505168db426df56afc9e611b8833c4f42247089ef031"
         }
       ],
       "license": "MIT",
-      "runtime_validation": "not_run"
+      "runtime_validation": "not_run",
+      "previous_version": "1.0.2",
+      "archived_version": "1.0.2"
     },
     {
       "id": "DynamicStoragePiles",
@@ -834,19 +844,19 @@
     {
       "id": "HumanoidRandomizer",
       "package": "Balrond-balrond_humanoidRandomizer",
-      "version": "1.6.1",
-      "status_in_archive": "Installed profile update; current DLL and targeted English sources audited on 2026-09-30. Original archive remains historical evidence.",
-      "source_root": "source-evidence/profile-updates/Balrond-balrond_humanoidRandomizer-1.6.1",
+      "version": "1.6.2",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Balrond-balrond_humanoidRandomizer-1.6.2",
       "binary_identities": [
         {
-          "mod": "Balrond-balrond_humanoidRandomizer-1.6.1",
+          "mod": "Balrond-balrond_humanoidRandomizer-1.6.2",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Balrond-balrond_humanoidRandomizer/BalrondHumanoidRandomizer.dll",
-          "size": 19053568,
-          "sha256": "69ea1a6489b7383533d077eab17a7d9994128a4d48b899858cfea9fb905bcf46"
+          "size": 19048448,
+          "sha256": "1d63329987efc4618986c79e7d4fd30dccecf50a030f511ab9ce7311e961745c"
         }
       ],
-      "previous_version": "1.6.0",
+      "previous_version": "1.6.1",
       "archived_version": "1.6.0"
     },
     {
@@ -869,19 +879,19 @@
     {
       "id": "InfinityHammer",
       "package": "JereKuusela-Infinity_Hammer",
-      "version": "1.87.0",
-      "status_in_archive": "Installed profile audited on 2026-10-07; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0",
+      "version": "1.90.0",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0",
       "binary_identities": [
         {
-          "mod": "JereKuusela-Infinity_Hammer-1.87.0",
+          "mod": "JereKuusela-Infinity_Hammer-1.90.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/JereKuusela-Infinity_Hammer/InfinityHammer.dll",
-          "size": 390656,
-          "sha256": "990a9bd7bea6562024b3094a45249837262aaaaa55510e9bd9511600c135adb4"
+          "size": 391680,
+          "sha256": "1a2b5e989ac53e02efd28a9b2a73d75c6a3f3370c1200d5068fe6a0d2f1191cf"
         }
       ],
-      "previous_version": "1.86.0",
+      "previous_version": "1.87.0",
       "archived_version": "1.85.0"
     },
     {
@@ -986,20 +996,20 @@
     {
       "id": "More_World_Locations_AIO",
       "package": "warpalicious-More_World_Locations_AIO",
-      "version": "5.1.9",
-      "status_in_archive": "Installed profile audited on 2026-10-07; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/warpalicious-More_World_Locations_AIO-5.1.9",
+      "version": "5.2.2",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/warpalicious-More_World_Locations_AIO-5.2.2",
       "binary_identities": [
         {
-          "mod": "warpalicious-More_World_Locations_AIO-5.1.9",
+          "mod": "warpalicious-More_World_Locations_AIO-5.2.2",
           "enabled": true,
           "profile_path": "BepInEx/plugins/warpalicious-More_World_Locations_AIO/More_World_Locations_AIO.dll",
-          "size": 60852736,
-          "sha256": "dd2334f0b2bada2bccfc6b9c61e4cfdf6bfeb46f9a9fcc7eca6d062362ad984c"
+          "size": 60880896,
+          "sha256": "e741ec46af2bc28972f171430e5d0a84cd8e78965ec9178b62b9719b96ecc68b"
         }
       ],
       "archived_version": "5.1.4",
-      "previous_version": "5.1.7"
+      "previous_version": "5.1.9"
     },
     {
       "id": "MoveBuildPieces",
@@ -1021,35 +1031,38 @@
     {
       "id": "MyLittleUI",
       "package": "shudnal-MyLittleUI",
-      "version": "1.2.26",
-      "status_in_archive": "not in archive (a profile mod outside the other pack's list); 1.2.26 decompiled from the profile on 2026-09-29",
-      "source_root": "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.26",
+      "version": "1.2.31",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.31",
       "binary_identities": [
         {
-          "mod": "shudnal-MyLittleUI-1.2.26",
+          "mod": "shudnal-MyLittleUI-1.2.31",
           "enabled": true,
           "profile_path": "BepInEx/plugins/shudnal-MyLittleUI/MyLittleUI.dll",
-          "size": 305152,
-          "sha256": "94424503353ccd2fabdd24a873a68fa515ecf9b69dba042dd965e051e2096664"
+          "size": 317952,
+          "sha256": "af4a568f13719421d0fdb3a7984d8a89b05a7672bdd9e3f230a0542e6d978fe2"
         }
-      ]
+      ],
+      "previous_version": "1.2.26",
+      "archived_version": "1.2.26"
     },
     {
       "id": "NetworkPerformanceSystem",
       "package": "MidnightMods-NetworkPerformanceSystem",
-      "version": "1.15.1",
-      "status_in_archive": "Installed profile audited on 2026-10-07; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.15.1",
+      "version": "1.17.0",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.17.0",
       "binary_identities": [
         {
-          "mod": "MidnightMods-NetworkPerformanceSystem-1.15.1",
+          "mod": "MidnightMods-NetworkPerformanceSystem-1.17.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/MidnightMods-NetworkPerformanceSystem/NetworkPerformanceSystem.dll",
-          "size": 422912,
-          "sha256": "03b9c03c09eb8a917603481d735577e469df2fa1263f325c57cb7023d35ea7de"
+          "size": 508928,
+          "sha256": "ff5eddf5b32b31aab706a0ecfb225d5541c69f6eafc9cb8aafb509215aa518c4"
         }
       ],
-      "previous_version": "1.13.0"
+      "previous_version": "1.15.1",
+      "archived_version": "1.15.1"
     },
     {
       "id": "Norsemen",
@@ -1174,53 +1187,56 @@
     {
       "id": "PortalLines",
       "package": "Jumpingmushroom-PortalLines",
-      "version": "0.8.1",
-      "status_in_archive": "Installed profile audited on 2026-10-07; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/Jumpingmushroom-PortalLines-0.8.1",
+      "version": "0.9.0",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Jumpingmushroom-PortalLines-0.9.0",
       "binary_identities": [
         {
-          "mod": "Jumpingmushroom-PortalLines-0.8.1",
+          "mod": "Jumpingmushroom-PortalLines-0.9.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Jumpingmushroom-PortalLines/PortalLines/PortalLines.dll",
-          "size": 76288,
-          "sha256": "be9c6a5eee8cb73bbe1c48cd9d8947dc872dad4127e19c49123bf1ab9d7801a7"
+          "size": 89600,
+          "sha256": "92fce6cc10c5c95e49fd8a81a333a5ce782bd35b2cc8ecceac4591937ab531e9"
         }
       ],
-      "previous_version": "0.8.0",
+      "previous_version": "0.8.1",
       "archived_version": "0.8.0"
     },
     {
       "id": "PortalPreview",
       "package": "Ivvty-PortalPreview",
-      "version": "1.3.6",
-      "status_in_archive": "Installed profile exact DLL/source audit 2026-10-07; game not run.",
-      "source_root": "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6",
+      "version": "1.4.0",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0",
       "binary_identities": [
         {
-          "mod": "Ivvty-PortalPreview-1.3.6",
+          "mod": "Ivvty-PortalPreview-1.4.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Ivvty-PortalPreview/PortalPreview.dll",
-          "size": 978432,
-          "sha256": "dca9e6576f11391fadcc41d6d95ddc1328873b4f0691dc371d4a9c63937c695a"
+          "size": 991232,
+          "sha256": "e073cdee0bcf2d7f4bace23874f4f50d389b0f2709b8a570071fb4008d59c895"
         }
       ],
-      "archived_version": "1.2.0"
+      "archived_version": "1.2.0",
+      "previous_version": "1.3.6"
     },
     {
       "id": "QuickStackStore",
       "package": "Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock",
-      "version": "1.4.15",
-      "status_in_archive": "not in archive (a profile mod outside the other pack's list); 1.4.15 decompiled from the profile on 2026-09-29",
-      "source_root": "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15",
+      "version": "1.4.16",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16",
       "binary_identities": [
         {
-          "mod": "Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15",
+          "mod": "Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock/QuickStackStore.dll",
-          "size": 538624,
-          "sha256": "4296be5e9fc8941be1079a1c979f97fcdfda79bca9287f29686e4bbc9e4f0400"
+          "size": 541696,
+          "sha256": "71ccc644da95d4fa94897968d5d90331210a574a6c65129dc8ec6032e3cf6eeb"
         }
-      ]
+      ],
+      "previous_version": "1.4.15",
+      "archived_version": "1.4.15"
     },
     {
       "id": "QuickTeleport",
@@ -1578,21 +1594,21 @@
     {
       "id": "UpgradeWorld",
       "package": "JereKuusela-Upgrade_World",
-      "version": "1.84.0",
+      "version": "1.85.0",
       "pluginVersion": "1.84",
       "assembly": "UpgradeWorld",
       "guids": [
         "upgrade_world"
       ],
-      "status_in_archive": "Installed profile audited on 2026-10-07; exact DLL decompilation. Scoped HUD errors added; game acceptance pending.",
-      "source_root": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.84.0",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0",
       "binary_identities": [
         {
-          "mod": "JereKuusela-Upgrade_World-1.84.0",
+          "mod": "JereKuusela-Upgrade_World-1.85.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/JereKuusela-Upgrade_World/UpgradeWorld.dll",
-          "size": 212992,
-          "sha256": "1dd2674686605622b48f008777d6760efb91735bd2a21d7b8f11ceb15ded50d3"
+          "size": 216064,
+          "sha256": "00e661ecd8ca6546525d61317c9dd4cf6416f5c360bee9451650004eb4da6fe4"
         }
       ],
       "sourceFiles": [
@@ -1602,7 +1618,8 @@
         "Four scoped literal values translate the HUD error path Helper.Catch -> AddError/AddMessage -> Character.Message, RegisterLocation.Register missing location, and ResetChests.GetPrefabsForOperation invalid chest ID. Executor.AddOperation -> Init -> OnInit calls chest validation synchronously under Catch. Console commands/help/autocomplete and ordinary reports excluded. Game execution still pending."
       ],
       "audit_scope": "All extracted C# searched for display/localization/message sinks; owner code and relevant callers inspected. No arbitrary F1 config translation; no claim of full runtime compatibility.",
-      "archived_version": "1.83.0"
+      "archived_version": "1.83.0",
+      "previous_version": "1.84.0"
     },
     {
       "id": "UsefulRunestones",
@@ -1640,35 +1657,37 @@
     {
       "id": "Valheim",
       "package": "Valheim",
-      "version": "1.0.17",
-      "status_in_archive": "Valheim 1.0.17 Steam build 25730771 audited 2026-10-07: native captions/localization and 16 serialized idol names; runtime is separate.",
-      "source_root": "source-evidence/game/valheim-1.0.17",
+      "version": "1.0.20",
+      "status_in_archive": "Valheim 1.0.20 audited 2026-10-17: localization and caption tables byte-identical to 1.0.17; 16 serialized idol names unchanged; runtime is separate.",
+      "source_root": "source-evidence/game/valheim-1.0.20",
       "binary_identities": [
         {
-          "mod": "Valheim 1.0.17 (Steam build 25730771)",
+          "mod": "Valheim 1.0.20",
           "enabled": true,
           "game_path": "valheim_Data/Managed/assembly_valheim.dll",
-          "size": 2573312,
-          "sha256": "25a0a107dce4d834c44c2b72d0eafd5cb7793933bda81816accfa1ea9543dace"
+          "size": 2575360,
+          "sha256": "94998885b103d6e5f5480123eaee0a093e82af2ddeeee37536c15bf555f24f3a"
         }
       ],
-      "previous_version": "1.0.16"
+      "previous_version": "1.0.17"
     },
     {
       "id": "ValheimCommunityPatch",
       "package": "MidnightMods-ValheimCommunityPatch",
-      "version": "0.33.0",
-      "status_in_archive": "Installed profile exact source/literal audit 2026-10-07; game execution is separate.",
-      "source_root": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.33.0",
+      "version": "0.36.1",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.36.1",
       "binary_identities": [
         {
-          "mod": "MidnightMods-ValheimCommunityPatch-0.33.0",
+          "mod": "MidnightMods-ValheimCommunityPatch-0.36.1",
           "enabled": true,
           "profile_path": "BepInEx/plugins/MidnightMods-ValheimCommunityPatch/ValheimCommunityPatch.dll",
-          "size": 283648,
-          "sha256": "abcf07139b987f0bdfcb623f77e32207207e98035154e046cb6e71bc53594dd5"
+          "size": 360448,
+          "sha256": "7a70e76dfa4e9e3e8dccca4aebde662a11a1bd1bd14fb1596890b5505dad96d9"
         }
-      ]
+      ],
+      "previous_version": "0.33.0",
+      "archived_version": "0.33.0"
     },
     {
       "id": "ValheimInfiniteFire",
@@ -1723,18 +1742,20 @@
     {
       "id": "Warfare",
       "package": "Therzie-Warfare",
-      "version": "1.9.4",
-      "status_in_archive": "partial",
-      "source_root": "source-evidence/localization/a/Therzie-Warfare",
+      "version": "1.9.5",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Therzie-Warfare-1.9.5",
       "binary_identities": [
         {
-          "mod": "Therzie-Warfare-1.9.4",
+          "mod": "Therzie-Warfare-1.9.5",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Therzie-Warfare/Warfare.dll",
-          "size": 182304256,
-          "sha256": "7e001761d3d20382b271a22b9535c1b557056db005a7ea0e9913565e6d70280e"
+          "size": 182316032,
+          "sha256": "0347593d80a345bf1e20094f4edc75a3c92d72d17e532a79e83f278adc1b4f48"
         }
-      ]
+      ],
+      "previous_version": "1.9.4",
+      "archived_version": "1.9.4"
     },
     {
       "id": "WieldEquipmentWhileSwimming",
@@ -1755,19 +1776,19 @@
     {
       "id": "WorldEditCommands",
       "package": "JereKuusela-World_Edit_Commands",
-      "version": "1.80.0",
-      "status_in_archive": "Installed profile audited on 2026-10-07; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/JereKuusela-World_Edit_Commands-1.80.0",
+      "version": "1.81.0",
+      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/JereKuusela-World_Edit_Commands-1.81.0",
       "binary_identities": [
         {
-          "mod": "JereKuusela-World_Edit_Commands-1.80.0",
+          "mod": "JereKuusela-World_Edit_Commands-1.81.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/JereKuusela-World_Edit_Commands/WorldEditCommands.dll",
-          "size": 314368,
-          "sha256": "15b2d309850f411cd6b8bcbff679efb76824b84fa5b6904c18a343cba65ca00e"
+          "size": 378880,
+          "sha256": "cc69251a4d4ce821e15e9b481de898141978e4e383386962c3a8492393afb726"
         }
       ],
-      "previous_version": "1.79.0",
+      "previous_version": "1.80.0",
       "archived_version": "1.78.0"
     },
     {
@@ -2707,5 +2728,34 @@
     "game_version": "1.0.17",
     "enabled_packages_with_catalog": 70,
     "enabled_packages_without_catalog": 33
+  },
+  "profile_update_2026_10_17": {
+    "captured_at": "2026-10-17T21:00:00+03:00",
+    "profile": "Default",
+    "updated_existing_modules": [
+      "AchievementEnabler",
+      "AdventureBackpacks",
+      "Armory",
+      "AsyncSave",
+      "AzuCraftyBoxes",
+      "BetterArchery",
+      "ConditionalConfigSync",
+      "DynamicStorageMaterials",
+      "HumanoidRandomizer",
+      "InfinityHammer",
+      "More_World_Locations_AIO",
+      "MyLittleUI",
+      "NetworkPerformanceSystem",
+      "PortalLines",
+      "PortalPreview",
+      "QuickStackStore",
+      "UpgradeWorld",
+      "Valheim",
+      "ValheimCommunityPatch",
+      "Warfare",
+      "WorldEditCommands"
+    ],
+    "source_evidence": "Exact installed DLLs decompiled with ILSpy 11.1. Binary equality is not a game behavior test.",
+    "game_version": "1.0.20"
   }
 }

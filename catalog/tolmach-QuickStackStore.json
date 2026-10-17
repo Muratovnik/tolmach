@@ -1,8 +1,8 @@
 {
   "id": "QuickStackStore",
   "package": "Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock",
-  "version": "1.4.15",
-  "pluginVersion": "1.4.15",
+  "version": "1.4.16",
+  "pluginVersion": "1.4.16",
   "assembly": "QuickStackStore",
   "guids": [
     "goldenrevolver.quick_stack_store"
@@ -47,16 +47,17 @@
   ],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15/QuickStackStore/QuickStackStore/LocalizationLoader.cs",
-    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15/QuickStackStore/QuickStackStore/LocalizationConfig.cs",
-    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15/QuickStackStore/QuickStackStore/QSSConfig.cs",
-    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15/QuickStackStore/ServerSync/VersionCheck.cs",
-    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15/resources/QuickStackStore.Translations.QuickStackStore.English.json",
-    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15/resources/QuickStackStore.Translations.QuickStackStore.Russian.json",
-    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15/QuickStackStore.ldstr.il"
+    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16/QuickStackStore/QuickStackStore/LocalizationLoader.cs",
+    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16/QuickStackStore/QuickStackStore/LocalizationConfig.cs",
+    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16/QuickStackStore/QuickStackStore/QSSConfig.cs",
+    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16/QuickStackStore/ServerSync/VersionCheck.cs",
+    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16/resources/QuickStackStore.Translations.QuickStackStore.English.json",
+    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16/resources/QuickStackStore.Translations.QuickStackStore.Russian.json",
+    "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16/QuickStackStore.ldstr.il"
   ],
   "notes": [
     "The mod loads QuickStackStore.Russian.json (package file, identical to the embedded resource) via Localization.AddWord with the quickstackstore_ prefix; all 30 English keys have Russian, so no words are filled.",
-    "Only gap: the bundled ServerSync copy (ConfigSync with MinimumRequiredVersion 1.4.15) shows English version-mismatch messages; literals match tolmach-AzuAutoStore.json."
+    "Only gap: the bundled ServerSync copy (ConfigSync with MinimumRequiredVersion 1.4.15) shows English version-mismatch messages; literals match tolmach-AzuAutoStore.json.",
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ]
 }

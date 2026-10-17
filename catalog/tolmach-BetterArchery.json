@@ -1,7 +1,7 @@
 {
   "id": "BetterArchery",
   "package": "ishid4-BetterArchery",
-  "version": "2.0.2",
+  "version": "2.0.5",
   "assembly": "BetterArchery",
   "guids": [
     "ishid4.mods.betterarchery"
@@ -43,13 +43,14 @@
   "prefabs": [],
   "sourceFiles": [
     "packages/ishid4-BetterArchery/plugins/betterarchery_translations.json",
-    "source-evidence/localization/c/47/BetterArchery/BetterArchery.cs"
+    "source-evidence/profile-updates/ishid4-BetterArchery-2.0.5/BetterArchery/BetterArchery.cs"
   ],
   "notes": [
-    "version — версия пакета Gale; pluginVersion и assembly — метаданные приложенной декомпиляции. Игровой запуск не выполнен."
+    "version — версия пакета Gale; pluginVersion и assembly — метаданные приложенной декомпиляции. Игровой запуск не выполнен.",
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "namespaces": [
     "BetterArchery"
   ],
-  "pluginVersion": "2.0.2"
+  "pluginVersion": "2.0.5"
 }

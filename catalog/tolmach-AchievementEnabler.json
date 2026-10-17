@@ -1,8 +1,8 @@
 {
   "id": "AchievementEnabler",
   "package": "MidnightMods-AchievementEnabler",
-  "version": "0.4.1",
-  "pluginVersion": "0.4.1",
+  "version": "0.5.1",
+  "pluginVersion": "0.5.1",
   "assembly": "AchievementEnabler",
   "guids": [
     "MidnightsFX.AchievementEnabler"
@@ -17,11 +17,12 @@
   "returns": [],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.4.1/AchievementEnabler/AchievementEnabler.cs",
-    "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.4.1/AchievementEnabler/ClearCheatedItemsCommand.cs"
+    "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.5.1/AchievementEnabler/AchievementEnabler.cs",
+    "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.5.1/AchievementEnabler/ClearCheatedItemsCommand.cs"
   ],
   "notes": [
-    "Английские консольные сообщения сверены с точной установленной DLL; русский перевод собственный."
+    "Английские консольные сообщения сверены с точной установленной DLL; русский перевод собственный.",
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "literals": [
     {

@@ -1,15 +1,14 @@
 {
   "id": "InfinityHammer",
   "package": "JereKuusela-Infinity_Hammer",
-  "version": "1.87.0",
-  "pluginVersion": "1.87",
+  "version": "1.90.0",
+  "pluginVersion": "1.90",
   "assembly": "InfinityHammer",
   "guids": [
     "infinity_hammer"
   ],
   "namespaces": [
-    "InfinityHammer",
-    "InfinityTools"
+    "InfinityHammer"
   ],
   "words": {},
   "englishWords": {},
@@ -119,7 +118,7 @@
       }
     },
     {
-      "type": "InfinityTools.ToolSelection",
+      "type": "InfinityHammer.ToolSelection",
       "method": "HandleCommand",
       "values": {
         "Nothing is being hovered.": "Курсор не наведен на объект."
@@ -154,21 +153,21 @@
       }
     },
     {
-      "type": "InfinityTools.ToolShapeCommand+<>c",
+      "type": "InfinityHammer.ToolShapeCommand+<>c",
       "method": "<.ctor>b__0_1",
       "values": {
         "Selection shape set to {0}.": "Форма выделения: {0}."
       }
     },
     {
-      "type": "InfinityTools.ToolCommand",
+      "type": "InfinityHammer.ToolCommand",
       "method": "Execute",
       "values": {
         "Selected tool ": "Выбран инструмент: "
       }
     },
     {
-      "type": "InfinityTools.ToolCmdCommand",
+      "type": "InfinityHammer.ToolCmdCommand",
       "method": "Execute",
       "values": {
         "Selected command ": "Выбрана команда: "
@@ -237,33 +236,33 @@
     }
   ],
   "sourceFiles": [
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/Configuration.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/Hammer.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/HammerBlueprintCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/HammerGridCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/HammerHelper.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/HammerLocationCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/HammerRoomCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/HammerScaleCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/HammerSelect.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/HammerZoomCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/InfinityHammer.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/LocationSelection.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/ObjectSelection.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/Position.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/RoomSelection.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/ScalingData.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityTools/InitialData.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityTools/ToolCmdCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityTools/ToolCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityTools/ToolSelection.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityTools/ToolShapeCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/il/InfinityHammer.il"
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/Configuration.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/Hammer.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/HammerBlueprintCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/HammerGridCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/HammerHelper.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/HammerLocationCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/HammerRoomCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/HammerScaleCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/HammerSelect.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/HammerZoomCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/InfinityHammer.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/LocationSelection.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/ObjectSelection.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/Position.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/RoomSelection.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/ScalingData.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/InitialData.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/ToolCmdCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/ToolCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/ToolSelection.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/ToolShapeCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/il/InfinityHammer.il"
   ],
   "notes": [
     "English is hard-coded in InfinityHammer.dll; HammerHelper.Message and thrown InvalidOperationException messages go through Server Devcommands Helper.AddMessage/AddError, which prints to the console and as a top-left Character.Message (MessageType 1), so the literals cover messages of commands bound to building keys (select, move, zoom, grid, shape, tool).",
     "Selection piece name and description (Multiple, Center, terrain radius, other types) are stored in Piece.m_name/m_description and localized by Hud, so they use rawPatterns and are not persisted translated.",
     "Console help and pure console output (AddString) are left in English in this pass.",
-    "Пакет текущего профиля проверен 2026-10-07 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ]
 }

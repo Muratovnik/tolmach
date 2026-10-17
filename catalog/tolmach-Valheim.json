@@ -1,8 +1,8 @@
 {
   "id": "Valheim",
   "package": "Valheim",
-  "version": "1.0.17",
-  "pluginVersion": "1.0.17",
+  "version": "1.0.20",
+  "pluginVersion": "1.0.20",
   "assembly": "assembly_valheim",
   "guids": [
     "valheim"
@@ -334,13 +334,14 @@
   "literals": [],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/game/valheim-1.0.17/localization_captions.csv",
-    "source-evidence/game/valheim-1.0.17/idol-names.json"
+    "source-evidence/game/valheim-1.0.20/localization_captions.csv",
+    "source-evidence/game/valheim-1.0.20/idol-names.json"
   ],
   "notes": [
     "Субтитры игры (localization_captions): в русской локализации Valheim 1.0.16 их нет. Модуль привязан к игре (GUID valheim) и заполняет только пустые или английские значения.",
     "Идолы Valheim 1.0.16: 16 точных составных названий отображаются через отдельные полные ключи Tolmach; исходные поля, префабы и отдельные штатные слова не меняются.",
-    "Valheim 1.0.17, Steam build 25730771: native localization/captions, ключи идолов и 16 сериализованных составных имен сверены с текущими resources.assets и SoftRef bundle c4210710 через UnityPy. Каталог подписей не получил новых непокрытых ключей."
+    "Valheim 1.0.17, Steam build 25730771: native localization/captions, ключи идолов и 16 сериализованных составных имен сверены с текущими resources.assets и SoftRef bundle c4210710 через UnityPy. Каталог подписей не получил новых непокрытых ключей.",
+    "Valheim 1.0.20: localization.csv и localization_captions.csv из resources.assets побайтно совпадают с 1.0.17; ключи идолов и 16 составных имен в bundle c4210710 те же (UnityPy, 2026-10-17)."
   ],
   "nameAliases": {
     "$item_upgrader_tier0 $item_upgrader_weapon $item_upgrader_name": "$tolmach_idol_0_weapon",

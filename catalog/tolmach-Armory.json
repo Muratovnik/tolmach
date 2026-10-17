@@ -1,8 +1,8 @@
 {
   "id": "Armory",
   "package": "Therzie-Armory",
-  "version": "1.4.2",
-  "pluginVersion": "1.4.2",
+  "version": "1.4.3",
+  "pluginVersion": "1.4.3",
   "assembly": "Armory",
   "guids": [
     "Therzie.Armory"
@@ -610,7 +610,7 @@
       "type": "Armory.RpcHandlers",
       "method": "RPC_Armory_Version",
       "values": {
-        "Armory Installed: 1.4.2\n Needed: ": "Armory: установлена версия 1.4.2\n Требуется: "
+        "Armory Installed: 1.4.3\n Needed: ": "Armory: установлена версия 1.4.3\n Требуется: "
       }
     },
     {
@@ -643,17 +643,18 @@
     }
   ],
   "sourceFiles": [
-    "source-evidence/profile-updates/Therzie-Armory-1.4.2/Armory/Armory/ArmoryPlugin.cs",
-    "source-evidence/profile-updates/Therzie-Armory-1.4.2/Armory/Armory/RpcHandlers.cs",
-    "source-evidence/profile-updates/Therzie-Armory-1.4.2/Armory/LocalizationManager/Localizer.cs",
-    "source-evidence/profile-updates/Therzie-Armory-1.4.2/Armory/PieceManager/PiecePrefabManager.cs",
-    "source-evidence/profile-updates/Therzie-Armory-1.4.2/Armory/ServerSync/VersionCheck.cs",
-    "source-evidence/profile-updates/Therzie-Armory-1.4.2/resources/Armory.translations.English.yml",
-    "source-evidence/profile-updates/Therzie-Armory-1.4.2/Armory.ldstr.il"
+    "source-evidence/profile-updates/Therzie-Armory-1.4.3/Armory/Armory/ArmoryPlugin.cs",
+    "source-evidence/profile-updates/Therzie-Armory-1.4.3/Armory/Armory/RpcHandlers.cs",
+    "source-evidence/profile-updates/Therzie-Armory-1.4.3/Armory/LocalizationManager/Localizer.cs",
+    "source-evidence/profile-updates/Therzie-Armory-1.4.3/Armory/PieceManager/PiecePrefabManager.cs",
+    "source-evidence/profile-updates/Therzie-Armory-1.4.3/Armory/ServerSync/VersionCheck.cs",
+    "source-evidence/profile-updates/Therzie-Armory-1.4.3/resources/Armory.translations.English.yml",
+    "source-evidence/profile-updates/Therzie-Armory-1.4.3/Armory.ldstr.il"
   ],
   "notes": [
     "English comes from the embedded Armory.translations.English.yml loaded by LocalizationManager; item, piece and status effect prefabs in the embedded asset bundles reference these $ keys.",
     "Extra words: m_setName keys of registered items that the table lacks (shown by set tooltip mods) and the PieceManager build category token for \"Warfare\".",
-    "ServerSync and the Armory version-mismatch message are translated as literals."
+    "ServerSync and the Armory version-mismatch message are translated as literals.",
+    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ]
 }

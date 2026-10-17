@@ -2,15 +2,15 @@
   {
     "id": "AchievementEnabler",
     "guid": "MidnightsFX.AchievementEnabler",
-    "pluginVersion": "0.4.1",
+    "pluginVersion": "0.5.1",
     "assembly": "AchievementEnabler",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.4.1/AchievementEnabler/AchievementEnabler.cs",
-        "sha256": "fd92b88c1f8f913ae3b2d2d176b5d8f5b2ee362d400909ba6070b3389d3ffc99"
+        "path": "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.5.1/AchievementEnabler/AchievementEnabler.cs",
+        "sha256": "dd0de41e3d6f9352225ef8afad8fab322e38674a5c7cf4a477b8b0261f975774"
       },
       {
-        "path": "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.4.1/AchievementEnabler.csproj",
+        "path": "source-evidence/profile-updates/MidnightMods-AchievementEnabler-0.5.1/AchievementEnabler.csproj",
         "sha256": "d757947cbdbb18cb5a6ec58a9305e48abaa410f18798b02b030c507ddca8d7c1"
       }
     ]
@@ -18,16 +18,16 @@
   {
     "id": "AdventureBackpacks",
     "guid": "vapok.mods.adventurebackpacks",
-    "pluginVersion": "2.2.10",
+    "pluginVersion": "2.4.0",
     "assembly": "AdventureBackpacks",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.2.10/AdventureBackpacks/AdventureBackpacks.cs",
-        "sha256": "20d3a0823555364f23f7873ddfdb0b87949540fd55bc7aa963403fc993285a27"
+        "path": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/AdventureBackpacks/AdventureBackpacks.cs",
+        "sha256": "ad0fbcf7f0a068f52ac07efff2fd7ea3b2939f1be0b9e56714f659b253a39a1d"
       },
       {
-        "path": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.2.10/AdventureBackpacks.csproj",
-        "sha256": "b1bb6ed04421514e63771e75a4c32542c86531432bc980818b6597e7bb41fb0a"
+        "path": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/AdventureBackpacks.csproj",
+        "sha256": "bd4a1d587ba9dbe3d3cd2f6a337a7842bf84483b0a49dfc4df1f5db19352139d"
       }
     ]
   },
@@ -66,32 +66,32 @@
   {
     "id": "Armory",
     "guid": "Therzie.Armory",
-    "pluginVersion": "1.4.2",
+    "pluginVersion": "1.4.3",
     "assembly": "Armory",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/Therzie-Armory-1.4.2/Armory/Armory/ArmoryPlugin.cs",
-        "sha256": "c920f0144f2633e1c91883a44aabece41958d98062bce087c42e263816dcf978"
+        "path": "source-evidence/profile-updates/Therzie-Armory-1.4.3/Armory/Armory/ArmoryPlugin.cs",
+        "sha256": "70e78a9d21ad022a898649883b2d5a959062d9ffe49c742526e858c79dbd5384"
       },
       {
-        "path": "source-evidence/profile-updates/Therzie-Armory-1.4.2/Armory/Armory.csproj",
-        "sha256": "f5df27ea99893ec752afe5b2ffed970d2ba7678288b1d167fbfbba819f1d9db9"
+        "path": "source-evidence/profile-updates/Therzie-Armory-1.4.3/Armory/Armory.csproj",
+        "sha256": "fa7aa5db3caab2e987bb5e1cb786b4557cd55d0dbc49135beb1bfee8d84e069c"
       }
     ]
   },
   {
     "id": "AsyncSave",
     "guid": "MidnightsFX.AsyncSave",
-    "pluginVersion": "0.6.0",
+    "pluginVersion": "0.6.1",
     "assembly": "AsyncSave",
     "sources": [
       {
-        "path": "source-evidence/current-profile/MidnightMods-AsyncSave-0.6.0/AsyncSave/AsyncSave/AsyncSavePlugin.cs",
-        "sha256": "4dcb70c4ace2c8ff865d0f6bbdb462420f4785b88d91150195adc30962da1191"
+        "path": "source-evidence/profile-updates/MidnightMods-AsyncSave-0.6.1/AsyncSave/AsyncSave/AsyncSavePlugin.cs",
+        "sha256": "aa2965bd3786f397edfb36ae62dcbc7b184cd08bfd027222f0d47a5ca8d2ef1c"
       },
       {
-        "path": "source-evidence/current-profile/MidnightMods-AsyncSave-0.6.0/AsyncSave/AsyncSave.csproj",
-        "sha256": "4255636945e51470e0b8d32cdfa4b5f8906cfcdc8d3b33b42cf51ca8aa935a8a"
+        "path": "source-evidence/profile-updates/MidnightMods-AsyncSave-0.6.1/AsyncSave/AsyncSave.csproj",
+        "sha256": "ba9215e04fa5d7851544106b22aeb16c060406be24178157ef644e1f1a38c62e"
       }
     ]
   },
@@ -146,16 +146,16 @@
   {
     "id": "AzuCraftyBoxes",
     "guid": "Azumatt.AzuCraftyBoxes",
-    "pluginVersion": "1.8.27",
+    "pluginVersion": "1.8.28",
     "assembly": "AzuCraftyBoxes",
     "sources": [
       {
-        "path": "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes/AzuCraftyBoxesPlugin.cs",
-        "sha256": "1d5fb8b761a6b3eb8a7e584c64b42329c36921e32ad3722f4c9288d7e395b540"
+        "path": "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes/AzuCraftyBoxesPlugin.cs",
+        "sha256": "80030e0ee37079561b8282925238fa42584f686099b3aefd48ab96d952cc51c5"
       },
       {
-        "path": "source-evidence/profile-20261002/updates/Azumatt-AzuCraftyBoxes-1.8.27/AzuCraftyBoxes/AzuCraftyBoxes.csproj",
-        "sha256": "a336019e41bd8bbb8eb761fffb21d933a04f1f2785d0e761dabf8a733fe08551"
+        "path": "source-evidence/profile-updates/Azumatt-AzuCraftyBoxes-1.8.28/AzuCraftyBoxes.csproj",
+        "sha256": "ec635a4e28409de1a35403aff8903dbc6f863111b19d97808f3e8f1bc5fb8dd2"
       }
     ]
   },
@@ -290,16 +290,16 @@
   {
     "id": "BetterArchery",
     "guid": "ishid4.mods.betterarchery",
-    "pluginVersion": "2.0.2",
+    "pluginVersion": "2.0.5",
     "assembly": "BetterArchery",
     "sources": [
       {
-        "path": "source-evidence/localization/c/47/BetterArchery/BetterArchery.cs",
-        "sha256": "43894897bcb9dae546be80b1d6a3c32cad60cb5c71dac5f5a96bbd795f8bd84d"
+        "path": "source-evidence/profile-updates/ishid4-BetterArchery-2.0.5/BetterArchery/BetterArchery.cs",
+        "sha256": "b932251a944d17ea844e794eb9ad775e80aa445e12917be9d340af6bb67514be"
       },
       {
-        "path": "source-evidence/localization/c/47/BetterArchery.csproj",
-        "sha256": "a8cac5663210dd811c32a453e8d2b9bef899db1f3942a903ff8d75aeb04f677f"
+        "path": "source-evidence/profile-updates/ishid4-BetterArchery-2.0.5/BetterArchery.csproj",
+        "sha256": "54e5c0fb2da404160937d2b6821c839ac5e6c7362e585ce4a8bb1c23de17add2"
       }
     ]
   },
@@ -402,16 +402,16 @@
   {
     "id": "ConditionalConfigSync",
     "guid": "_shudnal.ConditionalConfigSync",
-    "pluginVersion": "1.0.10",
+    "pluginVersion": "1.0.11",
     "assembly": "ConditionalConfigSync.Plugin",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/shudnal-ConditionalConfigSync-1.0.10/plugin/ConditionalConfigSync/ConditionalConfigSyncPlugin.cs",
-        "sha256": "06cdf1982dbcab7df7f2e7aaf3d2461568b336a73d8dad4f1e53b51592f7058b"
+        "path": "source-evidence/profile-updates/shudnal-ConditionalConfigSync-1.0.11/plugin/ConditionalConfigSync/ConditionalConfigSyncPlugin.cs",
+        "sha256": "ebf8418c39ab4d0998e0b34d7a3a7fd1b49bf8aab0f5d30659051be81192506e"
       },
       {
-        "path": "source-evidence/profile-updates/shudnal-ConditionalConfigSync-1.0.10/plugin/ConditionalConfigSync.Plugin.csproj",
-        "sha256": "f14fdfdaab517f26d65bbe017240ad9251b635c116abc48e116abfc8fcdb41d4"
+        "path": "source-evidence/profile-updates/shudnal-ConditionalConfigSync-1.0.11/plugin/ConditionalConfigSync.Plugin.csproj",
+        "sha256": "4474f7c1bf91c87778a3ebbe89f2e266cf1f92a41e65324707134d2517201e10"
       }
     ],
     "codeAssembly": "ConditionalConfigSync"
@@ -547,16 +547,16 @@
   {
     "id": "DynamicStorageMaterials",
     "guid": "com.muji.DynamicStorageMaterials",
-    "pluginVersion": "1.0.2",
+    "pluginVersion": "2.0.4",
     "assembly": "DynamicStorageMaterials",
     "sources": [
       {
-        "path": "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials/DynamicStorageMaterialsPlugin.cs",
-        "sha256": "28ba67c9647839f4bdcd343dcd41b57ed57ca65baaa7e54c30e61fb1876dea03"
+        "path": "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials/DynamicStorageMaterialsPlugin.cs",
+        "sha256": "d794ca98cff56a810f3b4dbbc5ae4b005dbf893d7b75232599c4b0ebc30e7ae7"
       },
       {
-        "path": "source-evidence/profile-additions/Muji-DynamicStorageMaterials-1.0.2/DynamicStorageMaterials/DynamicStorageMaterials.csproj",
-        "sha256": "b03164994af2d69e41fb233e544e0baee9c8c6bdc46c4cc36baa750784529227"
+        "path": "source-evidence/profile-updates/Muji-DynamicStorageMaterials-2.0.4/DynamicStorageMaterials.csproj",
+        "sha256": "e2a0922051765ac3566a0e9f740e755a7ef90b3a0021bb10a7b112b1ba5b5314"
       }
     ]
   },
@@ -755,16 +755,16 @@
   {
     "id": "HumanoidRandomizer",
     "guid": "balrond.astafaraios.BalrondHumanoidRandomizer",
-    "pluginVersion": "1.6.1",
+    "pluginVersion": "1.6.2",
     "assembly": "BalrondHumanoidRandomizer.merged",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/Balrond-balrond_humanoidRandomizer-1.6.1/BalrondHumanoidRandomizer/Launch.cs",
-        "sha256": "9d59ce0d325aeae41c6d53609d01316162138fb35a06594aca455fb57a91988d"
+        "path": "source-evidence/profile-updates/Balrond-balrond_humanoidRandomizer-1.6.2/BalrondHumanoidRandomizer/Launch.cs",
+        "sha256": "6bcb75639aac9770dffa9839044c7575489544d52775e609ce292cd3bd94f0ad"
       },
       {
-        "path": "source-evidence/profile-updates/Balrond-balrond_humanoidRandomizer-1.6.1/BalrondHumanoidRandomizer.csproj",
-        "sha256": "e5e5080e639d187025c19aec5e9c8b5ee17929c6bc587802a4d8ec698c86aa7a"
+        "path": "source-evidence/profile-updates/Balrond-balrond_humanoidRandomizer-1.6.2/BalrondHumanoidRandomizer.csproj",
+        "sha256": "05059def84c665f6bdc16cb15bd911732a510646d4e24729f12bd39e6a9a24e8"
       }
     ]
   },
@@ -787,16 +787,16 @@
   {
     "id": "InfinityHammer",
     "guid": "infinity_hammer",
-    "pluginVersion": "1.87",
+    "pluginVersion": "1.90",
     "assembly": "InfinityHammer",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer/InfinityHammer.cs",
-        "sha256": "e68057aeed7cede18c384292328bd1fa60405d0c75e83f6444c8d6de4ddda38a"
+        "path": "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer/InfinityHammer.cs",
+        "sha256": "e553825f0388dfb3eda88b959b18fd3f724442562599e21dcc7f953ba7734bfe"
       },
       {
-        "path": "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.87.0/InfinityHammer.csproj",
-        "sha256": "1337f684b3e722289f85f3a64491a9943ea0f332bb4739d6c17598e1d81aacf2"
+        "path": "source-evidence/profile-updates/JereKuusela-Infinity_Hammer-1.90.0/InfinityHammer.csproj",
+        "sha256": "2142e0fbee274d61016053d871548483e1d7e34b596e4396d9a9f1b692170a18"
       }
     ]
   },
@@ -899,16 +899,16 @@
   {
     "id": "More_World_Locations_AIO",
     "guid": "warpalicious.More_World_Locations_AIO",
-    "pluginVersion": "5.1.9",
+    "pluginVersion": "5.2.2",
     "assembly": "More_World_Locations_AIO",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/warpalicious-More_World_Locations_AIO-5.1.9/More_World_Locations_AIO/More_World_Locations_AIOPlugin.cs",
-        "sha256": "5d1bc51490a9c1568c898ad82c10b3713fa3cc6172751dfafbdd92dd92da069f"
+        "path": "source-evidence/profile-updates/warpalicious-More_World_Locations_AIO-5.2.2/More_World_Locations_AIO/More_World_Locations_AIOPlugin.cs",
+        "sha256": "97e4c5e01634f521f9959006be8110da25b18dc1d30030e04427b0eabfb015e4"
       },
       {
-        "path": "source-evidence/profile-updates/warpalicious-More_World_Locations_AIO-5.1.9/More_World_Locations_AIO.csproj",
-        "sha256": "61633897709e94a84a478926efe6b55afdce2048c7da1d8e40bf2e710a2a5d69"
+        "path": "source-evidence/profile-updates/warpalicious-More_World_Locations_AIO-5.2.2/More_World_Locations_AIO.csproj",
+        "sha256": "d32c68e0506b721f39b8c29eca23f980c98c8dc8c6ef7f6679b5606f47480916"
       }
     ]
   },
@@ -931,31 +931,31 @@
   {
     "id": "MyLittleUI",
     "guid": "shudnal.MyLittleUI",
-    "pluginVersion": "1.2.26",
+    "pluginVersion": "1.2.31",
     "assembly": "MyLittleUI",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.26/MyLittleUI/MyLittleUI/MyLittleUI.cs",
-        "sha256": "2e0ae055e7bcb2e37a8c9a333a3d1b74099afd3df75aa589cb91551ea21c072c"
+        "path": "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.31/MyLittleUI/MyLittleUI/MyLittleUI.cs",
+        "sha256": "3c3b35f217e6cf3a7f43e235589c51895781d3c6a6135c69ed48cf6256609d6f"
       },
       {
-        "path": "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.26/MyLittleUI/MyLittleUI.csproj",
-        "sha256": "4d0dd65cb24eb2fdc990229a73a0e1b40ef0b15a4b6d646ecf14a89255f33735"
+        "path": "source-evidence/profile-updates/shudnal-MyLittleUI-1.2.31/MyLittleUI/MyLittleUI.csproj",
+        "sha256": "235e5cf068928245d846ccb81d8e2dc5c92ddb040fb812e023ddd1c4d5758d36"
       }
     ]
   },
   {
     "id": "NetworkPerformanceSystem",
     "guid": "MidnightsFX.NetworkPerformanceSystem",
-    "pluginVersion": "1.15.1",
+    "pluginVersion": "1.17.0",
     "assembly": "NetworkPerformanceSystem",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.15.1/NetworkPerformanceSystem/NetworkPerformanceSystem.cs",
-        "sha256": "722b3f2f1d8a38075c24b70e44e872b276e84578e29691091bf71bf07279776a"
+        "path": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.17.0/NetworkPerformanceSystem/NetworkPerformanceSystem.cs",
+        "sha256": "f770c2df3bc2fc94405507c0df0610fe5f2383fe9dbde0c448c3cf83c3bfe802"
       },
       {
-        "path": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.15.1/NetworkPerformanceSystem.csproj",
+        "path": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.17.0/NetworkPerformanceSystem.csproj",
         "sha256": "442b53dff371a88533ddb3d6a33c077d7cabeeaae1f25681a31713e39052a856"
       }
     ]
@@ -1075,15 +1075,15 @@
   {
     "id": "PortalLines",
     "guid": "com.jumpingmushroom.portallines",
-    "pluginVersion": "0.8.1",
+    "pluginVersion": "0.9.0",
     "assembly": "PortalLines",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/Jumpingmushroom-PortalLines-0.8.1/PortalLines/PortalLinesPlugin.cs",
-        "sha256": "8675eb325d011b2178cc3cea833e351e7c2c5b52c183c4adeb01a98ce0aaba87"
+        "path": "source-evidence/profile-updates/Jumpingmushroom-PortalLines-0.9.0/PortalLines/PortalLinesPlugin.cs",
+        "sha256": "76c0f75dfb30c2044213427187b1c05d45d81f2f568da915f59e9a452dcea9f5"
       },
       {
-        "path": "source-evidence/profile-updates/Jumpingmushroom-PortalLines-0.8.1/PortalLines.csproj",
+        "path": "source-evidence/profile-updates/Jumpingmushroom-PortalLines-0.9.0/PortalLines.csproj",
         "sha256": "33aa496fcc8f19dd0a7574bed808221e24dec2d50eb04c26e89305eafc347e12"
       }
     ]
@@ -1091,15 +1091,15 @@
   {
     "id": "PortalPreview",
     "guid": "ru.ivest.portalpreview",
-    "pluginVersion": "1.3.6",
+    "pluginVersion": "1.4.0",
     "assembly": "PortalPreview",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview/PortalPreviewPlugin.cs",
-        "sha256": "591aca80e35a136653b8c6c44e84468f08ddffaf55336710117e02ff1fb50deb"
+        "path": "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/PortalPreviewPlugin.cs",
+        "sha256": "8a209b9b591989d97ae8ef076d7a26a4910d0988a24861401700684444ecb2b3"
       },
       {
-        "path": "source-evidence/profile-updates/Ivvty-PortalPreview-1.3.6/PortalPreview.csproj",
+        "path": "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview.csproj",
         "sha256": "004e410e6ee249eb73b6f8988812ff92e2987ce7452306e9ac9ee00f6238c6c4"
       }
     ]
@@ -1107,16 +1107,16 @@
   {
     "id": "QuickStackStore",
     "guid": "goldenrevolver.quick_stack_store",
-    "pluginVersion": "1.4.15",
+    "pluginVersion": "1.4.16",
     "assembly": "QuickStackStore",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15/QuickStackStore/QuickStackStore/QuickStackStorePlugin.cs",
-        "sha256": "156727ee0a5bc3622b754b19264ad59b555a10da5c7a3a14ed08b412b2705e7b"
+        "path": "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16/QuickStackStore/QuickStackStore/QuickStackStorePlugin.cs",
+        "sha256": "5b848174e6b7a35da998e37beb46eba6461a0e6574fa30060fa7cf8fa571292c"
       },
       {
-        "path": "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.15/QuickStackStore/QuickStackStore.csproj",
-        "sha256": "9ff4cb170c0514e4f05cadeb8754a5f52f82df265932f77d52e952bd054f0991"
+        "path": "source-evidence/profile-updates/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock-1.4.16/QuickStackStore/QuickStackStore.csproj",
+        "sha256": "d6c2ad679670dfeffe24b77ff6d9cb15b4b33f02281a5eac9e0cfd1ca19c1689"
       }
     ]
   },
@@ -1459,15 +1459,15 @@
   {
     "id": "UpgradeWorld",
     "guid": "upgrade_world",
-    "pluginVersion": "1.84",
+    "pluginVersion": "1.85",
     "assembly": "UpgradeWorld",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.84.0/UpgradeWorld/UpgradeWorld.cs",
-        "sha256": "5427880c383bc7e4ff8604303bcbafefff56413f7007f14f53b6004b7d2d7b2b"
+        "path": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld/UpgradeWorld.cs",
+        "sha256": "b37094044bafccfd9a403e71d999d360d5b2d43ce8fd190228951b18d1a4324c"
       },
       {
-        "path": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.84.0/UpgradeWorld.csproj",
+        "path": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld.csproj",
         "sha256": "5bb20e1f4f33ffb92f972af829cefcaf8cae2132d5343aaa59e3976fd4b88844"
       }
     ]
@@ -1507,28 +1507,28 @@
   {
     "id": "Valheim",
     "guid": "valheim",
-    "pluginVersion": "1.0.17",
+    "pluginVersion": "1.0.20",
     "assembly": "assembly_valheim",
     "sources": [
       {
-        "path": "source-evidence/game/valheim-1.0.17/Version.cs",
-        "sha256": "e658227c32ce59b5f65a066031788b9db00ebbebac1de6a5ecc69ef4084a01fd"
+        "path": "source-evidence/game/valheim-1.0.20/Version.cs",
+        "sha256": "8135261b9e8d65b6d3a29f2ace8e0efc08a2bf9772e1c8f997605cd16bb0c3b4"
       }
     ]
   },
   {
     "id": "ValheimCommunityPatch",
     "guid": "MidnightsFX.ValheimCommunityPatch",
-    "pluginVersion": "0.33.0",
+    "pluginVersion": "0.36.1",
     "assembly": "ValheimCommunityPatch",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.33.0/ValheimCommunityPatch/ValheimCommunityPatch.cs",
-        "sha256": "f7c097d7d6484c4cf6e1e63f7ab5760a2fc59113b8bb9ec99e860226102e5895"
+        "path": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.36.1/ValheimCommunityPatch/ValheimCommunityPatch.cs",
+        "sha256": "2e2e8d49fa23774071dc4767b707450d17361b59eb84529bcc730b6ba89bec4d"
       },
       {
-        "path": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.33.0/ValheimCommunityPatch.csproj",
-        "sha256": "4e69d1aabdb7df5871ffd40eca73da6433d671cb3cc0b4cf2e531b7d454c7588"
+        "path": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.36.1/ValheimCommunityPatch.csproj",
+        "sha256": "082989de64985394c5c93ab1c77eae308814e940c2ba678f44a34b5c7c051024"
       }
     ]
   },
@@ -1583,16 +1583,16 @@
   {
     "id": "Warfare",
     "guid": "Therzie.Warfare",
-    "pluginVersion": "1.9.4",
+    "pluginVersion": "1.9.5",
     "assembly": "Warfare",
     "sources": [
       {
-        "path": "source-evidence/localization/a/Therzie-Warfare/Warfare/WarfarePlugin.cs",
-        "sha256": "b911854fcf97174ce0c87915ee0465a22538117a530ddb011b78d84d70f487c4"
+        "path": "source-evidence/profile-updates/Therzie-Warfare-1.9.5/Warfare/WarfarePlugin.cs",
+        "sha256": "c8ffa0fd59bcf9b5f53f7618767c7d06fe892ec49ec6d3fc836bef1ac1d18492"
       },
       {
-        "path": "source-evidence/localization/a/Therzie-Warfare/Warfare.csproj",
-        "sha256": "566e7bfef37189678409295052de643aa80918b3ad8536a25ff7e04801a02f91"
+        "path": "source-evidence/profile-updates/Therzie-Warfare-1.9.5/Warfare.csproj",
+        "sha256": "61a840f159b6fc2ac89af9db5bb2691c7ce9f4dc6ecfb5447a503b5cc5d884f0"
       }
     ]
   },
@@ -1615,16 +1615,16 @@
   {
     "id": "WorldEditCommands",
     "guid": "world_edit_commands",
-    "pluginVersion": "1.80",
+    "pluginVersion": "1.81",
     "assembly": "WorldEditCommands",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/JereKuusela-World_Edit_Commands-1.80.0/WorldEditCommands/WorldEditCommands.cs",
-        "sha256": "f4afb5bba2d3c5cfc4f4ef7b48896fcdcc593dd46d3982a74636a43a397c71b7"
+        "path": "source-evidence/profile-updates/JereKuusela-World_Edit_Commands-1.81.0/WorldEditCommands/WorldEditCommands.cs",
+        "sha256": "7529554e5eb3f9027d0c85b9fb3076ca3dc86696b00ffad280f45ac77b576ca2"
       },
       {
-        "path": "source-evidence/profile-updates/JereKuusela-World_Edit_Commands-1.80.0/WorldEditCommands.csproj",
-        "sha256": "9704343c8fce4ae6a31067b936f4781820b7f9ee00aaf8a544ac05b175e9b604"
+        "path": "source-evidence/profile-updates/JereKuusela-World_Edit_Commands-1.81.0/WorldEditCommands.csproj",
+        "sha256": "ba741f1a6beb12a4e92631b371eb79066dc0a4ab7554a3de0e510d403ffd73c3"
       }
     ]
   },
