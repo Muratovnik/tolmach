@@ -123,7 +123,7 @@ namespace Tolmach
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string PluginId = "muratovnik.tolmach";
-        public const string PluginVersion = "0.9.1";
+        public const string PluginVersion = "0.10.0";
         private static ManualLogSource Log;
         private static readonly List<string> Notes = new List<string>();
         private static RuntimeReport report;

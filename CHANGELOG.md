@@ -1,5 +1,23 @@
 # Изменения
 
+## [0.10.0](https://github.com/Muratovnik/tolmach/compare/v0.9.1...v0.10.0) (2026-10-18)
+
+### Highlights
+
+Исправлена массовая пропажа переводов: с модом LocalizationCache английский текст других модов затирал русский, и вместо «Верстака» появлялся «Workbench». Перевод охватывает **107 модов** и Valheim 1.0.20: добавлены Fertilizer, Forest Gammeltroll, Why Sleep Alone и Shield Me Bruh, Warfare 1.9.5 переведён целиком. Переведены и новые экраны обновлённых модов: редактор Dynamic Storage Materials 2.0, панель маршрута Portal Lines и святилище More World Locations.
+
+### Features
+
+- **Новые моды:** добавлены Fertilizer, Forest Gammeltroll, Why Sleep Alone и Shield Me Bruh; переведены сообщения Network Performance System об ожидании свёрнутой игры хоста. ([24bea1c](https://github.com/Muratovnik/tolmach/commit/24bea1c6c15e13d0c40b81b31fca2d0003e1466c))
+- **Warfare:** с версии 1.9.5 мод не содержит своего русского перевода, поэтому переведены все 394 строки: оружие, щиты, боеприпасы, самоцветы, руны, медовухи и эффекты. Названия материалов и комплектов согласованы с Armory. ([d6dd446](https://github.com/Muratovnik/tolmach/commit/d6dd446ffc6d7471e7d0ec849371db99935afc25))
+- **Обновлённые моды:** переведены панель маршрута и подсказка портала Portal Lines, святилище испытания Равнин More World Locations, подсказки геймпада и подзаголовки заставки Adventure Backpacks, ошибки подключения Humanoid Randomizer и Warfare. ([6bd31fd](https://github.com/Muratovnik/tolmach/commit/6bd31fd34603d9e088945101a6b8d04639040794))
+- **Dynamic Storage Materials 2.0:** переведены новое хранилище материалов, подсказки, предупреждения, сообщения и редактор внешнего вида. Варианты выпадающих списков и слово стиля в названии хранилища остаются английскими. ([41e9537](https://github.com/Muratovnik/tolmach/commit/41e9537bd3220737a8116256fd277422993f229b))
+
+### Bug Fixes
+
+- **Пропавшие переводы:** запись английского текста через общий словарь LocalizationCache больше не заменяет уже показанный русский текст игры и модов. ([a13c880](https://github.com/Muratovnik/tolmach/commit/a13c880a6ef1c64807f7637ec67df98458c33593))
+- **Совместимость:** каталоги сверены с Valheim 1.0.20 и 20 обновлёнными модами; правила перевода Infinity Hammer 1.90, Armory 1.4.3 и Dynamic Storage Materials 2.0.4 обновлены под их новый код. ([d6dd446](https://github.com/Muratovnik/tolmach/commit/d6dd446ffc6d7471e7d0ec849371db99935afc25))
+
 ## [0.9.1](https://github.com/Muratovnik/tolmach/compare/v0.9.0...v0.9.1) (2026-10-10)
 
 ### Highlights
