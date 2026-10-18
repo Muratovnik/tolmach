@@ -53,6 +53,10 @@ def test_unmodified_data_passes():
     ('idol_overlap', 'name alias duplicates raw text'),
     ('idol_ordinary_tokens', 'placeholder/markup mismatch'),
     ('idol_owner', 'name aliases belong to the Valheim game catalog'),
+    ('composed_bare_container', 'composed pattern at a shared site without fixed text'),
+    ('composed_text_conflict', 'composed text differs from the module text'),
+    ('composed_argument', "'anything' does not match"),
+    ('composed_no_site', '$.composed[0]'),
 ])
 def test_real_data_mutation_is_detected(tmp_path, mutation, diagnostic):
     root = tmp_path / 'subject'
@@ -70,6 +74,8 @@ def test_real_data_mutation_is_detected(tmp_path, mutation, diagnostic):
         name = 'ConditionalConfigSync'
     elif mutation.startswith('idol_'):
         name = 'Valheim'
+    elif mutation.startswith('composed_'):
+        name = 'DynamicStorageMaterials'
     path = root / 'catalog' / ('tolmach-' + name + '.json')
     data = json.loads(path.read_text(encoding='utf-8'))
     if mutation == 'guid':
@@ -124,6 +130,18 @@ def test_real_data_mutation_is_detected(tmp_path, mutation, diagnostic):
             data.setdefault('rawTexts', {})[source] = data['words'][key]
         elif mutation == 'idol_owner':
             data['id'] = 'Other'
+    elif mutation == 'composed_bare_container':
+        rule = next(r for r in data['composed'] if r.get('containerOwners'))
+        rule['patterns'][0]['source'] = '{0}'
+        rule['patterns'][0]['target'] = '{0}'
+    elif mutation == 'composed_text_conflict':
+        rule = next(r for r in data['composed'] if r.get('sites'))
+        source = next(iter(data['texts']))
+        rule['texts'][source] = data['texts'][source] + ' (другое)'
+    elif mutation == 'composed_argument':
+        data['composed'][0]['patterns'][0]['arguments']['0'] = 'anything'
+    elif mutation == 'composed_no_site':
+        data['composed'][0].pop('sites')
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
     if mutation == 'duplicate_json_key':
         path.write_text(path.read_text(encoding='utf-8').replace('"id":', '"id": "duplicate", "id":', 1), encoding='utf-8')

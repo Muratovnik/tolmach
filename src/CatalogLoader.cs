@@ -94,6 +94,7 @@ namespace Tolmach
             }
             foreach (MethodSpec r in m.returns)
                 if (r == null || String.IsNullOrEmpty(r.type) || String.IsNullOrEmpty(r.method)) throw new InvalidDataException("Invalid return adapter.");
+            foreach (ComposedSpec c in m.composed) ValidateComposed(m, c);
             foreach (LiteralSpec r in m.literals.Concat(m.configTexts))
                 if (r == null || String.IsNullOrEmpty(r.type) || String.IsNullOrEmpty(r.method) || r.values.Count == 0 ||
                     r.values.Any(delegate(KeyValuePair<string, string> p) { return String.IsNullOrEmpty(p.Key) || String.IsNullOrEmpty(p.Value); }))
@@ -122,6 +123,26 @@ namespace Tolmach
                     throw new InvalidDataException("Empty CLLC key/value.");
             if (t.settings.Any(delegate(KeyValuePair<string, CllcSetting> p) { return String.IsNullOrEmpty(p.Key) || p.Value == null || String.IsNullOrEmpty(p.Value.display) || String.IsNullOrEmpty(p.Value.desc); }))
                 throw new InvalidDataException("A CLLC setting needs a name and a description.");
+        }
+        private static void ValidateComposed(Module m, ComposedSpec c)
+        {
+            if (c == null || (c.sites.Count == 0 && c.containerOwners.Count == 0) || (c.texts.Count == 0 && c.patterns.Count == 0) ||
+                c.sites.Any(delegate(MethodSpec s) { return s == null || String.IsNullOrEmpty(s.type) || String.IsNullOrEmpty(s.method); }) ||
+                c.containerOwners.Any(String.IsNullOrEmpty) ||
+                c.texts.Any(delegate(KeyValuePair<string, string> p) { return String.IsNullOrEmpty(p.Key) || String.IsNullOrEmpty(p.Value); }))
+                throw new InvalidDataException("Invalid composed text rule.");
+            // At its own sites a rule extends the module's table; one source text has one translation.
+            string existing;
+            if (c.texts.Any(delegate(KeyValuePair<string, string> p) { return m.texts.TryGetValue(p.Key, out existing) && existing != p.Value; }))
+                throw new InvalidDataException("A composed text differs from the module's text.");
+            // A game method or a container shows every mod's text: a template there needs fixed text.
+            bool shared = c.containerOwners.Count != 0 || c.sites.Any(delegate(MethodSpec s) { return !m.OwnTypeName(s.type); });
+            foreach (PatternSpec p in c.patterns)
+            {
+                ValidatePattern(m, p, "text", "message", "mapLabel", "item", "itemSet", "name");
+                if (shared && Hole.Replace(p.source, "").Trim().Length == 0)
+                    throw new InvalidDataException("A composed pattern at a game site or container has no fixed text.");
+            }
         }
         private static void ValidatePattern(Module m, PatternSpec p, params string[] semantics)
         {

@@ -13,7 +13,7 @@ namespace Tolmach
     // call comes from that method, so another mod's identical text stays as it is.
     internal static class CallSites
     {
-        private sealed class Site { public Module Module; public MethodBase Caller; public bool ScopedTerminal; }
+        private sealed class Site { public Module Module; public MethodBase Caller; public bool ScopedTerminal; public string ComposedSite; }
         // Keyed by method handle: Harmony passes the patched display method itself as __originalMethod.
         private static readonly Dictionary<IntPtr, List<Site>> Sinks = new Dictionary<IntPtr, List<Site>>();
         private static readonly HashSet<IntPtr> Patched = new HashSet<IntPtr>();
@@ -21,7 +21,7 @@ namespace Tolmach
         private static readonly string[] DerivedSinkTypes = { "Player", "TMPro.TextMeshProUGUI", "TMPro.TextMeshPro" };
         private const int LastArgument = 7;
 
-        internal static void Cover(Harmony harmony, Module module, string owner, MethodBase method, List<CodeInstruction> body, string reason)
+        internal static void Cover(Harmony harmony, Module module, string owner, MethodBase method, List<CodeInstruction> body, string reason, string composedSite = null)
         {
             PatchEvidence evidence = new PatchEvidence { method = owner, notPatched = reason };
             module.Patches[RuntimeAccess.MethodKey(method)] = evidence;
@@ -42,7 +42,7 @@ namespace Tolmach
                     if (!Install(harmony, target, selected)) { Add(evidence.leftAsIs, Name(target)); continue; }
                     List<Site> sites;
                     if (!Sinks.TryGetValue(target.MethodHandle.Value, out sites)) Sinks[target.MethodHandle.Value] = sites = new List<Site>();
-                    sites.Add(new Site { Module = module, Caller = method, ScopedTerminal = DisplayPatches.ScopedTerminalSink(call, module, method) });
+                    sites.Add(new Site { Module = module, Caller = method, ScopedTerminal = DisplayPatches.ScopedTerminalSink(call, module, method), ComposedSite = composedSite });
                     Add(evidence.callSites, Name(target));
                 }
             }
@@ -123,7 +123,7 @@ namespace Tolmach
                 Module current;
                 if (site.ScopedTerminal && (!site.Module.UiAllowed || !TextEngine.Modules.TryGetValue(site.Module.id, out current) ||
                     !ReferenceEquals(site.Module, current))) continue;
-                string translated = TextEngine.Display(value, site.Module.id);
+                string translated = site.ComposedSite != null ? TextEngine.DisplaySite(value, site.ComposedSite) : TextEngine.Display(value, site.Module.id);
                 if (translated == value) continue;
                 // The stack is read only for text a covered module translates.
                 if (caller == null) caller = Caller(sink);

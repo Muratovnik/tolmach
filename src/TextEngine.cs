@@ -25,6 +25,7 @@ namespace Tolmach
         private readonly Dictionary<string, string> cache = new Dictionary<string, string>(StringComparer.Ordinal);
         private readonly object cacheLock = new object();
         private static readonly Regex Hole = new Regex(@"\{(\d+)\}", RegexOptions.CultureInvariant);
+        private static readonly Regex Latin = new Regex("[A-Za-z]", RegexOptions.CultureInvariant);
         // A second '<' cannot belong to this tag. Excluding it keeps unmatched
         // opening brackets from causing overlapping scans on the global Localize path.
         private static readonly Regex Tags = new Regex("(<[^<>]+>)", RegexOptions.CultureInvariant);
@@ -138,6 +139,14 @@ namespace Tolmach
                     if (!p.Arguments.TryGetValue(h.Groups[1].Value, out semantic)) return captured;
                     string translated;
                     if (semantic == "text") return exact.TryGetValue(captured, out translated) ? translated : captured;
+                    // A name the game has already localized has no Latin letters; an English one
+                    // without a translation would leave the composed text half in English.
+                    if (semantic == "name")
+                    {
+                        if (exact.TryGetValue(captured, out translated)) return translated;
+                        if (captured.Trim().Length == 0 || Latin.IsMatch(captured)) unknownTerm = true;
+                        return captured;
+                    }
                     if (semantic == "mapLabel") return MapLabel(captured);
                     // A game object printed by its identifier: shown under the game's own name for it.
                     if (semantic == "item") return GameItems.ItemName(captured) ?? captured;
@@ -222,6 +231,11 @@ namespace Tolmach
         public static string DisplayOwned(string text, string callerKey)
         {
             return DisplayPatches.TranslateOwned(text, callerKey);
+        }
+        // Display text at a composed site: the module's table plus the site's own texts and templates.
+        public static string DisplaySite(string text, string siteKey)
+        {
+            return ComposedNames.Translate(text, siteKey);
         }
         public static string[] DisplayArray(string[] texts, string moduleId)
         {

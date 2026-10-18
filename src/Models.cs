@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
 
@@ -29,6 +30,17 @@ namespace Tolmach
         public string type = "";
         public string method = "";
         public Dictionary<string, string> values = new Dictionary<string, string>();
+    }
+    // Text a mod composes from its own parts, translated only where it is shown: the display calls, string
+    // result and call sites of the mod's own methods, the string result of a game method (after every other
+    // patch), or Container.m_name on containers that carry one of the owner components.
+    [JsonObject(ItemRequired = Required.DisallowNull)]
+    public sealed class ComposedSpec
+    {
+        public List<MethodSpec> sites = new List<MethodSpec>();
+        public List<string> containerOwners = new List<string>();
+        public Dictionary<string, string> texts = new Dictionary<string, string>();
+        public List<PatternSpec> patterns = new List<PatternSpec>();
     }
     [JsonObject(ItemRequired = Required.DisallowNull)]
     public sealed class PrefabSpec
@@ -91,6 +103,7 @@ namespace Tolmach
         public Dictionary<string, string> mapLabels = new Dictionary<string, string>();
         public List<PatternSpec> patterns = new List<PatternSpec>();
         public List<MethodSpec> returns = new List<MethodSpec>();
+        public List<ComposedSpec> composed = new List<ComposedSpec>();
         public List<LiteralSpec> literals = new List<LiteralSpec>();
         // Display text a mod keeps in its config (ConfigEntry<string>): replaced where the named method
         // reads the value, and only while it is still the English default. A player's own text stays.
@@ -118,7 +131,12 @@ namespace Tolmach
         [JsonIgnore] public int PatchedMethods;
         [JsonIgnore] public int ScannedMethods;
         [JsonIgnore] public bool HasDisplayText { get { return texts.Count != 0 || patterns.Count != 0; } }
-        [JsonIgnore] public bool NeedsIlAdapters { get { return HasDisplayText || literals.Count != 0 || configTexts.Count != 0 || returns.Count != 0; } }
+        [JsonIgnore] public bool NeedsIlAdapters { get { return HasDisplayText || literals.Count != 0 || configTexts.Count != 0 || returns.Count != 0 || OwnSites.Any(); } }
+        // Composed sites in the plugin's own types; any other site names a game method.
+        [JsonIgnore] public IEnumerable<MethodSpec> OwnSites
+        {
+            get { foreach (ComposedSpec c in composed) foreach (MethodSpec s in c.sites) if (OwnTypeName(s.type)) yield return s; }
+        }
         [JsonIgnore] public int NativeWords;
         [JsonIgnore] public bool UiAllowed;
         [JsonIgnore] public readonly Dictionary<string, PatchEvidence> Patches = new Dictionary<string, PatchEvidence>();
@@ -132,9 +150,16 @@ namespace Tolmach
         }
         // Marks a plugin's types declared outside any namespace; an empty entry would be rejected.
         public const string GlobalNamespace = "<global>";
-        public bool OwnType(Type type)
+        public bool OwnType(Type type) { return OwnNamespace(type.Namespace ?? ""); }
+        // A catalog type name ("Ns.Outer+<Nested>d__1"): its namespace precedes the last dot of the outermost type.
+        public bool OwnTypeName(string fullName)
         {
-            string ns = type.Namespace ?? "";
+            string outer = fullName.Split('+')[0];
+            int dot = outer.LastIndexOf('.');
+            return OwnNamespace(dot < 0 ? "" : outer.Substring(0, dot));
+        }
+        private bool OwnNamespace(string ns)
+        {
             foreach (string allowed in namespaces)
             {
                 if (allowed == GlobalNamespace) { if (ns.Length == 0) return true; continue; }

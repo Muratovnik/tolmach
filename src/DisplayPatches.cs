@@ -12,6 +12,7 @@ namespace Tolmach
         private static readonly Dictionary<string, Module> Owners = new Dictionary<string, Module>();
         private static readonly MethodInfo Display = typeof(TextEngine).GetMethod("Display");
         private static readonly MethodInfo DisplayOwned = typeof(TextEngine).GetMethod("DisplayOwned");
+        private static readonly MethodInfo DisplaySite = typeof(TextEngine).GetMethod("DisplaySite");
         private static readonly MethodInfo DisplayArray = typeof(TextEngine).GetMethod("DisplayArray");
         private static readonly MethodInfo Literal = typeof(TextEngine).GetMethod("Literal");
         private static readonly MethodInfo ConfigText = typeof(TextEngine).GetMethod("ConfigText");
@@ -59,6 +60,9 @@ namespace Tolmach
             foreach (MethodSpec expected in module.returns)
                 if (!Declares(module, expected.type, expected.method))
                     module.Warn("Expected return adapter not found: " + expected.type + "." + expected.method);
+            foreach (MethodSpec expected in module.OwnSites)
+                if (!Declares(module, expected.type, expected.method))
+                    module.Warn("Expected composed site not found: " + expected.type + "." + expected.method);
             foreach (LiteralSpec expected in module.literals)
             {
                 if (!Declares(module, expected.type, expected.method))
@@ -95,9 +99,12 @@ namespace Tolmach
             LiteralSpec[] specs = module.literals.Where(delegate(LiteralSpec p) { return p.type == type.FullName && p.method == method.Name; }).ToArray();
             LiteralSpec[] configs = module.configTexts.Where(delegate(LiteralSpec p) { return p.type == type.FullName && p.method == method.Name; }).ToArray();
             MethodInfo function = method as MethodInfo;
-            bool result = function != null && function.ReturnType == typeof(string) &&
-                module.returns.Any(delegate(MethodSpec p) { return p.type == type.FullName && p.method == method.Name; });
-            if (specs.Length == 0 && configs.Length == 0 && !result && !module.HasDisplayText) return;
+            // A composed site: its display calls and string result use the site's table (ComposedNames).
+            string site = ComposedNames.RegisterOwn(module, type, method);
+            bool displayText = module.HasDisplayText || site != null;
+            bool result = function != null && function.ReturnType == typeof(string) && (site != null ||
+                module.returns.Any(delegate(MethodSpec p) { return p.type == type.FullName && p.method == method.Name; }));
+            if (specs.Length == 0 && configs.Length == 0 && !result && !displayText) return;
             bool literal = false, sink = false, config = false;
             List<CodeInstruction> original = null;
             try
@@ -112,7 +119,7 @@ namespace Tolmach
                     foreach (LiteralSpec spec in specs)
                         if (spec.values.ContainsKey(text)) { literal = true; seen.Add(LiteralKey(spec, text)); }
                 }
-                sink = module.HasDisplayText && original.Any(delegate(CodeInstruction instruction) { return Relevant(instruction, module, method); });
+                sink = displayText && original.Any(delegate(CodeInstruction instruction) { return Relevant(instruction, module, method); });
                 // Like a literal rule, a config text rule patches only the overload that reads a string config value.
                 config = configs.Length != 0 && original.Any(ConfigRead);
                 if (config) foreach (LiteralSpec spec in configs) seen.Add(ConfigKey(spec));
@@ -126,6 +133,8 @@ namespace Tolmach
                 config = configs.Length != 0;
                 foreach (LiteralSpec spec in configs) seen.Add(ConfigKey(spec));
             }
+            if (site != null && !result && !sink)
+                module.Warn("Composed site has no display call or string result: " + type.FullName + "." + method.Name);
             if (!literal && !result && !sink && !config) return;
             // HarmonyX 2.9 cannot rebuild two kinds of exception blocks: it never marks the handler of an
             // exception filter (catch ... when), and it ends a fault handler (iterators with try/finally)
@@ -137,7 +146,7 @@ namespace Tolmach
             if (unsupported != null)
             {
                 string owner = type.FullName + "." + method.Name;
-                if (sink) CallSites.Cover(harmony, module, owner, method, original, unsupported);
+                if (sink) CallSites.Cover(harmony, module, owner, method, original, unsupported, site);
                 if (literal || config || result) module.Warn("UI patch skipped " + owner + ": " + unsupported);
                 return;
             }
@@ -175,7 +184,7 @@ namespace Tolmach
             }
             catch (Exception) { return false; }
         }
-        internal static void Reset() { Owners.Clear(); CallSites.Reset(); CcsDisplay.Reset(); }
+        internal static void Reset() { Owners.Clear(); CallSites.Reset(); CcsDisplay.Reset(); ComposedNames.Reset(); }
         private static bool Relevant(CodeInstruction instruction, Module module, MethodBase caller)
         {
             MethodBase call = instruction.operand as MethodBase;
@@ -254,7 +263,9 @@ namespace Tolmach
         private static void TranslateReturn(MethodBase __originalMethod, ref string __result)
         {
             Module module;
-            if (Owners.TryGetValue(RuntimeAccess.MethodKey(__originalMethod), out module)) __result = TextEngine.Display(__result, module.id);
+            string key = RuntimeAccess.MethodKey(__originalMethod);
+            if (!Owners.TryGetValue(key, out module)) return;
+            __result = ComposedNames.IsSite(key) ? TextEngine.DisplaySite(__result, key) : TextEngine.Display(__result, module.id);
         }
         private static IEnumerable<CodeInstruction> Transpile(IEnumerable<CodeInstruction> instructions, ILGenerator generator, MethodBase __originalMethod)
         {
@@ -274,6 +285,11 @@ namespace Tolmach
             evidence.matchedLiterals.Clear();
             string declaring = __originalMethod.DeclaringType.FullName;
             bool configRule = module.configTexts.Any(delegate(LiteralSpec p) { return p.type == declaring && p.method == __originalMethod.Name; });
+            bool site = ComposedNames.IsSite(methodKey);
+            bool displayText = module.HasDisplayText || site;
+            // The display call that receives the text: the site's table at a composed site, else the module's.
+            string displayKey = site ? methodKey : module.id;
+            MethodInfo display = site ? DisplaySite : Display;
             for (int index = 0; index < input.Count; index++)
             {
                 CodeInstruction current = input[index];
@@ -310,17 +326,17 @@ namespace Tolmach
                     continue;
                 }
                 FieldInfo field = current.operand as FieldInfo;
-                if (module.HasDisplayText && current.opcode == OpCodes.Stfld && field != null && DisplayField(field, module))
+                if (displayText && current.opcode == OpCodes.Stfld && field != null && DisplayField(field, module))
                 {
                     evidence.displayFields++;
-                    CodeInstruction first = new CodeInstruction(OpCodes.Ldstr, module.id);
+                    CodeInstruction first = new CodeInstruction(OpCodes.Ldstr, displayKey);
                     first.MoveLabelsFrom(current);
-                    output.Add(first); output.Add(new CodeInstruction(OpCodes.Call, Display)); output.Add(current);
+                    output.Add(first); output.Add(new CodeInstruction(OpCodes.Call, display)); output.Add(current);
                     continue;
                 }
                 MethodBase call = current.operand as MethodBase;
                 bool isCall = current.opcode == OpCodes.Call || current.opcode == OpCodes.Callvirt || current.opcode == OpCodes.Newobj;
-                if (!module.HasDisplayText || call == null || !isCall) { output.Add(current); continue; }
+                if (!displayText || call == null || !isCall) { output.Add(current); continue; }
                 bool[] selected = StringSinkAt(call, module, __originalMethod);
                 if (!selected.Any(delegate(bool b) { return b; })) { output.Add(current); continue; }
                 ParameterInfo[] parameters = call.GetParameters();
@@ -333,15 +349,17 @@ namespace Tolmach
                     replacement.Add(new CodeInstruction(OpCodes.Ldloc, locals[i]));
                     if (!selected[i]) continue;
                     bool scopedTerminal = ScopedTerminalSink(call, module, __originalMethod);
-                    replacement.Add(new CodeInstruction(OpCodes.Ldstr, scopedTerminal ? methodKey : module.id));
-                    replacement.Add(new CodeInstruction(OpCodes.Call, scopedTerminal ? DisplayOwned : parameters[i].ParameterType == typeof(string[]) ? DisplayArray : Display));
+                    bool array = parameters[i].ParameterType == typeof(string[]);
+                    // A site's string arrays (GUI toolbars) keep the module's table.
+                    replacement.Add(new CodeInstruction(OpCodes.Ldstr, scopedTerminal ? methodKey : array ? module.id : displayKey));
+                    replacement.Add(new CodeInstruction(OpCodes.Call, scopedTerminal ? DisplayOwned : array ? DisplayArray : display));
                 }
                 replacement[0].MoveLabelsFrom(current);
                 replacement.Add(current);
                 if (LocalizedReturn(call))
                 {
-                    replacement.Add(new CodeInstruction(OpCodes.Ldstr, module.id));
-                    replacement.Add(new CodeInstruction(OpCodes.Call, Display));
+                    replacement.Add(new CodeInstruction(OpCodes.Ldstr, displayKey));
+                    replacement.Add(new CodeInstruction(OpCodes.Call, display));
                 }
                 evidence.displayCalls++;
                 output.AddRange(replacement);

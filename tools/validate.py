@@ -281,14 +281,17 @@ def main() -> int:
         pairs = [(m['englishWords'][k], ru) for k, ru in m['words'].items() if k in m['englishWords']] + list(m['texts'].items())
         pairs += list(m.get('mapLabels', {}).items()) + list(m.get('rawTexts', {}).items())
         pairs += [pair for table in terms.values() for pair in table.items()]
-        pairs += [(p['source'], p['target']) for p in m['patterns'] + m.get('rawPatterns', [])]
+        composed = m.get('composed', [])
+        composed_patterns = [p for rule in composed for p in rule.get('patterns', [])]
+        pairs += [pair for rule in composed for pair in rule.get('texts', {}).items()]
+        pairs += [(p['source'], p['target']) for p in m['patterns'] + m.get('rawPatterns', []) + composed_patterns]
         pairs += [p for rule in m.get('literals', []) + m.get('configTexts', []) for p in rule['values'].items()]
         counts['explicit_literals'] += sum(len(rule['values']) for rule in m.get('literals', []))
         counts['config_texts'] += sum(len(rule['values']) for rule in m.get('configTexts', []))
         for en, ru in pairs:
             check(collections.Counter(TOKEN.findall(en)) == collections.Counter(TOKEN.findall(ru)), name + ': placeholder/markup mismatch: ' + repr(en))
             check(re.findall(r'</?[^>\n]+>', en) == re.findall(r'</?[^>\n]+>', ru), name + ': markup order mismatch: ' + repr(en))
-        for p in m['patterns'] + m.get('rawPatterns', []):
+        for p in m['patterns'] + m.get('rawPatterns', []) + composed_patterns:
             check(not p.get('singleLine') or not any(c in p['source'] + p['target'] for c in '\r\n'), name + ': single-line pattern contains line breaks')
             holes = set(HOLE.findall(p['source']))
             check(holes == set(HOLE.findall(p['target'])), name + ': pattern placeholders differ: ' + repr(p['source']))
@@ -299,6 +302,16 @@ def main() -> int:
                 check(int(key) not in p.get('numeric', []), name + ': conflicting numeric/semantic argument')
         for p in m.get('rawPatterns', []):
             check(HOLE.sub('', p['source']).strip() != '', name + ': raw pattern without fixed text: ' + repr(p['source']))
+        for rule in composed:
+            counts['composed_rules'] += 1
+            # At the mod's own sites a rule extends the module's table: one source text, one translation.
+            for en, ru in rule.get('texts', {}).items():
+                check(m['texts'].get(en, ru) == ru, name + ': composed text differs from the module text: ' + repr(en))
+            # A game method or a container shows every mod's text, so a template there needs fixed text.
+            shared = bool(rule.get('containerOwners')) or any(not own_type(m, site['type']) for site in rule.get('sites', []))
+            for p in rule.get('patterns', []):
+                check(not shared or HOLE.sub('', p['source']).strip() != '', name + ': composed pattern at a shared site without fixed text: ' + repr(p['source']))
+            check(bool(rule.get('texts')) or bool(rule.get('patterns')), name + ': composed rule without texts or patterns')
         for en, ru in m.get('mapLabels', {}).items():
             check(m['texts'].get(en) == ru, name + ': map label differs from display translation')
         cllc_checks(m, counts)
@@ -324,6 +337,20 @@ def main() -> int:
         args.report.write_text(rendered, encoding='utf-8')
     print(rendered)
     return 0 if not errors else 1
+
+def own_type(module, type_name):
+    """Mirrors Module.OwnTypeName: the namespace of the outermost type is one of the plugin's."""
+    outer = type_name.split('+')[0]
+    namespace = outer.rpartition('.')[0]
+    for allowed in module['namespaces']:
+        if allowed == '<global>':
+            if not namespace:
+                return True
+            continue
+        if namespace == allowed or namespace.startswith(allowed + '.'):
+            return True
+    return False
+
 
 if __name__ == '__main__':
     sys.exit(main())

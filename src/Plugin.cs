@@ -214,6 +214,8 @@ namespace Tolmach
             {
                 try { DisplayPatches.Install(harmony, m); }
                 catch (Exception e) { m.Warn("UI adapter initialization: " + e.GetType().Name); }
+                try { ComposedNames.InstallGameSites(harmony, m); }
+                catch (Exception e) { m.Warn("Composed game site initialization: " + e.GetType().Name); }
             }
             ExtraHooks.Install(harmony);
             PersistentUi.Install(harmony);
