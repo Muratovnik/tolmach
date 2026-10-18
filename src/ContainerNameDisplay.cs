@@ -108,9 +108,10 @@ namespace Tolmach
             if (container == null) return value;
             foreach (Rule rule in Rules)
             {
-                if (!Active(rule.Module) || !Carries(container, rule.Owners)) continue;
+                if (!Active(rule.Module)) continue;
+                // Hover runs every frame on every chest: the component lookup only follows a match.
                 translated = rule.Table.Translate(value);
-                if (translated != value) return translated;
+                if (translated != value && Carries(container, rule.Owners)) return translated;
             }
             return value;
         }
