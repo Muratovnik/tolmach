@@ -1501,5 +1501,138 @@
         "Treasure is deferred. Withdraw stored items; choose another material once empty.": "Сокровища пока не поддерживаются. Заберите хранимые предметы; когда хранилище опустеет, выберите другой материал."
       }
     }
+  ],
+  "composed": [
+    {
+      "sites": [
+        {
+          "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+          "method": "RefreshSummary"
+        },
+        {
+          "type": "DynamicStorageMaterials.MaterialQuickBuild",
+          "method": "Tick"
+        }
+      ],
+      "texts": {
+        "Material": "Материал",
+        "Components": "Компоненты",
+        "Seeds": "Семена",
+        "Boss Rewards": "Награды боссов",
+        "Boss Summoning": "Призыв боссов",
+        "Vendor Items": "Товары торговцев",
+        "Treasure": "Сокровища"
+      },
+      "patterns": [
+        {
+          "source": "{0} Pile",
+          "target": "{0} (груда)",
+          "singleLine": true,
+          "arguments": {
+            "0": "name"
+          }
+        },
+        {
+          "source": "{0} Barrel",
+          "target": "{0} (бочка)",
+          "singleLine": true,
+          "arguments": {
+            "0": "name"
+          }
+        },
+        {
+          "source": "{0} Crate",
+          "target": "{0} (ящик)",
+          "singleLine": true,
+          "arguments": {
+            "0": "name"
+          }
+        }
+      ]
+    },
+    {
+      "sites": [
+        {
+          "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+          "method": "RenderStorageLabelPreview"
+        }
+      ],
+      "texts": {
+        "Material": "Материал",
+        "Components": "Компоненты",
+        "Seeds": "Семена",
+        "Boss Rewards": "Награды боссов",
+        "Boss Summoning": "Призыв боссов",
+        "Vendor Items": "Товары торговцев",
+        "Treasure": "Сокровища"
+      },
+      "patterns": [
+        {
+          "source": "{0} · Pile",
+          "target": "{0} · груда",
+          "singleLine": true,
+          "arguments": {
+            "0": "name"
+          }
+        },
+        {
+          "source": "{0} · Barrel",
+          "target": "{0} · бочка",
+          "singleLine": true,
+          "arguments": {
+            "0": "name"
+          }
+        },
+        {
+          "source": "{0} · Crate",
+          "target": "{0} · ящик",
+          "singleLine": true,
+          "arguments": {
+            "0": "name"
+          }
+        }
+      ]
+    },
+    {
+      "containerOwners": [
+        "DynamicStorageMaterials.MaterialBarrelStorage",
+        "DynamicStorageMaterials.PlacedAppearance"
+      ],
+      "texts": {
+        "Material": "Материал",
+        "Components": "Компоненты",
+        "Seeds": "Семена",
+        "Boss Rewards": "Награды боссов",
+        "Boss Summoning": "Призыв боссов",
+        "Vendor Items": "Товары торговцев",
+        "Treasure": "Сокровища"
+      },
+      "patterns": [
+        {
+          "source": "{0} Pile",
+          "target": "{0} (груда)",
+          "singleLine": true,
+          "arguments": {
+            "0": "name"
+          }
+        },
+        {
+          "source": "{0} Barrel",
+          "target": "{0} (бочка)",
+          "singleLine": true,
+          "arguments": {
+            "0": "name"
+          }
+        },
+        {
+          "source": "{0} Crate",
+          "target": "{0} (ящик)",
+          "singleLine": true,
+          "arguments": {
+            "0": "name"
+          }
+        }
+      ]
+    }
   ]
 }

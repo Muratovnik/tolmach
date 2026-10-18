@@ -46,5 +46,20 @@
   "notes": [
     "English comes from Plugin.AddLocalization, which registers ten keys in the plugin's Jotunn CustomLocalization; tier names and descriptions come from Tier.All.",
     "The plant hover suffix appends Tier.DisplayName (a static-initializer string) after vanilla localization in a Harmony postfix, so it has no display sink and stays English."
+  ],
+  "composed": [
+    {
+      "sites": [
+        {
+          "type": "Plant",
+          "method": "GetHoverText"
+        }
+      ],
+      "texts": {
+        "Bone Meal": "Костная мука",
+        "Enriched Bone Meal": "Обогащенная костная мука",
+        "Enhanced Bone Meal": "Усиленная костная мука"
+      }
+    }
   ]
 }

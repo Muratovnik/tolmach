@@ -291,7 +291,10 @@
     "The Delivery tab shows incoming shipments at the <color=orange>current port</color>.\n\n<color=orange><b>Collecting a Delivery</b></color>\n<size=5>●</size> When a shipment's status changes to <color=yellow>Delivered</color>, click it to collect\n<size=5>●</size> The manifest chests will appear near the Port Manager with all your items inside\n<size=5>●</size> Once you've emptied every chest, the containers disappear and the delivery is marked complete\n": "На вкладке «Доставки» показаны грузы, прибывающие в <color=orange>текущий порт</color>.\n\n<color=orange><b>Получение доставки</b></color>\n<size=5>●</size> Когда состояние груза сменится на <color=yellow>Доставлен</color>, нажмите на него, чтобы получить\n<size=5>●</size> Грузовые сундуки со всеми вашими предметами появятся рядом с начальником порта\n<size=5>●</size> Когда вы опустошите все сундуки, контейнеры исчезнут, а доставка будет отмечена как завершенная\n",
     "Teleport": "Телепорт",
     "The Teleport tab lets you fast travel directly to any discovered port.\n\n<color=orange><b>How it Works</b></color>\n<size=5>●</size> Select a destination and click <color=yellow>[Teleport]</color>\n<size=5>●</size> The teleport fee scales with distance, similar to shipping costs\n<size=5>●</size> You will arrive at the destination port instantly\n\n<color=yellow>Note:</color> Teleporting is a config option and may be disabled by the server.\n": "Вкладка «Телепорт» позволяет быстро переместиться прямо в любой открытый порт.\n\n<color=orange><b>Как это работает</b></color>\n<size=5>●</size> Выберите пункт назначения и нажмите <color=yellow>[Телепорт]</color>\n<size=5>●</size> Плата за телепорт растет с расстоянием, как и стоимость отправки\n<size=5>●</size> Вы мгновенно окажетесь в порту назначения\n\n<color=yellow>Примечание:</color> телепортация включается в настройках и может быть отключена на сервере.\n",
-    "This shipment belongs to another player": "Этот груз принадлежит другому игроку"
+    "This shipment belongs to another player": "Этот груз принадлежит другому игроку",
+    "The challenge could not start. Your offering was not consumed.": "Не удалось начать испытание. Подношение не израсходовано.",
+    "The shrine has no clear spawn points.": "У святилища нет свободных точек появления.",
+    "The shrine is busy. Try again.": "Святилище занято. Попробуйте еще раз."
   },
   "patterns": [],
   "returns": [],
@@ -699,8 +702,7 @@
       "type": "More_World_Locations_AIO.Shrines.FortressTributeShrine",
       "method": "Offer",
       "values": {
-        "A challenge is already in progress.": "Испытание уже идет.",
-        "You need {0} {1}.": "Нужно {0} шт.: {1}."
+        "A challenge is already in progress.": "Испытание уже идет."
       }
     },
     {
@@ -709,17 +711,53 @@
       "values": {
         "Offer {0} resin, guck, crystal, black metal, seeker meat, soft tissue, charred bone, seal fat, amber or ruby.": "Поднесите {0} шт. смолы, слизи, кристаллов, черного металла, мяса искателя, мягкой ткани, обугленных костей, жира тюленя, янтаря или рубинов."
       }
-    },
+    }
+  ],
+  "terms": {
+    "tribute": {
+      "resin": "смола",
+      "guck": "слизь",
+      "crystal": "кристалл",
+      "blackmetal": "черный металл",
+      "seekermeat": "мясо искателя",
+      "softtissue": "мягкая ткань",
+      "charredbone": "обугленная кость",
+      "sealblubber": "жир тюленя",
+      "amber": "янтарь",
+      "ruby": "рубин"
+    }
+  },
+  "composed": [
     {
-      "type": "More_World_Locations_AIO.Shrines.FortressTributeShrine+<StartOffering>d__28",
-      "method": "MoveNext",
-      "values": {
-        "The ": "Испытание ",
-        " challenge is unavailable. Your offering was not consumed.": " — недоступно. Подношение не израсходовано.",
-        "The challenge could not start. Your offering was not consumed.": "Не удалось начать испытание. Подношение не израсходовано.",
-        "The shrine has no clear spawn points.": "У святилища нет свободных точек появления.",
-        "The shrine is busy. Try again.": "Святилище занято. Попробуйте еще раз."
-      }
+      "sites": [
+        {
+          "type": "More_World_Locations_AIO.Shrines.FortressTributeShrine",
+          "method": "Offer"
+        },
+        {
+          "type": "More_World_Locations_AIO.Shrines.FortressTributeShrine+<StartOffering>d__28",
+          "method": "MoveNext"
+        }
+      ],
+      "patterns": [
+        {
+          "source": "You need {0} {1}.",
+          "target": "Нужно {0} шт.: {1}.",
+          "numeric": [
+            0
+          ],
+          "arguments": {
+            "1": "term:tribute"
+          }
+        },
+        {
+          "source": "The {0} challenge is unavailable. Your offering was not consumed.",
+          "target": "Испытание недоступно ({0}). Подношение не израсходовано.",
+          "arguments": {
+            "0": "term:tribute"
+          }
+        }
+      ]
     }
   ]
 }
