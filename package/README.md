@@ -18,7 +18,7 @@
 
 ## Переводимые моды
 
-В одних модах переведены основные окна и предметы, в других — дополнены отдельные строки или только сообщения о несовпадении версий. Число 103 не означает одинаковую полноту перевода каждого мода.
+В одних модах переведены основные окна и предметы, в других — дополнены отдельные строки или только сообщения о несовпадении версий. Число 107 не означает одинаковую полноту перевода каждого мода.
 
 Ниже указаны версии, с которыми сверялись каталоги. Другие версии обрабатываются по совпадающим строкам, но их совместимость не считается проверенной. Моды, которых нет в профиле, пропускаются.
 
@@ -67,8 +67,10 @@
 | [Eternal Legends](https://thunderstore.io/c/valheim/p/Dreanegade/Eternal_Legends/)                                               | 1.0.4 |
 | [Expert Explorer](https://thunderstore.io/c/valheim/p/MilkMediaProductions/ExpertExplorer/)                                      | 1.7.0 |
 | [Fermenting](https://thunderstore.io/c/valheim/p/blacks7ar/Fermenting/)                                                          | 1.1.8 |
+| [Fertilizer](https://thunderstore.io/c/valheim/p/Dwarf_Haven_Games/Fertilizer/)                                                  | 1.3.0 |
 | [First Person Mode](https://thunderstore.io/c/valheim/p/Azumatt/FirstPersonMode/)                                                | 1.3.12 |
 | [Food Duration Multiplier](https://thunderstore.io/c/valheim/p/blacks7ar/FoodDurationMultiplier/)                                | 1.1.7 |
+| [Forest Gammeltroll](https://thunderstore.io/c/valheim/p/Voxx/ForestGammeltroll/)                                                | 1.0.1 |
 | [Groups](https://thunderstore.io/c/valheim/p/Smoothbrain/Groups/)                                                                | 1.2.12 |
 | [HammerTime](https://thunderstore.io/c/valheim/p/MSchmoecker/HammerTime/)                                                        | 0.3.11 |
 | [Huginn Map](https://thunderstore.io/c/valheim/p/NightOfGames/Huginn_Map/)                                                       | 1.0.5 |
@@ -103,6 +105,7 @@
 | [Sea Animals](https://thunderstore.io/c/valheim/p/Marlthon/SeaAnimals/)                                                          | 0.3.9 |
 | [Seed Bed](https://thunderstore.io/c/valheim/p/blacks7ar/SeedBed/)                                                               | 1.2.9 |
 | [Server devcommands](https://thunderstore.io/c/valheim/p/JereKuusela/Server_devcommands/)                                        | 1.115.0 |
+| [Shield Me Bruh](https://thunderstore.io/c/valheim/p/Vapok/ShieldMeBruh/)                                                        | 2.1.5 |
 | [Sleep Skip](https://thunderstore.io/c/valheim/p/Azumatt/SleepSkip/)                                                             | 1.3.2 |
 | [Smart Wishbone Updated](https://thunderstore.io/c/valheim/p/VerdantsAscent/SmartWishboneUpdated/)                               | 1.0.6 |
 | [Smelter Upgrades](https://thunderstore.io/c/valheim/p/OverDrive/SmelterUpgrades/)                                               | 1.1.5 |
@@ -126,6 +129,7 @@
 | [VNEI](https://thunderstore.io/c/valheim/p/MSchmoecker/VNEI/)                                                                    | 0.17.6 |
 | [Wacky's Database](https://thunderstore.io/c/valheim/p/WackyMole/WackysDatabase/)                                                | 2.5.39 |
 | [Warfare](https://thunderstore.io/c/valheim/p/Therzie/Warfare/)                                                                  | 1.9.5 |
+| [Why Sleep Alone](https://thunderstore.io/c/valheim/p/TheLionCid/WhySleepAlone/)                                                 | 1.0.3 |
 | [Wield Equipment While Swimming](https://thunderstore.io/c/valheim/p/blacks7ar/WieldEquipmentWhileSwimming/)                     | 1.1.4 |
 | [World Edit Commands](https://thunderstore.io/c/valheim/p/JereKuusela/World_Edit_Commands/)                                      | 1.81.0 |
 | [XPortal](https://thunderstore.io/c/valheim/p/SpikeHimself/XPortal/)                                                             | 1.2.25 |

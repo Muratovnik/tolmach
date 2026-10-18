@@ -8,7 +8,7 @@
 
 [![Release](https://img.shields.io/github/v/release/Muratovnik/tolmach?style=flat-square&color=blue)](https://github.com/Muratovnik/tolmach/releases)
 [![GitHub downloads](https://img.shields.io/github/downloads/Muratovnik/tolmach/total?style=flat-square&color=blue&label=GitHub%20downloads)](https://github.com/Muratovnik/tolmach/releases)
-[![103 mods](https://img.shields.io/badge/mods-103-8b5a2b?style=flat-square)](docs/COVERAGE.md)
+[![107 mods](https://img.shields.io/badge/mods-107-8b5a2b?style=flat-square)](docs/COVERAGE.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 
 [Что переведено](docs/COVERAGE.md) · [Установка](#установка) · [Документация](#документация) · [Сообщить об ошибке](https://github.com/Muratovnik/tolmach/issues/new)
