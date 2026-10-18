@@ -52,7 +52,206 @@
     "Snapshot: <color=#FF6B6B>MISSING</color> | ZDO: Remote": "Снимок: <color=#FF6B6B>ОТСУТСТВУЕТ</color> | ZDO: Удаленный",
     "Not applied on this client": "Не применено на этом клиенте",
     "Unavailable (no Materials visual stages)": "Недоступно (нет стадий отображения Materials)",
-    "Bars (native fallback; generated layout unavailable)": "Слитки (исходная модель; созданная схема недоступна)"
+    "Bars (native fallback; generated layout unavailable)": "Слитки (исходная модель; созданная схема недоступна)",
+    "Rejected item dropped nearby because its source could not safely hold it.": "Отклоненный предмет выброшен рядом: в исходном хранилище для него нет безопасного места.",
+    "Materials item recovery is pending. Do not quit; inspect the log.": "Восстановление предметов не завершено. Не выходите из игры; проверьте журнал.",
+    "This swap does not match the fixed pile material. Items have not moved.": "Обмен не подходит к материалу этой груды. Предметы не перемещены.",
+    "Different items with the same name cannot be merged here. Nothing was moved.": "Разные предметы с одинаковым названием здесь нельзя объединить. Ничего не перемещено.",
+    "This storage cannot accept that item. Nothing was moved.": "Это хранилище не принимает этот предмет. Ничего не перемещено.",
+    "Forced removal: saved contents may be lost.\nTurn 'Allow deletion of protected piles' OFF afterwards.": "Принудительное удаление: сохраненное содержимое может быть утрачено.\nПосле этого выключите «Allow deletion of protected piles».",
+    "Storage is loading. Try removing it again shortly.": "Хранилище загружается. Попробуйте удалить его чуть позже.",
+    "Removal blocked: saved contents are protected.\nServer/admin override is OFF: Advanced Debug / Allow deletion of protected piles.\nEnable it on the server when playing multiplayer.\nForcing deletion may lose contents. Back up the world first.": "Удаление запрещено: сохраненное содержимое под защитой.\nОбход для сервера/администратора выключен: Advanced Debug / Allow deletion of protected piles.\nВ сетевой игре включайте его на сервере.\nПринудительное удаление может уничтожить содержимое. Сначала сделайте резервную копию мира.",
+    "Quick storage build: stack could not fit; move it manually.": "Быстрая постройка хранилища: стопка не поместилась, переложите ее вручную.",
+    "Quick storage build: stack kept; deposit could not complete.": "Быстрая постройка хранилища: стопка осталась у вас, перенос не завершен.",
+    "Quick storage build: stack kept; material or style could not be set.": "Быстрая постройка хранилища: стопка осталась у вас, не удалось задать материал или вид.",
+    "Quick storage build: stack left in your inventory; storage was not ready.": "Быстрая постройка хранилища: стопка осталась в инвентаре, хранилище не было готово.",
+    "Quick storage build: deposit stopped; check your inventory.": "Быстрая постройка хранилища: перенос остановлен, проверьте инвентарь.",
+    "Quick storage build: storage did not finish loading; stack kept.": "Быстрая постройка хранилища: хранилище не загрузилось, стопка осталась у вас.",
+    "New storage could not be safely assigned; debug cycle stopped. Existing contents were preserved.": "Новое хранилище не удалось безопасно назначить; отладочный перебор остановлен. Имеющееся содержимое сохранено.",
+    "New storage is not loaded and locally owned; debug cycle stopped without assigning it.": "Новое хранилище не загружено или принадлежит не вам; отладочный перебор остановлен без назначения.",
+    "<color=#FFCE77>Quick storage build paused</color>\nTurn off debug placement cycling to use your inventory.": "<color=#FFCE77>Быстрая постройка хранилища приостановлена</color>\nВыключите отладочный перебор размещения, чтобы использовать инвентарь.",
+    "<color=#FFCE77>Quick storage build on</color>\nPut a supported material in slots 1-5. First stack, left to right.": "<color=#FFCE77>Быстрая постройка хранилища включена</color>\nПоложите подходящий материал в ячейки 1-5. Берется первая стопка слева направо.",
+    "Quick storage build unavailable": "Быстрая постройка хранилища недоступна",
+    "Material Pile": "Материал (груда)",
+    "Material Barrel": "Материал (бочка)",
+    "Material Crate": "Материал (ящик)",
+    "Material pile": "Груда материалов",
+    "Server capacity updated. Unsafe reductions remain deferred.": "Емкость на сервере обновлена. Небезопасное уменьшение отложено.",
+    "Capacity is controlled by the server.": "Емкостью управляет сервер.",
+    "Visual log limit updated. Stored items are unchanged.": "Предел видимых бревен обновлен. Хранимые предметы не изменились.",
+    "Enter 1-512 on the host or server.": "Введите число 1-512 на хосте или сервере.",
+    "New Material Storage build cost updated.": "Стоимость постройки нового хранилища материалов обновлена.",
+    "Build cost is controlled by the server administrator.": "Стоимостью постройки управляет администратор сервера.",
+    "Appearance unchanged: this piece is owned by another player.": "Внешний вид не изменен: постройка принадлежит другому игроку.",
+    "Appearance saved automatically.": "Внешний вид сохранен автоматически.",
+    "Appearance unchanged: ownership was lost. Reopen after gaining ownership.": "Внешний вид не изменен: владение утрачено. Откройте редактор снова, когда станете владельцем.",
+    "Item unchanged. Remove every stored item of that type first; ownership and a completed load are required.": "Предмет не изменен. Сначала уберите все хранимые предметы этого типа; нужны владение и завершенная загрузка.",
+    "Choose a display material before adding extra allowed items.": "Сначала выберите отображаемый материал, затем добавляйте дополнительные предметы.",
+    "Remove an item with × only when none of that item is stored inside.": "Убирайте предмет кнопкой ×, только если внутри нет ни одного такого предмета.",
+    "Waiting for storage load": "Ожидание загрузки хранилища",
+    "None stored · can remove": "Не хранится · можно убрать",
+    "Extra item unchanged. Requires ownership, a completed load and a supported item not already allowed.": "Дополнительный предмет не изменен. Нужны владение, завершенная загрузка и поддерживаемый предмет, еще не разрешенный здесь.",
+    "Lock unchanged. Requires ownership and an empty, fully loaded storage.": "Закрепление не изменено. Нужны владение и пустое, полностью загруженное хранилище.",
+    "Material choice saved.": "Выбор материала сохранен.",
+    "Server support was not changed. Requires a server administrator or host.": "Поддержка на сервере не изменена. Нужен администратор сервера или хост.",
+    "Waiting for the server to confirm support…": "Ожидание подтверждения поддержки от сервера…",
+    "Only a server administrator or host can enable a new custom item.": "Включить поддержку нового своего предмета может только администратор сервера или хост.",
+    "Unknown item prefab. Enter the exact, case-sensitive prefab ID.": "Неизвестный префаб предмета. Введите точный ID префаба с учетом регистра.",
+    "This prefab is not a usable ItemDrop item.": "Этот префаб не является подходящим предметом ItemDrop.",
+    "No server confirmation received. Storage lock unchanged.": "Сервер не подтвердил изменение. Закрепление хранилища не изменено.",
+    "Storage is empty. You can change the material.": "Хранилище пусто. Материал можно сменить.",
+    "Remove all stored items before applying a new material.": "Перед сменой материала уберите все хранимые предметы.",
+    "Restore the missing item support before changing material.": "Перед сменой материала верните поддержку недостающих предметов.",
+    "Wait for storage to finish loading before changing material.": "Дождитесь загрузки хранилища, прежде чем менять материал.",
+    "Surroundings: On": "Окружение: вкл.",
+    "Surroundings: Off": "Окружение: выкл.",
+    "Label could not be saved: this storage is no longer owned by you.": "Не удалось сохранить надпись: хранилище больше вам не принадлежит.",
+    "Choose a category, view all, or search.": "Выберите категорию, откройте весь список или воспользуйтесь поиском.",
+    "3D preview could not start.": "Не удалось запустить 3D-просмотр.",
+    "3D preview unavailable on this device.": "3D-просмотр недоступен на этом устройстве.",
+    "3D preview unavailable; storage is unchanged.": "3D-просмотр недоступен; хранилище не изменено.",
+    "Waiting for visible storage meshes…": "Ожидание видимых моделей хранилища…",
+    "Your side": "Ваша сторона",
+    "You": "Вы",
+    "Chosen material unavailable; using the model's native material.": "Выбранный материал недоступен; используется собственный материал модели.",
+    "Animated display mesh unavailable; inventory remains accessible.": "Анимированная модель недоступна; содержимое по-прежнему доступно.",
+    "Native crate box unavailable; stored items remain accessible.": "Исходная модель ящика недоступна; хранимые предметы по-прежнему доступны.",
+    "Display mesh bounds unavailable; stored items remain accessible.": "Границы модели недоступны; хранимые предметы по-прежнему доступны.",
+    "Fill surface material unavailable; pile display and stored items remain accessible.": "Материал заполняющей поверхности недоступен; груда и хранимые предметы по-прежнему доступны.",
+    "Native crate box unavailable; displaying the barrel base. Stored items remain accessible.": "Исходная модель ящика недоступна; показана основа бочки. Хранимые предметы по-прежнему доступны.",
+    "Boss display models unavailable; stored items remain accessible.": "Модели наград боссов недоступны; хранимые предметы по-прежнему доступны.",
+    "One or more boss display meshes unavailable; stored items remain accessible.": "Часть геометрии наград боссов недоступна; хранимые предметы по-прежнему доступны.",
+    "One or more boss display models unavailable; stored items remain accessible.": "Часть моделей наград боссов недоступна; хранимые предметы по-прежнему доступны.",
+    "Native shell model unavailable; stored items remain accessible.": "Исходная модель панциря недоступна; хранимые предметы по-прежнему доступны.",
+    "Fabric display mesh unavailable; stored items remain accessible.": "Модель ткани недоступна; хранимые предметы по-прежнему доступны.",
+    "Fang display model unavailable; stored items remain accessible.": "Модель клыков недоступна; хранимые предметы по-прежнему доступны.",
+    "Native strap model unavailable; stored items remain accessible.": "Исходная модель ремней недоступна; хранимые предметы по-прежнему доступны.",
+    "Native bone stack geometry unavailable; stored items remain accessible.": "Геометрия исходной стопки костей недоступна; хранимые предметы по-прежнему доступны.",
+    "Native bone stack topology changed; stored items remain accessible.": "Строение исходной стопки костей изменилось; хранимые предметы по-прежнему доступны.",
+    "Original skull display unavailable; stored items remain accessible.": "Исходная модель черепов недоступна; хранимые предметы по-прежнему доступны.",
+    "Bright Ashwood cap shader unavailable; lighter lit end-grain retained.": "Яркий шейдер торцов пепельной древесины недоступен; оставлены светлые освещенные торцы.",
+    "Vanilla round wood log mesh unavailable; stored items remain accessible.": "Исходная модель круглого бревна недоступна; хранимые предметы по-прежнему доступны.",
+    "Vanilla wood log topology unavailable; stored items remain accessible.": "Строение исходного бревна недоступно; хранимые предметы по-прежнему доступны.",
+    "Neat pyramid display mesh unavailable; stored items remain accessible.": "Модель аккуратной пирамиды недоступна; хранимые предметы по-прежнему доступны.",
+    "Display roll mesh unavailable; stored items remain accessible.": "Модель рулонов недоступна; хранимые предметы по-прежнему доступны.",
+    "Packed display model unavailable; stored items remain accessible.": "Модель плотной укладки недоступна; хранимые предметы по-прежнему доступны.",
+    "Native resource display mesh unavailable; stored items remain accessible.": "Исходная модель ресурса недоступна; хранимые предметы по-прежнему доступны.",
+    "Settled diamond display mesh unavailable; stored items remain accessible.": "Модель осевшей ромбовидной груды недоступна; хранимые предметы по-прежнему доступны.",
+    "Some vendor models unavailable; stored items remain accessible.": "Часть моделей товаров торговцев недоступна; хранимые предметы по-прежнему доступны.",
+    "No supported group display models available; stored items remain accessible.": "Нет поддерживаемых моделей для этой группы; хранимые предметы по-прежнему доступны.",
+    "Pile display model unavailable; stored items remain accessible.": "Модель груды недоступна; хранимые предметы по-прежнему доступны.",
+    "Pile layout asset unavailable; stored items remain accessible.": "Ресурс схемы груды недоступен; хранимые предметы по-прежнему доступны.",
+    "Treasure is deferred; stored contents remain withdrawable.": "Сокровища пока не поддерживаются; хранимое содержимое можно забрать.",
+    "Unknown pile layout; using the material's configured layout.": "Неизвестная схема груды; используется схема из настроек материала.",
+    "Container mask could not reshape complete models; original geometry retained.": "Маска контейнера не смогла перестроить модели целиком; исходная геометрия сохранена.",
+    "Container mask retained a display with physical components; renderer-only movement unavailable.": "Маска контейнера оставила отображение с физическими компонентами; перемещение только модели недоступно.",
+    "Model tuning preview unavailable; original display retained.": "Предпросмотр настройки модели недоступен; исходный вид сохранен.",
+    "Model tuning unavailable for an unreadable display mesh.": "Настройка модели недоступна: модель отображения не читается.",
+    "Rotation preview unavailable; original display retained.": "Предпросмотр поворота недоступен; исходный вид сохранен.",
+    "Rotation unavailable for an unreadable display mesh.": "Поворот недоступен: модель отображения не читается.",
+    "Native crate box unavailable. Keeping the original pile.": "Исходная модель ящика недоступна. Оставлена исходная груда.",
+    "Native prop dimensions unavailable. Keeping the original pile.": "Размеры исходной модели недоступны. Оставлена исходная груда.",
+    "Style preview unavailable: no usable display mesh. Original storage remains intact.": "Предпросмотр вида недоступен: нет подходящей модели. Хранилище не изменено.",
+    "Style preview unavailable: shell asset missing. Keeping the original pile.": "Предпросмотр вида недоступен: нет ресурса оболочки. Оставлена исходная груда.",
+    "Waiting for inventory load.": "Ожидание загрузки содержимого.",
+    "Inventory load failed. Saved data is protected; inspect the log.": "Загрузка содержимого не удалась. Сохраненные данные под защитой; проверьте журнал.",
+    "Inventory load failed. Saved data is protected; preserve this save and inspect the log.": "Загрузка содержимого не удалась. Сохраненные данные под защитой; сохраните копию мира и проверьте журнал.",
+    "Assignment/content mismatch. Deposits blocked; withdraw contents to recover. Items are preserved.": "Назначение не совпадает с содержимым. Добавление заблокировано; заберите содержимое, чтобы исправить. Предметы сохранены.",
+    "Extra allowed item list could not be read. Deposits blocked; saved contents remain protected.": "Не удалось прочитать список дополнительных предметов. Добавление заблокировано; сохраненное содержимое под защитой.",
+    "Recovered item is outside the supported material catalogue. Deposits blocked; contents remain withdrawable.": "Восстановленный предмет не входит в каталог поддерживаемых материалов. Добавление заблокировано; содержимое можно забрать.",
+    "Treasure is deferred. Withdraw stored items; choose another material once empty.": "Сокровища пока не поддерживаются. Заберите хранимые предметы; когда хранилище опустеет, выберите другой материал.",
+    "Waiting for saved inventory.": "Ожидание сохраненного содержимого.",
+    "Saved inventory package is missing.": "Пакет сохраненного содержимого отсутствует.",
+    "Your saved contents are kept untouched.": "Сохраненное содержимое остается нетронутым.",
+    "Opening, saving and removal are paused to prevent item loss.": "Открытие, сохранение и удаление приостановлены, чтобы не потерять предметы.",
+    "Back up the world before changing mods or settings.": "Перед изменением модов или настроек сделайте резервную копию мира.",
+    "Saved inventory format needs a compatible loader.": "Для формата сохраненного содержимого нужен совместимый загрузчик.",
+    "Saved inventory exceeds the safe recovery capacity.": "Сохраненное содержимое превышает безопасную емкость восстановления.",
+    "Restore its item mod on host and client, then restart.": "Верните мод этого предмета на хосте и клиенте, затем перезапустите игру.",
+    "Saved inventory contains invalid or overlapping slots.": "В сохраненном содержимом неверные или перекрывающиеся ячейки.",
+    "Saved inventory contains an invalid stack amount.": "В сохраненном содержимом неверный размер стопки.",
+    "Saved inventory contains unread trailing data.": "В сохраненном содержимом остались непрочитанные данные.",
+    "Saved items could not be loaded intact.": "Сохраненные предметы не удалось загрузить без изменений.",
+    "Check required item mods on host and client.": "Проверьте нужные моды предметов на хосте и клиенте.",
+    "Check item/stack settings on both host and client.": "Проверьте настройки предметов и стопок на хосте и клиенте.",
+    "Check the required item mods and their versions on host and client.": "Проверьте нужные моды предметов и их версии на хосте и клиенте.",
+    "Saved inventory could not be loaded unchanged.": "Сохраненное содержимое не удалось загрузить без изменений.",
+    "Check item/inventory mods on host and client.": "Проверьте моды предметов и инвентаря на хосте и клиенте.",
+    "Saved inventory could not be verified.": "Сохраненное содержимое не удалось проверить.",
+    "Error details were written to the BepInEx log.": "Подробности ошибки записаны в журнал BepInEx.",
+    "Saved inventory needs a compatible loader.": "Для сохраненного содержимого нужен совместимый загрузчик.",
+    "unknown item": "неизвестный предмет",
+    "STORAGE PROTECTED": "ХРАНИЛИЩЕ ПОД ЗАЩИТОЙ",
+    "Your saved contents are retained. Locked to prevent item loss.": "Сохраненное содержимое на месте. Доступ закрыт, чтобы не потерять предметы.",
+    "VISUAL UPDATE BLOCKED": "ОБНОВЛЕНИЕ ВИДА ЗАБЛОКИРОВАНО",
+    "Stored items unchanged.": "Хранимые предметы не изменены.",
+    "APPEARANCE SAVE ISSUE": "ОШИБКА СОХРАНЕНИЯ ВНЕШНЕГО ВИДА",
+    "Stored items unchanged; reopen editor.": "Хранимые предметы не изменены; откройте редактор заново.",
+    "EDITOR ERROR": "ОШИБКА РЕДАКТОРА",
+    "Reopen the editor; see logs.": "Откройте редактор заново; подробности в журнале.",
+    "CAPACITY UPDATE BLOCKED": "ИЗМЕНЕНИЕ ЕМКОСТИ ЗАБЛОКИРОВАНО",
+    "Check logs before further changes.": "Перед дальнейшими изменениями проверьте журнал.",
+    "STORAGE ISSUE": "ПРОБЛЕМА ХРАНИЛИЩА",
+    "See logs for details.": "Подробности в журнале.",
+    "Saved format is incompatible.": "Несовместимый формат сохранения.",
+    "Required saved item is missing.": "Нужный сохраненный предмет отсутствует.",
+    "Invalid or overlapping saved slots.": "Неверные или перекрывающиеся сохраненные ячейки.",
+    "Invalid saved stack amount.": "Неверный размер сохраненной стопки.",
+    "Loaded contents differ from the save.": "Загруженное содержимое отличается от сохранения.",
+    "Loaded item data differs from the save.": "Данные загруженного предмета отличаются от сохранения.",
+    "Saved contents exceed safe capacity.": "Сохраненное содержимое превышает безопасную емкость.",
+    "Unreadable display mesh.": "Модель отображения не читается.",
+    "Required display asset is missing.": "Нужный ресурс отображения отсутствует.",
+    "No usable display mesh.": "Нет подходящей модели отображения.",
+    "Ownership changed during saving.": "Владелец сменился во время сохранения.",
+    "Deferred: final grid write/readback failed; recovery grid retained": "Отложено: запись или проверка итоговой сетки не удалась; сетка восстановления сохранена",
+    "Deferred: load envelope could not be verified": "Отложено: границы загрузки не удалось проверить",
+    "Send LogOutput.log to Muji's Mods Discord:": "Отправьте LogOutput.log в Discord Muji's Mods:",
+    "This crate has protected saved items. Restore missing item support before adding items. Nothing was moved.": "В этом ящике есть защищенные сохраненные предметы. Верните поддержку недостающих предметов, прежде чем добавлять новые. Ничего не перемещено.",
+    "This crate is waiting for its saved inventory to load. Nothing was moved.": "Этот ящик ждет загрузки сохраненного содержимого. Ничего не перемещено.",
+    "This crate cannot accept that item while its contents need recovery. Nothing was moved.": "Этот ящик не может принять этот предмет, пока содержимое требует восстановления. Ничего не перемещено.",
+    "This crate cannot accept that item with the current material support. Nothing was moved.": "Этот ящик не может принять этот предмет при текущей поддержке материалов. Ничего не перемещено.",
+    "This barrel has protected saved items. Restore missing item support before adding items. Nothing was moved.": "В этой бочке есть защищенные сохраненные предметы. Верните поддержку недостающих предметов, прежде чем добавлять новые. Ничего не перемещено.",
+    "This barrel is waiting for its saved inventory to load. Nothing was moved.": "Эта бочка ждет загрузки сохраненного содержимого. Ничего не перемещено.",
+    "This barrel cannot accept that item while its contents need recovery. Nothing was moved.": "Эта бочка не может принять этот предмет, пока содержимое требует восстановления. Ничего не перемещено.",
+    "This barrel cannot accept that item with the current material support. Nothing was moved.": "Эта бочка не может принять этот предмет при текущей поддержке материалов. Ничего не перемещено.",
+    "This pile has protected saved items. Restore missing item support before adding items. Nothing was moved.": "В этой груде есть защищенные сохраненные предметы. Верните поддержку недостающих предметов, прежде чем добавлять новые. Ничего не перемещено.",
+    "This pile is waiting for its saved inventory to load. Nothing was moved.": "Эта груда ждет загрузки сохраненного содержимого. Ничего не перемещено.",
+    "This pile cannot accept that item while its contents need recovery. Nothing was moved.": "Эта груда не может принять этот предмет, пока содержимое требует восстановления. Ничего не перемещено.",
+    "This pile cannot accept that item with the current material support. Nothing was moved.": "Эта груда не может принять этот предмет при текущей поддержке материалов. Ничего не перемещено.",
+    "This storage has protected saved items. Restore missing item support before adding items. Nothing was moved.": "В этом хранилище есть защищенные сохраненные предметы. Верните поддержку недостающих предметов, прежде чем добавлять новые. Ничего не перемещено.",
+    "This storage is waiting for its saved inventory to load. Nothing was moved.": "Это хранилище ждет загрузки сохраненного содержимого. Ничего не перемещено.",
+    "This storage cannot accept that item while its contents need recovery. Nothing was moved.": "Это хранилище не может принять этот предмет, пока содержимое требует восстановления. Ничего не перемещено.",
+    "This storage cannot accept that item with the current material support. Nothing was moved.": "Это хранилище не может принять этот предмет при текущей поддержке материалов. Ничего не перемещено.",
+    "<color=#FF5555>STORAGE PROTECTED": "<color=#FF5555>ХРАНИЛИЩЕ ПОД ЗАЩИТОЙ",
+    "<color=#FF5555>VISUAL UPDATE BLOCKED": "<color=#FF5555>ОБНОВЛЕНИЕ ВИДА ЗАБЛОКИРОВАНО",
+    "<color=#FF5555>APPEARANCE SAVE ISSUE": "<color=#FF5555>ОШИБКА СОХРАНЕНИЯ ВНЕШНЕГО ВИДА",
+    "<color=#FF5555>EDITOR ERROR": "<color=#FF5555>ОШИБКА РЕДАКТОРА",
+    "<color=#FF5555>CAPACITY UPDATE BLOCKED": "<color=#FF5555>ИЗМЕНЕНИЕ ЕМКОСТИ ЗАБЛОКИРОВАНО",
+    "<color=#FF5555>STORAGE ISSUE": "<color=#FF5555>ПРОБЛЕМА ХРАНИЛИЩА",
+    "Fill surface material unavailable; pile display and stored items rema...": "Материал заполняющей поверхности недоступен; груда и хранимые предметы по-прежнему доступны.",
+    "Native crate box unavailable; displaying the barrel base. Stored item...": "Исходная модель ящика недоступна; показана основа бочки. Хранимые предметы по-прежнему доступны.",
+    "One or more boss display meshes unavailable; stored items remain acce...": "Часть геометрии наград боссов недоступна; хранимые предметы по-прежнему доступны.",
+    "One or more boss display models unavailable; stored items remain acce...": "Часть моделей наград боссов недоступна; хранимые предметы по-прежнему доступны.",
+    "Native resource display mesh unavailable; stored items remain accessi...": "Исходная модель ресурса недоступна; хранимые предметы по-прежнему доступны.",
+    "Settled diamond display mesh unavailable; stored items remain accessi...": "Модель осевшей ромбовидной груды недоступна; хранимые предметы по-прежнему доступны.",
+    "No supported group display models available; stored items remain acce...": "Нет поддерживаемых моделей для этой группы; хранимые предметы по-прежнему доступны.",
+    "Container mask could not reshape complete models; original geometry r...": "Маска контейнера не смогла перестроить модели целиком; исходная геометрия сохранена.",
+    "Container mask retained a display with physical components; renderer-...": "Маска контейнера оставила отображение с физическими компонентами; перемещение только модели недоступно.",
+    "Inventory load failed. Saved data is protected; preserve this save an...": "Загрузка содержимого не удалась. Сохраненные данные под защитой; сохраните копию мира и проверьте журнал.",
+    "Flint Pile (Storage)": "Груда кремня (хранилище)",
+    "Obsidian Pile (Storage)": "Груда обсидиана (хранилище)",
+    "Resin Pile (Storage)": "Груда смолы (хранилище)",
+    "Greydwarf Eye Pile (Storage)": "Груда глаз грейдворфов (хранилище)",
+    "Surtling Core Pile (Storage)": "Груда ядер суртлинга (хранилище)",
+    "Crystal Pile (Storage)": "Груда кристаллов (хранилище)",
+    "Freeze Gland Pile (Storage)": "Груда морозных желез (хранилище)",
+    "Needle Pile (Storage)": "Груда игл (хранилище)",
+    "Soft Tissue Pile (Storage)": "Груда мягких тканей (хранилище)",
+    "Black Core Pile (Storage)": "Груда черных ядер (хранилище)",
+    "Sulfur Pile (Storage)": "Груда серы (хранилище)",
+    "Ice Pile (Storage)": "Груда льда (хранилище)",
+    "Frostcore Pile (Storage)": "Груда ледяных ядер (хранилище)"
   },
   "patterns": [
     {
@@ -400,6 +599,210 @@
     {
       "source": "Dropped-world reference @ 1.0: {0} × {1} × {2} m",
       "target": "Размер предмета в мире при масштабе 1.0: {0} × {1} × {2} м"
+    },
+    {
+      "source": "Storage is unavailable. {0}",
+      "target": "Хранилище недоступно. {0}",
+      "arguments": {
+        "0": "message"
+      },
+      "singleLine": true
+    },
+    {
+      "source": "<color=#FFCE77>Quick storage build on | {0}</color>\nSlot {1} | {2} items will move into storage after placement.",
+      "target": "<color=#FFCE77>Быстрая постройка хранилища: {0}</color>\nЯчейка {1} | предметов: {2}; после постройки они переместятся в хранилище.",
+      "arguments": {
+        "0": "message"
+      },
+      "numeric": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "Build cost was not changed: {0}",
+      "target": "Стоимость постройки не изменена: {0}"
+    },
+    {
+      "source": "{0} removed from extra allowed items. Display unchanged.",
+      "target": "{0}: убран из дополнительных разрешенных предметов. Вид не изменился."
+    },
+    {
+      "source": "{0} stored · remove them first",
+      "target": "Хранится: {0} · сначала уберите их",
+      "numeric": [
+        0
+      ]
+    },
+    {
+      "source": "{0} is now allowed. Display stays {1}.",
+      "target": "{0}: теперь разрешен. Вид остается: {1}."
+    },
+    {
+      "source": "Valid item: {0}",
+      "target": "Подходящий предмет: {0}"
+    },
+    {
+      "source": "{0} logs at full display | server limit {1} | storage capacity unchanged",
+      "target": "Бревен при полном виде: {0} | предел сервера: {1} | емкость хранилища не меняется",
+      "numeric": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "{0} branches at full display | server limit {1} | storage capacity unchanged",
+      "target": "Ветвей при полном виде: {0} | предел сервера: {1} | емкость хранилища не меняется",
+      "numeric": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "{0} search results · all categories",
+      "target": "Найдено: {0} · все категории",
+      "numeric": [
+        0
+      ]
+    },
+    {
+      "source": "{0} choices · scroll for the full list",
+      "target": "Вариантов: {0} · прокрутите, чтобы увидеть весь список",
+      "numeric": [
+        0
+      ]
+    },
+    {
+      "source": "UI scale {0}%",
+      "target": "Масштаб окна {0}%",
+      "numeric": [
+        0
+      ]
+    },
+    {
+      "source": "UI scale {0}% (release)",
+      "target": "Масштаб окна {0}% (отпустите)",
+      "numeric": [
+        0
+      ]
+    },
+    {
+      "source": "UI scale {0}% (fit {1}%)",
+      "target": "Масштаб окна {0}% (по размеру экрана {1}%)",
+      "numeric": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "Chain bundles require the native Chain link mesh; using parallel model rows. {0}",
+      "target": "Связкам цепей нужна исходная модель звена цепи; используются параллельные ряды моделей. {0}",
+      "arguments": {
+        "0": "message"
+      }
+    },
+    {
+      "source": "Chain link capture unavailable: {0}",
+      "target": "Не удалось получить модель звена цепи: {0}"
+    },
+    {
+      "source": "Vanilla round wood log capture unavailable: {0}",
+      "target": "Не удалось получить исходное круглое бревно: {0}"
+    },
+    {
+      "source": "Style preview reverted to the original pile: {0}",
+      "target": "Предпросмотр вида возвращен к исходной груде: {0}"
+    },
+    {
+      "source": "Saved version: {0}; native decoder: {1}; declared compact versions: {2}.",
+      "target": "Сохраненная версия: {0}; встроенный декодер: {1}; объявленные компактные версии: {2}."
+    },
+    {
+      "source": "A saved item is unavailable (prefab hash {0}).",
+      "target": "Сохраненный предмет недоступен (хеш префаба {0})."
+    },
+    {
+      "source": "{0}: a saved stack of {1} is missing from the loaded inventory.",
+      "target": "{0}: сохраненная стопка ({1}) отсутствует в загруженном содержимом.",
+      "arguments": {
+        "0": "text"
+      },
+      "numeric": [
+        1
+      ]
+    },
+    {
+      "source": "{0}: saved {1}; loader returned {2}.",
+      "target": "{0}: сохранено {1}; загрузчик вернул {2}.",
+      "arguments": {
+        "0": "text"
+      },
+      "numeric": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "Detected stack limit: {0}; prefab template: {1}.",
+      "target": "Обнаруженный предел стопки: {0}; в шаблоне префаба: {1}.",
+      "numeric": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "Saved item data changed during loading: {0}.",
+      "target": "Данные сохраненного предмета изменились при загрузке: {0}.",
+      "arguments": {
+        "0": "text"
+      }
+    },
+    {
+      "source": "Saved stacks: {0}; loaded stacks: {1}.",
+      "target": "Сохранено стопок: {0}; загружено: {1}.",
+      "numeric": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "Other issues: {0} (see log).",
+      "target": "Других проблем: {0} (см. журнал).",
+      "numeric": [
+        0
+      ]
+    },
+    {
+      "source": "This crate is locked to {0}. Nothing was moved.",
+      "target": "Этот ящик закреплен за материалом «{0}». Ничего не перемещено."
+    },
+    {
+      "source": "This crate displays {0}. That item is not allowed here. Nothing was moved.",
+      "target": "Этот ящик показывает материал «{0}». Этот предмет здесь не разрешен. Ничего не перемещено."
+    },
+    {
+      "source": "This barrel is locked to {0}. Nothing was moved.",
+      "target": "Эта бочка закреплена за материалом «{0}». Ничего не перемещено."
+    },
+    {
+      "source": "This barrel displays {0}. That item is not allowed here. Nothing was moved.",
+      "target": "Эта бочка показывает материал «{0}». Этот предмет здесь не разрешен. Ничего не перемещено."
+    },
+    {
+      "source": "This pile is locked to {0}. Nothing was moved.",
+      "target": "Эта груда закреплена за материалом «{0}». Ничего не перемещено."
+    },
+    {
+      "source": "This pile displays {0}. That item is not allowed here. Nothing was moved.",
+      "target": "Эта груда показывает материал «{0}». Этот предмет здесь не разрешен. Ничего не перемещено."
+    },
+    {
+      "source": "This storage is locked to {0}. Nothing was moved.",
+      "target": "Это хранилище закреплено за материалом «{0}». Ничего не перемещено."
+    },
+    {
+      "source": "This storage displays {0}. That item is not allowed here. Nothing was moved.",
+      "target": "Это хранилище показывает материал «{0}». Этот предмет здесь не разрешен. Ничего не перемещено."
     }
   ],
   "returns": [
@@ -414,6 +817,10 @@
     {
       "type": "DynamicStorageMaterials.PlacedAppearance",
       "method": "GetDebugHoverText"
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialIssueDiagnostics",
+      "method": "ForHover"
     }
   ],
   "prefabs": [],
@@ -468,7 +875,9 @@
     "Black Core Pile (Storage)": "Груда черных ядер (хранилище)",
     "Sulfur Pile (Storage)": "Груда серы (хранилище)",
     "Ice Pile (Storage)": "Груда льда (хранилище)",
-    "Frostcore Pile (Storage)": "Груда ледяных ядер (хранилище)"
+    "Frostcore Pile (Storage)": "Груда ледяных ядер (хранилище)",
+    "Material Storage": "Хранилище материалов",
+    "Stores materials with Pile, Barrel or Crate displays. Components, Seeds, Boss Rewards and Vendor Items support their listed mixed groups. Use the configured Appearance Editor key to customize.": "Хранит материалы в виде груды, бочки или ящика. Компоненты, семена, награды боссов и товары торговцев хранятся смешанными группами из перечисленных предметов. Для настройки нажмите клавишу редактора внешнего вида."
   },
   "terms": {
     "pieces": {
@@ -587,6 +996,509 @@
         "\n<color=#8AD7FF>DSM DROPPED MODEL DEBUG â€” ": "\n<color=#8AD7FF>DSM ДИАГНОСТИКА МОДЕЛИ ПРЕДМЕТА — ",
         "\nDropped rendered size: ": "\nОтображаемый размер предмета: ",
         "\nDSM Model Scale 1.0: ": "\nМасштаб модели DSM 1.0: "
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialBarrelPatches",
+      "method": "Hover",
+      "values": {
+        "</b></color>] Appearance Editor": "</b></color>] Редактор внешнего вида",
+        " ( Saved contents protected )": " ( Содержимое под защитой )"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.DynamicStorageMaterialsPlugin",
+      "method": "AddAppearanceDebugHover",
+      "values": {
+        "\n<color=#D9B46F>Older pile. New: Material Storage in the build menu.</color>": "\n<color=#D9B46F>Старая груда. Новое: «Хранилище материалов» в меню строительства.</color>"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "Build",
+      "values": {
+        "DYNAMICSTORAGE MATERIALS": "DYNAMICSTORAGE: МАТЕРИАЛЫ",
+        "Appearance Editor": "Редактор внешнего вида",
+        "Label changes apply and save on this storage.": "Изменения надписи применяются и сохраняются в этом хранилище.",
+        "Changes apply and save automatically on this storage.": "Изменения применяются и сохраняются в этом хранилище автоматически.",
+        "THIS STORAGE": "ЭТО ХРАНИЛИЩЕ",
+        "MOD SETTINGS": "НАСТРОЙКИ МОДА",
+        "INFORMATION": "СВЕДЕНИЯ"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildStorage",
+      "values": {
+        "‹ Back to ": "‹ Назад: ",
+        " appearance": " — внешний вид",
+        " | Advanced pile appearance": " | Расширенный вид груды",
+        "Display style": "Вид хранилища",
+        "Choose the base for the configured material pile.": "Выберите основу для груды выбранного материала.",
+        "Remember display style": "Запоминать вид хранилища",
+        "Start new Material Storage using your last choice: Pile, Barrel or Crate. Existing storages keep their style.": "Новые хранилища материалов строятся в последнем выбранном виде: груда, бочка или ящик. Построенные сохраняют свой вид.",
+        "Looks full at": "Полная при",
+        "Choose when the pile looks full.": "Выберите, при каком заполнении груда выглядит полной.",
+        "Appearance": "Внешний вид",
+        "Custom item controls ›": "Настройки своего предмета ›"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildPilePreset",
+      "values": {
+        "Current appearance: custom.": "Текущий внешний вид: свой.",
+        "Pile preset": "Предустановка груды"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildBasicAppearance",
+      "values": {
+        "Display scale": "Масштаб",
+        "Container height": "Высота контейнера",
+        "Display height": "Высота",
+        "Vertical offset": "Смещение по высоте",
+        "Rotation": "Поворот",
+        "Contents scale": "Масштаб содержимого",
+        "Contents vertical offset": "Высота содержимого"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildWoodPileControls",
+      "values": {
+        "Loose branch bundle": "Связка веток",
+        "Wood stack": "Поленница",
+        "Branches across": "Веток в ширину",
+        "Logs across": "Бревен в ширину",
+        "Stack height (rows)": "Высота (рядов)",
+        "Each section has two pieces per row, turning 90° on the next row. Width adds two-piece sections; height adds one row.": "В каждой секции по два куска в ряду, следующий ряд повернут на 90°. Ширина добавляет секции по два куска, высота — по одному ряду.",
+        "A low bundle of forked branches, lying flat with loosely crossed headings. Higher layers contain fewer branches.": "Низкая связка раздвоенных веток, лежащих плашмя и слегка накрест. В верхних слоях веток меньше.",
+        "Each width step adds one four-log section beside the stack. Depth stays the same; extra rows continue the crossed pattern upward.": "Каждый шаг ширины добавляет сбоку секцию из четырех бревен. Глубина не меняется; новые ряды продолжают перекрестную укладку вверх.",
+        "Sets the bottom row and the number of rows above it. Each higher row has one fewer log.": "Задает нижний ряд и число рядов над ним. В каждом следующем ряду на одно бревно меньше.",
+        "Branch twist (%)": "Поворот веток (%)",
+        "Log twist (%)": "Поворот бревен (%)",
+        "End stagger (%)": "Сдвиг торцов (%)",
+        "Twist rotates each log around its length. Stagger offsets its ends. Both stay fixed as the pile grows; 0% keeps the standard stack.": "Поворот вращает каждое бревно вокруг его оси, сдвиг смещает торцы. Оба значения не меняются по мере роста груды; 0% — обычная укладка."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildTuningActions",
+      "values": {
+        "Advanced pile tuning": "Расширенная настройка груды",
+        "Layout | models | materials": "Схема | модели | материалы",
+        "Container | fitting | straw": "Контейнер | размещение | солома"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildLiveTuningNotice",
+      "values": {
+        "LIVE CONFIGURATION TUNING": "ЖИВАЯ НАСТРОЙКА ИЗ КОНФИГУРАЦИИ",
+        "Shared configuration overrides saved appearances. Turn live tuning off to edit this storage.": "Общая конфигурация заменяет сохраненный внешний вид. Выключите живую настройку, чтобы изменить это хранилище.",
+        "Edit this storage": "Изменить это хранилище"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildContainerTuning",
+      "values": {
+        "Each style keeps its own saved tuning. Mask strength pulls whole models into the opening; it never clips or removes models. Oversized display groups shrink uniformly.": "У каждого вида своя сохраненная настройка. Сила маски стягивает модели в проем целиком, не обрезая и не убирая их. Слишком большие группы равномерно уменьшаются.",
+        "Mask target footprint": "Размер цели маски",
+        "Manual keeps the recipe size before masking. Mask strength then pulls models into the target opening. Reduce target footprint to compact a pile already inside it. Models remain whole; this is not a physics simulation.": "Вручную: размер по рецепту сохраняется до маски, затем сила маски стягивает модели в целевой проем. Уменьшите размер цели, чтобы уплотнить груду, которая уже внутри. Модели остаются целыми; это не физическая симуляция.",
+        "Circular mask (%)": "Круглая маска (%)",
+        "Square mask (%)": "Квадратная маска (%)",
+        "Pile scale": "Масштаб груды",
+        "Pile vertical offset": "Высота груды",
+        "Container scale": "Масштаб контейнера",
+        "Container height": "Высота контейнера",
+        "Container vertical offset": "Высота контейнера над землей",
+        "The pile layout, spacing and model controls remain on Advanced pile appearance. Fill plane level and surface are independent of the item materials. Live configuration tuning uses the shared recipe. Use Edit this storage to turn it off before changing saved appearance controls.": "Схема груды, интервалы и модели настраиваются в расширенном виде груды. Уровень и поверхность заполнения не зависят от материалов предметов. Живая настройка использует общий рецепт; нажмите «Изменить это хранилище», чтобы выключить ее перед изменением сохраненного вида."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildFillControls",
+      "values": {
+        "Fill surface": "Заполняющая поверхность",
+        "Circular surface beneath the pile to cover gaps.": "Круглая поверхность под грудой закрывает просветы.",
+        "Square surface beneath the pile to cover gaps.": "Квадратная поверхность под грудой закрывает просветы.",
+        "Fill plane surface": "Поверхность заполнения",
+        "Straw packing uses matte straw and bump detail. Deep straw packing adds raised strands; unevenness increases their loft. Both use these controls; nest shape raises the edges.": "Соломенная подстилка — матовая солома с рельефом. Глубокая подстилка добавляет торчащие соломинки, неровность поднимает их выше. Обе используют эти настройки; форма гнезда поднимает края.",
+        "Straw colour": "Цвет соломы",
+        "Straw texture scale": "Масштаб текстуры соломы",
+        "Straw bump strength": "Сила рельефа соломы",
+        "Straw surface unevenness": "Неровность соломы",
+        "Straw brightness": "Яркость соломы",
+        "Nest strength (%)": "Сила гнезда (%)",
+        "Nest edge height": "Высота края гнезда",
+        "Nest rim width": "Ширина края гнезда",
+        "Fill plane level": "Уровень заполнения",
+        "Fill plane scale": "Масштаб заполнения"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildLegacyAdvanced",
+      "values": {
+        "Layout scale": "Масштаб схемы",
+        "Layout height": "Высота схемы",
+        "Model scale": "Масштаб модели",
+        "Visual vertical offset": "Смещение вида по высоте",
+        "Layout": "Схема",
+        "Model": "Модель",
+        "Material": "Материал",
+        "Finish": "Поверхность",
+        "These are the same per-piece appearance options as configuration. Model and material choices do not change the stored resource whitelist.": "Это те же настройки внешнего вида постройки, что и в конфигурации. Выбор модели и материала не меняет список разрешенных ресурсов."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildGenericAdvanced",
+      "values": {
+        "Layout scale": "Масштаб схемы",
+        "Layout height": "Высота схемы",
+        "Model scale": "Масштаб модели",
+        "Visual vertical offset": "Смещение вида по высоте",
+        "Layout": "Схема",
+        "Model": "Модель",
+        "Material": "Материал",
+        "Finish": "Поверхность",
+        "Frozen branches form a compact, shallow mound with varied directions. This pile has a fixed design; use normal scale, width, depth and model controls to adjust it.": "Замерзшие ветви лежат низким плотным холмиком в разных направлениях. Форма этой груды постоянна; меняйте ее обычными настройками масштаба, ширины, глубины и модели.",
+        "Display models and materials are visual choices. The exact stored-item assignment stays unchanged.": "Модели и материалы влияют только на вид. Назначенный для хранения предмет не меняется."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildModelTuningControls",
+      "values": {
+        "Layout width": "Ширина схемы",
+        "Layout depth": "Глубина схемы",
+        "Width changes spacing across the pile; depth changes front/back spacing. 1.00 keeps the recipe footprint without stretching item models.": "Ширина меняет интервалы поперек груды, глубина — спереди назад. 1.00 сохраняет площадь по рецепту и не растягивает модели предметов.",
+        "Model pitch": "Наклон модели",
+        "Model yaw": "Поворот модели",
+        "Model roll": "Крен модели",
+        "Model scale variation (%)": "Разброс размера модели (%)",
+        "Pale face upward chance (%)": "Шанс светлой стороной вверх (%)",
+        "180° reverse chance (%)": "Шанс разворота на 180° (%)",
+        "Flips selected Finewood pieces around their length so the familiar pale cut face points upward. 0% keeps the native face-down stack; 100% flips every piece. Twist still adds its own variation.": "Переворачивает часть кусков качественной древесины вдоль оси, чтобы светлый срез смотрел вверх. 0% — исходная укладка срезом вниз, 100% — переворачиваются все. Поворот по-прежнему добавляет свой разброс.",
+        "Outer column rotation": "Поворот внешнего столбца",
+        "Rotates only the outward-tail column around each coil body.180° is the accepted inward pose;0° is its original direction. Other columns keep their positions and angles.": "Поворачивает только столбец с хвостами наружу вокруг каждого мотка. 180° — принятое положение внутрь, 0° — исходное направление. Остальные столбцы сохраняют положение и углы.",
+        "Model angles rotate each displayed model around its centre. Variation is stable per slot; 0% adds no variation. Settled diamond pile uses physically settled Black Core poses at the preset settings; changing spacing, model size/angles or masks can break those contacts.": "Углы поворачивают каждую модель вокруг ее центра. Разброс постоянен для каждой ячейки; 0% — без разброса. Осевшая ромбовидная груда использует физически осевшие положения черных ядер при настройках предустановки; изменение интервалов, размера и углов моделей или масок может нарушить эти касания."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildAdmin",
+      "values": {
+        "Quick storage build": "Быстрая постройка хранилища",
+        "Select Material Storage with your hammer. The first supported stack in slots 1-5, left to right, sets the material and moves into storage after placement. The ghost uses your remembered Pile, Crate or Barrel style. Normal build costs apply. Client-local; off by default. Paused during debug placement cycling.": "Выберите молотом хранилище материалов. Первая подходящая стопка в ячейках 1-5 слева направо задает материал и после постройки перемещается в хранилище. Призрак постройки показывает запомненный вид: груду, ящик или бочку. Стоимость постройки обычная. Только на этом клиенте; по умолчанию выключено. Приостанавливается при отладочном переборе размещения.",
+        "Server capacity": "Емкость на сервере",
+        "Applies to all Materials storage. Unsafe reductions wait until every stack fits.": "Действует на все хранилища Materials. Небезопасное уменьшение ждет, пока поместятся все стопки.",
+        " slots": " ячеек",
+        "Host controls enabled.": "Управление хоста включено.",
+        "Read only on connected clients. Configure dedicated-server capacity on the server.": "На подключенных клиентах только просмотр. Емкость выделенного сервера настраивается на сервере.",
+        "Build menu": "Меню строительства",
+        "Show legacy pile blueprints": "Показывать чертежи старых груд",
+        "Client-local visibility only. Existing placed piles remain registered and usable. Enable this to place the original fixed-material piles again.": "Влияет только на видимость на этом клиенте. Построенные груды остаются зарегистрированными и работают. Включите, чтобы снова строить прежние груды с постоянным материалом.",
+        "Performance": "Производительность",
+        "Maximum logs per pile": "Наибольшее число бревен в груде",
+        "Apply": "Применить",
+        "Limits visible logs in wood piles. Default: 100. Stored items and capacity stay the same. Host or server setting.": "Ограничивает число видимых бревен в грудах древесины. По умолчанию: 100. Хранимые предметы и емкость не меняются. Настройка хоста или сервера.",
+        "Special effects": "Особые эффекты",
+        "Enable special effects": "Включить особые эффекты",
+        "Client-local for all Materials displays: particles, item lights, flicker and animated motion. Static glowing material colours and sign lettering stay as configured. Disabling stops particle simulation, not just rendering.": "Только на этом клиенте, для всех хранилищ Materials: частицы, свет предметов, мерцание и анимация. Постоянное свечение материалов и надписи остаются как настроено. Выключение останавливает расчет частиц, а не только их отрисовку.",
+        "Configuration / diagnostics": "Конфигурация и диагностика",
+        "Temporary local visual override for all loaded Materials piles, crates and barrels. Choose Use saved settings to restore each placement. No stored items, capacity or saved appearance changes. Boss displays still show only items actually stored. Explicit full previews and mesh inspection keep their own controls.": "Временная локальная замена вида всех загруженных груд, ящиков и бочек Materials. Выберите «Use saved settings», чтобы вернуть сохраненный вид каждой постройки. Хранимые предметы, емкость и сохраненный внешний вид не меняются. Награды боссов по-прежнему показывают только реально хранимые предметы. У полного предпросмотра и осмотра моделей свои настройки.",
+        "Storage debug tooltip": "Диагностическая подсказка хранилища",
+        "Cycle material placements | pile / barrel / crate": "Перебор размещения материалов | груда / бочка / ящик",
+        "Mesh debug hover": "Диагностика моделей при наведении",
+        "Technical debug hover": "Техническая диагностика при наведении",
+        "Dropped model debug hover": "Диагностика выброшенных предметов при наведении"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildFullnessDebugControl",
+      "values": {
+        "Force looks full at": "Принудительно «Полная при»"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildCostControl",
+      "values": {
+        "Material Storage build cost": "Стоимость постройки хранилища материалов",
+        "Default cost": "Стоимость",
+        "New Material Storage only. Current: 10 fine wood + 2 bronze. Iron / Black metal replace the metal; Free costs nothing. Existing construction refunds are retained. Server/admin controlled.": "Только для новых хранилищ материалов. Current: 10 качественной древесины + 2 бронзы. Iron / Black metal заменяют металл; Free — бесплатно. Возврат ресурсов за уже построенные сохраняется. Управляет сервер или администратор."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildInformation",
+      "values": {
+        "Material Storage supports 130 built-in item types in 82 material groups, with Pile, Barrel and Crate styles. Most groups store one exact item type; Components, Seeds, Boss Rewards and Vendor Items intentionally store their listed members together.": "Хранилище материалов поддерживает 130 встроенных типов предметов в 82 группах материалов, в виде груды, бочки или ящика. Большинство групп хранит один конкретный тип предмета; компоненты, семена, награды боссов и товары торговцев намеренно хранят перечисленные предметы вместе.",
+        "Boss Rewards combines seven rewards with Withered Bones, Dragon Eggs and Fuling Totems. Each present type enables its own mini-pile; extra display copies are decorative. Vile Ribcage has its own pile. Vendor Items stores twenty types, with Powdered Dragon Eggshells counted but hidden from the model.": "Награды боссов объединяют семь наград с иссохшими костями, яйцами дракона и тотемами фулингов. Каждый имеющийся тип показывает свою маленькую груду; лишние копии — для украшения. Для гнилостных ребер есть своя груда. Товары торговцев хранят двадцать типов; толченая драконья скорлупа учитывается, но не показывается.",
+        "Seeds use complete seed models in a layered stack. Appearance size and spacing never change inventory capacity. Treasure is deferred; historical stored treasure remains recoverable for withdrawal.": "Семена показываются целыми моделями слоями. Размер и интервалы внешнего вида не меняют емкость. Сокровища пока не поддерживаются; ранее сохраненные сокровища можно забрать.",
+        "Appearance changes save for the storage owner. This Storage has basic controls; Advanced has layout, models, materials, masking and packing. Looks full at controls visual growth separately from slot capacity. New defaults use Match Storage Capacity; saved choices are retained.": "Изменения внешнего вида сохраняются у владельца хранилища. На вкладке «Это хранилище» основные настройки, в расширенных — схема, модели, материалы, маска и подстилка. «Полная при» управляет видимым ростом отдельно от числа ячеек. Новые значения по умолчанию следуют емкости хранилища; сохраненный выбор остается.",
+        "The bulk recipe variables are hidden from Configuration Manager to reduce search work. Use this editor for normal adjustments. Boss mini-pile tuning and temporary item preview switches remain in Configuration Manager; Live configuration tuning reveals absent types without adding real items.": "Большинство параметров рецептов скрыто из Configuration Manager, чтобы облегчить поиск. Для обычной настройки пользуйтесь этим редактором. Настройка маленьких груд наград боссов и временный предпросмотр предметов остаются в Configuration Manager; живая настройка показывает отсутствующие типы, не добавляя настоящих предметов.",
+        "Labels can follow the material name or retain explicitly custom text, including another item's name. Counts always use real stored items. Style/model/label changes do not convert items or change allowed groups.": "Надпись может повторять название материала или хранить свой текст, в том числе название другого предмета. Количество всегда считается по реально хранимым предметам. Смена вида, модели или надписи не превращает предметы и не меняет разрешенные группы.",
+        "What happened to the old piles?": "Что стало со старыми грудами?",
+        "All thirteen original pile prefabs remain registered. Hiding a legacy Hammer blueprint only stops new placements from that menu; it does not remove, convert or empty an existing pile.": "Все тринадцать прежних груд остаются зарегистрированными. Скрытие старого чертежа в меню молота только запрещает новые постройки из этого меню; построенная груда не удаляется, не превращается и не опустошается.",
+        "Legacy blueprints can be hidden from your Hammer menu and re-enabled in Mod Settings. New installations default to hidden; saved preferences are retained. Existing piles keep their original resource rules and saved appearance unless you explicitly edit them.": "Старые чертежи можно скрыть из меню молота и снова включить в настройках мода. В новых установках они скрыты по умолчанию; сохраненный выбор остается. Построенные груды сохраняют прежние правила ресурсов и внешний вид, пока вы их явно не измените.",
+        "Testing and multiplayer": "Проверка и сетевая игра",
+        "Use matching Materials versions on server and clients. This is a test build: gameplay, old-world upgrades and two save/reload checks are NOT RUN. Test on copied worlds before changing a live server.": "Используйте одинаковые версии Materials на сервере и клиентах. Это тестовая сборка: игровой процесс, обновление старых миров и две проверки сохранения и перезагрузки НЕ ПРОВОДИЛИСЬ. Проверяйте на копиях миров, прежде чем менять рабочий сервер.",
+        "The material picker has categories, global search and complete scrolling lists. Administrators can add valid custom items by exact prefab ID. Changing display style, model or fullness does not change capacity or the admitted item group. Appearance choices save immediately. Close the editor with ×, Escape or the configured editor key.": "В выборе материала есть категории, общий поиск и полные прокручиваемые списки. Администраторы могут добавлять подходящие свои предметы по точному ID префаба. Смена вида, модели или заполненности не меняет емкость и группу допустимых предметов. Внешний вид сохраняется сразу. Закрыть редактор можно кнопкой ×, клавишей Escape или клавишей редактора."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildExtraAllowedItems",
+      "values": {
+        "Allowed items": "Разрешенные предметы",
+        "Built-in items are part of this pile configuration and cannot be removed.\nExtra allowed items can be added below; the display stays ": "Встроенные предметы входят в настройку этой груды, их нельзя убрать.\nНиже можно добавить дополнительные предметы; вид остается: ",
+        "Extra items can also be stored here and count towards pile growth.\nThe display stays ": "Здесь можно хранить и дополнительные предметы, они учитываются в росте груды.\nВид остается: ",
+        "Choose a display material before adding extra allowed items.": "Сначала выберите отображаемый материал, затем добавляйте дополнительные предметы.",
+        "The saved extra item list could not be read. Deposits are blocked; existing contents remain protected.": "Не удалось прочитать сохраненный список дополнительных предметов. Добавление заблокировано; имеющееся содержимое под защитой.",
+        " built-in / ": " встроенных / ",
+        " extra item types": " дополнительных",
+        "No extra items allowed.\nOnly the display material is accepted.": "Дополнительные предметы не разрешены.\nПринимается только отображаемый материал.",
+        "Add allowed items ›": "Добавить разрешенные предметы ›",
+        "Allow more item types in this storage.": "Разрешите хранить здесь другие типы предметов."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildConfiguredItems",
+      "values": {
+        "Part of pile configuration": "Входит в настройку груды"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildMaterialLock",
+      "values": {
+        "Display material": "Отображаемый материал",
+        "Automatic · the first item decides. That material stays locked until you change it on empty storage.": "Автоматически · материал задает первый предмет. Он остается закрепленным, пока вы не смените его в пустом хранилище.",
+        "First item decides": "По первому предмету",
+        "Choose material ›": "Выбрать материал ›",
+        "Change material ›": "Сменить материал ›",
+        "You can browse choices now. Applying a lock requires an empty, fully loaded storage.": "Варианты можно посмотреть сейчас. Чтобы закрепить материал, хранилище должно быть пустым и полностью загруженным."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildMaterialBrowser",
+      "values": {
+        "‹ Back to ": "‹ Назад: ",
+        " storage": " — хранилище",
+        "Add allowed items": "Добавить разрешенные предметы",
+        "Choose a material": "Выберите материал",
+        "Choose an extra allowed item. It counts towards pile growth; the display stays ": "Выберите дополнительный предмет. Он учитывается в росте груды; вид остается: ",
+        "Search all materials by name or prefab ID. Applying a choice requires empty storage.": "Ищите материалы по названию или ID префаба. Чтобы применить выбор, хранилище должно быть пустым.",
+        "First item decides": "По первому предмету",
+        "Search all material choices": "Поиск по всем материалам",
+        "View all material choices ›": "Все материалы ›",
+        "‹ Material categories": "‹ Категории материалов",
+        "Custom or modded item?": "Свой предмет или предмет из мода?",
+        "Add item by prefab ID ›": "Добавить предмет по ID префаба ›"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "RefreshMaterialResults",
+      "values": {
+        " · mixed items": " · смешанные предметы"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildCustomEntry",
+      "values": {
+        "‹ Back to material choices": "‹ Назад к выбору материала",
+        "Add item by prefab ID": "Добавить предмет по ID префаба",
+        "Enter an exact, case-sensitive supported ItemDrop prefab ID. An administrator or host can enable custom support. Adding an allowed item keeps the display material unchanged.": "Введите точный ID префаба поддерживаемого предмета ItemDrop с учетом регистра. Включить поддержку своего предмета может администратор или хост. Добавление разрешенного предмета не меняет отображаемый материал.",
+        "Enter an exact, case-sensitive ItemDrop prefab ID. Adding server support requires an administrator or host. Assigning it requires ownership and empty storage.": "Введите точный ID префаба предмета ItemDrop с учетом регистра. Поддержку на сервере добавляет администратор или хост. Чтобы назначить предмет, нужны владение и пустое хранилище.",
+        "Exact prefab ID": "Точный ID префаба",
+        "Add allowed item": "Добавить разрешенный предмет",
+        "Add and use this item": "Добавить и использовать этот предмет",
+        "The item must exist on the server and clients. Removing support later stops new deposits; saved contents remain withdrawable. Display controls never change the stored item.": "Предмет должен быть на сервере и у клиентов. Если позже убрать поддержку, новые предметы класть будет нельзя, а сохраненное содержимое можно будет забрать. Настройки вида не меняют хранимый предмет."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildCustomControls",
+      "values": {
+        "‹ Back to ": "‹ Назад: ",
+        " appearance": " — внешний вид",
+        "Custom item · ": "Свой предмет · ",
+        "Display-only controls for this storage. Changes save automatically. Full-pile preview is temporary and does not add items.": "Настройки только внешнего вида этого хранилища. Изменения сохраняются автоматически. Предпросмотр полной груды временный и не добавляет предметы.",
+        "Full pile preview: On": "Предпросмотр полной груды: вкл.",
+        "Full pile preview: Off": "Предпросмотр полной груды: выкл.",
+        "Size": "Размер",
+        "Overall scale": "Общий масштаб",
+        "Length": "Длина",
+        "Width": "Ширина",
+        "Thickness": "Толщина",
+        "Placement": "Размещение",
+        "Rotation X": "Поворот X",
+        "Rotation Y": "Поворот Y",
+        "Rotation Z": "Поворот Z",
+        "Height": "Высота",
+        "Anchor X": "Опорная точка X",
+        "Anchor Y": "Опорная точка Y",
+        "Anchor Z": "Опорная точка Z",
+        "Variation": "Разброс",
+        "Rotation variation": "Разброс поворота",
+        "Height variation": "Разброс высоты",
+        "Scale variation": "Разброс масштаба"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildLockedMaterialCard",
+      "values": {
+        "Current display material": "Текущий отображаемый материал",
+        "Locked to ": "Закреплено: ",
+        "This storage always displays this material's pile.": "Это хранилище всегда показывает груду этого материала.",
+        "The display material is always allowed in this storage.": "Отображаемый материал всегда разрешен в этом хранилище.",
+        "Change material ›": "Сменить материал ›",
+        "Choose the material used for the visible pile.": "Выберите материал видимой груды."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildStorageLabelEntry",
+      "values": {
+        "Storage label": "Надпись хранилища",
+        "Floating text, with an optional icon and count.": "Парящий текст со значком и количеством по желанию.",
+        "Edit label ›": "Изменить надпись ›"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildStorageLabelEditor",
+      "values": {
+        "‹ Back to this storage": "‹ Назад к хранилищу",
+        "Position": "Положение",
+        "Anchor point": "Точка крепления",
+        "Height offset": "Смещение по высоте",
+        "Height above storage": "Высота над хранилищем",
+        "Forward / backward offset": "Смещение вперед / назад",
+        " m": " м",
+        "Label scale": "Масштаб надписи",
+        "Label direction": "Направление надписи",
+        "Fixed to storage": "По хранилищу",
+        "Follow your view": "За камерой",
+        "Turns with your camera so the label stays facing you.": "Поворачивается за камерой и всегда смотрит на вас.",
+        "Stays at your chosen angle.": "Остается под выбранным углом.",
+        "Tilt upward": "Наклон вверх",
+        "Tilt is ignored while following your view. Your saved angle is kept.": "Пока надпись следует за камерой, наклон не действует. Сохраненный угол остается.",
+        "Visibility": "Видимость",
+        "Fade with distance": "Исчезать с расстоянием",
+        "Visible up to": "Видна до",
+        "Fully visible within": "Полностью видна в пределах",
+        "Hidden beyond the outer distance. Fades smoothly as you approach.": "Дальше внешнего предела не видна; при приближении плавно проявляется.",
+        "Label text": "Текст надписи",
+        "Reset name": "Сбросить",
+        "Font": "Шрифт",
+        "Size": "Размер",
+        "Alignment": "Выравнивание",
+        "Change text colour ›": "Изменить цвет текста ›",
+        "Hide colour picker ‹": "Скрыть выбор цвета ‹",
+        "Icon & count": "Значок и количество",
+        "Show item icon": "Показывать значок предмета",
+        "Show count": "Показывать количество",
+        "Position beside label": "Положение у надписи",
+        "Icon size": "Размер значка",
+        "Readability": "Читаемость",
+        "Bright in the dark": "Яркая в темноте",
+        "Dark outline": "Темный контур",
+        "Fewer effects ‹": "Меньше эффектов ‹",
+        "More effects ›": "Больше эффектов ›",
+        "Boost brightness": "Усилить яркость",
+        "Text halo": "Ореол текста",
+        "Icon glow": "Свечение значка",
+        "Icon halo": "Ореол значка",
+        "Brightness boost": "Усиление яркости",
+        "Halo strength": "Сила ореола",
+        "Boost and halos work best with darker colours. No nearby surfaces are lit.": "Усиление и ореолы лучше смотрятся с темными цветами. Окружающие поверхности не освещаются.",
+        "This font does not support text outline or halo. Choose another font to use them.": "Этот шрифт не поддерживает контур и ореол текста. Выберите другой шрифт, чтобы их использовать.",
+        "Some characters are unavailable. Try another font.": "Некоторых символов нет в шрифте. Попробуйте другой шрифт."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildStorageColourPicker",
+      "values": {
+        "Text colour": "Цвет текста",
+        "Selected colour": "Выбранный цвет"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "CreateStorageLabelPreview",
+      "values": {
+        "Preview": "Предпросмотр",
+        "Day": "День",
+        "Night": "Ночь",
+        "Fit view": "Вписать",
+        "Preparing preview…": "Подготовка предпросмотра…",
+        "Drag to rotate · Scroll to zoom": "Перетаскивайте для поворота · колесо для масштаба",
+        "Gold arrow · Your position": "Золотая стрелка · ваше положение"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "BuildWindowChrome",
+      "values": {
+        "Window opacity": "Непрозрачность окна",
+        "UI scale": "Масштаб окна"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialsAppearanceEditor",
+      "method": "RefreshSummary",
+      "values": {
+        " items | ": " шт. | ",
+        " slots": " ячеек",
+        "loading": "загрузка",
+        " | owner": " | владелец",
+        " | read only": " | только просмотр",
+        " | LIVE CONFIG TUNING": " | ЖИВАЯ НАСТРОЙКА"
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialBarrelStorage",
+      "method": ".ctor",
+      "values": {
+        "Waiting for inventory load.": "Ожидание загрузки содержимого."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialBarrelStorage",
+      "method": "BeginInventoryLoad",
+      "values": {
+        "Waiting for inventory load.": "Ожидание загрузки содержимого."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialBarrelStorage",
+      "method": "FailedInventoryLoad",
+      "values": {
+        "Inventory load failed. Saved data is protected; preserve this save and inspect the log.": "Загрузка содержимого не удалась. Сохраненные данные под защитой; сохраните копию мира и проверьте журнал."
+      }
+    },
+    {
+      "type": "DynamicStorageMaterials.MaterialBarrelStorage",
+      "method": "Reconcile",
+      "values": {
+        "Extra allowed item list could not be read. Deposits blocked; saved contents remain protected.": "Не удалось прочитать список дополнительных предметов. Добавление заблокировано; сохраненное содержимое под защитой.",
+        "Assignment/content mismatch. Deposits blocked; withdraw contents to recover. Items are preserved.": "Назначение не совпадает с содержимым. Добавление заблокировано; заберите содержимое, чтобы исправить. Предметы сохранены.",
+        "Recovered item is outside the supported material catalogue. Deposits blocked; contents remain withdrawable.": "Восстановленный предмет не входит в каталог поддерживаемых материалов. Добавление заблокировано; содержимое можно забрать.",
+        "Treasure is deferred. Withdraw stored items; choose another material once empty.": "Сокровища пока не поддерживаются. Заберите хранимые предметы; когда хранилище опустеет, выберите другой материал."
       }
     }
   ]
