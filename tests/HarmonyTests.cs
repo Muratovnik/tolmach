@@ -564,6 +564,7 @@ namespace Tolmach.Tests
         {
             // LocalizationCache gives a mod's separate English instance the main dictionary;
             // the mod then writes its English words there (seen in game with OreMines on 1.0.20).
+            // These writes come from LoadCSV postfixes, while SetupLanguage still runs.
             Module m = ViewModule(); m.words["mine_key"] = "Угольная шахта"; m.englishWords["mine_key"] = "Coal Mine";
             Localization.SelectedLanguage = "Russian";
             Localization main = Localization.instance;
@@ -571,13 +572,42 @@ namespace Tolmach.Tests
             main.AddWord("piece_workbench", "Верстак");
             LocalizationBridge.InjectMain();
             Localization english = Localization.CreateSharingMainTableForTests();
-            english.SetupLanguage("English");
             english.AddWord("mine_key", "Coal Mine");
             english.AddWord("piece_workbench", "Workbench");
             english.AddWord("new_key", "New word");
             Assert.That(main.Localize("$mine_key"), Is.EqualTo("Угольная шахта"), "Our translation survives.");
             Assert.That(main.Localize("$piece_workbench"), Is.EqualTo("Верстак"), "The game's own Russian survives too.");
             Assert.That(main.Translate("new_key"), Is.EqualTo("New word"), "A key the table lacks is still added.");
+            Assert.That(TextEngine.IsRussian, Is.True);
+        }
+        // QuickStackStore's SetupLanguage postfix: writes the English button text straight into the table.
+        private static void TakeAllPostfix(Localization __instance, string language)
+        {
+            if (language == "English") __instance.WriteTableForTests("inventory_takeall", "Take All");
+        }
+        [Test]
+        public void MainTableHandedToAnotherInstanceDuringSetupIsCopiedBeforeOtherPostfixes()
+        {
+            // LocalizationCache gives every new instance the main dictionary while SetupLanguage
+            // loads it; a later SetupLanguage postfix of another mod then wrote into the main table.
+            Localization.Resources["Russian"] = new Dictionary<string, string> { { "inventory_takeall", "Взять все" } };
+            Localization.SelectedLanguage = "Russian";
+            Localization main = Localization.instance;
+            Patcher.Patch(HarmonyLib.AccessTools.Method(typeof(Localization), "SetupLanguage"),
+                postfix: new HarmonyLib.HarmonyMethod(typeof(HarmonyTests), "TakeAllPostfix"));
+            Localization.CacheSharesMainTable = true;
+            Localization unprotected = Localization.CreateDetachedForTests();
+            unprotected.SetupLanguage("English");
+            Assert.That(main.Translate("inventory_takeall"), Is.EqualTo("Take All"), "Without Tolmach the fixture reproduces the defect.");
+            Assert.That(unprotected.SharesTableWith(main), Is.True);
+            main.AddWord("inventory_takeall", "Взять все");
+
+            InstallBridge(() => "Russian");
+            Localization english = Localization.CreateDetachedForTests();
+            english.SetupLanguage("English");
+            Assert.That(main.Translate("inventory_takeall"), Is.EqualTo("Взять все"), "The text the player sees survives.");
+            Assert.That(english.SharesTableWith(main), Is.False);
+            Assert.That(english.Translate("inventory_takeall"), Is.EqualTo("Take All"), "The mod's write lands in its own instance.");
             Assert.That(TextEngine.IsRussian, Is.True);
         }
         [Test]

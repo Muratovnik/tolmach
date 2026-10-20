@@ -10,7 +10,8 @@ namespace Tolmach
     // Fill-only policy over Valheim's Translate/AddWord API, not a second dictionary
     // implementation. The sole private game member used for mutation is the cache's
     // existing EvictAll API: this snapshot exposes no public invalidation method.
-    // The private m_translations is only compared by reference, never read or written.
+    // The private m_translations is compared by reference; it is written only to give a
+    // mod's instance that received the main dictionary its own copy (DetachSharedTable).
     internal static class LocalizationBridge
     {
         private sealed class LanguageState { internal string Language; }
@@ -23,6 +24,7 @@ namespace Tolmach
         private static MethodInfo translate;
         private static MethodInfo addWord;
         private static MethodInfo selectedLanguage;
+        private static FieldInfo translations;
         private static Func<string> readPreference;
         private static bool injecting;
         private static bool warnedCache;
@@ -40,6 +42,8 @@ namespace Tolmach
                 throw new MissingMethodException("Localization.Translate(string)/AddWord(string,string) API unavailable.");
             selectedLanguage = AccessTools.Method(gameType, "GetSelectedLanguage", Type.EmptyTypes);
             if (selectedLanguage != null && (selectedLanguage.IsStatic || selectedLanguage.ReturnType != typeof(string))) selectedLanguage = null;
+            translations = AccessTools.Field(gameType, "m_translations");
+            if (translations != null && (translations.IsStatic || translations.FieldType != typeof(Dictionary<string, string>))) translations = null;
             Rebuild();
             object initialMain = Main;
             string initialLanguage = initialMain == null ? readPreference() : SelectedLanguage(initialMain);
@@ -52,6 +56,7 @@ namespace Tolmach
                 if (method.Name == "SetupLanguage" && !method.IsStatic && args.Length > 0 && args[0].ParameterType == typeof(string))
                 {
                     harmony.Patch(method, HM("BeforeSetup", Priority.First), HM("AfterSetup", Priority.Last));
+                    if (translations != null) harmony.Patch(method, postfix: HM("DetachSharedTable", Priority.First));
                     setupFound = true;
                 }
                 else if (RawDisplay.HasEntries && method.Name == "Localize" && !method.IsStatic && method.ReturnType == typeof(string) &&
@@ -126,6 +131,16 @@ namespace Tolmach
             Inject(__instance, __0);
             PersistentUi.Refresh();
         }
+        // A localization cache (LocalizationCache) hands every new instance its cached
+        // dictionary, which is the main one. Mods then write their own language into "their"
+        // instance from SetupLanguage postfixes (QuickStackStore sets "Take All") and replace
+        // the text the player sees. Runs before those postfixes and gives the instance a copy.
+        private static void DetachSharedTable(object __instance)
+        {
+            if (!SharesMainTable(__instance)) return;
+            Dictionary<string, string> table = (Dictionary<string, string>)translations.GetValue(__instance);
+            translations.SetValue(__instance, new Dictionary<string, string>(table, table.Comparer));
+        }
         internal static bool ShouldFill(string current, string english, string key)
         {
             return current == english || IsPlaceholder(current, key);
@@ -165,7 +180,7 @@ namespace Tolmach
             InvalidateCache(__instance);
             if (SharesMainTable(__instance)) InvalidateCache(Main);
         }
-        // True for another Localization instance whose dictionary is the main one (read only).
+        // True for another Localization instance whose dictionary is the main one.
         private static bool SharesMainTable(object instance)
         {
             object main = Main;
@@ -251,7 +266,7 @@ namespace Tolmach
         {
             Russian.Clear(); English.Clear(); Replacing.Clear();
             Languages = new ConditionalWeakTable<object, LanguageState>();
-            gameType = null; translate = null; addWord = null; selectedLanguage = null; readPreference = null;
+            gameType = null; translate = null; addWord = null; selectedLanguage = null; translations = null; readPreference = null;
             injecting = warnedCache = false;
             TextEngine.IsRussian = false;
         }

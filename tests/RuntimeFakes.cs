@@ -67,6 +67,8 @@ public sealed class Localization
     // Stand-ins for the game's CSV resources and PlatformPrefs("language").
     internal static readonly Dictionary<string, Dictionary<string, string>> Resources = new Dictionary<string, Dictionary<string, string>>();
     internal static string SelectedLanguage = "English";
+    // LocalizationCache: LoadCSV inside SetupLanguage hands a new instance the cached main dictionary.
+    internal static bool CacheSharesMainTable;
     private static Localization m_instance;
     private Dictionary<string, string> m_translations = new Dictionary<string, string>();
     private readonly LruCache m_cache = new LruCache();
@@ -91,7 +93,10 @@ public sealed class Localization
         extra.m_translations = instance.m_translations;
         return extra;
     }
-    internal static void ResetForTests() { m_instance = null; SelectedLanguage = "English"; Resources.Clear(); }
+    internal static void ResetForTests() { m_instance = null; SelectedLanguage = "English"; CacheSharesMainTable = false; Resources.Clear(); }
+    internal bool SharesTableWith(Localization other) { return ReferenceEquals(m_translations, other.m_translations); }
+    // A mod's SetupLanguage postfix writing straight into the dictionary, bypassing AddWord.
+    internal void WriteTableForTests(string key, string text) { m_translations[key] = text; }
     public string GetSelectedLanguage() { return SelectedLanguage; }
     public void SetLanguage(string language)
     {
@@ -103,6 +108,7 @@ public sealed class Localization
     [MethodImpl(MethodImplOptions.NoInlining)]
     public bool SetupLanguage(string language)
     {
+        if (CacheSharesMainTable && m_instance != null && !ReferenceEquals(this, m_instance)) m_translations = m_instance.m_translations;
         Dictionary<string, string> words;
         if (Resources.TryGetValue(language, out words))
             foreach (KeyValuePair<string, string> word in words) AddWord(word.Key, word.Value);
