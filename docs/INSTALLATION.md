@@ -41,7 +41,7 @@ BepInEx/
 В PowerShell откройте папку загрузки и укажите версию скачанного пакета:
 
 ```powershell
-$version = '0.11.0' # замените на версию скачанного релиза
+$version = '0.12.0' # замените на версию скачанного релиза
 (Get-FileHash ".\Muratovnik-Tolmach-$version.zip" -Algorithm SHA256).Hash.ToLowerInvariant()
 Get-Content .\SHA256SUMS
 ```

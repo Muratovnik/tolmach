@@ -1,5 +1,28 @@
 # Изменения
 
+## [0.12.0](https://github.com/Muratovnik/tolmach/compare/v0.11.0...v0.12.0) (2026-10-20)
+
+### Highlights
+
+Исправлены строки, которые оставались английскими. Кнопка «Take All» в контейнерах снова переведена, хранилища в подсказках My Little UI называются «Смола (груда)» вместо «Смола Pile», моды Jötunn показывают свой русский перевод вместо немецкого или английского. В подсказке еды исцеление пишется как «5 ОЗ/тик», таймер саженцев Plant Everything — «Созреет через 50 мин 00 с». Каталоги сверены с новыми версиями восьми модов, добавлены Dive In и GroupHUD: перевод охватывает **109 модов**.
+
+### Features
+
+- **Обновлённые моды:** каталоги сверены с Adventure Backpacks 2.4.5, Plant Everything 1.21.4, Portal Preview 1.5.1, Upgrade World 1.86.0, Valheim Visual Enhanced 0.5.24, Wacky's Database 2.5.40, Valheim Community Patch 0.37.0 и Network Performance System 1.18.0. ([e63c74a](https://github.com/Muratovnik/tolmach/commit/e63c74a77277d4b6566864c5d382364d5c811a3f))
+- **Новые моды:** добавлены Dive In и GroupHUD; переведены таймеры роста саженцев Plant Everything. ([eb1e371](https://github.com/Muratovnik/tolmach/commit/eb1e371665fcb2532b673a4b5b71a9d23b4d630b))
+- **Подсказки и подписи:** переведены названия клавиш и подсказки пополнения Azu Crafty Boxes, оставшиеся подписи Comfort Tweaks и Better Archery, вкладки молота Crafty Carts Remake («Повозки») и Seed Bed («Коллекция»). ([40ddc70](https://github.com/Muratovnik/tolmach/commit/40ddc70bf4e51f9153d9f3a187f5766d50d15983)) ([1d80532](https://github.com/Muratovnik/tolmach/commit/1d8053205ba198060c742c589cc986355f5b51a0))
+- **Warfare, Armory, More World Locations:** переведены названия эффектов оружия Warfare, ящики Armory («Груз», «Хранилище»), ключи, переключатель и алтарь подземелий More World Locations. ([fee65f8](https://github.com/Muratovnik/tolmach/commit/fee65f8897ed72d23c0d8f6fa3a995b0b7331abb)) ([1d80532](https://github.com/Muratovnik/tolmach/commit/1d8053205ba198060c742c589cc986355f5b51a0))
+- **Valheim:** переведены подсказка повозки и единица исцеления в подсказке еды («ОЗ/тик»). ([14e1bda](https://github.com/Muratovnik/tolmach/commit/14e1bdaed3ff65f38985fab6a3ceaa2c4f2c12fd))
+
+### Bug Fixes
+
+- **Общий словарь LocalizationCache:** мод, который при выборе языка пишет английский текст в свой экземпляр локализации, больше не меняет основной словарь игрока. Так оставалась английской кнопка «Take All» Quick Stack Store. ([b7e8caf](https://github.com/Muratovnik/tolmach/commit/b7e8caf34b215a44fb54faca66744e39fd8366e9))
+- **Названия хранилищ:** название контейнера переводится и в подсказке, которую другой мод заново собирает из поля имени. ([593ed78](https://github.com/Muratovnik/tolmach/commit/593ed785acb2c93b2393b92a9e01a09a84de952d))
+- **Моды Jötunn:** если Jötunn опубликовал строку мода на первом зарегистрированном языке, например немецком, или мод зарегистрировал русский перевод позже, Tolmach показывает собственный русский перевод мода. ([95c546e](https://github.com/Muratovnik/tolmach/commit/95c546ef942b87d41a45776c762d7620c273eab0))
+- **Подсказка еды:** строка исцеления переводится при любом цвете, который задаёт подсказка. ([5e7bd10](https://github.com/Muratovnik/tolmach/commit/5e7bd10eb365db5f406d7b3950be4d368b8c27c2))
+- **Portal Preview 1.5.1:** перевод ответов консольной команды снова работает после изменения имени обработчика в новой версии мода. ([7969a73](https://github.com/Muratovnik/tolmach/commit/7969a73cdf66b41ac4e519039bd6d74015d0804e))
+- **Диагностика:** предупреждение об ошибке регистрации ключа в моде называет исходное исключение. ([ea2099a](https://github.com/Muratovnik/tolmach/commit/ea2099a6a3a9a3b757dca0ec94562f9ca21eb3b8))
+
 ## [0.11.0](https://github.com/Muratovnik/tolmach/compare/v0.10.0...v0.11.0) (2026-10-18)
 
 ### Highlights
