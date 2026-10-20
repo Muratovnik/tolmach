@@ -664,6 +664,27 @@ namespace Tolmach.Tests
             Assert.That(m.NativeWords, Is.EqualTo(2), "Repeated refresh does not re-count keys.");
         }
         [Test]
+        public void NativeLocalizeKeyOwnRussianFillsTheEnglishLeftByASkippedLoader()
+        {
+            // LocalizationCache skips the mod's LoadCSV postfix after the English load: the game
+            // table keeps "Nectar" although the mod's registry holds its own Russian.
+            Module m = FixtureModule("birds", "FixturePlugin");
+            Activate(m);
+            Localization.SelectedLanguage = "English";
+            Localization main = Localization.instance;
+            FixturePlugin.LocalizeKey nectar = new FixturePlugin.LocalizeKey("$item_nectar").English("Nectar");
+            FixturePlugin.LocalizeKey protein = new FixturePlugin.LocalizeKey("$item_beetleprotein").English("Beetle protein");
+            nectar.Localizations["Russian"] = "Нектар"; protein.Localizations["Russian"] = "Белок жука";
+            Localization.SelectedLanguage = "Russian";
+            main.AddWord("item_nectar", "Nectar");
+            main.AddWord("item_beetleprotein", "Протеин из другого перевода");
+            InstallBridge(() => "Russian");
+            NativeAdapters.Refresh();
+            Assert.That(main.Translate("item_nectar"), Is.EqualTo("Нектар"));
+            Assert.That(main.Translate("item_beetleprotein"), Is.EqualTo("Протеин из другого перевода"), "Russian already shown is kept.");
+            Assert.That(m.NativeWords, Is.EqualTo(0), "The mod's own words are not counted as added by Tolmach.");
+        }
+        [Test]
         public void OreMinesResetNoticeIsTranslatedInChatLogAndBubble()
         {
             Module mines = LoadModule("OreMines");

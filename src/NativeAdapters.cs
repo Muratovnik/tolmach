@@ -58,7 +58,6 @@ namespace Tolmach
         }
         private static void AddManagerKeys(Module m)
         {
-            if (m.texts.Count == 0) return;
             // Item/Piece/Creature/SkillManager each embed their own LocalizeKey registry.
             foreach (Type type in AccessTools.GetTypesFromAssembly(m.RuntimeAssembly))
             {
@@ -86,10 +85,18 @@ namespace Tolmach
                 string key = RuntimeAccess.Read(record, "Key") as string;
                 if (langs == null || key == null) continue;
                 string en = langs["English"] as string;
-                string ru;
-                if (en == null || !m.texts.TryGetValue(en, out ru)) continue;
+                if (en == null) continue;
                 string existing = langs["Russian"] as string;
-                if (!LocalizationBridge.ShouldFill(existing, en, key)) continue;
+                if (!LocalizationBridge.ShouldFill(existing, en, key))
+                {
+                    // The mod's own Russian. Its loader may never reach the game table: a
+                    // localization cache (LocalizationCache) skips mods' LoadCSV postfixes once
+                    // the English load is cached. Kept fill-only, like a catalog word.
+                    if (!m.words.ContainsKey(key.TrimStart('$'))) LocalizationBridge.RegisterNativeKey(m, key, en, existing);
+                    continue;
+                }
+                string ru;
+                if (!m.texts.TryGetValue(en, out ru)) continue;
                 bool isNew = !m.words.ContainsKey(key.TrimStart('$'));
                 // Register first: the Russian setter writes through Localization.AddWord at
                 // once, and the fill-only AddWord guard must already know this key so a
