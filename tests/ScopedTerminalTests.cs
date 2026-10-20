@@ -38,6 +38,8 @@ namespace Tolmach.Tests
                 FieldBuilder state = nested.DefineField("_status", typeof(string), FieldAttributes.Public | FieldAttributes.Static);
                 FieldBuilder command = nested.DefineField("CommandId", typeof(string), FieldAttributes.Public | FieldAttributes.Static);
                 Emit(nested, state, command, "<Initialize>b__49_0");
+                Emit(nested, state, command, "<Initialize>b__15_0");
+                Emit(nested, state, command, "<Update>b__15_0");
                 Emit(nested, state, command, "OtherCaller");
                 nested.CreateType();
                 outer.CreateType();
@@ -81,7 +83,9 @@ namespace Tolmach.Tests
             Assert.That(Run("<Initialize>b__49_0"), Is.EqualTo(Russian));
             Assert.That(callbackType.GetField("_status").GetValue(null), Is.EqualTo(Source));
             Assert.That(callbackType.GetField("CommandId").GetValue(null), Is.EqualTo("off"), "A translated vocabulary value must not alter the command identifier.");
+            Assert.That(Run("<Initialize>b__15_0"), Is.EqualTo(Russian), "PortalPreview 1.5.1 renumbered the same handler.");
             Assert.That(Run("OtherCaller"), Is.EqualTo(Source));
+            Assert.That(Run("<Update>b__15_0"), Is.EqualTo(Source));
             var external = new Chat(); external.AddString(Source);
             Assert.That(external.Lines[0], Is.EqualTo(Source));
             Assert.That(DisplayPatches.StringSink(typeof(Terminal).GetMethod("AddString", new[] { typeof(string) })), Is.EqualTo(new[] { false }));

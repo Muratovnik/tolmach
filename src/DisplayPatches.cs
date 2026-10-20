@@ -232,10 +232,12 @@ namespace Tolmach
             }
             return selected;
         }
+        // The command handler is the Initialize lambda of FrozenPortals; the compiler's ordinal
+        // suffix changes between mod versions (b__49_0 in 1.4.0, b__15_0 in 1.5.1).
         internal static bool ScopedTerminalSink(MethodBase sink, Module module, MethodBase caller)
         {
             if (module == null || module.id != "PortalPreview" || caller == null || caller.DeclaringType == null ||
-                caller.DeclaringType.FullName != "PortalPreview.FrozenPortals+<>c" || caller.Name != "<Initialize>b__49_0" ||
+                caller.DeclaringType.FullName != "PortalPreview.FrozenPortals+<>c" || !caller.Name.StartsWith("<Initialize>b__", StringComparison.Ordinal) ||
                 sink.DeclaringType == null || sink.DeclaringType.FullName != "Terminal" || sink.Name != "AddString" || sink.IsStatic) return false;
             ParameterInfo[] parameters = sink.GetParameters();
             return parameters.Length == 1 && parameters[0].ParameterType == typeof(string);
