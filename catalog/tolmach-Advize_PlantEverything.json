@@ -133,8 +133,41 @@
     "peGrowthTimeHoverPrefix": "Ready in"
   },
   "texts": {},
-  "patterns": [],
-  "returns": [],
+  "patterns": [
+    {
+      "source": "({0} <color=#{1}>{2}h {3}m {4}s</color>)",
+      "target": "({0} <color=#{1}>{2} ч {3} мин {4} с</color>)",
+      "singleLine": true,
+      "numeric": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "({0} <color=#{1}>{2}m {3}s</color>)",
+      "target": "({0} <color=#{1}>{2} мин {3} с</color>)",
+      "singleLine": true,
+      "numeric": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "({0} <color=#{1}>{2}s</color>)",
+      "target": "({0} <color=#{1}>{2} с</color>)",
+      "singleLine": true,
+      "numeric": [
+        2
+      ]
+    }
+  ],
+  "returns": [
+    {
+      "type": "Advize_PlantEverything.HoverTextPatches",
+      "method": "FormatTime"
+    }
+  ],
   "prefabs": [],
   "sourceFiles": [
     "source-evidence/profile-updates/Advize-PlantEverything-1.21.4/Advize_PlantEverything/PlantEverything.cs",

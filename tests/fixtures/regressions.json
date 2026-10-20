@@ -208,5 +208,15 @@
     "module": "AzuCraftyBoxes",
     "source": "\n[<b><color=yellow>LeftShift</color> + <color=yellow>$KEY_Use</color></b>] Добавить: 10 $item_wood",
     "expected": "\n[<b><color=yellow>Л. Shift</color> + <color=yellow>$KEY_Use</color></b>] Добавить: 10 $item_wood"
+  },
+  {
+    "module": "Advize_PlantEverything",
+    "source": "(Созреет через <color=#E5C000>01h 02m 03s</color>)",
+    "expected": "(Созреет через <color=#E5C000>01 ч 02 мин 03 с</color>)"
+  },
+  {
+    "module": "Advize_PlantEverything",
+    "source": "(Созреет через <color=#E5C000>09s</color>)",
+    "expected": "(Созреет через <color=#E5C000>09 с</color>)"
   }
 ]

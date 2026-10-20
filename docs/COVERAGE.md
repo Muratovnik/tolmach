@@ -1,6 +1,6 @@
 # Что переведено в каждом моде
 
-Tolmach содержит переводы и дополнения для **107 модов**, а также звуковые субтитры и исправленные названия идолов Valheim **1.0.20**. Здесь описан результат для игрока, а не количество ключей или внутренних патчей.
+Tolmach содержит переводы и дополнения для **109 модов**, а также звуковые субтитры и исправленные названия идолов Valheim **1.0.20**. Здесь описан результат для игрока, а не количество ключей или внутренних патчей.
 
 Таблица относится к каталогам в этой ветке репозитория. Версии модов — те, с которыми сверялись исходные строки. Наличие каталога не означает одинаковую полноту перевода или игровую проверку каждого экрана. На других версиях перевод применяется по совпадениям; новые или изменённые фразы могут остаться без перевода.
 
@@ -43,6 +43,7 @@ Tolmach содержит переводы и дополнения для **107 �
 | [Creature Level and Loot Control](https://thunderstore.io/c/valheim/p/Smoothbrain/CreatureLevelAndLootControl/) | 4.6.4 | Имена существ с эффектами и стихиями, особенности боссов, сообщения и уровень сектора, редактор YAML, списки и настройки F1 с описаниями. После смены языка требуется перезапуск. |
 | [Culinary Horizons](https://thunderstore.io/c/valheim/p/lnsanity/Culinary_Horizons/) | 1.0.42 | Недостающие вкладки строительства, субтитры и сообщения о версиях; дополняет собственный русский перевод. |
 | [Digitalroot's Gold Bars](https://thunderstore.io/c/valheim/p/Digitalroot/Digitalroots_GoldBars/) | 1.2.34 | Названия и описания золотых слитков и монет. |
+| [Dive In](https://thunderstore.io/c/valheim/p/sighsorry/Dive_In/) | 1.2.6 | Названия клавиш в подсказках плавания и ныряния, сообщения о несовпадении версий. Подсказки управления мод переводит сам. |
 | [Dynamic Storage Ammunition Piles](https://thunderstore.io/c/valheim/p/Muji/DynamicStorage_Ammunition_Piles/) | 1.0.3 | Названия и описания запасов стрел и болтов, подсказки, предупреждения о сохранности, сообщения и редактор размещения. Настройки F1 и часть технической диагностики остаются исходными. |
 | [Dynamic Storage Butcher’s Hall](https://thunderstore.io/c/valheim/p/Muji/DynamicStorage_Butchers_Hall/) | 1.1.0 | Название и описание стойки для мяса, предупреждения о сохранности, сообщения взаимодействия, редактор размещения и диагностика хранения. Настройки F1 остаются исходными. |
 | [Dynamic Storage Forge](https://thunderstore.io/c/valheim/p/Muji/DynamicStorageForge/) | 1.0.2 | Названия и описания хранилищ металлов и руды, подсказки, предупреждения о сохранности, сообщения и редактор размещения. Настройки F1 и часть технической диагностики остаются исходными. |
@@ -57,6 +58,7 @@ Tolmach содержит переводы и дополнения для **107 �
 | [First Person Mode](https://thunderstore.io/c/valheim/p/Azumatt/FirstPersonMode/) | 1.3.12 | Сообщения камеры и о несовпадении версий. |
 | [Food Duration Multiplier](https://thunderstore.io/c/valheim/p/blacks7ar/FoodDurationMultiplier/) | 1.1.7 | Только сообщения о несовпадении версий при подключении к серверу. |
 | [Forest Gammeltroll](https://thunderstore.io/c/valheim/p/Voxx/ForestGammeltroll/) | 1.0.1 | Название лесного гаммельтролля и его окаменевших останков. |
+| [GroupHUD](https://thunderstore.io/c/valheim/p/Mobrin/GroupHUD/) | 0.66.0 | Дополняет собственный русский: строки подсказки кнопок размера карточек, уведомление о виде во время игры, единица «ОЗ/тик» в подсказке еды. |
 | [Groups](https://thunderstore.io/c/valheim/p/Smoothbrain/Groups/) | 1.2.12 | Панель группы, приглашения и действия участников. |
 | [HammerTime](https://thunderstore.io/c/valheim/p/MSchmoecker/HammerTime/) | 0.3.11 | Названия категорий строительства. |
 | [Huginn Map](https://thunderstore.io/c/valheim/p/NightOfGames/Huginn_Map/) | 1.0.5 | Панель фильтров карты, группа порталов, вывод и справка команд поиска. |

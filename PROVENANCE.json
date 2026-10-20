@@ -570,6 +570,22 @@
       ]
     },
     {
+      "id": "DiveIn",
+      "package": "sighsorry-Dive_In",
+      "version": "1.2.6",
+      "status_in_archive": "Installed profile exact DLL/source audit 2026-10-20; game not run.",
+      "source_root": "source-evidence/profile-updates/sighsorry-Dive_In-1.2.6",
+      "binary_identities": [
+        {
+          "mod": "sighsorry-Dive_In-1.2.6",
+          "enabled": true,
+          "profile_path": "BepInEx/plugins/sighsorry-Dive_In/DiveIn.dll",
+          "size": 449024,
+          "sha256": "038f3ff6de6ff55d645367275145a3df9fd5a9351b9dba6a57a9679cfde53394"
+        }
+      ]
+    },
+    {
       "id": "DynamicStorageAmmunitionPiles",
       "package": "Muji-DynamicStorage_Ammunition_Piles",
       "version": "1.0.3",
@@ -823,6 +839,22 @@
           "profile_path": "BepInEx/plugins/Voxx-ForestGammeltroll/ForestGammeltroll.dll",
           "size": 52224,
           "sha256": "cc4a80a51aa5bb0708e5fc30763ef6c6f0b83c8ed0da32490a56818f6695809d"
+        }
+      ]
+    },
+    {
+      "id": "GroupHUD",
+      "package": "Mobrin-GroupHUD",
+      "version": "0.66.0",
+      "status_in_archive": "Installed profile exact DLL/source audit 2026-10-20; game not run.",
+      "source_root": "source-evidence/profile-updates/Mobrin-GroupHUD-0.66.0",
+      "binary_identities": [
+        {
+          "mod": "Mobrin-GroupHUD-0.66.0",
+          "enabled": true,
+          "profile_path": "BepInEx/plugins/Mobrin-GroupHUD/GroupHUD.dll",
+          "size": 454656,
+          "sha256": "66570a74a18931f94bac9582b385c525fd7288bf6fd2c59f5087d05cfb554a60"
         }
       ]
     },
@@ -1358,38 +1390,6 @@
       ]
     },
     {
-      "id": "ShieldMeBruh",
-      "package": "Vapok-ShieldMeBruh",
-      "version": "2.1.5",
-      "status_in_archive": "Installed profile exact DLL/source audit 2026-10-17; game not run.",
-      "source_root": "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5",
-      "binary_identities": [
-        {
-          "mod": "Vapok-ShieldMeBruh-2.1.5",
-          "enabled": true,
-          "profile_path": "BepInEx/plugins/Vapok-ShieldMeBruh/ShieldMeBruh.dll",
-          "size": 613376,
-          "sha256": "847b92602de6e316f059c7c51451d1b118ae47894b314ae7c92ecdc59b9b68ce"
-        }
-      ]
-    },
-    {
-      "id": "SNEAKer",
-      "package": "blacks7ar-SNEAKer",
-      "version": "1.1.8",
-      "status_in_archive": "missing",
-      "source_root": "source-evidence/localization/c/50",
-      "binary_identities": [
-        {
-          "mod": "blacks7ar-SNEAKer-1.1.8",
-          "enabled": true,
-          "profile_path": "BepInEx/plugins/blacks7ar-SNEAKer/SNEAKer.dll",
-          "size": 55296,
-          "sha256": "91f4888dda9424fe615fb815446fcc20645f388279f3950769f0eb96a71e630d"
-        }
-      ]
-    },
-    {
       "id": "SeaAnimals",
       "package": "Marlthon-SeaAnimals",
       "version": "0.3.9",
@@ -1434,6 +1434,22 @@
           "profile_path": "BepInEx/plugins/JereKuusela-Server_devcommands/ServerDevcommands.dll",
           "size": 568832,
           "sha256": "f41812ac8c7c759ca60e84beef716c438fb766adda592f8a9365a86514bbda15"
+        }
+      ]
+    },
+    {
+      "id": "ShieldMeBruh",
+      "package": "Vapok-ShieldMeBruh",
+      "version": "2.1.5",
+      "status_in_archive": "Installed profile exact DLL/source audit 2026-10-17; game not run.",
+      "source_root": "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5",
+      "binary_identities": [
+        {
+          "mod": "Vapok-ShieldMeBruh-2.1.5",
+          "enabled": true,
+          "profile_path": "BepInEx/plugins/Vapok-ShieldMeBruh/ShieldMeBruh.dll",
+          "size": 613376,
+          "sha256": "847b92602de6e316f059c7c51451d1b118ae47894b314ae7c92ecdc59b9b68ce"
         }
       ]
     },
@@ -1490,6 +1506,22 @@
           "profile_path": "BepInEx/plugins/OverDrive-SmelterUpgrades/SmelterUpgrades.dll",
           "size": 1321472,
           "sha256": "30cfbe22310a9491d6ece9b7918ece910ffee1ba433d662e46f56b245bab7d59"
+        }
+      ]
+    },
+    {
+      "id": "SNEAKer",
+      "package": "blacks7ar-SNEAKer",
+      "version": "1.1.8",
+      "status_in_archive": "missing",
+      "source_root": "source-evidence/localization/c/50",
+      "binary_identities": [
+        {
+          "mod": "blacks7ar-SNEAKer-1.1.8",
+          "enabled": true,
+          "profile_path": "BepInEx/plugins/blacks7ar-SNEAKer/SNEAKer.dll",
+          "size": 55296,
+          "sha256": "91f4888dda9424fe615fb815446fcc20645f388279f3950769f0eb96a71e630d"
         }
       ]
     },
@@ -1642,6 +1674,22 @@
       ]
     },
     {
+      "id": "trustymod",
+      "package": "trustworthy-MaxwellTheCat",
+      "version": "0.0.1",
+      "status_in_archive": "missing",
+      "source_root": "source-evidence/localization/b/26-trustworthy-MaxwellTheCat",
+      "binary_identities": [
+        {
+          "mod": "trustworthy-MaxwellTheCat-0.0.1",
+          "enabled": true,
+          "profile_path": "BepInEx/plugins/trustworthy-MaxwellTheCat/trustymod.dll",
+          "size": 317440,
+          "sha256": "d637187d884d21a3f7d2e8194167bc057a4ff1a2b5240b636d0c9c5cc59bb0c8"
+        }
+      ]
+    },
+    {
       "id": "UpgradeWorld",
       "package": "JereKuusela-Upgrade_World",
       "version": "1.86.0",
@@ -1684,23 +1732,6 @@
           "profile_path": "BepInEx/plugins/sighsorry-UsefulRunestones/UsefulRunestones.dll",
           "size": 392192,
           "sha256": "32f0c32fc3871e82e5d82591c7cdea47a0973bb5c1ba373d6191f9ba6e54235e"
-        }
-      ]
-    },
-    {
-      "id": "VNEI",
-      "package": "MSchmoecker-VNEI",
-      "version": "0.17.6",
-      "status_in_archive": "stage_b_thunderstore",
-      "source_root": "source-evidence/stage-b/MSchmoecker-VNEI-0.17.6",
-      "binary_identities": [
-        {
-          "mod": "MSchmoecker-VNEI-0.17.6",
-          "enabled": false,
-          "source": "thunderstore",
-          "package_path": "VNEI.dll",
-          "size": 174080,
-          "sha256": "a496f106b325414eff2f19d1c48afb522b8f10359f0571cecb85754d53012ebd"
         }
       ]
     },
@@ -1772,6 +1803,23 @@
       ],
       "previous_version": "0.5.18",
       "archived_version": "0.5.18"
+    },
+    {
+      "id": "VNEI",
+      "package": "MSchmoecker-VNEI",
+      "version": "0.17.6",
+      "status_in_archive": "stage_b_thunderstore",
+      "source_root": "source-evidence/stage-b/MSchmoecker-VNEI-0.17.6",
+      "binary_identities": [
+        {
+          "mod": "MSchmoecker-VNEI-0.17.6",
+          "enabled": false,
+          "source": "thunderstore",
+          "package_path": "VNEI.dll",
+          "size": 174080,
+          "sha256": "a496f106b325414eff2f19d1c48afb522b8f10359f0571cecb85754d53012ebd"
+        }
+      ]
     },
     {
       "id": "WackysDatabase",
@@ -1873,22 +1921,6 @@
           "package_path": "plugins/XPortal/XPortal.dll",
           "size": 55296,
           "sha256": "f133fb57501260276e1783f20dd89f8675e7e1efcf29571d53e0d40f3ae6cd5b"
-        }
-      ]
-    },
-    {
-      "id": "trustymod",
-      "package": "trustworthy-MaxwellTheCat",
-      "version": "0.0.1",
-      "status_in_archive": "missing",
-      "source_root": "source-evidence/localization/b/26-trustworthy-MaxwellTheCat",
-      "binary_identities": [
-        {
-          "mod": "trustworthy-MaxwellTheCat-0.0.1",
-          "enabled": true,
-          "profile_path": "BepInEx/plugins/trustworthy-MaxwellTheCat/trustymod.dll",
-          "size": 317440,
-          "sha256": "d637187d884d21a3f7d2e8194167bc057a4ff1a2b5240b636d0c9c5cc59bb0c8"
         }
       ]
     }
@@ -3015,6 +3047,68 @@
       "ValheimVisualEnhanced",
       "WackysDatabase"
     ],
-    "source_evidence": "Exact installed DLLs decompiled with ILSpy 11.1. Binary equality is not a game behavior test."
+    "source_evidence": "Exact installed DLLs decompiled with ILSpy 11.1. Binary equality is not a game behavior test.",
+    "new_modules": [
+      "DiveIn",
+      "GroupHUD"
+    ],
+    "no_catalog_audit": [
+      {
+        "package": "ComfyMods-SearsCatalog",
+        "version": "1.10.0",
+        "audit_scope": "1.10.0 rewrote piece search and the pooled grid; no new screen strings (only a rotate glyph).",
+        "binary_identities": [
+          {
+            "mod": "ComfyMods-SearsCatalog-1.10.0",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/ComfyMods-SearsCatalog/SearsCatalog.dll",
+            "size": 45568,
+            "sha256": "eac4216b7bc99fe87752370053648587128ea5e929671037c67513871bb7f31c"
+          }
+        ]
+      },
+      {
+        "package": "Ezomic-Sinka",
+        "version": "1.3.1",
+        "audit_scope": "1.3.1 split Release/EndSearch; log lines and config descriptions only.",
+        "binary_identities": [
+          {
+            "mod": "Ezomic-Sinka-1.3.1",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/Ezomic-Sinka/Sinka/Sinka.dll",
+            "size": 51200,
+            "sha256": "de12000672b45ced41154bf22476fbf4cfea6975e9d79041531335ad875033d4"
+          }
+        ]
+      },
+      {
+        "package": "Ivvty-SteadyFrame",
+        "version": "1.1.0",
+        "audit_scope": "1.1.0 adds GPU grass and frame verification written to cache files; no screen output.",
+        "binary_identities": [
+          {
+            "mod": "Ivvty-SteadyFrame-1.1.0",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/Ivvty-SteadyFrame/SteadyFrame.dll",
+            "size": 670208,
+            "sha256": "e2cca58dd1b15d004c468aa617462a9e626440ca6950f8e41b515071a8e4083f"
+          }
+        ]
+      },
+      {
+        "package": "MidnightMods-ImpactfulSkills",
+        "version": "0.24.0",
+        "audit_scope": "0.24.0 ships a complete Russian table of its own (66/66, new unlock_elemental_accuracy included).",
+        "binary_identities": [
+          {
+            "mod": "MidnightMods-ImpactfulSkills-0.24.0",
+            "enabled": true,
+            "profile_path": "BepInEx/plugins/MidnightMods-ImpactfulSkills/ImpactfulSkills.dll",
+            "size": 474112,
+            "sha256": "c87accaf7e710bd2a13e4f766e4ebface9495efdbc7cadb7c847c3707581adb4"
+          }
+        ]
+      }
+    ]
   }
 }

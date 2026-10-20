@@ -1,0 +1,83 @@
+{
+  "id": "DiveIn",
+  "package": "sighsorry-Dive_In",
+  "version": "1.2.6",
+  "pluginVersion": "1.2.6",
+  "assembly": "DiveIn",
+  "guids": [
+    "sighsorry.DiveIn"
+  ],
+  "namespaces": [
+    "ServerSync",
+    "ServerSyncModTemplate"
+  ],
+  "words": {},
+  "englishWords": {},
+  "texts": {
+    "Space": "Пробел",
+    "Left Ctrl": "Л. Ctrl",
+    "Right Ctrl": "Пр. Ctrl",
+    "Left Shift": "Л. Shift",
+    "Right Shift": "Пр. Shift",
+    "Left Alt": "Л. Alt",
+    "Right Alt": "Пр. Alt",
+    "Mouse-1": "ЛКМ",
+    "Mouse-2": "ПКМ",
+    "Mouse-3": "СКМ",
+    "None": "Нет"
+  },
+  "patterns": [],
+  "returns": [
+    {
+      "type": "ServerSyncModTemplate.ServerSyncModTemplatePlugin",
+      "method": "GetDiveAscendKeyHint"
+    },
+    {
+      "type": "ServerSyncModTemplate.ServerSyncModTemplatePlugin",
+      "method": "GetDiveDescendKeyHint"
+    }
+  ],
+  "literals": [
+    {
+      "type": "ServerSync.VersionCheck",
+      "method": "ErrorServer",
+      "values": {
+        "Disconnect: The client (": "Отключение: у клиента (",
+        ") doesn't have the correct ": ") неподходящая версия ",
+        " version ": " — нужна версия "
+      }
+    },
+    {
+      "type": "ServerSync.VersionCheck",
+      "method": "ErrorClient",
+      "values": {
+        " is not installed on the server.": " не установлен на сервере.",
+        " needs to be at least version ": " — нужна версия не ниже ",
+        ". You have version ": ". У вас версия ",
+        " may not be higher than version ": " — версия должна быть не выше "
+      }
+    },
+    {
+      "type": "ServerSync.VersionCheck",
+      "method": "ShowConnectionError",
+      "values": {
+        "\nServer expects you to have ": "\nСервер требует установить ",
+        " (Version: ": " (версия: ",
+        ") installed.": ")."
+      }
+    }
+  ],
+  "prefabs": [],
+  "sourceFiles": [
+    "source-evidence/profile-updates/sighsorry-Dive_In-1.2.6/DiveIn/ServerSyncModTemplate/DiveLocalization.cs",
+    "source-evidence/profile-updates/sighsorry-Dive_In-1.2.6/DiveIn/ServerSyncModTemplate/ServerSyncModTemplatePlugin.cs",
+    "source-evidence/profile-updates/sighsorry-Dive_In-1.2.6/DiveIn/ServerSyncModTemplate/FastSwimHud.cs",
+    "source-evidence/profile-updates/sighsorry-Dive_In-1.2.6/DiveIn/ServerSyncModTemplate/PlayerDiveKeyHints.cs",
+    "source-evidence/profile-updates/sighsorry-Dive_In-1.2.6/DiveIn/ServerSync/VersionCheck.cs",
+    "source-evidence/profile-updates/sighsorry-Dive_In-1.2.6/il/DiveIn.il"
+  ],
+  "notes": [
+    "The mod registers its four hint texts itself through DiveLocalization (Localization.AddWord on SetupLanguage) and already ships a Russian table, so the catalog adds no words.",
+    "The catalog covers the ServerSync version-check messages and the key names that GetDiveAscendKeyHint and GetDiveDescendKeyHint return for the swim HUD row and the key hint cells."
+  ]
+}

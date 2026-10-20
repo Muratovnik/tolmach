@@ -1,0 +1,54 @@
+{
+  "id": "GroupHUD",
+  "package": "Mobrin-GroupHUD",
+  "version": "0.66.0",
+  "pluginVersion": "0.66.0",
+  "assembly": "GroupHUD",
+  "guids": [
+    "mobrin.grouphud"
+  ],
+  "namespaces": [
+    "GroupHUD"
+  ],
+  "words": {},
+  "englishWords": {},
+  "texts": {},
+  "patterns": [],
+  "returns": [],
+  "literals": [
+    {
+      "type": "GroupHUD.GroupHUDPlugin",
+      "method": "ShowViewNotice",
+      "values": {
+        "GroupHUD while playing: {0}": "GroupHUD во время игры: {0}"
+      }
+    },
+    {
+      "type": "GroupHUD.GroupHUDPlugin",
+      "method": "LevelHint",
+      "values": {
+        "not set": "не задана",
+        "Now: {0} – also while playing (key {1})": "Сейчас: {0} – действует и во время игры (клавиша {1})",
+        "Your own card shows your effects in the inventory (vanilla effects are hidden there)": "Ваша карточка показывает ваши эффекты и в инвентаре (стандартные эффекты игры там скрыты)",
+        "While playing, food/effects pop up briefly when something happens (AutoShow)": "Во время игры еда и эффекты ненадолго появляются, когда что-то происходит (AutoShow)",
+        "Not enough room while playing: only bars there": "Во время игры не хватает места: там только полосы"
+      }
+    },
+    {
+      "type": "GroupHUD.GroupHUDPlugin",
+      "method": "FoodTooltip",
+      "values": {
+        "\n$item_food_regen: <color={1}>{0} hp/tick</color>": "\n$item_food_regen: <color={1}>{0} ОЗ/тик</color>"
+      }
+    }
+  ],
+  "prefabs": [],
+  "sourceFiles": [
+    "source-evidence/profile-updates/Mobrin-GroupHUD-0.66.0/GroupHUD/GroupHUD/GroupHUDPlugin.cs",
+    "source-evidence/profile-updates/Mobrin-GroupHUD-0.66.0/il/GroupHUD.il"
+  ],
+  "notes": [
+    "The mod has its own Russian table (TrBuiltIn[ru], keyed by TrKeys); this catalog only covers text that 0.66.0 sends through Tr/T without a table entry.",
+    "Each literal is replaced in the one method that contains it: with the English key replaced by Russian, Tr finds no table entry and returns the argument unchanged."
+  ]
+}

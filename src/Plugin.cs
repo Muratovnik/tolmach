@@ -120,6 +120,8 @@ namespace Tolmach
     [BepInDependency("com.voxxsidus.forestgammeltroll", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("vapok.mods.shieldmebruh", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("TheLionCid.WhySleepAlone", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("sighsorry.DiveIn", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("mobrin.grouphud", BepInDependency.DependencyFlags.SoftDependency)]
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string PluginId = "muratovnik.tolmach";

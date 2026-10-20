@@ -497,6 +497,22 @@
     ]
   },
   {
+    "id": "DiveIn",
+    "guid": "sighsorry.DiveIn",
+    "pluginVersion": "1.2.6",
+    "assembly": "DiveIn",
+    "sources": [
+      {
+        "path": "source-evidence/profile-updates/sighsorry-Dive_In-1.2.6/DiveIn/ServerSyncModTemplate/ServerSyncModTemplatePlugin.cs",
+        "sha256": "d6063b7ae968c81add78713000457fe99bc0fb5f1e03bce4c505a039548f780d"
+      },
+      {
+        "path": "source-evidence/profile-updates/sighsorry-Dive_In-1.2.6/DiveIn/DiveIn.csproj",
+        "sha256": "b89af420f05c50715fe1d6db1b6839b607028f9fde5e30224a20ab89fe291f54"
+      }
+    ]
+  },
+  {
     "id": "DynamicStorageAmmunitionPiles",
     "guid": "com.muji.DynamicStorageAmmunitionPiles",
     "pluginVersion": "1.0.2",
@@ -733,6 +749,22 @@
       {
         "path": "source-evidence/profile-updates/Voxx-ForestGammeltroll-1.0.1/ForestGammeltroll/ForestGammeltroll.csproj",
         "sha256": "8b0b1e2b141ffe7bd5afd1204c72f4bf65d66b6003f9cae9f145807e95d504ea"
+      }
+    ]
+  },
+  {
+    "id": "GroupHUD",
+    "guid": "mobrin.grouphud",
+    "pluginVersion": "0.66.0",
+    "assembly": "GroupHUD",
+    "sources": [
+      {
+        "path": "source-evidence/profile-updates/Mobrin-GroupHUD-0.66.0/GroupHUD/GroupHUD/GroupHUDPlugin.cs",
+        "sha256": "fae443edce3125630b73d0a73dc86d1b9ab1d44997581a098cbd5dda23b477ba"
+      },
+      {
+        "path": "source-evidence/profile-updates/Mobrin-GroupHUD-0.66.0/GroupHUD/GroupHUD.csproj",
+        "sha256": "a97da67afcac3fa936c639e962b8edf3d37775784d13c835358f6a3289e47ad8"
       }
     ]
   },
@@ -1233,38 +1265,6 @@
     ]
   },
   {
-    "id": "ShieldMeBruh",
-    "guid": "vapok.mods.shieldmebruh",
-    "pluginVersion": "2.1.5",
-    "assembly": "ShieldMeBruh",
-    "sources": [
-      {
-        "path": "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/ShieldMeBruh/ShieldMeBruh/ShieldMeBruh.cs",
-        "sha256": "f8619da5c81e0f06a804ced2b1a6d7d657dca751e96f56eab0987d7cbee3e2a9"
-      },
-      {
-        "path": "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/ShieldMeBruh/ShieldMeBruh.csproj",
-        "sha256": "067256df9b1365183b2bb5752ec1159ffdec957e296be570c7c9a4aab572e8da"
-      }
-    ]
-  },
-  {
-    "id": "SNEAKer",
-    "guid": "blacks7ar.SNEAKer",
-    "pluginVersion": "1.1.8",
-    "assembly": "SNEAKer",
-    "sources": [
-      {
-        "path": "source-evidence/localization/c/50/SNEAKer/Plugin.cs",
-        "sha256": "9e676b8f8b50321a88c7a84e46d436e7ecdf299d335be595b558b2c267922470"
-      },
-      {
-        "path": "source-evidence/localization/c/50/SNEAKer.csproj",
-        "sha256": "5d9b837abccf9bc8c5be9e60ffd25c12750ca368ed61a74cfe8937437fdf16c7"
-      }
-    ]
-  },
-  {
     "id": "SeaAnimals",
     "guid": "marlthon.SeaAnimals",
     "pluginVersion": "0.3.9",
@@ -1313,6 +1313,22 @@
     ]
   },
   {
+    "id": "ShieldMeBruh",
+    "guid": "vapok.mods.shieldmebruh",
+    "pluginVersion": "2.1.5",
+    "assembly": "ShieldMeBruh",
+    "sources": [
+      {
+        "path": "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/ShieldMeBruh/ShieldMeBruh/ShieldMeBruh.cs",
+        "sha256": "f8619da5c81e0f06a804ced2b1a6d7d657dca751e96f56eab0987d7cbee3e2a9"
+      },
+      {
+        "path": "source-evidence/profile-updates/Vapok-ShieldMeBruh-2.1.5/ShieldMeBruh/ShieldMeBruh.csproj",
+        "sha256": "067256df9b1365183b2bb5752ec1159ffdec957e296be570c7c9a4aab572e8da"
+      }
+    ]
+  },
+  {
     "id": "SleepSkip",
     "guid": "Azumatt.SleepSkip",
     "pluginVersion": "1.3.2",
@@ -1357,6 +1373,22 @@
       {
         "path": "source-evidence/profile-updates/OverDrive-SmelterUpgrades-1.1.5/SmelterUpgrades/SmelterUpgrades.csproj",
         "sha256": "bd4efc00b9f233d874d54df4609419966b83399e5032c5b5734ba9e9f108ee83"
+      }
+    ]
+  },
+  {
+    "id": "SNEAKer",
+    "guid": "blacks7ar.SNEAKer",
+    "pluginVersion": "1.1.8",
+    "assembly": "SNEAKer",
+    "sources": [
+      {
+        "path": "source-evidence/localization/c/50/SNEAKer/Plugin.cs",
+        "sha256": "9e676b8f8b50321a88c7a84e46d436e7ecdf299d335be595b558b2c267922470"
+      },
+      {
+        "path": "source-evidence/localization/c/50/SNEAKer.csproj",
+        "sha256": "5d9b837abccf9bc8c5be9e60ffd25c12750ca368ed61a74cfe8937437fdf16c7"
       }
     ]
   },
@@ -1505,6 +1537,22 @@
     ]
   },
   {
+    "id": "trustymod",
+    "guid": "com.jotunn.trustymod",
+    "pluginVersion": "0.0.1",
+    "assembly": "trustymod",
+    "sources": [
+      {
+        "path": "source-evidence/localization/b/26-trustworthy-MaxwellTheCat/trustymod/trustymod.cs",
+        "sha256": "a3ec04626c6d2888acc35159d7d09f13804d0d1a628b686fa8306202cee6ccd3"
+      },
+      {
+        "path": "source-evidence/localization/b/26-trustworthy-MaxwellTheCat/trustymod.csproj",
+        "sha256": "039d02c574bfc64495eaebd2d20b0a22e831a0090005eb2dac1ca33e02d69e30"
+      }
+    ]
+  },
+  {
     "id": "UpgradeWorld",
     "guid": "upgrade_world",
     "pluginVersion": "1.86",
@@ -1533,22 +1581,6 @@
       {
         "path": "source-evidence/localization/d/sighsorry-UsefulRunestones-proj/UsefulRunestones.csproj",
         "sha256": "f218017d43f5d61674368cf1f595c04f0f9613debf0e54d1d998bf881d9c6352"
-      }
-    ]
-  },
-  {
-    "id": "VNEI",
-    "guid": "com.maxsch.valheim.vnei",
-    "pluginVersion": "0.17.6",
-    "assembly": "VNEI",
-    "sources": [
-      {
-        "path": "source-evidence/stage-b/MSchmoecker-VNEI-0.17.6/VNEI/Plugin.cs",
-        "sha256": "e7f4ef298051e60eaaefed699d17c577463e87884b7c42d96bcae8d42cf27839"
-      },
-      {
-        "path": "source-evidence/stage-b/MSchmoecker-VNEI-0.17.6/VNEI.csproj",
-        "sha256": "08e509c5104efb6acebb67a6ba754c094e93cf964f87089d194998dde6ebc8d0"
       }
     ]
   },
@@ -1609,6 +1641,22 @@
       {
         "path": "source-evidence/profile-updates/Pumpkin-ValheimVisualEnhanced-0.5.24/ValheimVisualEnhanced.csproj",
         "sha256": "fbca04c7faeca3ec4537aed2ba4cca9b2a315a09eefcb298054264025879ef4e"
+      }
+    ]
+  },
+  {
+    "id": "VNEI",
+    "guid": "com.maxsch.valheim.vnei",
+    "pluginVersion": "0.17.6",
+    "assembly": "VNEI",
+    "sources": [
+      {
+        "path": "source-evidence/stage-b/MSchmoecker-VNEI-0.17.6/VNEI/Plugin.cs",
+        "sha256": "e7f4ef298051e60eaaefed699d17c577463e87884b7c42d96bcae8d42cf27839"
+      },
+      {
+        "path": "source-evidence/stage-b/MSchmoecker-VNEI-0.17.6/VNEI.csproj",
+        "sha256": "08e509c5104efb6acebb67a6ba754c094e93cf964f87089d194998dde6ebc8d0"
       }
     ]
   },
@@ -1705,22 +1753,6 @@
       {
         "path": "source-evidence/stage-b/SpikeHimself-XPortal-1.2.25/XPortal.csproj",
         "sha256": "2809a380918106dcfc3b8c266c716f286119de28790455cb3a22527c66714ae3"
-      }
-    ]
-  },
-  {
-    "id": "trustymod",
-    "guid": "com.jotunn.trustymod",
-    "pluginVersion": "0.0.1",
-    "assembly": "trustymod",
-    "sources": [
-      {
-        "path": "source-evidence/localization/b/26-trustworthy-MaxwellTheCat/trustymod/trustymod.cs",
-        "sha256": "a3ec04626c6d2888acc35159d7d09f13804d0d1a628b686fa8306202cee6ccd3"
-      },
-      {
-        "path": "source-evidence/localization/b/26-trustworthy-MaxwellTheCat/trustymod.csproj",
-        "sha256": "039d02c574bfc64495eaebd2d20b0a22e831a0090005eb2dac1ca33e02d69e30"
       }
     ]
   }

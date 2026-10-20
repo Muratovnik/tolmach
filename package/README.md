@@ -18,7 +18,7 @@
 
 ## Переводимые моды
 
-В одних модах переведены основные окна и предметы, в других — дополнены отдельные строки или только сообщения о несовпадении версий. Число 107 не означает одинаковую полноту перевода каждого мода.
+В одних модах переведены основные окна и предметы, в других — дополнены отдельные строки или только сообщения о несовпадении версий. Число 109 не означает одинаковую полноту перевода каждого мода.
 
 Ниже указаны версии, с которыми сверялись каталоги. Другие версии обрабатываются по совпадающим строкам, но их совместимость не считается проверенной. Моды, которых нет в профиле, пропускаются.
 
@@ -28,7 +28,7 @@
 | -------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | [AAA Crafting](https://thunderstore.io/c/valheim/p/Azumatt/AAA_Crafting/)                                                        | 2.1.11 |
 | [Achievement Enabler](https://thunderstore.io/c/valheim/p/MidnightMods/AchievementEnabler/) | 0.5.1 |
-| [Adventure Backpacks](https://thunderstore.io/c/valheim/p/Vapok/AdventureBackpacks/)                                             | 2.4.0  |
+| [Adventure Backpacks](https://thunderstore.io/c/valheim/p/Vapok/AdventureBackpacks/)                                             | 2.4.5  |
 | [Air Animals](https://thunderstore.io/c/valheim/p/Marlthon/AirAnimals/)                                                          | 0.3.2 |
 | [Armory (Therzie)](https://thunderstore.io/c/valheim/p/Therzie/Armory/)                                                          | 1.4.3 |
 | [Async Save](https://thunderstore.io/c/valheim/p/MidnightMods/AsyncSave/)                                                        | 0.6.1 |
@@ -57,6 +57,7 @@
 | [Creature Level and Loot Control](https://thunderstore.io/c/valheim/p/Smoothbrain/CreatureLevelAndLootControl/)                  | 4.6.4 |
 | [Culinary Horizons](https://thunderstore.io/c/valheim/p/lnsanity/Culinary_Horizons/)                                             | 1.0.42 |
 | [Digitalroot's Gold Bars](https://thunderstore.io/c/valheim/p/Digitalroot/Digitalroots_GoldBars/)                                | 1.2.34 |
+| [Dive In](https://thunderstore.io/c/valheim/p/sighsorry/Dive_In/)                                                                | 1.2.6 |
 | [Dynamic Storage Ammunition Piles](https://thunderstore.io/c/valheim/p/Muji/DynamicStorage_Ammunition_Piles/)                    | 1.0.3 |
 | [Dynamic Storage Butcher’s Hall](https://thunderstore.io/c/valheim/p/Muji/DynamicStorage_Butchers_Hall/)                         | 1.1.0 |
 | [Dynamic Storage Forge](https://thunderstore.io/c/valheim/p/Muji/DynamicStorageForge/)                                           | 1.0.2 |
@@ -71,6 +72,7 @@
 | [First Person Mode](https://thunderstore.io/c/valheim/p/Azumatt/FirstPersonMode/)                                                | 1.3.12 |
 | [Food Duration Multiplier](https://thunderstore.io/c/valheim/p/blacks7ar/FoodDurationMultiplier/)                                | 1.1.7 |
 | [Forest Gammeltroll](https://thunderstore.io/c/valheim/p/Voxx/ForestGammeltroll/)                                                | 1.0.1 |
+| [GroupHUD](https://thunderstore.io/c/valheim/p/Mobrin/GroupHUD/)                                                                 | 0.66.0 |
 | [Groups](https://thunderstore.io/c/valheim/p/Smoothbrain/Groups/)                                                                | 1.2.12 |
 | [HammerTime](https://thunderstore.io/c/valheim/p/MSchmoecker/HammerTime/)                                                        | 0.3.11 |
 | [Huginn Map](https://thunderstore.io/c/valheim/p/NightOfGames/Huginn_Map/)                                                       | 1.0.5 |
@@ -86,16 +88,16 @@
 | [More World Locations AIO](https://thunderstore.io/c/valheim/p/warpalicious/More_World_Locations_AIO/)                           | 5.2.2 |
 | [Move Build Pieces](https://thunderstore.io/c/valheim/p/DragonMotion/MoveBuildPieces/)                                           | 1.1.1 |
 | [My Little UI](https://thunderstore.io/c/valheim/p/shudnal/MyLittleUI/)                                                          | 1.2.31 |
-| [Network Performance System](https://thunderstore.io/c/valheim/p/MidnightMods/NetworkPerformanceSystem/)                         | 1.17.0 |
+| [Network Performance System](https://thunderstore.io/c/valheim/p/MidnightMods/NetworkPerformanceSystem/)                         | 1.18.0 |
 | [Odin's Steelworks](https://thunderstore.io/c/valheim/p/OdinPlus/OdinsSteelworks/)                                               | 0.4.1 |
 | [Odin’s Food Barrels](https://thunderstore.io/c/valheim/p/OdinPlus/OdinsFoodBarrels/) | 1.4.0 |
 | [Ore Mines](https://thunderstore.io/c/valheim/p/blacks7ar/OreMines/)                                                             | 1.2.1 |
 | [Passive Powers](https://thunderstore.io/c/valheim/p/Smoothbrain/PassivePowers/)                                                 | 1.1.5 |
 | [Perfect Placement](https://thunderstore.io/c/valheim/p/Azumatt/PerfectPlacement/)                                               | 1.2.2 |
 | [Plant Easily](https://thunderstore.io/c/valheim/p/Advize/PlantEasily/)                                                          | 2.3.0 |
-| [Plant Everything](https://thunderstore.io/c/valheim/p/Advize/PlantEverything/)                                                  | 1.21.3 |
+| [Plant Everything](https://thunderstore.io/c/valheim/p/Advize/PlantEverything/)                                                  | 1.21.4 |
 | [Portal Lines](https://thunderstore.io/c/valheim/p/Jumpingmushroom/PortalLines/)                                                 | 0.9.0 |
-| [Portal Preview](https://thunderstore.io/c/valheim/p/Ivvty/PortalPreview/) | 1.4.0 |
+| [Portal Preview](https://thunderstore.io/c/valheim/p/Ivvty/PortalPreview/) | 1.5.1 |
 | [Quick Stack Store Sort Trash Restock](https://thunderstore.io/c/valheim/p/Goldenrevolver/Quick_Stack_Store_Sort_Trash_Restock/) | 1.4.16 |
 | [Quick Teleport](https://thunderstore.io/c/valheim/p/OdinPlus/QuickTeleport/)                                                    | 2.0.4 |
 | [Recipe Description Expansion](https://thunderstore.io/c/valheim/p/Azumatt/Recipe_Description_Expansion/)                        | 1.1.9 |
@@ -120,14 +122,14 @@
 | [Torches Are Fires](https://thunderstore.io/c/valheim/p/blacks7ar/TorchesAreFires/)                                              | 1.1.0 |
 | [Traders Extended](https://thunderstore.io/c/valheim/p/shudnal/TradersExtended/)                                                 | 2.0.5 |
 | [Transmog](https://thunderstore.io/c/valheim/p/Alpus/Transmog/)                                                                  | 3.2.0 |
-| [Upgrade World](https://thunderstore.io/c/valheim/p/JereKuusela/Upgrade_World/) | 1.85.0 |
+| [Upgrade World](https://thunderstore.io/c/valheim/p/JereKuusela/Upgrade_World/) | 1.86.0 |
 | [Useful Runestones](https://thunderstore.io/c/valheim/p/sighsorry/UsefulRunestones/)                                             | 1.0.3 |
-| [Valheim Community Patch](https://thunderstore.io/c/valheim/p/MidnightMods/ValheimCommunityPatch/) | 0.36.1 |
+| [Valheim Community Patch](https://thunderstore.io/c/valheim/p/MidnightMods/ValheimCommunityPatch/) | 0.37.0 |
 | [Valheim Infinite Fire](https://thunderstore.io/c/valheim/p/MidnightMods/ValheimInfiniteFire/)                                   | 1.4.0 |
-| [Valheim Visual Enhanced](https://thunderstore.io/c/valheim/p/Pumpkin/ValheimVisualEnhanced/)                                    | 0.5.18 |
+| [Valheim Visual Enhanced](https://thunderstore.io/c/valheim/p/Pumpkin/ValheimVisualEnhanced/)                                    | 0.5.24 |
 | [Viking NPC Continued](https://thunderstore.io/c/valheim/p/SephrinMods/VikingNPC_Continued/)                                     | 0.4.1 |
 | [VNEI](https://thunderstore.io/c/valheim/p/MSchmoecker/VNEI/)                                                                    | 0.17.6 |
-| [Wacky's Database](https://thunderstore.io/c/valheim/p/WackyMole/WackysDatabase/)                                                | 2.5.39 |
+| [Wacky's Database](https://thunderstore.io/c/valheim/p/WackyMole/WackysDatabase/)                                                | 2.5.40 |
 | [Warfare](https://thunderstore.io/c/valheim/p/Therzie/Warfare/)                                                                  | 1.9.5 |
 | [Why Sleep Alone](https://thunderstore.io/c/valheim/p/TheLionCid/WhySleepAlone/)                                                 | 1.0.3 |
 | [Wield Equipment While Swimming](https://thunderstore.io/c/valheim/p/blacks7ar/WieldEquipmentWhileSwimming/)                     | 1.1.4 |
