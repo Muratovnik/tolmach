@@ -12,7 +12,7 @@
     "msg_maxlevel": "$1: уже достигнут максимальный уровень",
     "piece_upgradecart": "Улучшить повозку",
     "piece_upgradecart_description": "Повысить уровень повозки",
-    "piecemanager_cat_craftycarts": "Ремесленные повозки"
+    "piecemanager_cat_craftycarts": "Повозки"
   },
   "englishWords": {
     "msg_cartupgraded": "$1 has been upgraded",
