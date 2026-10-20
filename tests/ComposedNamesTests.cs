@@ -159,6 +159,8 @@ namespace Tolmach.Tests
             string tooltip = "$item_food_health: <color=orange>20</color>\n$item_food_regen: <color=orange>2 hp/tick</color>";
             Assert.That(table.Translate(tooltip), Is.EqualTo("$item_food_health: <color=orange>20</color>\n$item_food_regen: <color=orange>2 ОЗ/тик</color>"));
             Assert.That(table.Translate("$item_food_regen: <color=orange>1.5 hp/tick</color>"), Is.EqualTo("$item_food_regen: <color=orange>1.5 ОЗ/тик</color>"));
+            Assert.That(table.Translate("$item_food_regen: <color=#ffa500ff>5 hp/tick</color>"), Is.EqualTo("$item_food_regen: <color=#ffa500ff>5 ОЗ/тик</color>"),
+                "Seen on the stand: the color reaches the tooltip as a hex value.");
             Assert.That(table.Translate("Heals 2 hp/tick"), Is.EqualTo("Heals 2 hp/tick"), "Text outside the game's line stays.");
         }
 

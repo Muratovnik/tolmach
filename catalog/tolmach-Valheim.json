@@ -375,8 +375,8 @@
       "texts": {},
       "patterns": [
         {
-          "source": "$item_food_regen: <color=orange>{0} hp/tick</color>",
-          "target": "$item_food_regen: <color=orange>{0} ОЗ/тик</color>",
+          "source": "$item_food_regen: <color={1}>{0} hp/tick</color>",
+          "target": "$item_food_regen: <color={1}>{0} ОЗ/тик</color>",
           "numeric": [
             0
           ],
