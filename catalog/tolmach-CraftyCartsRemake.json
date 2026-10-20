@@ -11,14 +11,16 @@
     "msg_cantupgrade": "Невозможно улучшить $1",
     "msg_maxlevel": "$1: уже достигнут максимальный уровень",
     "piece_upgradecart": "Улучшить повозку",
-    "piece_upgradecart_description": "Повысить уровень повозки"
+    "piece_upgradecart_description": "Повысить уровень повозки",
+    "piecemanager_cat_craftycarts": "Ремесленные повозки"
   },
   "englishWords": {
     "msg_cartupgraded": "$1 has been upgraded",
     "msg_cantupgrade": "$1 can't be upgraded",
     "msg_maxlevel": "$1 is already at max level",
     "piece_upgradecart": "Upgrade Cart",
-    "piece_upgradecart_description": "Upgrade your cart to a higher level"
+    "piece_upgradecart_description": "Upgrade your cart to a higher level",
+    "piecemanager_cat_craftycarts": "Crafty Carts"
   },
   "texts": {},
   "patterns": [],

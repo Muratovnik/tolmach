@@ -53,6 +53,76 @@
       "source": "Pull from containers? {0}",
       "target": "Брать из сундуков? {0}",
       "singleLine": true
+    },
+    {
+      "source": "[<color=yellow><b>{0}</b></color>] $hud_crafting $piece_chestwood {1}",
+      "target": "[<color=yellow><b>{0}</b></color>] $hud_crafting $piece_chestwood {1}",
+      "singleLine": true,
+      "arguments": {
+        "0": "term:keys"
+      }
+    },
+    {
+      "source": "[<color=yellow><b>{0} + {1}</b></color>] $hud_crafting $piece_chestwood {2}",
+      "target": "[<color=yellow><b>{0} + {1}</b></color>] $hud_crafting $piece_chestwood {2}",
+      "singleLine": true,
+      "arguments": {
+        "1": "term:keys"
+      }
+    },
+    {
+      "source": "[<color=yellow><b>{0} + {1} + {2}</b></color>] $hud_crafting $piece_chestwood {3}",
+      "target": "[<color=yellow><b>{0} + {1} + {2}</b></color>] $hud_crafting $piece_chestwood {3}",
+      "singleLine": true,
+      "arguments": {
+        "1": "term:keys",
+        "2": "term:keys"
+      }
+    },
+    {
+      "source": "[<color=yellow><b>{0} + {1} + {2} + {3}</b></color>] $hud_crafting $piece_chestwood {4}",
+      "target": "[<color=yellow><b>{0} + {1} + {2} + {3}</b></color>] $hud_crafting $piece_chestwood {4}",
+      "singleLine": true,
+      "arguments": {
+        "1": "term:keys",
+        "2": "term:keys",
+        "3": "term:keys"
+      }
+    },
+    {
+      "source": "[<b><color=yellow>{0}</color> + <color=yellow>$KEY_Use</color></b>] {1}",
+      "target": "[<b><color=yellow>{0}</color> + <color=yellow>$KEY_Use</color></b>] {1}",
+      "singleLine": true,
+      "arguments": {
+        "0": "term:keys"
+      }
+    },
+    {
+      "source": "[<b><color=yellow>{0} + {1}</color> + <color=yellow>$KEY_Use</color></b>] {2}",
+      "target": "[<b><color=yellow>{0} + {1}</color> + <color=yellow>$KEY_Use</color></b>] {2}",
+      "singleLine": true,
+      "arguments": {
+        "1": "term:keys"
+      }
+    },
+    {
+      "source": "[<b><color=yellow>{0} + {1} + {2}</color> + <color=yellow>$KEY_Use</color></b>] {3}",
+      "target": "[<b><color=yellow>{0} + {1} + {2}</color> + <color=yellow>$KEY_Use</color></b>] {3}",
+      "singleLine": true,
+      "arguments": {
+        "1": "term:keys",
+        "2": "term:keys"
+      }
+    },
+    {
+      "source": "[<b><color=yellow>{0} + {1} + {2} + {3}</color> + <color=yellow>$KEY_Use</color></b>] {4}",
+      "target": "[<b><color=yellow>{0} + {1} + {2} + {3}</color> + <color=yellow>$KEY_Use</color></b>] {4}",
+      "singleLine": true,
+      "arguments": {
+        "1": "term:keys",
+        "2": "term:keys",
+        "3": "term:keys"
+      }
     }
   ],
   "returns": [],
@@ -99,14 +169,20 @@
       "type": "AzuCraftyBoxes.Patches.FireplaceGetHoverTextPatch",
       "method": "Postfix",
       "values": {
-        " and ": " и "
+        " and ": " и ",
+        "{0} in inventory": "{0} в инвентаре",
+        "{0} in nearby containers": "{0} в ближайших сундуках",
+        "{0} needed to fill": "{0} нужно для заполнения"
       }
     },
     {
       "type": "AzuCraftyBoxes.Patches.TurretGetHoverTextPatch",
       "method": "Postfix",
       "values": {
-        " and ": " и "
+        " and ": " и ",
+        "{0} in inventory": "{0} в инвентаре",
+        "{0} in nearby containers": "{0} в ближайших сундуках",
+        "{0} needed to fill": "{0} нужно для заполнения"
       }
     },
     {
@@ -114,7 +190,10 @@
       "method": "UpdateAddFuelSwitchHoverText",
       "values": {
         " and ": " и ",
-        "\n[<b><color=yellow>{0}</color> + <color=yellow>$KEY_Use</color></b>] Add {1}": "\n[<b><color=yellow>{0}</color> + <color=yellow>$KEY_Use</color></b>] Добавить: {1}"
+        "\n[<b><color=yellow>{0}</color> + <color=yellow>$KEY_Use</color></b>] Add {1}": "\n[<b><color=yellow>{0}</color> + <color=yellow>$KEY_Use</color></b>] Добавить: {1}",
+        "{0} {1} in inventory": "{0} {1} в инвентаре",
+        "{0} {1} in nearby containers": "{0} {1} в ближайших сундуках",
+        "{0} needed to fill": "{0} нужно для заполнения"
       }
     },
     {
@@ -136,7 +215,9 @@
       "method": "CreateEffect",
       "values": {
         "Preventing Pulling": "Не брать из сундуков",
-        "Prevents pulling from nearby containers & backpacks": "Предметы не берутся из ближайших сундуков и рюкзаков"
+        "Prevents pulling from nearby containers & backpacks": "Предметы не берутся из ближайших сундуков и рюкзаков",
+        "Pulling From Own Containers": "Брать из своих сундуков",
+        "Only pulls from containers you built yourself (plus backpacks)": "Предметы берутся только из сундуков, построенных вами (и из рюкзаков)"
       }
     },
     {
@@ -165,6 +246,23 @@
   "pluginVersion": "1.8.28",
   "rawTexts": {
     "Preventing Pulling": "Не брать из сундуков",
-    "Prevents pulling from nearby containers & backpacks": "Предметы не берутся из ближайших сундуков и рюкзаков"
+    "Prevents pulling from nearby containers & backpacks": "Предметы не берутся из ближайших сундуков и рюкзаков",
+    "Pulling From Own Containers": "Брать из своих сундуков",
+    "Only pulls from containers you built yourself (plus backpacks)": "Предметы берутся только из сундуков, построенных вами (и из рюкзаков)"
+  },
+  "terms": {
+    "keys": {
+      "LeftShift": "Л. Shift",
+      "RightShift": "Пр. Shift",
+      "LeftControl": "Л. Ctrl",
+      "RightControl": "Пр. Ctrl",
+      "LeftAlt": "Л. Alt",
+      "RightAlt": "Пр. Alt",
+      "Mouse0": "ЛКМ",
+      "Mouse1": "ПКМ",
+      "Mouse2": "СКМ",
+      "Space": "Пробел",
+      "Return": "Enter"
+    }
   }
 }

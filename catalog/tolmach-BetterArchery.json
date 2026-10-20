@@ -17,7 +17,9 @@
     "mod_betterarchery_quiver_drop_outside_error": "Сначала снимите колчан.",
     "mod_betterarchery_quiver_unequip_error": "Сначала опустошите колчан.",
     "mod_betterarchery_leather_quiver_name": "Кожаный колчан",
-    "mod_betterarchery_leather_quiver_description": "Колчан из кожи. Добавляет три ячейки для ваших стрел."
+    "mod_betterarchery_leather_quiver_description": "Колчан из кожи. Добавляет три ячейки для ваших стрел.",
+    "mod_betterarchery_welcome_topic": "Добро пожаловать в BetterArchery",
+    "mod_betterarchery_welcome_text": "Спасибо, что пользуетесь Better Archery! Не забудьте настроить конфигурацию под свой вкус!"
   },
   "englishWords": {
     "mod_betterarchery_test": "Loaded",
@@ -30,7 +32,9 @@
     "mod_betterarchery_quiver_drop_outside_error": "Unequip the quiver first.",
     "mod_betterarchery_quiver_unequip_error": "Empty the quiver first.",
     "mod_betterarchery_leather_quiver_name": "Leather Quiver",
-    "mod_betterarchery_leather_quiver_description": "An arrow holder made with leathers. Gives 3 extra slots for your lovely arrows."
+    "mod_betterarchery_leather_quiver_description": "An arrow holder made with leathers. Gives 3 extra slots for your lovely arrows.",
+    "mod_betterarchery_welcome_topic": "Welcome to BetterArchery",
+    "mod_betterarchery_welcome_text": "Thank you for using Better Archery! Don't forget to adjust the config to suit your taste!"
   },
   "texts": {},
   "patterns": [

@@ -15,7 +15,8 @@
     "bsb_seedbed_germinating": "Прорастает",
     "bsb_seedbed_empty": "Пусто",
     "bsb_seedbed_add": "Посадить семена",
-    "bsb_notenoughseeds": "Недостаточно семян."
+    "bsb_notenoughseeds": "Недостаточно семян.",
+    "piecemanager_cat_collectorseries": "Коллекционная серия"
   },
   "englishWords": {
     "bsb_seedbed": "Seed Bed",
@@ -26,7 +27,8 @@
     "bsb_seedbed_germinating": "Germinating",
     "bsb_seedbed_empty": "Empty",
     "bsb_seedbed_add": "Plant Seeds",
-    "bsb_notenoughseeds": "Not enough seeds."
+    "bsb_notenoughseeds": "Not enough seeds.",
+    "piecemanager_cat_collectorseries": "CollectorSeries"
   },
   "texts": {},
   "patterns": [],

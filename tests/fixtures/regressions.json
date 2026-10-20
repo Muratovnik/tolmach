@@ -193,5 +193,20 @@
     "module": "AzuCraftyBoxes",
     "source": "<size=30><color=#ffffff>Pull from containers?</color></size>\r\n<size=25><color=green>Да</color></size>",
     "expected": "<size=30><color=#ffffff>Брать из сундуков?</color></size>\r\n<size=25><color=green>Да</color></size>"
+  },
+  {
+    "module": "AzuCraftyBoxes",
+    "source": "\n[<color=yellow><b>E + LeftShift</b></color>] $hud_crafting $piece_chestwood ✅",
+    "expected": "\n[<color=yellow><b>E + Л. Shift</b></color>] $hud_crafting $piece_chestwood ✅"
+  },
+  {
+    "module": "AzuCraftyBoxes",
+    "source": "\n[<color=yellow><b>F5</b></color>] $hud_crafting $piece_chestwood ✅",
+    "expected": "\n[<color=yellow><b>F5</b></color>] $hud_crafting $piece_chestwood ✅"
+  },
+  {
+    "module": "AzuCraftyBoxes",
+    "source": "\n[<b><color=yellow>LeftShift</color> + <color=yellow>$KEY_Use</color></b>] Добавить: 10 $item_wood",
+    "expected": "\n[<b><color=yellow>Л. Shift</color> + <color=yellow>$KEY_Use</color></b>] Добавить: 10 $item_wood"
   }
 ]

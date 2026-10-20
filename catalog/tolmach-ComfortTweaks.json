@@ -48,5 +48,11 @@
   "namespaces": [
     "ComfortTweaks"
   ],
-  "pluginVersion": "3.3.11"
+  "pluginVersion": "3.3.11",
+  "rawTexts": {
+    "Small rested buff": "Малый заряд бодрости",
+    "Medium rested buff": "Средний заряд бодрости",
+    "Large rested buff": "Большой заряд бодрости",
+    "Rested:": "Бодрость:"
+  }
 }
