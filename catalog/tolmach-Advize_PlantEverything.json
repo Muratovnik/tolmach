@@ -1,7 +1,7 @@
 {
   "id": "Advize_PlantEverything",
   "package": "Advize-PlantEverything",
-  "version": "1.21.3",
+  "version": "1.21.4",
   "assembly": "Advize_PlantEverything",
   "guids": [
     "advize.PlantEverything"
@@ -10,10 +10,13 @@
     "peLingonberryBushName": "Куст брусники",
     "peLingonberryBushDescription": "Посадите бруснику, чтобы вырастить куст брусники.",
     "peAncientSaplingName": "Саженец старого дерева",
+    "peAncientSaplingDescription": "Посадите саженец старого дерева.",
     "peYggaSaplingName": "Саженец Иггдрасиля",
+    "peYggaSaplingDescription": "Посадите саженец Иггдрасиля.",
     "peAutumnBirchSaplingName": "Саженец осенней березы",
     "peAutumnBirchSaplingDescription": "Разновидность с Равнин",
     "peAshwoodSaplingName": "Саженец пепельного дерева",
+    "peAshwoodSaplingDescription": "Посадите саженец пепельного дерева.",
     "peVineAshSaplingName": "Настраиваемая пепельная лоза",
     "peVineAshSaplingDescription": "Высаживает пепельную лозу с окраской, заданной в настройках мода.",
     "peRaspberryBushName": "Куст малины",
@@ -70,10 +73,13 @@
     "peLingonberryBushName": "Lingonberry Bush",
     "peLingonberryBushDescription": "Plant lingonberries to grow lingonberry bushes.",
     "peAncientSaplingName": "Ancient Sapling",
+    "peAncientSaplingDescription": "peAncientSaplingDescription",
     "peYggaSaplingName": "Ygga Sapling",
+    "peYggaSaplingDescription": "peYggaSaplingDescription",
     "peAutumnBirchSaplingName": "Autumn Birch Sapling",
     "peAutumnBirchSaplingDescription": "Plains Variant",
     "peAshwoodSaplingName": "Ashwood Sapling",
+    "peAshwoodSaplingDescription": "peAshwoodSaplingDescription",
     "peVineAshSaplingName": "Custom Ashvine",
     "peVineAshSaplingDescription": "Plants an Ashvine sapling with the colours defined in the mod config.",
     "peRaspberryBushName": "Raspberry Bush",
@@ -131,17 +137,18 @@
   "returns": [],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/localization/b/29-Advize-PlantEverything/Advize_PlantEverything/PlantEverything.cs",
-    "source-evidence/localization/b/29-Advize-PlantEverything/ServerSync/VersionCheck.cs"
+    "source-evidence/profile-updates/Advize-PlantEverything-1.21.4/Advize_PlantEverything/PlantEverything.cs",
+    "source-evidence/profile-updates/Advize-PlantEverything-1.21.4/ServerSync/VersionCheck.cs"
   ],
   "notes": [
-    "version — версия пакета Gale; pluginVersion и assembly — метаданные приложенной декомпиляции. Игровой запуск не выполнен."
+    "version — версия пакета Gale; pluginVersion и assembly — метаданные приложенной декомпиляции. Игровой запуск не выполнен.",
+    "Пакет текущего профиля проверен 2026-10-20 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "namespaces": [
     "Advize_PlantEverything",
     "ServerSync"
   ],
-  "pluginVersion": "1.21.3",
+  "pluginVersion": "1.21.4",
   "literals": [
     {
       "type": "ServerSync.VersionCheck",

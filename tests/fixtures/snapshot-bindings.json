@@ -18,15 +18,15 @@
   {
     "id": "AdventureBackpacks",
     "guid": "vapok.mods.adventurebackpacks",
-    "pluginVersion": "2.4.0",
+    "pluginVersion": "2.4.5",
     "assembly": "AdventureBackpacks",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/AdventureBackpacks/AdventureBackpacks.cs",
-        "sha256": "ad0fbcf7f0a068f52ac07efff2fd7ea3b2939f1be0b9e56714f659b253a39a1d"
+        "path": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.5/AdventureBackpacks/AdventureBackpacks.cs",
+        "sha256": "4699c7f1f4b30bdbde0ff3f38616351bfb8c6218036b721c60268f67e07dc98c"
       },
       {
-        "path": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/AdventureBackpacks.csproj",
+        "path": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.5/AdventureBackpacks.csproj",
         "sha256": "bd4a1d587ba9dbe3d3cd2f6a337a7842bf84483b0a49dfc4df1f5db19352139d"
       }
     ]
@@ -34,16 +34,16 @@
   {
     "id": "Advize_PlantEverything",
     "guid": "advize.PlantEverything",
-    "pluginVersion": "1.21.3",
+    "pluginVersion": "1.21.4",
     "assembly": "Advize_PlantEverything",
     "sources": [
       {
-        "path": "source-evidence/localization/b/29-Advize-PlantEverything/Advize_PlantEverything/PlantEverything.cs",
-        "sha256": "b543f3b9980db0620cea58b0b7d3f06eefdcb52b37502285ccdfff86fd7b282a"
+        "path": "source-evidence/profile-updates/Advize-PlantEverything-1.21.4/Advize_PlantEverything/PlantEverything.cs",
+        "sha256": "a8fd5ca6430b598b09634cd556b65b8be8f99f321f20a1370434d92f35e19035"
       },
       {
-        "path": "source-evidence/localization/b/29-Advize-PlantEverything/Advize_PlantEverything.csproj",
-        "sha256": "843877f0b533d4a192fd774b04cfdec5b5db7d2bc72c58cd9fc3124e665e4925"
+        "path": "source-evidence/profile-updates/Advize-PlantEverything-1.21.4/Advize_PlantEverything.csproj",
+        "sha256": "40f555c2836b30cc1bb2efb96ce59b30cb6596973f1c60383b2a4f5b6c4b6230"
       }
     ]
   },
@@ -979,15 +979,15 @@
   {
     "id": "NetworkPerformanceSystem",
     "guid": "MidnightsFX.NetworkPerformanceSystem",
-    "pluginVersion": "1.17.0",
+    "pluginVersion": "1.18.0",
     "assembly": "NetworkPerformanceSystem",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.17.0/NetworkPerformanceSystem/NetworkPerformanceSystem.cs",
-        "sha256": "f770c2df3bc2fc94405507c0df0610fe5f2383fe9dbde0c448c3cf83c3bfe802"
+        "path": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.18.0/NetworkPerformanceSystem/NetworkPerformanceSystem.cs",
+        "sha256": "93583f758c99b4785541770150b063064a25e17323d376d57f85487a80efe5fe"
       },
       {
-        "path": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.17.0/NetworkPerformanceSystem.csproj",
+        "path": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.18.0/NetworkPerformanceSystem.csproj",
         "sha256": "442b53dff371a88533ddb3d6a33c077d7cabeeaae1f25681a31713e39052a856"
       }
     ]
@@ -1123,16 +1123,16 @@
   {
     "id": "PortalPreview",
     "guid": "ru.ivest.portalpreview",
-    "pluginVersion": "1.4.0",
+    "pluginVersion": "1.5.1",
     "assembly": "PortalPreview",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/PortalPreviewPlugin.cs",
-        "sha256": "8a209b9b591989d97ae8ef076d7a26a4910d0988a24861401700684444ecb2b3"
+        "path": "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/PortalPreviewPlugin.cs",
+        "sha256": "849da60403b9f71bd173a7eeb91eea8859d06c5f0f8dd189f803efe5b9242ac4"
       },
       {
-        "path": "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview.csproj",
-        "sha256": "004e410e6ee249eb73b6f8988812ff92e2987ce7452306e9ac9ee00f6238c6c4"
+        "path": "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview.csproj",
+        "sha256": "5e48499aef982fc17498c20754c5c23279db051a9881b5b18d39c438ad60bc2a"
       }
     ]
   },
@@ -1507,15 +1507,15 @@
   {
     "id": "UpgradeWorld",
     "guid": "upgrade_world",
-    "pluginVersion": "1.85",
+    "pluginVersion": "1.86",
     "assembly": "UpgradeWorld",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld/UpgradeWorld.cs",
-        "sha256": "b37094044bafccfd9a403e71d999d360d5b2d43ce8fd190228951b18d1a4324c"
+        "path": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld/UpgradeWorld.cs",
+        "sha256": "93fe11e45b0d26b7c1ca69906185153176d8b936bfb2238aec10f9a0df3c8eec"
       },
       {
-        "path": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld.csproj",
+        "path": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld.csproj",
         "sha256": "5bb20e1f4f33ffb92f972af829cefcaf8cae2132d5343aaa59e3976fd4b88844"
       }
     ]
@@ -1567,16 +1567,16 @@
   {
     "id": "ValheimCommunityPatch",
     "guid": "MidnightsFX.ValheimCommunityPatch",
-    "pluginVersion": "0.36.1",
+    "pluginVersion": "0.37.0",
     "assembly": "ValheimCommunityPatch",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.36.1/ValheimCommunityPatch/ValheimCommunityPatch.cs",
-        "sha256": "2e2e8d49fa23774071dc4767b707450d17361b59eb84529bcc730b6ba89bec4d"
+        "path": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.37.0/ValheimCommunityPatch/ValheimCommunityPatch.cs",
+        "sha256": "e23f3b699d37d936695f5edeedb2469085eae51fcef498a81275ea173c025f8b"
       },
       {
-        "path": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.36.1/ValheimCommunityPatch.csproj",
-        "sha256": "082989de64985394c5c93ab1c77eae308814e940c2ba678f44a34b5c7c051024"
+        "path": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.37.0/ValheimCommunityPatch.csproj",
+        "sha256": "b7ea6a750d8be704d37bbc7707a8b08008e139957b0fc87e00e6a0a2d76cf622"
       }
     ]
   },
@@ -1599,31 +1599,31 @@
   {
     "id": "ValheimVisualEnhanced",
     "guid": "dev.local.valheimvisualenhanced",
-    "pluginVersion": "0.5.18",
+    "pluginVersion": "0.5.24",
     "assembly": "ValheimVisualEnhanced",
     "sources": [
       {
-        "path": "source-evidence/localization/d/Pumpkin-ValheimVisualEnhanced-proj/ValheimVisualEnhanced/ValheimVisualEnhancedPlugin.cs",
-        "sha256": "832e4f17aab352783d86db6becbb2a0579f47823be4302b7d56125a29ac0a449"
+        "path": "source-evidence/profile-updates/Pumpkin-ValheimVisualEnhanced-0.5.24/ValheimVisualEnhanced/ValheimVisualEnhancedPlugin.cs",
+        "sha256": "032f67127045d3cc977472e34c58fb00eb54efbb66886ca290d19713cb627beb"
       },
       {
-        "path": "source-evidence/localization/d/Pumpkin-ValheimVisualEnhanced-proj/ValheimVisualEnhanced.csproj",
-        "sha256": "e76aca73cbf385be73caf6c91aa1ae79590b8741a035c14eca4d495ff5788421"
+        "path": "source-evidence/profile-updates/Pumpkin-ValheimVisualEnhanced-0.5.24/ValheimVisualEnhanced.csproj",
+        "sha256": "fbca04c7faeca3ec4537aed2ba4cca9b2a315a09eefcb298054264025879ef4e"
       }
     ]
   },
   {
     "id": "WackysDatabase",
     "guid": "WackyMole.WackysDatabase",
-    "pluginVersion": "2.5.39",
+    "pluginVersion": "2.5.40",
     "assembly": "WackysDatabase",
     "sources": [
       {
-        "path": "source-evidence/profile-updates/WackyMole-WackysDatabase-2.5.39/wackydatabase/WMRecipeCust.cs",
-        "sha256": "7ac352bf3e1620897fcc28530929d7c84fb191d8ac4636b80cc4741d3ac81325"
+        "path": "source-evidence/profile-updates/WackyMole-WackysDatabase-2.5.40/wackydatabase/WMRecipeCust.cs",
+        "sha256": "98e02b5b94f8fdffbd01117cf4a26da3e6a19ceaded74f0d3c25eaab4e735c23"
       },
       {
-        "path": "source-evidence/profile-updates/WackyMole-WackysDatabase-2.5.39/WackysDatabase.csproj",
+        "path": "source-evidence/profile-updates/WackyMole-WackysDatabase-2.5.40/WackysDatabase.csproj",
         "sha256": "8143b8eb9daff5238ef54b14f000e9c38ced196e99bd0681a478758e97693603"
       }
     ]

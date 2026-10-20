@@ -1,8 +1,8 @@
 {
   "id": "UpgradeWorld",
   "package": "JereKuusela-Upgrade_World",
-  "version": "1.85.0",
-  "pluginVersion": "1.85",
+  "version": "1.86.0",
+  "pluginVersion": "1.86",
   "assembly": "UpgradeWorld",
   "guids": [
     "upgrade_world"
@@ -41,19 +41,19 @@
     }
   ],
   "sourceFiles": [
-    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld/Helper.cs",
-    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld/RegisterLocation.cs",
-    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld/ResetChests.cs",
-    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld/LocationRegisterCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld/ChestsResetCommand.cs",
-    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld/ExecutedEntityOperation.cs",
-    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld/Executor.cs",
-    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0/UpgradeWorld.il"
+    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld/Helper.cs",
+    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld/RegisterLocation.cs",
+    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld/ResetChests.cs",
+    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld/LocationRegisterCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld/ChestsResetCommand.cs",
+    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld/ExecutedEntityOperation.cs",
+    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld/Executor.cs",
+    "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0/UpgradeWorld.il"
   ],
   "notes": [
     "Scoped HUD error translation: Helper.Catch catches InvalidOperationException from command callbacks and calls AddError -> AddMessage -> Character.Message. RegisterLocation.Register and ResetChests.GetPrefabsForOperation provide the mod's two explicit InvalidOperationException messages; Executor.AddOperation invokes ResetChests.OnInit synchronously within the caught callback.",
     "Command names, parameter IDs, help, autocomplete and ordinary console operation reports remain outside coverage. No general Terminal.AddString adapter is installed. The Location prefix is also shared by the successful registration report in Register; its opaque location ID is preserved.",
-    "Exact installed DLL was decompiled and its literal instructions checked. Package version is 1.84.0; BepInPlugin reports 1.84. No game execution or screen layout validation is claimed.",
-    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
+    "Exact installed DLL was decompiled and its literal instructions checked. Package version is 1.86.0; BepInPlugin reports 1.86. No game execution or screen layout validation is claimed.",
+    "Пакет текущего профиля проверен 2026-10-20 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ]
 }

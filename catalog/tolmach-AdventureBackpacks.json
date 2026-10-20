@@ -1,8 +1,8 @@
 {
   "id": "AdventureBackpacks",
   "package": "Vapok-AdventureBackpacks",
-  "version": "2.4.0",
-  "pluginVersion": "2.4.0",
+  "version": "2.4.5",
+  "pluginVersion": "2.4.5",
   "assembly": "AdventureBackpacks",
   "guids": [
     "vapok.mods.adventurebackpacks"
@@ -86,22 +86,29 @@
       "values": {
         "Adventure Backpacks: Game restart required for model changes to take effect.": "Adventure Backpacks: чтобы сменить модель, перезапустите игру."
       }
+    },
+    {
+      "type": "AdventureBackpacks.Assets.Factories.BackpackFactory+<>c__DisplayClass7_0",
+      "method": "<ResolveModelBundle>b__1",
+      "values": {
+        "Adventure Backpacks: Game restart required for texture pack changes to take effect.": "Adventure Backpacks: чтобы сменить набор текстур, перезапустите игру."
+      }
     }
   ],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/AdventureBackpacks.Translations.English.json",
-    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/AdventureBackpacks/AdventureBackpacks.cs",
-    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/Vapok.Common.Managers.Skill/Skill.cs",
-    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/Vapok.Common.Managers.Splash/CyberTooltipTrigger.cs",
-    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/Vapok.Common.Managers.Splash/SplashModalComponent.cs",
-    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0/il/AdventureBackpacks.il"
+    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.5/AdventureBackpacks.Translations.English.json",
+    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.5/AdventureBackpacks/AdventureBackpacks.cs",
+    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.5/Vapok.Common.Managers.Skill/Skill.cs",
+    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.5/Vapok.Common.Managers.Splash/CyberTooltipTrigger.cs",
+    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.5/Vapok.Common.Managers.Splash/SplashModalComponent.cs",
+    "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.5/il/AdventureBackpacks.il"
   ],
   "notes": [
     "Английский текст взят из кода и ресурсов этой версии мода; русский перевод собственный.",
     "Собственный русский перевод мода сохраняется, кроме шести явно перечисленных replaceNative: исправлены обещание вечного рюкзака, потерянные светлячок и волшебный сундук, название защиты от статуса «Холод» и ошибочное указание на силы Тора вместо сил игрока.",
     "The native Russian gameplay table is preserved outside the explicit replaceNative allowlist. English keys and existing Russian values for those overrides were verified against the AdventureBackpacks 2.2.10 release commit 02d2326596d548199a9f02aa3e65e94c0f514377 (AdventureBackpacks/Translations/English.json and Translations/AdventureBackpacks.Russian.json). ColdResistance.cs removes only the Cold status; EffectsFactory.cs explicitly excludes freezing. Three hard-coded privacy UI headers are translated in their exact display methods; optional ChebsNecromancy content absent from the checked installation is not added.",
-    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
+    "Пакет текущего профиля проверен 2026-10-20 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "replaceNative": [
     "vapok_mod_item_backpack_plains",

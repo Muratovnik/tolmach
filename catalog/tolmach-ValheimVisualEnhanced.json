@@ -1,7 +1,7 @@
 {
   "id": "ValheimVisualEnhanced",
   "package": "Pumpkin-ValheimVisualEnhanced",
-  "version": "0.5.18",
+  "version": "0.5.24",
   "assembly": "ValheimVisualEnhanced",
   "guids": [
     "dev.local.valheimvisualenhanced"
@@ -18,13 +18,14 @@
   "returns": [],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/localization/d/Pumpkin-ValheimVisualEnhanced-proj/ValheimVisualEnhanced/ValheimVisualEnhancedPlugin.cs"
+    "source-evidence/profile-updates/Pumpkin-ValheimVisualEnhanced-0.5.24/ValheimVisualEnhanced/ValheimVisualEnhancedPlugin.cs"
   ],
   "notes": [
-    "version — версия пакета Gale; pluginVersion и assembly — метаданные приложенной декомпиляции. Игровой запуск не выполнен."
+    "version — версия пакета Gale; pluginVersion и assembly — метаданные приложенной декомпиляции. Игровой запуск не выполнен.",
+    "Пакет текущего профиля проверен 2026-10-20 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "namespaces": [
     "ValheimVisualEnhanced"
   ],
-  "pluginVersion": "0.5.18"
+  "pluginVersion": "0.5.24"
 }

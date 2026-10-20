@@ -24,36 +24,38 @@
     {
       "id": "AdventureBackpacks",
       "package": "Vapok-AdventureBackpacks",
-      "version": "2.4.0",
-      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.0",
+      "version": "2.4.5",
+      "status_in_archive": "Installed profile audited on 2026-10-20; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Vapok-AdventureBackpacks-2.4.5",
       "binary_identities": [
         {
-          "mod": "Vapok-AdventureBackpacks-2.4.0",
+          "mod": "Vapok-AdventureBackpacks-2.4.5",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Vapok-AdventureBackpacks/AdventureBackpacks.dll",
-          "size": 12637696,
-          "sha256": "880274426d9a2af116c277950b32d20f55ea6970031fe82f4f2d277f6ccb9048"
+          "size": 12645376,
+          "sha256": "249f1b5d35576045038ad27326c0487c231b3bacf48d572a14b5abe5333ab1b7"
         }
       ],
-      "previous_version": "2.2.10",
-      "archived_version": "2.2.0"
+      "previous_version": "2.4.0",
+      "archived_version": "2.4.0"
     },
     {
       "id": "Advize_PlantEverything",
       "package": "Advize-PlantEverything",
-      "version": "1.21.3",
-      "status_in_archive": "partial",
-      "source_root": "source-evidence/localization/b/29-Advize-PlantEverything",
+      "version": "1.21.4",
+      "status_in_archive": "Installed profile audited on 2026-10-20; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Advize-PlantEverything-1.21.4",
       "binary_identities": [
         {
-          "mod": "Advize-PlantEverything-1.21.3",
+          "mod": "Advize-PlantEverything-1.21.4",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Advize-PlantEverything/Advize_PlantEverything.dll",
           "size": 260096,
-          "sha256": "313d57d5d9df2a27bff04ab184487d544a0749bbbe2c10cb1c41a0ae964cac62"
+          "sha256": "ae6f90220ac138e9cc90deefa530e934007de4bf899b4ac51712525e268f6147"
         }
-      ]
+      ],
+      "previous_version": "1.21.3",
+      "archived_version": "1.21.3"
     },
     {
       "id": "AirAnimals",
@@ -1081,20 +1083,20 @@
     {
       "id": "NetworkPerformanceSystem",
       "package": "MidnightMods-NetworkPerformanceSystem",
-      "version": "1.17.0",
-      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.17.0",
+      "version": "1.18.0",
+      "status_in_archive": "Installed profile audited on 2026-10-20; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/MidnightMods-NetworkPerformanceSystem-1.18.0",
       "binary_identities": [
         {
-          "mod": "MidnightMods-NetworkPerformanceSystem-1.17.0",
+          "mod": "MidnightMods-NetworkPerformanceSystem-1.18.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/MidnightMods-NetworkPerformanceSystem/NetworkPerformanceSystem.dll",
-          "size": 508928,
-          "sha256": "ff5eddf5b32b31aab706a0ecfb225d5541c69f6eafc9cb8aafb509215aa518c4"
+          "size": 557568,
+          "sha256": "0a94439a9c77edc4c19fe75ad1872648816ea85c148b38fa14cfee26d2a03611"
         }
       ],
-      "previous_version": "1.15.1",
-      "archived_version": "1.15.1"
+      "previous_version": "1.17.0",
+      "archived_version": "1.17.0"
     },
     {
       "id": "Norsemen",
@@ -1237,20 +1239,20 @@
     {
       "id": "PortalPreview",
       "package": "Ivvty-PortalPreview",
-      "version": "1.4.0",
-      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0",
+      "version": "1.5.1",
+      "status_in_archive": "Installed profile audited on 2026-10-20; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1",
       "binary_identities": [
         {
-          "mod": "Ivvty-PortalPreview-1.4.0",
+          "mod": "Ivvty-PortalPreview-1.5.1",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Ivvty-PortalPreview/PortalPreview.dll",
-          "size": 991232,
-          "sha256": "e073cdee0bcf2d7f4bace23874f4f50d389b0f2709b8a570071fb4008d59c895"
+          "size": 739328,
+          "sha256": "9ad804f3b4da39ba612ac01466e46247018fbd08b408e355a70b255708b332e5"
         }
       ],
-      "archived_version": "1.2.0",
-      "previous_version": "1.3.6"
+      "archived_version": "1.4.0",
+      "previous_version": "1.4.0"
     },
     {
       "id": "QuickStackStore",
@@ -1642,21 +1644,21 @@
     {
       "id": "UpgradeWorld",
       "package": "JereKuusela-Upgrade_World",
-      "version": "1.85.0",
+      "version": "1.86.0",
       "pluginVersion": "1.84",
       "assembly": "UpgradeWorld",
       "guids": [
         "upgrade_world"
       ],
-      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.85.0",
+      "status_in_archive": "Installed profile audited on 2026-10-20; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/JereKuusela-Upgrade_World-1.86.0",
       "binary_identities": [
         {
-          "mod": "JereKuusela-Upgrade_World-1.85.0",
+          "mod": "JereKuusela-Upgrade_World-1.86.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/JereKuusela-Upgrade_World/UpgradeWorld.dll",
-          "size": 216064,
-          "sha256": "00e661ecd8ca6546525d61317c9dd4cf6416f5c360bee9451650004eb4da6fe4"
+          "size": 216576,
+          "sha256": "2605eed18db4857f05d4df1f3530c24cccf1eeb90121eebfbd5b06a58eb7cd34"
         }
       ],
       "sourceFiles": [
@@ -1666,8 +1668,8 @@
         "Four scoped literal values translate the HUD error path Helper.Catch -> AddError/AddMessage -> Character.Message, RegisterLocation.Register missing location, and ResetChests.GetPrefabsForOperation invalid chest ID. Executor.AddOperation -> Init -> OnInit calls chest validation synchronously under Catch. Console commands/help/autocomplete and ordinary reports excluded. Game execution still pending."
       ],
       "audit_scope": "All extracted C# searched for display/localization/message sinks; owner code and relevant callers inspected. No arbitrary F1 config translation; no claim of full runtime compatibility.",
-      "archived_version": "1.83.0",
-      "previous_version": "1.84.0"
+      "archived_version": "1.85.0",
+      "previous_version": "1.85.0"
     },
     {
       "id": "UsefulRunestones",
@@ -1722,20 +1724,20 @@
     {
       "id": "ValheimCommunityPatch",
       "package": "MidnightMods-ValheimCommunityPatch",
-      "version": "0.36.1",
-      "status_in_archive": "Installed profile audited on 2026-10-17; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.36.1",
+      "version": "0.37.0",
+      "status_in_archive": "Installed profile audited on 2026-10-20; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/MidnightMods-ValheimCommunityPatch-0.37.0",
       "binary_identities": [
         {
-          "mod": "MidnightMods-ValheimCommunityPatch-0.36.1",
+          "mod": "MidnightMods-ValheimCommunityPatch-0.37.0",
           "enabled": true,
           "profile_path": "BepInEx/plugins/MidnightMods-ValheimCommunityPatch/ValheimCommunityPatch.dll",
-          "size": 360448,
-          "sha256": "7a70e76dfa4e9e3e8dccca4aebde662a11a1bd1bd14fb1596890b5505dad96d9"
+          "size": 378368,
+          "sha256": "a55ec3fa37ba16baaf848cc0b17aafb91572b37fb5f6e1ded0fd5575ba8db6e5"
         }
       ],
-      "previous_version": "0.33.0",
-      "archived_version": "0.33.0"
+      "previous_version": "0.36.1",
+      "archived_version": "0.36.1"
     },
     {
       "id": "ValheimInfiniteFire",
@@ -1756,36 +1758,38 @@
     {
       "id": "ValheimVisualEnhanced",
       "package": "Pumpkin-ValheimVisualEnhanced",
-      "version": "0.5.18",
-      "status_in_archive": "missing",
-      "source_root": "source-evidence/localization/d/Pumpkin-ValheimVisualEnhanced-proj",
+      "version": "0.5.24",
+      "status_in_archive": "Installed profile audited on 2026-10-20; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/Pumpkin-ValheimVisualEnhanced-0.5.24",
       "binary_identities": [
         {
-          "mod": "Pumpkin-ValheimVisualEnhanced-0.5.18",
+          "mod": "Pumpkin-ValheimVisualEnhanced-0.5.24",
           "enabled": true,
           "profile_path": "BepInEx/plugins/Pumpkin-ValheimVisualEnhanced/ValheimVisualEnhanced/ValheimVisualEnhanced.dll",
-          "size": 165888,
-          "sha256": "e1f611ad5d1b3a59a79dd9926cd5fd813c4e24265f0626554db52ab51bb25f2e"
+          "size": 194560,
+          "sha256": "846ecc0345ae16e3807be2f75e98db91c664a0e086b5357f73dbc7a6dd548853"
         }
-      ]
+      ],
+      "previous_version": "0.5.18",
+      "archived_version": "0.5.18"
     },
     {
       "id": "WackysDatabase",
       "package": "WackyMole-WackysDatabase",
-      "version": "2.5.39",
-      "status_in_archive": "Installed profile audited on 2026-10-07; exact DLL and targeted source/resource checks. Historical archive retained.",
-      "source_root": "source-evidence/profile-updates/WackyMole-WackysDatabase-2.5.39",
+      "version": "2.5.40",
+      "status_in_archive": "Installed profile audited on 2026-10-20; exact DLL and targeted source/resource checks. Historical archive retained.",
+      "source_root": "source-evidence/profile-updates/WackyMole-WackysDatabase-2.5.40",
       "binary_identities": [
         {
-          "mod": "WackyMole-WackysDatabase-2.5.39",
+          "mod": "WackyMole-WackysDatabase-2.5.40",
           "enabled": true,
           "profile_path": "BepInEx/plugins/WackyMole-WackysDatabase/WackysDatabase.dll",
-          "size": 1380864,
-          "sha256": "5f7cb76db2c11c8528618ed8f1115e710c08ca9e053ad3eaeb9e070fdaa0b8e5"
+          "size": 1382400,
+          "sha256": "a6261373c77bbf1213437d14daf2f6432a327fed0a00a73ca5f566dd5afae1b5"
         }
       ],
-      "archived_version": "2.5.35",
-      "previous_version": "2.5.38"
+      "archived_version": "2.5.39",
+      "previous_version": "2.5.39"
     },
     {
       "id": "Warfare",
@@ -2997,5 +3001,20 @@
         ]
       }
     ]
+  },
+  "profile_update_2026_10_20": {
+    "captured_at": "2026-10-20T21:00:00+03:00",
+    "profile": "Default",
+    "updated_existing_modules": [
+      "AdventureBackpacks",
+      "Advize_PlantEverything",
+      "NetworkPerformanceSystem",
+      "PortalPreview",
+      "UpgradeWorld",
+      "ValheimCommunityPatch",
+      "ValheimVisualEnhanced",
+      "WackysDatabase"
+    ],
+    "source_evidence": "Exact installed DLLs decompiled with ILSpy 11.1. Binary equality is not a game behavior test."
   }
 }

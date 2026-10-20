@@ -1,8 +1,8 @@
 {
   "id": "PortalPreview",
   "package": "Ivvty-PortalPreview",
-  "version": "1.4.0",
-  "pluginVersion": "1.4.0",
+  "version": "1.5.1",
+  "pluginVersion": "1.5.1",
   "assembly": "PortalPreview",
   "guids": [
     "ru.ivest.portalpreview"
@@ -61,8 +61,10 @@
     "Resolution, Max visible portals and Max resident snapshots follow the profile again (set to 0).": "Разрешение, число видимых порталов и число снимков в памяти снова определяются профилем (установлено 0).",
     "Usage: frozenportal recapture <metres, 0.02-1; 0.3 by default>": "Использование: frozenportal recapture <metres, 0.02-1; 0.3 by default>",
     "Usage: frozenportal pair on|off": "Использование: frozenportal pair on|off",
+    "Usage: frozenportal mainview on|off": "Использование: frozenportal mainview on|off",
+    "Usage: frozenportal load normal|reduced|minimal|auto": "Использование: frozenportal load normal|reduced|minimal|auto",
     "Usage: frozenportal buffers on|off": "Использование: frozenportal buffers on|off",
-    "Usage: frozenportal on|off|status|clear|refresh|backdropcheck|cleanup|lighting|buffers on|off|pair on|off|recapture <m>; profile auto|low|medium|high|ultra|custom; mode always|approach; count|radius|spiral|memory <number> (count and memory 0: the profile's)": "Использование: frozenportal on|off|status|clear|refresh|backdropcheck|cleanup|lighting|buffers on|off|pair on|off|recapture <m>; profile auto|low|medium|high|ultra|custom; mode always|approach; count|radius|spiral|memory <number> (count и memory 0: из профиля)",
+    "Usage: frozenportal on|off|status|clear|refresh|backdropcheck|cleanup|lighting|buffers on|off|pair on|off|mainview on|off|load normal|reduced|minimal|auto|recapture <m>; profile auto|low|medium|high|ultra|custom; mode always|approach; count|radius|spiral|memory <number> (count and memory 0: the profile's)": "Использование: frozenportal on|off|status|clear|refresh|backdropcheck|cleanup|lighting|buffers on|off|pair on|off|mainview on|off|load normal|reduced|minimal|auto|recapture <m>; profile auto|low|medium|high|ultra|custom; mode always|approach; count|radius|spiral|memory <number> (count и memory 0: из профиля)",
     "WhenChanged": "при изменениях",
     "EveryTrip": "при каждом переходе",
     "Once": "один раз",
@@ -78,7 +80,11 @@
     "On": "включена",
     ", integrated": ", встроенная графика",
     "; a scene was saved meanwhile, the rest waits for the next run": "; за это время сохранилась сцена, остальное ожидает следующего запуска",
-    "none": "нет"
+    "; scenes of portals that are gone are only removed on the host": "; сцены исчезнувших порталов удаляются только на хосте",
+    "none": "нет",
+    "Normal": "обычная",
+    "Reduced": "сниженная",
+    "Minimal": "минимальная"
   },
   "patterns": [
     {
@@ -142,6 +148,16 @@
     {
       "source": "eye capture pair {0} (diagnostic, not saved)",
       "target": "парный захват вида {0} (диагностика, не сохраняется)",
+      "singleLine": true
+    },
+    {
+      "source": "main view only {0} (diagnostic, not saved)",
+      "target": "повторный захват только главного вида {0} (диагностика, не сохраняется)",
+      "singleLine": true
+    },
+    {
+      "source": "load {0} (diagnostic, not saved)",
+      "target": "нагрузка {0} (диагностика, не сохраняется)",
       "singleLine": true
     },
     {
@@ -271,8 +287,56 @@
       "singleLine": true
     },
     {
-      "source": "Hardware profile {0} ({1}): resolution {2}{3}, up to {4}{5} portal views, {6}{7} resident snapshots, captures kept {8} s unseen, preview quality {9}, hidden geometry {10}",
-      "target": "Профиль оборудования {0} ({1}): разрешение {2}{3}, до {4}{5} видов портала, снимков в памяти: {6}{7}, невидимые снимки хранятся {8} с, качество предпросмотра {9}, скрытая геометрия {10}",
+      "source": "Hardware profile {0} ({1}): resolution {2}{3}, up to {4}{5} portal views, {6}{7} resident snapshots, captures kept {8} s unseen, preview quality {9}, hidden geometry {10}; measured scene render {11} ms on a {12} ms frame, load {13} (not applied: profile chosen), eye captures at most every {14} frames",
+      "target": "Профиль оборудования {0} ({1}): разрешение {2}{3}, до {4}{5} видов портала, снимков в памяти: {6}{7}, невидимые снимки хранятся {8} с, качество предпросмотра {9}, скрытая геометрия {10}; измеренная отрисовка сцены {11} мс при кадре {12} мс, нагрузка: {13} (не применяется: выбран профиль), пауза между захватами вида, кадров: {14}",
+      "singleLine": true,
+      "numeric": [
+        2,
+        4,
+        6,
+        8,
+        11,
+        12,
+        14
+      ],
+      "arguments": {
+        "0": "message",
+        "1": "message",
+        "10": "message",
+        "3": "text",
+        "5": "text",
+        "7": "text",
+        "9": "text",
+        "13": "text"
+      }
+    },
+    {
+      "source": "Hardware profile {0} ({1}): resolution {2}{3}, up to {4}{5} portal views, {6}{7} resident snapshots, captures kept {8} s unseen, preview quality {9}, hidden geometry {10}; measured scene render {11} ms on a {12} ms frame, load {13}, eye captures at most every {14} frames",
+      "target": "Профиль оборудования {0} ({1}): разрешение {2}{3}, до {4}{5} видов портала, снимков в памяти: {6}{7}, невидимые снимки хранятся {8} с, качество предпросмотра {9}, скрытая геометрия {10}; измеренная отрисовка сцены {11} мс при кадре {12} мс, нагрузка: {13}, пауза между захватами вида, кадров: {14}",
+      "singleLine": true,
+      "numeric": [
+        2,
+        4,
+        6,
+        8,
+        11,
+        12,
+        14
+      ],
+      "arguments": {
+        "0": "message",
+        "1": "message",
+        "10": "message",
+        "3": "text",
+        "5": "text",
+        "7": "text",
+        "9": "text",
+        "13": "text"
+      }
+    },
+    {
+      "source": "Hardware profile {0} ({1}): resolution {2}{3}, up to {4}{5} portal views, {6}{7} resident snapshots, captures kept {8} s unseen, preview quality {9}, hidden geometry {10}; scene render cost not measured yet",
+      "target": "Профиль оборудования {0} ({1}): разрешение {2}{3}, до {4}{5} видов портала, снимков в памяти: {6}{7}, невидимые снимки хранятся {8} с, качество предпросмотра {9}, скрытая геометрия {10}; стоимость отрисовки сцены пока не измерена",
       "singleLine": true,
       "numeric": [
         2,
@@ -373,26 +437,34 @@
       "arguments": {
         "0": "message"
       }
+    },
+    {
+      "source": "{0}; scenes of portals that are gone are only removed on the host",
+      "target": "{0}; сцены исчезнувших порталов удаляются только на хосте",
+      "singleLine": true,
+      "arguments": {
+        "0": "message"
+      }
     }
   ],
   "returns": [],
   "prefabs": [],
   "sourceFiles": [
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/FrozenPortals.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/HardwareProfile.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/PortalCleanup.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/PortalPreviewPlugin.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/DestinationLighting.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/SnapshotUpdates.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/HardwareProfileSetting.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/HiddenGeometryMode.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview/PreviewQuality.cs",
-    "source-evidence/profile-updates/Ivvty-PortalPreview-1.4.0/PortalPreview.il"
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/FrozenPortals.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/HardwareProfile.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/PortalCleanup.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/PortalPreviewPlugin.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/DestinationLighting.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/SnapshotUpdates.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/HardwareProfileSetting.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/HiddenGeometryMode.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview/PreviewQuality.cs",
+    "source-evidence/profile-updates/Ivvty-PortalPreview-1.5.1/PortalPreview.il"
   ],
   "notes": [
-    "Перевод на границе вывода frozenportal: Terminal.AddString только в PortalPreview.FrozenPortals+<>c.<Initialize>b__49_0. Внутренние _status/LastError/WaitReason, параметры команд, метаданные ConfigEntry и идентификаторы остаются исходными.",
+    "Перевод на границе вывода frozenportal: Terminal.AddString только в обработчике команды PortalPreview.FrozenPortals+<>c.<Initialize>b__* (в 1.5.1 — b__15_0). Внутренние _status/LastError/WaitReason, параметры команд, метаданные ConfigEntry и идентификаторы остаются исходными.",
     "Точные полные сообщения и шаблоны сводок команды, динамических состояний/причин захвата, ближайшего портала, оборудования, освещения и очистки. Вложенные сообщения явно типизированы; числовые поля и непрозрачные идентификаторы сохранены. Низкоуровневые исключения, probe и verbose debug log могут оставаться исходными. Игровой запуск не выполнен.",
-    "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
+    "Пакет текущего профиля проверен 2026-10-20 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
   ],
   "literals": [
     {
