@@ -50,7 +50,8 @@ namespace Tolmach
                     { Warn("Container name display target unavailable: " + name); continue; }
                     string unsupported = DisplayPatches.UnsupportedHandler(method);
                     if (unsupported != null) { Record(method, 0, unsupported); continue; }
-                    harmony.Patch(method, transpiler: new HarmonyMethod(AccessTools.Method(typeof(ContainerNameDisplay), "Transpile")));
+                    harmony.Patch(method, transpiler: new HarmonyMethod(AccessTools.Method(typeof(ContainerNameDisplay), "Transpile")),
+                        postfix: new HarmonyMethod(AccessTools.Method(typeof(ContainerNameDisplay), "AfterHover")) { priority = Priority.Last });
                 }
                 catch (Exception e) { Warn("Container name display target " + name + ": " + e.GetType().Name); }
             }
@@ -76,6 +77,20 @@ namespace Tolmach
             Record(__originalMethod, count, count == 0 ? "no safe container name read" : null);
         }
 
+        // Another mod's postfix can rebuild the hover from the field itself (MyLittleUI writes
+        // m_name, its contents and its own controls). Its result still starts from the shown
+        // name, so that occurrence is replaced. Names holding "$" tokens are left to the transpiler.
+        private static void AfterHover(object __instance, ref string __result)
+        {
+            if (!TextEngine.IsRussian || String.IsNullOrEmpty(__result) || nameField == null) return;
+            string name = nameField.GetValue(__instance) as string;
+            if (String.IsNullOrEmpty(name) || name.IndexOf('$') >= 0) return;
+            string display = Display(name, __instance);
+            // Already translated by the transpiler: nothing of the original name is left to replace.
+            if (display == name || __result.IndexOf(display, StringComparison.Ordinal) >= 0) return;
+            int at = __result.IndexOf(name, StringComparison.Ordinal);
+            if (at >= 0) __result = __result.Substring(0, at) + display + __result.Substring(at + name.Length);
+        }
         private static IEnumerable<Module> Modules()
         {
             return Owners.Concat(Rules.Select(r => r.Module)).Distinct();

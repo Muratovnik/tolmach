@@ -149,6 +149,34 @@ namespace Tolmach.Tests
             Assert.That(m.Patches[typeof(MarkedContainer).FullName + ".GetHoverName [container name]"].displayFields, Is.EqualTo(1));
         }
 
+        // MyLittleUI's hover postfix: rebuilds the whole hover from the m_name field.
+        private static void RebuiltHover(MarkedContainer __instance, ref string __result)
+        {
+            __result = __instance.m_name + " 3/32\n[E] Открыть";
+        }
+        [TestCase(true)]
+        [TestCase(false)]
+        public void HoverRebuiltByAnotherModFromTheFieldStillShowsTheTranslatedName(bool modPatchedFirst)
+        {
+            Module m = FixtureModule("composed-rebuilt-hover", "FixtureComposed");
+            var c = new ComposedSpec { patterns = StylePatterns() };
+            c.containerOwners.Add("FixtureComposed.StorageMarker");
+            m.composed.Add(c);
+            Activate(m);
+            MethodInfo hover = AccessTools(typeof(MarkedContainer), "GetHoverText");
+            var rebuild = new HarmonyLib.HarmonyMethod(typeof(ComposedNamesTests), "RebuiltHover");
+            if (modPatchedFirst) Patcher.Patch(hover, postfix: rebuild);
+            ContainerNameDisplay.Install(Patcher, typeof(MarkedContainer));
+            if (!modPatchedFirst) Patcher.Patch(hover, postfix: rebuild);
+            var owned = new MarkedContainer { m_name = "Кремень Pile", Marker = new FixtureComposed.StorageMarker() };
+            Assert.That(owned.GetHoverText(), Is.EqualTo("Кремень (груда) 3/32\n[E] Открыть"));
+            Assert.That(owned.m_name, Is.EqualTo("Кремень Pile"));
+            var other = new MarkedContainer { m_name = "Кремень Pile" };
+            Assert.That(other.GetHoverText(), Is.EqualTo("Кремень Pile 3/32\n[E] Открыть"), "Another mod's container keeps its name.");
+            m.UiAllowed = false;
+            Assert.That(owned.GetHoverText(), Is.EqualTo("Кремень Pile 3/32\n[E] Открыть"));
+        }
+
         [Test]
         public void MissingOwnerComponentDisablesTheRuleWithAWarning()
         {
