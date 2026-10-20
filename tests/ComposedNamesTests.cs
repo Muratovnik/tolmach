@@ -164,6 +164,33 @@ namespace Tolmach.Tests
             Assert.That(table.Translate("Heals 2 hp/tick"), Is.EqualTo("Heals 2 hp/tick"), "Text outside the game's line stays.");
         }
 
+        [Test]
+        public void FoodTooltipDurationUnitsAreTranslatedInEveryShapeOfTheGameString()
+        {
+            // ItemDrop.GetDurationString (Valheim 1.0.20): "25m 30s", "25m " (trailing space) or "30s".
+            Module m = CatalogLoader.Read(Catalog("Valheim"));
+            ComposedSpec rule = m.composed.Single(c => c.sites.Any(s => s.type == "ItemDrop+ItemData" && s.method == "GetTooltip"));
+            TextTable table = ComposedNames.SharedTable(m, rule);
+            Assert.That(table.Translate("$item_food_duration: <color=orange>25m 30s</color>"), Is.EqualTo("$item_food_duration: <color=orange>25 мин 30 с</color>"));
+            Assert.That(table.Translate("$item_food_duration: <color=orange>25m </color>"), Is.EqualTo("$item_food_duration: <color=orange>25 мин </color>"));
+            Assert.That(table.Translate("$item_food_duration: <color=#ffa500ff>30s</color>"), Is.EqualTo("$item_food_duration: <color=#ffa500ff>30 с</color>"));
+            Assert.That(table.Translate("Lasts 25m 30s"), Is.EqualTo("Lasts 25m 30s"), "Text outside the game's line stays.");
+        }
+
+        [Test]
+        public void GroupHudMinutesAndMetresAreTranslatedOnlyInTheirOwnMethods()
+        {
+            // FormatFoodTime returns "15m" for minutes, DistanceText "120m" or "120m С" for metres.
+            Module m = CatalogLoader.Read(Catalog("GroupHUD"));
+            TextTable food = ComposedNames.OwnTable(m, m.composed.Single(c => c.sites.Single().method == "FormatFoodTime"));
+            TextTable distance = ComposedNames.OwnTable(m, m.composed.Single(c => c.sites.Single().method == "DistanceText"));
+            Assert.That(food.Translate("15m"), Is.EqualTo("15 мин"));
+            Assert.That(food.Translate("30s"), Is.EqualTo("30 с"));
+            Assert.That(distance.Translate("120m"), Is.EqualTo("120 м"));
+            Assert.That(distance.Translate("120m СВ"), Is.EqualTo("120 м СВ"));
+            Assert.That(food.Translate("Xm"), Is.EqualTo("Xm"), "Only a number takes the unit.");
+        }
+
         // MyLittleUI's hover postfix: rebuilds the whole hover from the m_name field.
         private static void RebuiltHover(MarkedContainer __instance, ref string __result)
         {

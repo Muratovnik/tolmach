@@ -36,6 +36,21 @@
     },
     {
       "type": "GroupHUD.GroupHUDPlugin",
+      "method": "OnPartyCommand",
+      "values": {
+        "Demo: {0} test cards (only visible to you). Turn off: /party demo off": "Демо: тестовых карточек — {0} (видны только вам). Выключить: /party demo off",
+        "Demo off.": "Демо выключено."
+      }
+    },
+    {
+      "type": "GroupHUD.GroupHUDPlugin",
+      "method": "OnGroupChatCommand",
+      "values": {
+        "Group chat: /p <message>": "Групповой чат: /p <message>"
+      }
+    },
+    {
+      "type": "GroupHUD.GroupHUDPlugin",
       "method": "FoodTooltip",
       "values": {
         "\n$item_food_regen: <color={1}>{0} hp/tick</color>": "\n$item_food_regen: <color={1}>{0} ОЗ/тик</color>"
@@ -50,5 +65,61 @@
   "notes": [
     "The mod has its own Russian table (TrBuiltIn[ru], keyed by TrKeys); this catalog only covers text that 0.66.0 sends through Tr/T without a table entry.",
     "Each literal is replaced in the one method that contains it: with the English key replaced by Russian, Tr finds no table entry and returns the argument unchanged."
+  ],
+  "composed": [
+    {
+      "sites": [
+        {
+          "type": "GroupHUD.GroupHUDPlugin",
+          "method": "FormatFoodTime"
+        }
+      ],
+      "texts": {},
+      "patterns": [
+        {
+          "source": "{0}m",
+          "target": "{0} мин",
+          "numeric": [
+            0
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "{0}s",
+          "target": "{0} с",
+          "numeric": [
+            0
+          ],
+          "arguments": {}
+        }
+      ]
+    },
+    {
+      "sites": [
+        {
+          "type": "GroupHUD.GroupHUDPlugin",
+          "method": "DistanceText"
+        }
+      ],
+      "texts": {},
+      "patterns": [
+        {
+          "source": "{0}m",
+          "target": "{0} м",
+          "numeric": [
+            0
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "{0}m {1}",
+          "target": "{0} м {1}",
+          "numeric": [
+            0
+          ],
+          "arguments": {}
+        }
+      ]
+    }
   ]
 }

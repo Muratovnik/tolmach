@@ -381,6 +381,31 @@
             0
           ],
           "arguments": {}
+        },
+        {
+          "source": "$item_food_duration: <color={2}>{0}m {1}s</color>",
+          "target": "$item_food_duration: <color={2}>{0} мин {1} с</color>",
+          "numeric": [
+            0,
+            1
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "$item_food_duration: <color={1}>{0}m </color>",
+          "target": "$item_food_duration: <color={1}>{0} мин </color>",
+          "numeric": [
+            0
+          ],
+          "arguments": {}
+        },
+        {
+          "source": "$item_food_duration: <color={1}>{0}s</color>",
+          "target": "$item_food_duration: <color={1}>{0} с</color>",
+          "numeric": [
+            0
+          ],
+          "arguments": {}
         }
       ]
     }
