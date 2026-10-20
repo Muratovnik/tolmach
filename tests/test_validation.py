@@ -57,6 +57,8 @@ def test_unmodified_data_passes():
     ('composed_text_conflict', 'composed text differs from the module text'),
     ('composed_argument', "'anything' does not match"),
     ('composed_no_site', '$.composed[0]'),
+    ('composed_item_own_site', 'composed item filter outside game sites'),
+    ('composed_item_tokens', 'item description text with tokens or markup'),
 ])
 def test_real_data_mutation_is_detected(tmp_path, mutation, diagnostic):
     root = tmp_path / 'subject'
@@ -74,6 +76,8 @@ def test_real_data_mutation_is_detected(tmp_path, mutation, diagnostic):
         name = 'ConditionalConfigSync'
     elif mutation.startswith('idol_'):
         name = 'Valheim'
+    elif mutation.startswith('composed_item'):
+        name = 'More_World_Locations_AIO'
     elif mutation.startswith('composed_'):
         name = 'DynamicStorageMaterials'
     path = root / 'catalog' / ('tolmach-' + name + '.json')
@@ -142,6 +146,12 @@ def test_real_data_mutation_is_detected(tmp_path, mutation, diagnostic):
         data['composed'][0]['patterns'][0]['arguments']['0'] = 'anything'
     elif mutation == 'composed_no_site':
         data['composed'][0].pop('sites')
+    elif mutation.startswith('composed_item'):
+        rule = next(r for r in data['composed'] if r.get('items'))
+        if mutation == 'composed_item_own_site':
+            rule['sites'].append({'type': 'Forbidden_Catacombs.AltarDoor', 'method': 'GetHoverText'})
+        else:
+            rule['texts']['$item_cryptkey_description'] = 'Ключ: $item_cryptkey'
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
     if mutation == 'duplicate_json_key':
         path.write_text(path.read_text(encoding='utf-8').replace('"id":', '"id": "duplicate", "id":', 1), encoding='utf-8')

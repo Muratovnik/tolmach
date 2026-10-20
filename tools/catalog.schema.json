@@ -126,12 +126,13 @@
     },
     "composed": {
       "type": "object",
-      "description": "Texts and templates for strings a mod composes from its own parts. They apply only at the named sites: display calls, string results and fault-protected call sites of the mod's own methods, the string result of a game method, or Container.m_name on containers carrying one of the owner components.",
+      "description": "Texts and templates for strings a mod composes from its own parts. They apply only at the named sites: display calls, string results and fault-protected call sites of the mod's own methods, the string result of a game method, or Container.m_name on containers carrying one of the owner components. At game sites an item list limits the rule to the named items.",
       "additionalProperties": false,
       "anyOf": [{"required": ["sites"]}, {"required": ["containerOwners"]}],
       "properties": {
         "sites": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/method"}},
         "containerOwners": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "items": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}, "description": "Prefab names (ItemData.m_dropPrefab) of the items whose text the rule's game sites translate; the rule then applies to no other item."},
         "texts": {"$ref": "#/$defs/table"},
         "patterns": {"type": "array", "items": {"$ref": "#/$defs/composedPattern"}}
       }

@@ -283,7 +283,12 @@ def main() -> int:
         pairs += [pair for table in terms.values() for pair in table.items()]
         composed = m.get('composed', [])
         composed_patterns = [p for rule in composed for p in rule.get('patterns', [])]
-        pairs += [pair for rule in composed for pair in rule.get('texts', {}).items()]
+        # An item rule may replace the item's whole description key with its own text (More World Locations
+        # gives two offerings the vanilla crypt key description).
+        item_keys = [(en, ru) for rule in composed if rule.get('items') for en, ru in rule.get('texts', {}).items() if re.fullmatch(r'\$[A-Za-z_]\w*', en)]
+        for en, ru in item_keys:
+            check(not TOKEN.findall(ru), name + ': item description text with tokens or markup: ' + repr(en))
+        pairs += [pair for rule in composed for pair in rule.get('texts', {}).items() if pair not in item_keys]
         pairs += [(p['source'], p['target']) for p in m['patterns'] + m.get('rawPatterns', []) + composed_patterns]
         pairs += [p for rule in m.get('literals', []) + m.get('configTexts', []) for p in rule['values'].items()]
         counts['explicit_literals'] += sum(len(rule['values']) for rule in m.get('literals', []))
@@ -309,6 +314,9 @@ def main() -> int:
                 check(m['texts'].get(en, ru) == ru, name + ': composed text differs from the module text: ' + repr(en))
             # A game method or a container shows every mod's text, so a template there needs fixed text.
             shared = bool(rule.get('containerOwners')) or any(not own_type(m, site['type']) for site in rule.get('sites', []))
+            # An item filter reads the item a game method shows; containers and the mod's own methods have none.
+            check(not rule.get('items') or (not rule.get('containerOwners') and all(not own_type(m, site['type']) for site in rule.get('sites', []))),
+                  name + ': composed item filter outside game sites')
             for p in rule.get('patterns', []):
                 check(not shared or HOLE.sub('', p['source']).strip() != '', name + ': composed pattern at a shared site without fixed text: ' + repr(p['source']))
             check(bool(rule.get('texts')) or bool(rule.get('patterns')), name + ': composed rule without texts or patterns')

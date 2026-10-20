@@ -39,6 +39,8 @@ namespace Tolmach
     {
         public List<MethodSpec> sites = new List<MethodSpec>();
         public List<string> containerOwners = new List<string>();
+        // Prefab names of the items whose texts the game sites translate (ItemData.m_dropPrefab); empty means any item.
+        public List<string> items = new List<string>();
         public Dictionary<string, string> texts = new Dictionary<string, string>();
         public List<PatternSpec> patterns = new List<PatternSpec>();
     }

@@ -11,7 +11,8 @@ namespace Tolmach
     // template such as "{0} Pile" would also reach text a player typed. Stored values are never changed.
     internal static class ComposedNames
     {
-        private sealed class Site { public Module Module; public TextTable Table; }
+        // Items: the prefab names a game site's rule is limited to (null for any item).
+        private sealed class Site { public Module Module; public TextTable Table; public HashSet<string> Items; }
         // Keyed by RuntimeAccess.MethodKey of the site method.
         private static readonly Dictionary<string, List<Site>> Sites = new Dictionary<string, List<Site>>(StringComparer.Ordinal);
         private static readonly HashSet<string> PatchedGameSites = new HashSet<string>(StringComparer.Ordinal);
@@ -87,23 +88,38 @@ namespace Tolmach
                 }
                 catch (Exception e) { m.Warn("Composed game site skipped " + owner + ": " + e.GetType().Name); return; }
             }
-            Add(key, m, SharedTable(m, c));
+            Add(key, m, SharedTable(m, c), c.items.Count == 0 ? null : new HashSet<string>(c.items, StringComparer.Ordinal));
             if (m.Patches.ContainsKey(evidenceKey)) return;
             m.ScannedMethods++; m.PatchedMethods++;
             m.Patches[evidenceKey] = new PatchEvidence { method = evidenceKey, returnAdapter = true };
         }
-        private static void AfterGameSite(MethodBase __originalMethod, ref string __result)
+        private static void AfterGameSite(MethodBase __originalMethod, object __instance, object[] __args, ref string __result)
         {
-            __result = Translate(__result, RuntimeAccess.MethodKey(__originalMethod));
+            string key = RuntimeAccess.MethodKey(__originalMethod);
+            List<Site> list;
+            string item = Sites.TryGetValue(key, out list) && list.Any(delegate(Site s) { return s.Items != null; }) ? ShownItem(__instance, __args) : null;
+            __result = Translate(__result, key, item);
         }
-        private static void Add(string key, Module m, TextTable table)
+        // The item a game method shows (ItemDrop.ItemData.GetTooltip: the instance or its ItemData argument),
+        // named by its drop prefab.
+        private static string ShownItem(object instance, object[] args)
+        {
+            foreach (object candidate in new[] { instance }.Concat(args ?? new object[0]))
+            {
+                if (candidate == null || AccessTools.Field(candidate.GetType(), "m_dropPrefab") == null) continue;
+                object prefab = RuntimeAccess.Read(candidate, "m_dropPrefab");
+                return prefab == null ? null : RuntimeAccess.Read(prefab, "name") as string;
+            }
+            return null;
+        }
+        private static void Add(string key, Module m, TextTable table, HashSet<string> items = null)
         {
             List<Site> list;
             if (!Sites.TryGetValue(key, out list)) Sites[key] = list = new List<Site>();
-            list.Add(new Site { Module = m, Table = table });
+            list.Add(new Site { Module = m, Table = table, Items = items });
         }
 
-        internal static string Translate(string text, string key)
+        internal static string Translate(string text, string key, string item = null)
         {
             List<Site> list;
             if (!TextEngine.IsRussian || String.IsNullOrEmpty(text) || key == null || !Sites.TryGetValue(key, out list)) return text;
@@ -111,6 +127,7 @@ namespace Tolmach
             {
                 Module current;
                 if (!site.Module.UiAllowed || !TextEngine.Modules.TryGetValue(site.Module.id, out current) || !ReferenceEquals(site.Module, current)) continue;
+                if (site.Items != null && (item == null || !site.Items.Contains(item))) continue;
                 string translated = site.Table.Translate(text);
                 if (translated != text) return translated;
             }

@@ -758,6 +758,36 @@
           }
         }
       ]
+    },
+    {
+      "sites": [
+        {
+          "type": "ItemDrop+ItemData",
+          "method": "GetTooltip"
+        }
+      ],
+      "items": [
+        "BFD_CryptKey"
+      ],
+      "texts": {
+        "$item_cryptkey_description": "Ключ от потайной двери в Подземных руинах."
+      },
+      "patterns": []
+    },
+    {
+      "sites": [
+        {
+          "type": "ItemDrop+ItemData",
+          "method": "GetTooltip"
+        }
+      ],
+      "items": [
+        "CD_kit_CryptKey"
+      ],
+      "texts": {
+        "$item_cryptkey_description": "Подношение для жертвенного алтаря. Положите его на подставку у алтаря и принесите жертву, чтобы открыть потайную дверь."
+      },
+      "patterns": []
     }
   ],
   "rawTexts": {

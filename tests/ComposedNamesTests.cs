@@ -118,6 +118,26 @@ namespace Tolmach.Tests
         }
 
         [Test]
+        public void ItemRuleAtAGameSiteTranslatesOnlyTheNamedItems()
+        {
+            // More World Locations gives two offerings the vanilla crypt key description.
+            Module m = FixtureModule("composed-items", "FixtureComposedMod");
+            var c = new ComposedSpec();
+            c.sites.Add(new MethodSpec { type = "ComposedItem", method = "GetTooltip" });
+            c.items.Add("BFD_CryptKey");
+            c.texts["$item_cryptkey_description"] = "Ключ от потайной двери в Подземных руинах.";
+            m.composed.Add(c);
+            ComposedNames.InstallGameSites(Patcher, Activate(m));
+            var offering = new ComposedItem { m_dropPrefab = new ComposedPrefab { name = "BFD_CryptKey" } };
+            var vanilla = new ComposedItem { m_dropPrefab = new ComposedPrefab { name = "CryptKey" } };
+            Assert.That(ComposedItem.GetTooltip(offering, 1), Is.EqualTo("Ключ от потайной двери в Подземных руинах.\n$item_weight: 0.1"));
+            Assert.That(offering.GetTooltip(), Is.EqualTo("Ключ от потайной двери в Подземных руинах.\n$item_weight: 0.1"), "The instance overload names the item too.");
+            Assert.That(ComposedItem.GetTooltip(vanilla, 1), Is.EqualTo("$item_cryptkey_description\n$item_weight: 0.1"), "The vanilla key keeps its description.");
+            Assert.That(ComposedItem.GetTooltip(new ComposedItem(), 1), Is.EqualTo("$item_cryptkey_description\n$item_weight: 0.1"), "An item without a drop prefab is not named.");
+            Assert.That(m.Warnings, Is.Empty);
+        }
+
+        [Test]
         public void MissingGameSiteIsReported()
         {
             Module m = FixtureModule("composed-game-missing", "FixtureComposedMod");
@@ -259,6 +279,9 @@ namespace Tolmach.Tests
             var own = new ComposedSpec(); own.sites.Add(new MethodSpec { type = "FixtureComposed.Storage", method = "Summary" });
             own.patterns.Add(new PatternSpec { source = "{0}", target = "{0}", arguments = new Dictionary<string, string> { { "0", "name" } } });
             Assert.DoesNotThrow(() => CatalogLoader.Validate(module(own)));
+            var ownItems = new ComposedSpec(); ownItems.sites.Add(new MethodSpec { type = "FixtureComposed.Storage", method = "Title" });
+            ownItems.items.Add("BFD_CryptKey"); ownItems.texts["Barrel"] = "Бочка";
+            Assert.Throws<InvalidDataException>(() => CatalogLoader.Validate(module(ownItems)), "Only a game method shows an item.");
         }
 
         private static MethodInfo AccessTools(Type type, string name) { return HarmonyLib.AccessTools.Method(type, name); }
@@ -305,6 +328,16 @@ public sealed class ComposedPlant
     public bool Fertilized;
     [MethodImpl(MethodImplOptions.NoInlining)]
     public string GetHoverText() { return "Морковь\nРастет"; }
+}
+// Same shape as ItemDrop.ItemData: a static tooltip for an item and an instance overload calling it.
+public sealed class ComposedPrefab { public string name { get; set; } }
+public sealed class ComposedItem
+{
+    public ComposedPrefab m_dropPrefab;
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    public string GetTooltip() { return GetTooltip(this, 1); }
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    public static string GetTooltip(ComposedItem item, int quality) { return "$item_cryptkey_description\n$item_weight: 0.1"; }
 }
 public sealed class MarkedContainer
 {

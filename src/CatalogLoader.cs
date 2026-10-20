@@ -128,7 +128,7 @@ namespace Tolmach
         {
             if (c == null || (c.sites.Count == 0 && c.containerOwners.Count == 0) || (c.texts.Count == 0 && c.patterns.Count == 0) ||
                 c.sites.Any(delegate(MethodSpec s) { return s == null || String.IsNullOrEmpty(s.type) || String.IsNullOrEmpty(s.method); }) ||
-                c.containerOwners.Any(String.IsNullOrEmpty) ||
+                c.containerOwners.Any(String.IsNullOrEmpty) || c.items.Any(String.IsNullOrEmpty) ||
                 c.texts.Any(delegate(KeyValuePair<string, string> p) { return String.IsNullOrEmpty(p.Key) || String.IsNullOrEmpty(p.Value); }))
                 throw new InvalidDataException("Invalid composed text rule.");
             // At its own sites a rule extends the module's table; one source text has one translation.
@@ -137,6 +137,9 @@ namespace Tolmach
                 throw new InvalidDataException("A composed text differs from the module's text.");
             // A game method or a container shows every mod's text: a template there needs fixed text.
             bool shared = c.containerOwners.Count != 0 || c.sites.Any(delegate(MethodSpec s) { return !m.OwnTypeName(s.type); });
+            // An item filter reads the item a game method shows; containers and the mod's own methods have none.
+            if (c.items.Count != 0 && (c.containerOwners.Count != 0 || c.sites.Any(delegate(MethodSpec s) { return m.OwnTypeName(s.type); })))
+                throw new InvalidDataException("A composed item filter needs game sites only.");
             foreach (PatternSpec p in c.patterns)
             {
                 ValidatePattern(m, p, "text", "message", "mapLabel", "item", "itemSet", "name");
