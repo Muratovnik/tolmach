@@ -759,5 +759,11 @@
         }
       ]
     }
-  ]
+  ],
+  "rawTexts": {
+    "Offering": "Подношение",
+    "Sacrificial Altar": "Жертвенный алтарь",
+    "Submit Offering": "Совершить подношение",
+    "Surtling Offering": "Подношение суртлинга"
+  }
 }

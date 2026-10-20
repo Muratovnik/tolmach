@@ -656,5 +656,19 @@
     "Extra words: m_setName keys of registered items that the table lacks (shown by set tooltip mods) and the PieceManager build category token for \"Warfare\".",
     "ServerSync and the Armory version-mismatch message are translated as literals.",
     "Пакет текущего профиля проверен 2026-10-17 по точной установленной DLL и декомпиляции; версия пакета и BepInPlugin сверены отдельно. Игровая приёмка относится к общей квитанции выпуска."
+  ],
+  "rawTexts": {
+    "Cargo": "Груз",
+    "Storage": "Хранилище"
+  },
+  "rawPatterns": [
+    {
+      "source": "{0} ( $piece_container_empty )",
+      "target": "{0} ( $piece_container_empty )",
+      "numeric": [],
+      "arguments": {
+        "0": "text"
+      }
+    }
   ]
 }

@@ -857,5 +857,20 @@
         ") installed.": ")."
       }
     }
-  ]
+  ],
+  "rawTexts": {
+    "Adrenaline": "Адреналин",
+    "Bleeding": "Кровотечение",
+    "BleedingSecondaryAttack": "Кровотечение от альт. атаки",
+    "Decapitator": "Головосек",
+    "HacknSlash": "Рубка и рассечение",
+    "Haste": "Ускорение",
+    "Impale": "Насаживание",
+    "Juggernaut": "Джаггернаут",
+    "PiercingGreatbowMistlands": "Пробивание",
+    "PiercingGreatbowModer": "Пробивание",
+    "PiercingGreatbowPlains": "Пробивание",
+    "Smasher": "Дробитель",
+    "Vampirism": "Вампиризм"
+  }
 }
