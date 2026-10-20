@@ -51,6 +51,7 @@ namespace Tolmach
                     catch (Exception e) { m.Warn("CLLC language adapter: " + e.GetType().Name); }
                 }
                 LocalizationBridge.Rebuild();
+                ReapplyJotunnRussian();
                 LocalizationBridge.InjectMain();
             }
             finally { busy = false; }
@@ -115,8 +116,7 @@ namespace Tolmach
             // Jotunn 2.30.2 uses `in string` (String&) here; older variants may use
             // String by value. Match the actual public API, never read its private Map.
             Type type = scope.GetType();
-            MethodInfo get = AccessTools.Method(type, "GetTranslations", new[] { typeof(string).MakeByRefType() }) ??
-                AccessTools.Method(type, "GetTranslations", new[] { typeof(string) });
+            MethodInfo get = TranslationsGetter(type);
             MethodInfo add = AccessTools.Method(type, "AddTranslation", new[] { typeof(string).MakeByRefType(), typeof(Dictionary<string, string>) }) ??
                 AccessTools.Method(type, "AddTranslation", new[] { typeof(string), typeof(Dictionary<string, string>) });
             if (get == null || add == null || !get.IsPublic || !add.IsPublic || get.IsStatic || add.IsStatic)
@@ -134,6 +134,48 @@ namespace Tolmach
                     additions[word.Key] = word.Value;
             }
             if (additions.Count != 0) add.Invoke(scope, new object[] { "Russian", additions });
+        }
+        private static MethodInfo TranslationsGetter(Type type)
+        {
+            return AccessTools.Method(type, "GetTranslations", new[] { typeof(string).MakeByRefType() }) ??
+                AccessTools.Method(type, "GetTranslations", new[] { typeof(string) });
+        }
+        private static void ReapplyJotunnRussian()
+        {
+            Type type = RuntimeAccess.ExactType("Jotunn.Managers.LocalizationManager");
+            if (type == null || !TextEngine.IsRussian) return;
+            IDictionary all = RuntimeAccess.Read(RuntimeAccess.Read(type, "Instance"), "Localizations") as IDictionary;
+            if (all == null) return;
+            foreach (DictionaryEntry scope in all)
+            {
+                try { ReapplyOwnRussian(scope.Value); }
+                catch (Exception e) { Plugin.Warn("Jotunn own Russian of " + scope.Key + ": " + e.GetType().Name); }
+            }
+        }
+        // Jotunn publishes a key the game table lacks in whatever language a mod registers
+        // first: Transmog reads its German file before the Russian one, More Ore Deposits
+        // registers its Russian file after Jotunn applied the player's language. Such a word
+        // gets the mod's own Russian, only where the shown text is that mod's own word in
+        // another language: a value from the game or another mod stays.
+        internal static void ReapplyOwnRussian(object scope)
+        {
+            if (!TextEngine.IsRussian || scope == null) return;
+            Type type = scope.GetType();
+            MethodInfo languages = AccessTools.Method(type, "GetLanguages", Type.EmptyTypes);
+            MethodInfo get = TranslationsGetter(type);
+            if (languages == null || get == null) return;
+            IReadOnlyDictionary<string, string> russian = get.Invoke(scope, new object[] { "Russian" }) as IReadOnlyDictionary<string, string>;
+            IEnumerable<string> names = languages.Invoke(scope, null) as IEnumerable<string>;
+            if (russian == null || russian.Count == 0 || names == null) return;
+            List<IReadOnlyDictionary<string, string>> others = names.Where(l => l != "Russian")
+                .Select(l => get.Invoke(scope, new object[] { l }) as IReadOnlyDictionary<string, string>).Where(t => t != null).ToList();
+            foreach (KeyValuePair<string, string> word in russian.ToArray())
+            {
+                string current = LocalizationBridge.MainWord(word.Key);
+                if (current == null || current == word.Value) continue;
+                string other;
+                if (others.Any(t => t.TryGetValue(word.Key, out other) && other == current)) LocalizationBridge.SetMainWord(word.Key, word.Value);
+            }
         }
 
     }

@@ -199,6 +199,17 @@ namespace Tolmach
         {
             if (Language(__instance) == "Russian") __0 = RawDisplay.Translate(__0);
         }
+        internal static string MainWord(string key)
+        {
+            object main = Main;
+            return main == null ? null : CurrentWord(main, key);
+        }
+        // Goes through the AddWord patch: our fill-only and replaceNative rules still apply.
+        internal static void SetMainWord(string key, string text)
+        {
+            object main = Main;
+            if (main != null) addWord.Invoke(main, new object[] { key, text });
+        }
         internal static void InjectMain()
         {
             object main = Main;

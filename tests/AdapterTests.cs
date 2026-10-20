@@ -156,6 +156,47 @@ namespace Tolmach.Tests
             Assert.That(main.Translate("missing_jotunn_key"), Is.EqualTo("Новый перевод"));
             Assert.That(scope.Writes, Is.EqualTo(1), "The same native registration still works in Russian.");
         }
+        // CustomLocalization with several languages: GetLanguages and GetTranslations(in string).
+        public sealed class MultiLanguageScope
+        {
+            public readonly Dictionary<string, Dictionary<string, string>> Languages = new Dictionary<string, Dictionary<string, string>>();
+            public IEnumerable<string> GetLanguages() { return Languages.Keys; }
+            public IReadOnlyDictionary<string, string> GetTranslations(in string language)
+            {
+                Dictionary<string, string> words;
+                return Languages.TryGetValue(language, out words) ? words : new Dictionary<string, string>();
+            }
+        }
+        [Test]
+        public void ModsOwnRussianReplacesItsWordPublishedInAnotherLanguageOnly()
+        {
+            // Jotunn published German (Transmog's first file) and English (More Ore Deposits
+            // registers Russian late) for keys the game table lacked.
+            Localization.SelectedLanguage = "Russian";
+            Localization main = Localization.instance;
+            LocalizationBridge.Install(Patcher, typeof(Localization), () => "Russian");
+            var scope = new MultiLanguageScope();
+            scope.Languages["German"] = new Dictionary<string, string> { { "transmog_title", "Transmogrifikation" } };
+            scope.Languages["English"] = new Dictionary<string, string> { { "GoldOre_warp", "Gold ore" }, { "shared_key", "Shared" }, { "other_key", "Other" } };
+            scope.Languages["Russian"] = new Dictionary<string, string> {
+                { "transmog_title", "Трансмогрификация" }, { "GoldOre_warp", "Золотая руда" },
+                { "shared_key", "Общий" }, { "other_key", "Другое" }, { "absent_key", "Нет в игре" } };
+            main.AddWord("transmog_title", "Transmogrifikation");
+            main.AddWord("GoldOre_warp", "Gold ore");
+            main.AddWord("shared_key", "Перевод другого мода");
+            main.AddWord("other_key", "Other words");
+            NativeAdapters.ReapplyOwnRussian(scope);
+            Assert.That(main.Translate("transmog_title"), Is.EqualTo("Трансмогрификация"));
+            Assert.That(main.Translate("GoldOre_warp"), Is.EqualTo("Золотая руда"));
+            Assert.That(main.Translate("shared_key"), Is.EqualTo("Перевод другого мода"), "Another mod's Russian stays.");
+            Assert.That(main.Translate("other_key"), Is.EqualTo("Other words"), "A value the mod did not register stays.");
+            Assert.That(main.Translate("absent_key"), Is.EqualTo("[absent_key]"), "Only words the mod published are replaced.");
+
+            main.SetLanguage("German");
+            main.AddWord("transmog_title", "Transmogrifikation");
+            NativeAdapters.ReapplyOwnRussian(scope);
+            Assert.That(main.Translate("transmog_title"), Is.EqualTo("Transmogrifikation"), "Nothing changes in another language.");
+        }
         [Test]
         public void JotunnScopeTakesAReplaceNativeWordOverTheModsOwnRussian()
         {

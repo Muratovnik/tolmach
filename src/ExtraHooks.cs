@@ -10,9 +10,11 @@ namespace Tolmach
         internal static void Install(Harmony harmony)
         {
             // Re-register dictionaries after Jotunn/native loaders run at menu/world startup.
+            // SetupObjectDB follows SetupGui: Jotunn's OnVanillaPrefabsAvailable fires there,
+            // and mods register words in it after Jotunn applied the player's language.
             Type startup = RuntimeAccess.ExactType("FejdStartup");
             if (startup != null)
-                foreach (MethodInfo m in startup.GetMethods(AccessTools.allDeclared).Where(delegate(MethodInfo x) { return x.Name == "SetupGui"; }))
+                foreach (MethodInfo m in startup.GetMethods(AccessTools.allDeclared).Where(delegate(MethodInfo x) { return x.Name == "SetupGui" || x.Name == "SetupObjectDB"; }))
                     harmony.Patch(m, postfix: new HarmonyMethod(typeof(ExtraHooks).GetMethod("AfterMenu", AccessTools.all)) { priority = Priority.Last });
             // OreMines broadcasts English with Chat.SendText. Every client receives it in
             // Chat.OnNewChatMessage, which feeds both the chat log (Terminal.AddString) and
