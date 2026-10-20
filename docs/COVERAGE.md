@@ -14,13 +14,13 @@ Tolmach содержит переводы и дополнения для **107 �
 |---|---|---|
 | [AAA Crafting](https://thunderstore.io/c/valheim/p/Azumatt/AAA_Crafting/) | 2.1.11 | Обучение сетке рецептов, поиску и созданию нескольких предметов, типы предметов, подсказки станции и клавиш; дополняет встроенный русский. |
 | [Achievement Enabler](https://thunderstore.io/c/valheim/p/MidnightMods/AchievementEnabler/) | 0.5.1 | Справка и сообщения команды снятия отметки читерского происхождения с предметов. Имена команды и предметов сохраняются. |
-| [Adventure Backpacks](https://thunderstore.io/c/valheim/p/Vapok/AdventureBackpacks/) | 2.4.0 | Название Spectral Shroud of Holding, сообщения команд навыков, заголовки окна раскрытия данных, подсказки геймпада и подзаголовки на заставке Vapok, сообщение о смене модели рюкзака. Шесть адресных исправлений собственного русского: два рюкзака и их описания, защита от холода и сообщение о потере сил. |
+| [Adventure Backpacks](https://thunderstore.io/c/valheim/p/Vapok/AdventureBackpacks/) | 2.4.5 | Название Spectral Shroud of Holding, сообщения команд навыков, заголовки окна раскрытия данных, подсказки геймпада и подзаголовки на заставке Vapok, сообщения о смене модели и набора текстур рюкзака. Шесть адресных исправлений собственного русского: два рюкзака и их описания, защита от холода и сообщение о потере сил. |
 | [Air Animals](https://thunderstore.io/c/valheim/p/Marlthon/AirAnimals/) | 0.3.2 | Названия птиц и насекомых; существующие русские названия предметов сохраняются. |
 | [Armory (Therzie)](https://thunderstore.io/c/valheim/p/Therzie/Armory/) | 1.4.3 | Доспехи, плащ, пояс, оружейная станция, бонусы комплектов и вкладка молота. Это не Valheim Armory от MidnightMods. |
 | [Async Save](https://thunderstore.io/c/valheim/p/MidnightMods/AsyncSave/) | 0.6.1 | Уведомление о сохранении мира в дополнительном режиме асинхронного финального сохранения. Сам режим не включается переводчиком. |
 | [Azu Area Repair](https://thunderstore.io/c/valheim/p/Azumatt/AzuAreaRepair/) | 1.1.8 | Только сообщения о несовпадении версий при подключении к серверу. |
 | [Azu Auto Store](https://thunderstore.io/c/valheim/p/Azumatt/AzuAutoStore/) | 3.1.7 | Сообщения складывания, подсказки рюкзака, избранных предметов и ячеек, вывод поиска и сообщения о версиях. Личные настройки хранения не меняются. |
-| [Azu Crafty Boxes](https://thunderstore.io/c/valheim/p/Azumatt/AzuCraftyBoxes/) | 1.8.28 | Режимы, подсказки топлива и руды, рюкзака, подписи у печей и других построек, эффект «Не брать из сундуков». |
+| [Azu Crafty Boxes](https://thunderstore.io/c/valheim/p/Azumatt/AzuCraftyBoxes/) | 1.8.28 | Режимы, подсказки топлива и руды, рюкзака, подписи у печей и других построек, количества для пополнения, имена клавиш-модификаторов в подсказках, эффекты «Не брать из сундуков» и «Брать из своих сундуков». |
 | [Azu Workbench Tweaks](https://thunderstore.io/c/valheim/p/Azumatt/AzuWorkbenchTweaks/) | 1.0.7 | Только сообщения о несовпадении версий мода и сервера. |
 | [Balrond Amazing Nature](https://thunderstore.io/c/valheim/p/Balrond/balrond_amazing_nature/) | 1.4.0 | Недостающие предметы, станции, скалы, эффекты, обучение, ремонт и износ; дополняет собственный русский перевод. |
 | [Balrond Arsenal Reborn](https://thunderstore.io/c/valheim/p/Balrond/balrond_arsenal_reborn/) | 0.1.6 | Дополнения к названиям оружия, комплектных эффектов и статусов, включая «Благословение Одина» и описание «Глубинного клеймора». |
@@ -30,13 +30,13 @@ Tolmach содержит переводы и дополнения для **107 �
 | [Balrond Humanoid Randomizer](https://thunderstore.io/c/valheim/p/Balrond/balrond_humanoidRandomizer/) | 1.6.2 | Варианты имён существ, эффекты, атаки, оружие и сообщение о краже. Шаблоны имён применяются только к чтению имени существа с компонентом этого мода или подтверждённым префабом его варианта; пользовательские имена сохраняются. |
 | [Balrond Lightkeeper](https://thunderstore.io/c/valheim/p/Balrond/balrond_lightkeeper/) | 1.0.2 | Подсказки и сообщения маяка. |
 | [Balrond Shipyard](https://thunderstore.io/c/valheim/p/Balrond/balrond_shipyard/) | 1.8.4 | Верфь, улучшения кораблей, чертежи, якорь, сеть-ловушка, покраска щитов, предметы и записи справочника. Сохранённое имя корабля не редактируется. |
-| [Better Archery](https://thunderstore.io/c/valheim/p/ishid4/BetterArchery/) | 2.0.5 | Интерфейс колчана и стрел, сообщение о получении опыта. |
+| [Better Archery](https://thunderstore.io/c/valheim/p/ishid4/BetterArchery/) | 2.0.5 | Интерфейс колчана и стрел, сообщение о получении опыта, приветствие. |
 | [Better Beehives](https://thunderstore.io/c/valheim/p/MaxFoxGaming/Better_Beehives/) | 1.3.1 | Только сообщения о несовпадении версий при подключении к серверу; остальной игровой текст берётся из локализации Valheim. |
 | [BossAdd](https://thunderstore.io/c/valheim/p/LJS/BossAdd/) | 1.2.0 | Сообщения боя с Массой костей, названия её цветов и эффекты Яглута. Исходные сообщения этого мода — на корейском. |
 | [Build Camera — Custom Hammers Edition](https://thunderstore.io/c/valheim/p/Azumatt/Build_Camera_Custom_Hammers_Edition/) | 1.3.4 | Подписи и сообщения камеры строительства, сообщения о версиях. |
 | [Cartur's Feeding Trough](https://thunderstore.io/c/valheim/p/Cartur/Carturs_Feeding_Trough/) | 1.0.0 | Название и описание кормушки, подсказки и оставшееся время приручения. |
 | [Circlet Extended](https://thunderstore.io/c/valheim/p/shudnal/CircletExtended/) | 1.1.13 | Стандартная подпись слота обруча в ExtraSlots. Пользовательская подпись, технические идентификаторы и настройки F1 сохраняются. |
-| [Comfort Tweaks](https://thunderstore.io/c/valheim/p/Smoothbrain/ComfortTweaks/) | 3.3.11 | Подписи комфорта и интерфейса. |
+| [Comfort Tweaks](https://thunderstore.io/c/valheim/p/Smoothbrain/ComfortTweaks/) | 3.3.11 | Подписи комфорта и интерфейса, подсказки зелий отдыха. |
 | [Conditional Config Sync](https://thunderstore.io/c/valheim/p/shudnal/ConditionalConfigSync/) | 1.0.11 | Причины отказа подключения, несовместимости версий и синхронизации, пояснения и рекомендации в окне ошибки. Имена модов сохраняются по структуре текущего отчёта. Причины без структуры или с неоднозначным разделением динамических значений остаются исходными. Сетевые сообщения и журналы не меняются. |
 | [Configuration Manager](https://thunderstore.io/c/valheim/p/shudnal/ConfigurationManager/) | 1.1.25 | Интерфейс настроек, поиск, редактор значений и файлов, подсказки синхронизации, кнопка главного меню. Названия разделов и параметров других модов, технические типы и произвольные ошибки не переводятся. |
 | [Crafty Carts Remake](https://thunderstore.io/c/valheim/p/OdinPlus/CraftyCartsRemake/) | 3.2.4 | Тележки, категория строительства, повозки со станциями и названия их хранилищ. |
@@ -72,16 +72,16 @@ Tolmach содержит переводы и дополнения для **107 �
 | [More World Locations AIO](https://thunderstore.io/c/valheim/p/warpalicious/More_World_Locations_AIO/) | 5.2.2 | Локации, порты и обучение в порту, избранные порты, святилища, благословения, путевые камни, торговцы, книги навыков, святилище испытания Равнин с названием подношения в его сообщениях и сообщения о версиях. Имена портов в сохранениях не меняются. |
 | [Move Build Pieces](https://thunderstore.io/c/valheim/p/DragonMotion/MoveBuildPieces/) | 1.1.1 | Вкладка и сообщения перемещения построек. |
 | [My Little UI](https://thunderstore.io/c/valheim/p/shudnal/MyLittleUI/) | 1.2.31 | Обычная и расширенная статистика персонажа в главном меню, включая 205 счётчиков, нечеткие часы и метка PING. Настройка показа всей статистики не включается переводом. |
-| [Network Performance System](https://thunderstore.io/c/valheim/p/MidnightMods/NetworkPerformanceSystem/) | 1.17.0 | Сообщения об обрыве связи, ожидании свернутой игры хоста и ошибки подключения. Отладочный оверлей и консольная диагностика не переводятся. |
+| [Network Performance System](https://thunderstore.io/c/valheim/p/MidnightMods/NetworkPerformanceSystem/) | 1.18.0 | Сообщения об обрыве связи, ожидании свернутой игры хоста и ошибки подключения. Отладочный оверлей и консольная диагностика не переводятся. |
 | [Odin's Steelworks](https://thunderstore.io/c/valheim/p/OdinPlus/OdinsSteelworks/) | 0.4.1 | Постройки и материалы сталеварения, оружие, щиты, болты и подсказки плавильных построек. |
 | [Odin’s Food Barrels](https://thunderstore.io/c/valheim/p/OdinPlus/OdinsFoodBarrels/) | 1.4.0 | Категория «Бочки с припасами» и сообщение о запрещённом предмете в хранилище. Дополняет собственные русские названия и описания построек мода. |
 | [Ore Mines](https://thunderstore.io/c/valheim/p/blacks7ar/OreMines/) | 1.2.1 | Шахты, предметы, подсказки и уведомление о сбросе шахт в чате. |
 | [Passive Powers](https://thunderstore.io/c/valheim/p/Smoothbrain/PassivePowers/) | 1.1.5 | Пассивные силы боссов, перезарядка, истощение и сообщения о версиях. |
 | [Perfect Placement](https://thunderstore.io/c/valheim/p/Azumatt/PerfectPlacement/) | 1.2.2 | Сообщения режимов размещения и сетки, сообщения о версиях. |
 | [Plant Easily](https://thunderstore.io/c/valheim/p/Advize/PlantEasily/) | 2.3.0 | Подсказки области посадки и размера сетки. |
-| [Plant Everything](https://thunderstore.io/c/valheim/p/Advize/PlantEverything/) | 1.21.3 | Названия и описания растений и саженцев, сообщения о версиях. |
+| [Plant Everything](https://thunderstore.io/c/valheim/p/Advize/PlantEverything/) | 1.21.4 | Названия и описания растений и саженцев, сообщения о версиях. |
 | [Portal Lines](https://thunderstore.io/c/valheim/p/Jumpingmushroom/PortalLines/) | 0.9.0 | Панель маршрута и подсказка портала на большой карте: связь, расстояние, переходы и время последнего наблюдения, сообщения переключения линий. Консольные команды не переводятся. |
-| [Portal Preview](https://thunderstore.io/c/valheim/p/Ivvty/PortalPreview/) | 1.4.0 | Ответы и справка команд frozenportal, сводки оборудования, очистки и ближайшего портала. Имена команд и аргументы сохраняются; подробный debug/probe, технические исключения и настройки F1 остаются исходными. |
+| [Portal Preview](https://thunderstore.io/c/valheim/p/Ivvty/PortalPreview/) | 1.5.1 | Ответы и справка команд frozenportal (включая mainview и load), сводки оборудования и замеренной нагрузки, очистки и ближайшего портала. Имена команд и аргументы сохраняются; подробный debug/probe, технические исключения и настройки F1 остаются исходными. |
 | [Quick Stack Store Sort Trash Restock](https://thunderstore.io/c/valheim/p/Goldenrevolver/Quick_Stack_Store_Sort_Trash_Restock/) | 1.4.16 | Только сообщения о несовпадении версий. Основной интерфейс уже переведён самим модом. |
 | [Quick Teleport](https://thunderstore.io/c/valheim/p/OdinPlus/QuickTeleport/) | 2.0.4 | Только сообщения о несовпадении версий при подключении к серверу. |
 | [Recipe Description Expansion](https://thunderstore.io/c/valheim/p/Azumatt/Recipe_Description_Expansion/) | 1.1.9 | Названия комплектов и их частей в подсказках: игровые названия вместо внутренних идентификаторов предметов. |
@@ -89,7 +89,7 @@ Tolmach содержит переводы и дополнения для **107 �
 | [Recycle N Reclaim](https://thunderstore.io/c/valheim/p/Azumatt/Recycle_N_Reclaim/) | 1.4.5 | Четыре недостающие строки; имеющийся русский перевод сохраняется. |
 | [Renegade Vikings](https://thunderstore.io/c/valheim/p/blacks7ar/RenegadeVikings/) | 1.4.2 | Названия и описания существ, предметов и трофеев. |
 | [Sea Animals](https://thunderstore.io/c/valheim/p/Marlthon/SeaAnimals/) | 0.3.9 | Морские существа, предметы, мясо, сёдла и их описания. |
-| [Seed Bed](https://thunderstore.io/c/valheim/p/blacks7ar/SeedBed/) | 1.2.9 | Грядки и подсказки. |
+| [Seed Bed](https://thunderstore.io/c/valheim/p/blacks7ar/SeedBed/) | 1.2.9 | Грядки, подсказки и вкладка молота. |
 | [Server devcommands](https://thunderstore.io/c/valheim/p/JereKuusela/Server_devcommands/) | 1.115.0 | Ошибки, отмена и повтор, выбор объектов, зона и расстояние на карте. Консольная справка и вывод команд не переводятся. |
 | [Shield Me Bruh](https://thunderstore.io/c/valheim/p/Vapok/ShieldMeBruh/) | 2.1.5 | Подзаголовок, подсказки геймпада и заголовки окна раскрытия данных на заставке Vapok. При установленном Adventure Backpacks заставку показывает он, и эти строки переводятся его каталогом. |
 | [Sleep Skip](https://thunderstore.io/c/valheim/p/Azumatt/SleepSkip/) | 1.3.2 | Недостающие сообщения пропуска сна. |
@@ -106,14 +106,14 @@ Tolmach содержит переводы и дополнения для **107 �
 | [Torches Are Fires](https://thunderstore.io/c/valheim/p/blacks7ar/TorchesAreFires/) | 1.1.0 | Только сообщения о несовпадении версий при подключении к серверу. |
 | [Traders Extended](https://thunderstore.io/c/valheim/p/shudnal/TradersExtended/) | 2.0.5 | Редактор: вкладки, кнопки, поиск, страницы, проверка полей и сообщения. Технические значения в полях ввода не переводятся; заголовки окон зависят от совместимости адресного адаптера. |
 | [Transmog](https://thunderstore.io/c/valheim/p/Alpus/Transmog/) | 3.2.0 | Сообщение переключения внешнего вида; остальной интерфейс переводится самим модом. |
-| [Upgrade World](https://thunderstore.io/c/valheim/p/JereKuusela/Upgrade_World/) | 1.85.0 | Ошибки о неизвестной локации и неверном ID сундука в игровом HUD, а также подпись локации при регистрации. Команды, справка, автодополнение и остальные отчёты консоли остаются исходными. |
+| [Upgrade World](https://thunderstore.io/c/valheim/p/JereKuusela/Upgrade_World/) | 1.86.0 | Ошибки о неизвестной локации и неверном ID сундука в игровом HUD, а также подпись локации при регистрации. Команды, справка, автодополнение и остальные отчёты консоли остаются исходными. |
 | [Useful Runestones](https://thunderstore.io/c/valheim/p/sighsorry/UsefulRunestones/) | 1.0.3 | Сообщения рунных камней, эффекты, текст о торговце и стандартные подписи целей на карте. |
-| [Valheim Community Patch](https://thunderstore.io/c/valheim/p/MidnightMods/ValheimCommunityPatch/) | 0.36.1 | Справка и консольная сводка памяти ZDO. Технические обозначения таблиц и числовые значения сохраняются. |
+| [Valheim Community Patch](https://thunderstore.io/c/valheim/p/MidnightMods/ValheimCommunityPatch/) | 0.37.0 | Справка и консольная сводка памяти ZDO. Технические обозначения таблиц и числовые значения сохраняются. |
 | [Valheim Infinite Fire](https://thunderstore.io/c/valheim/p/MidnightMods/ValheimInfiniteFire/) | 1.4.0 | Подсказки «топливо не нужно» и расписания костра. |
-| [Valheim Visual Enhanced](https://thunderstore.io/c/valheim/p/Pumpkin/ValheimVisualEnhanced/) | 0.5.18 | Уведомления о переключении визуальных эффектов. Параметры графики в F1 не переводятся. |
+| [Valheim Visual Enhanced](https://thunderstore.io/c/valheim/p/Pumpkin/ValheimVisualEnhanced/) | 0.5.24 | Уведомления о переключении визуальных эффектов. Параметры графики в F1 не переводятся. |
 | [Viking NPC Continued](https://thunderstore.io/c/valheim/p/SephrinMods/VikingNPC_Continued/) | 0.4.1 | Интерфейс спутников, исходные реплики, составные сообщения и стандартные имена неприручённых NPC в подсказках и связанных окнах. Имена приручённых NPC сохраняются; пользовательские реплики и конфиги не переводятся автоматически. |
 | [VNEI](https://thunderstore.io/c/valheim/p/MSchmoecker/VNEI/) | 0.17.6 | Поиск, категории, счётчики и вкладки рецептов, фильтр «Все станции». Данные экспорта сохраняются в исходном виде. |
-| [Wacky's Database](https://thunderstore.io/c/valheim/p/WackyMole/WackysDatabase/) | 2.5.39 | Названия и описания двух топоров, сообщения загрузки и синхронизации ресурсов, ошибки версий и требование перезапуска при подключении. Произвольные рецепты и предметы пользователя не входят в перевод. |
+| [Wacky's Database](https://thunderstore.io/c/valheim/p/WackyMole/WackysDatabase/) | 2.5.40 | Названия и описания двух топоров, сообщения загрузки и синхронизации ресурсов, ошибки версий и требование перезапуска при подключении. Произвольные рецепты и предметы пользователя не входят в перевод. |
 | [Warfare](https://thunderstore.io/c/valheim/p/Therzie/Warfare/) | 1.9.5 | Оружие, щиты, боеприпасы, самоцветы, руны, медовухи, улучшения станций, описания эффектов и сообщения о версиях. С версии 1.9.5 мод не содержит своего русского перевода, поэтому Tolmach переводит всю таблицу. |
 | [Why Sleep Alone](https://thunderstore.io/c/valheim/p/TheLionCid/WhySleepAlone/) | 1.0.3 | Подсказки общей кровати, сообщения о привязке, сны, фразы при пробуждении и эффект «Удовлетворение». Собственный файл текстов игрока не переводится. |
 | [Wield Equipment While Swimming](https://thunderstore.io/c/valheim/p/blacks7ar/WieldEquipmentWhileSwimming/) | 1.1.4 | Только сообщения о несовпадении версий при подключении к серверу. |
@@ -122,7 +122,7 @@ Tolmach содержит переводы и дополнения для **107 �
 
 ## Субтитры игры
 
-Для Valheim 1.0.20 подготовлены 142 звуковых субтитра из таблицы игры: они не зависят от установки одного из перечисленных модов.
+Для Valheim 1.0.20 подготовлены 142 звуковых субтитра из таблицы игры: они не зависят от установки одного из перечисленных модов. Кроме того, переведены пустая в русской игре подсказка повозки и единица «hp/tick» в подсказке еды («ОЗ/тик»).
 
 ### Названия идолов
 
