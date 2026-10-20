@@ -63,7 +63,13 @@ namespace Tolmach
             foreach (Type type in AccessTools.GetTypesFromAssembly(m.RuntimeAssembly))
             {
                 try { if (type.Name == "LocalizeKey" && !type.ContainsGenericParameters) AddManagerKeys(m, type); }
-                catch (Exception e) { m.Warn("LocalizeKey adapter skipped " + type.Name + ": " + e.GetType().Name); }
+                catch (Exception e)
+                {
+                    // The mod's own registration API runs through reflection: report what it threw.
+                    Exception cause = e is TargetInvocationException && e.InnerException != null ? e.InnerException : e;
+                    m.Warn("LocalizeKey adapter skipped " + type.Name + ": " + cause.GetType().Name + ": " + cause.Message);
+                    Plugin.Debug(cause.ToString());
+                }
             }
         }
         private static void AddManagerKeys(Module m, Type type)

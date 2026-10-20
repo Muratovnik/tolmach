@@ -260,6 +260,10 @@ namespace Tolmach
         {
             if (Log != null) Log.LogWarning(text);
         }
+        internal static void Debug(string text)
+        {
+            if (Log != null) Log.LogDebug(text);
+        }
         internal static void WriteReport()
         {
             if (report == null) return;
