@@ -149,6 +149,19 @@ namespace Tolmach.Tests
             Assert.That(m.Patches[typeof(MarkedContainer).FullName + ".GetHoverName [container name]"].displayFields, Is.EqualTo(1));
         }
 
+        [Test]
+        public void FoodTooltipRegenerationUnitIsTranslatedOnlyInItsOwnLine()
+        {
+            // ItemDrop.ItemData.GetTooltip (Valheim 1.0.20) appends "$item_food_regen: <color=orange>{0} hp/tick</color>".
+            Module m = CatalogLoader.Read(Catalog("Valheim"));
+            ComposedSpec rule = m.composed.Single(c => c.sites.Any(s => s.type == "ItemDrop+ItemData" && s.method == "GetTooltip"));
+            TextTable table = ComposedNames.SharedTable(m, rule);
+            string tooltip = "$item_food_health: <color=orange>20</color>\n$item_food_regen: <color=orange>2 hp/tick</color>";
+            Assert.That(table.Translate(tooltip), Is.EqualTo("$item_food_health: <color=orange>20</color>\n$item_food_regen: <color=orange>2 ОЗ/тик</color>"));
+            Assert.That(table.Translate("$item_food_regen: <color=orange>1.5 hp/tick</color>"), Is.EqualTo("$item_food_regen: <color=orange>1.5 ОЗ/тик</color>"));
+            Assert.That(table.Translate("Heals 2 hp/tick"), Is.EqualTo("Heals 2 hp/tick"), "Text outside the game's line stays.");
+        }
+
         // MyLittleUI's hover postfix: rebuilds the whole hover from the m_name field.
         private static void RebuiltHover(MarkedContainer __instance, ref string __result)
         {

@@ -166,7 +166,8 @@
     "tolmach_idol_6_weapon": "Боевой идол из огнеметалла",
     "tolmach_idol_6_armor": "Защитный идол из огнеметалла",
     "tolmach_idol_7_weapon": "Боевой идол из кровавого золота",
-    "tolmach_idol_7_armor": "Защитный идол из кровавого золота"
+    "tolmach_idol_7_armor": "Защитный идол из кровавого золота",
+    "msg_cart_use": "Использовать"
   },
   "englishWords": {
     "caption_alerted": "alerted",
@@ -326,7 +327,8 @@
     "tolmach_idol_6_weapon": "Flametal Battle Idol",
     "tolmach_idol_6_armor": "Flametal Protection Idol",
     "tolmach_idol_7_weapon": "Bloodgold Battle Idol",
-    "tolmach_idol_7_armor": "Bloodgold Protection Idol"
+    "tolmach_idol_7_armor": "Bloodgold Protection Idol",
+    "msg_cart_use": "Use"
   },
   "texts": {},
   "patterns": [],
@@ -341,7 +343,8 @@
     "Субтитры игры (localization_captions): в русской локализации Valheim 1.0.16 их нет. Модуль привязан к игре (GUID valheim) и заполняет только пустые или английские значения.",
     "Идолы Valheim 1.0.16: 16 точных составных названий отображаются через отдельные полные ключи Tolmach; исходные поля, префабы и отдельные штатные слова не меняются.",
     "Valheim 1.0.17, Steam build 25730771: native localization/captions, ключи идолов и 16 сериализованных составных имен сверены с текущими resources.assets и SoftRef bundle c4210710 через UnityPy. Каталог подписей не получил новых непокрытых ключей.",
-    "Valheim 1.0.20: localization.csv и localization_captions.csv из resources.assets побайтно совпадают с 1.0.17; ключи идолов и 16 составных имен в bundle c4210710 те же (UnityPy, 2026-10-17)."
+    "Valheim 1.0.20: localization.csv и localization_captions.csv из resources.assets побайтно совпадают с 1.0.17; ключи идолов и 16 составных имен в bundle c4210710 те же (UnityPy, 2026-10-17).",
+    "Valheim 1.0.20: msg_cart_use (подсказка повозки) в русской локализации игры пуст. Строка регенерации в подсказке еды (ItemDrop+ItemData.GetTooltip) содержит английскую единицу «hp/tick», она заменяется на «ОЗ/тик» в итоговой строке подсказки."
   ],
   "nameAliases": {
     "$item_upgrader_tier0 $item_upgrader_weapon $item_upgrader_name": "$tolmach_idol_0_weapon",
@@ -360,5 +363,26 @@
     "$item_upgrader_tier6 $item_upgrader_armor $item_upgrader_name": "$tolmach_idol_6_armor",
     "$item_upgrader_tier7 $item_upgrader_weapon $item_upgrader_name": "$tolmach_idol_7_weapon",
     "$item_upgrader_tier7 $item_upgrader_armor $item_upgrader_name": "$tolmach_idol_7_armor"
-  }
+  },
+  "composed": [
+    {
+      "sites": [
+        {
+          "type": "ItemDrop+ItemData",
+          "method": "GetTooltip"
+        }
+      ],
+      "texts": {},
+      "patterns": [
+        {
+          "source": "$item_food_regen: <color=orange>{0} hp/tick</color>",
+          "target": "$item_food_regen: <color=orange>{0} ОЗ/тик</color>",
+          "numeric": [
+            0
+          ],
+          "arguments": {}
+        }
+      ]
+    }
+  ]
 }
