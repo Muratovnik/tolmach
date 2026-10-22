@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using HarmonyLib;
 using NUnit.Framework;
 using Tolmach;
 using Module = Tolmach.Module;
@@ -24,6 +25,56 @@ namespace Tolmach.Tests
         private void InstallBridge(Func<string> preference)
         {
             LocalizationBridge.Install(Patcher, typeof(Localization), preference);
+        }
+        // The IL scan reads bodies with one ILGenerator for many methods. A module that spans the whole test assembly
+        // scans far more methods than one generator serves, and must still patch exactly the methods whose bodies
+        // reach a display call, as read with a generator of their own.
+        [Test]
+        public void ScanOfManyMethodsPatchesTheSameMethodsAsReadingEachWithItsOwnGenerator()
+        {
+            Module m = FixtureModule("wide", "Tolmach.Tests");
+            foreach (string ns in m.RuntimeAssembly.GetTypes().Select(t => t.Namespace ?? "").Distinct())
+            {
+                string own = ns.Length == 0 ? Module.GlobalNamespace : ns;
+                if (!m.namespaces.Contains(own)) m.namespaces.Add(own);
+            }
+            m.texts["Price"] = "Цена";
+            Activate(m);
+            HashSet<string> expected = new HashSet<string>();
+            foreach (Type type in AccessTools.GetTypesFromAssembly(m.RuntimeAssembly))
+            {
+                List<MethodBase> methods;
+                try
+                {
+                    if (!m.OwnType(type) || type.ContainsGenericParameters) continue;
+                    methods = AccessTools.GetDeclaredMethods(type).Cast<MethodBase>().Concat(AccessTools.GetDeclaredConstructors(type, false).Cast<MethodBase>()).ToList();
+                }
+                catch (Exception) { continue; } // FixtureOptional refers to an assembly that is absent on purpose.
+                foreach (MethodBase method in methods)
+                {
+                    try
+                    {
+                        if (!RuntimeAccess.ManagedBody(method)) continue;
+                        List<CodeInstruction> body = PatchProcessor.GetOriginalInstructions(method, null);
+                        if (body.Any(i => ReachesDisplay(i, m, method))) expected.Add(RuntimeAccess.MethodKey(method));
+                    }
+                    catch (Exception) { }
+                }
+            }
+            DisplayPatches.Install(Patcher, m);
+            Assert.That(m.ScannedMethods, Is.GreaterThan(2 * DisplayPatches.ScanGeneratorUses), "The scan has to outlast the reused generator more than once.");
+            Assert.That(expected, Is.Not.Empty);
+            Assert.That(m.Patches.Keys, Is.EquivalentTo(expected));
+            FixturePlugin.View.Draw();
+            Assert.That(UnityEngine.GUI.LastText, Is.EqualTo("Цена"));
+        }
+        private static bool ReachesDisplay(CodeInstruction instruction, Module module, MethodBase caller)
+        {
+            MethodBase call = instruction.operand as MethodBase;
+            if (call != null && (instruction.opcode == System.Reflection.Emit.OpCodes.Call || instruction.opcode == System.Reflection.Emit.OpCodes.Callvirt || instruction.opcode == System.Reflection.Emit.OpCodes.Newobj))
+                return DisplayPatches.StringSinkAt(call, module, caller).Any(selected => selected);
+            FieldInfo field = instruction.operand as FieldInfo;
+            return field != null && instruction.opcode == System.Reflection.Emit.OpCodes.Stfld && DisplayPatches.DisplayField(field, module);
         }
         [Test]
         public void DictionaryOnlyModuleDoesNotInspectOrPatchMethods()

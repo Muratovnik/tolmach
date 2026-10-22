@@ -19,6 +19,22 @@ namespace Tolmach
         private static readonly HashSet<string> GuiMethods = new HashSet<string>(new string[] {
             "Label", "Button", "RepeatButton", "Toggle", "Box", "Window", "ModalWindow", "Toolbar", "SelectionGrid"
         });
+        // Reading a body needs an ILGenerator for the labels and locals of its instructions, and Harmony builds
+        // a new one per call: about a third of the time of reading all the bodies of a large profile. The scan
+        // only looks at instructions, so one generator serves many methods. A new one starts every
+        // ScanGeneratorUses methods so that the locals it collects stay far below the 65535 a method may hold.
+        internal const int ScanGeneratorUses = 256;
+        private static ILGenerator scanGenerator;
+        private static int scanGeneratorUses;
+        private static ILGenerator ScanGenerator()
+        {
+            if (scanGenerator == null || ++scanGeneratorUses > ScanGeneratorUses)
+            {
+                scanGenerator = PatchProcessor.CreateILGenerator();
+                scanGeneratorUses = 1;
+            }
+            return scanGenerator;
+        }
         internal static void Install(Harmony harmony, Module module)
         {
             // Native words and persistent map labels have their own consumers. An empty
@@ -109,7 +125,7 @@ namespace Tolmach
             List<CodeInstruction> original = null;
             try
             {
-                original = PatchProcessor.GetOriginalInstructions(method, null);
+                original = PatchProcessor.GetOriginalInstructions(method, ScanGenerator());
                 // A literal rule names a method, and overloads share the name: only a body that holds
                 // one of its values gets the literal transpiler, so the others are neither patched nor reported.
                 foreach (CodeInstruction instruction in original)
@@ -184,7 +200,7 @@ namespace Tolmach
             }
             catch (Exception) { return false; }
         }
-        internal static void Reset() { Owners.Clear(); CallSites.Reset(); CcsDisplay.Reset(); ComposedNames.Reset(); }
+        internal static void Reset() { Owners.Clear(); scanGenerator = null; scanGeneratorUses = 0; CallSites.Reset(); CcsDisplay.Reset(); ComposedNames.Reset(); }
         private static bool Relevant(CodeInstruction instruction, Module module, MethodBase caller)
         {
             MethodBase call = instruction.operand as MethodBase;
