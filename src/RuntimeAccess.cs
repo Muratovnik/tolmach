@@ -7,11 +7,22 @@ namespace Tolmach
     // Product policy only. Harmony owns type enumeration and member/base-type lookup.
     internal static class RuntimeAccess
     {
+        // The first loaded type whose full name is exactly this one; a short name is never an identity.
+        // Every assembly answers from its own type table. AccessTools.TypeByName instead enumerates all
+        // types of all loaded assemblies, and once more for a short-name fallback that is discarded here
+        // when the name is absent: tens of milliseconds per call on a profile with a hundred plugins,
+        // paid for the same Jotunn type once per module on every refresh.
         internal static Type ExactType(string fullName)
         {
-            Type type = AccessTools.TypeByName(fullName);
-            // Do not accept AccessTools' short-name fallback for an unrelated type.
-            return type != null && type.FullName == fullName ? type : null;
+            if (String.IsNullOrEmpty(fullName)) return null;
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Type type = null;
+                try { type = assembly.GetType(fullName, false); }
+                catch (Exception) { } // An assembly with an unresolved dependency cannot supply the type.
+                if (type != null && type.FullName == fullName) return type;
+            }
+            return null;
         }
         internal static object Read(object instanceOrType, string name)
         {

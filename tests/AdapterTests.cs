@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using HarmonyLib;
 using NUnit.Framework;
 using Tolmach;
 using Module = Tolmach.Module;
@@ -75,6 +76,40 @@ namespace Tolmach.Tests
             Assert.That(RuntimeAccess.Read(target, "absent"), Is.Null);
             Assert.That(RuntimeAccess.ExactType("OnlyShortName"), Is.Null, "A short-name fallback is not an exact identity.");
             Assert.That(RuntimeAccess.ExactType("FixtureShadow.OnlyShortName"), Is.EqualTo(typeof(FixtureShadow.OnlyShortName)));
+        }
+        // The answer of AccessTools.TypeByName (a search through all types of all loaded assemblies), accepted only
+        // for a full name: what RuntimeAccess.ExactType returned before it asked each assembly's own type table.
+        private static Type FullNameSearch(string name)
+        {
+            Type type = AccessTools.TypeByName(name);
+            return type != null && type.FullName == name ? type : null;
+        }
+        [TestCase("System.String", true)]
+        [TestCase("System.Collections.Generic.List`1", true)]
+        [TestCase("HarmonyLib.Harmony", true)]
+        [TestCase("NUnit.Framework.Assert", true)]
+        [TestCase("Tolmach.TextEngine", true)]
+        [TestCase("FixtureShadow.OnlyShortName", true)]
+        [TestCase("FixturePlugin.View", true)]
+        [TestCase("Tolmach.Tests.AdapterTests+InScope", true)]
+        [TestCase("OnlyShortName", false)]
+        [TestCase("InScope", false)]
+        [TestCase("fixtureplugin.view", false)]
+        [TestCase("No.Such.Type", false)]
+        [TestCase("Tolmach.Tests.AdapterTests+NoSuchNested", false)]
+        [TestCase("Not,A[Valid.Name", false)]
+        public void ExactTypeFindsExactlyWhatTheFullNameSearchOfAllLoadedTypesFinds(string name, bool exists)
+        {
+            Type found = RuntimeAccess.ExactType(name);
+            Assert.That(found, Is.EqualTo(FullNameSearch(name)));
+            Assert.That(found != null, Is.EqualTo(exists));
+            if (found != null) Assert.That(found.FullName, Is.EqualTo(name));
+        }
+        [TestCase(null)]
+        [TestCase("")]
+        public void ExactTypeOfNoNameIsNull(string name)
+        {
+            Assert.That(RuntimeAccess.ExactType(name), Is.Null);
         }
         [TestCase(null, true)]
         [TestCase("English", true)]
