@@ -19,6 +19,48 @@ namespace Tolmach
         private static readonly HashSet<string> GuiMethods = new HashSet<string>(new string[] {
             "Label", "Button", "RepeatButton", "Toggle", "Box", "Window", "ModalWindow", "Toolbar", "SelectionGrid"
         });
+        private const string Constructor = ".ctor";
+        // The one terminal sink a module may scope to a single handler (ScopedTerminalSink).
+        private const string ScopedSinkName = "AddString";
+        // The fields a module's catalog may name as display text (DisplayField).
+        private static readonly HashSet<string> DisplayFieldNames = new HashSet<string>(new string[] { "m_topic", "m_description", "m_name" });
+        // The display sinks: declaring type -> the methods whose string arguments are shown. StringSink reads this
+        // table, and BodyScreen takes from it the method names a body has to mention to be worth reading, so a sink
+        // added here cannot be hidden from the scan.
+        private static readonly Dictionary<string, HashSet<string>> SinkMethods = SinkTable();
+        private static Dictionary<string, HashSet<string>> SinkTable()
+        {
+            Dictionary<string, HashSet<string>> table = new Dictionary<string, HashSet<string>>(StringComparer.Ordinal);
+            table["UnityEngine.GUI"] = GuiMethods;
+            table["UnityEngine.GUILayout"] = GuiMethods;
+            table["UnityEngine.GUIContent"] = new HashSet<string>(new string[] { Constructor, "set_text", "set_tooltip" });
+            foreach (string type in new string[] { "UnityEngine.UI.Text", "TMPro.TMP_Text", "TMPro.TextMeshProUGUI", "TMPro.TextMeshPro" })
+                table[type] = new HashSet<string>(new string[] { "set_text", "SetText" });
+            foreach (string type in new string[] { "Character", "Player", "MessageHud", "Hud" })
+                table[type] = new HashSet<string>(new string[] { "Message", "ShowMessage" });
+            // Chat log lines are declared on Terminal and in these mods carry console command
+            // output, which this pack deliberately leaves untranslated.
+            table["Chat"] = new HashSet<string>(new string[] { "SetNpcText", "AddInworldText" });
+            // AddPin/DiscoverLocation create persistent data, not display text. Never translate their arguments.
+            table["Localization"] = new HashSet<string>(new string[] { "Localize" });
+            table["Jotunn.Entities.CustomLocalization"] = new HashSet<string>(new string[] { "TryTranslate" });
+            return table;
+        }
+        // The names of all sink methods except the constructors, which are keyed by their type.
+        private static readonly HashSet<string> SinkNames = new HashSet<string>(
+            SinkMethods.Values.SelectMany(delegate(HashSet<string> names) { return names; }).Where(delegate(string name) { return name != Constructor; }).Concat(new string[] { ScopedSinkName }));
+        // Whether a call in IL that names this method can reach a display sink, judged by the names alone: false only
+        // where StringSink is certain to answer false for it. A call is resolved to the method that declares it, which
+        // can be a base type of the type it names, so the method name is the only safe key; a constructor is not
+        // inherited, so it is keyed by its exact type.
+        internal static bool MayCallSink(string name, string declaringType)
+        {
+            HashSet<string> names;
+            if (name == Constructor) return declaringType != null && SinkMethods.TryGetValue(declaringType, out names) && names.Contains(Constructor);
+            return SinkNames.Contains(name);
+        }
+        // The same for a field store: false only where DisplayField is certain to answer false.
+        internal static bool MayStoreDisplayField(string name) { return DisplayFieldNames.Contains(name); }
         // Reading a body needs an ILGenerator for the labels and locals of its instructions, and Harmony builds
         // a new one per call: about a third of the time of reading all the bodies of a large profile. The scan
         // only looks at instructions, so one generator serves many methods. A new one starts every
@@ -56,6 +98,8 @@ namespace Tolmach
             HashSet<string> seen = new HashSet<string>(StringComparer.Ordinal);
             // A type, signature or body referring to an absent optional dependency throws on
             // reflection. Skip only that type or method; the rest of the module stays patched.
+            // The screen is null when the assembly cannot be read from its file; every body is then read.
+            using (BodyScreen screen = BodyScreen.Open(codeAssembly))
             foreach (Type type in AccessTools.GetTypesFromAssembly(codeAssembly))
             {
                 List<MethodBase> methods;
@@ -69,7 +113,7 @@ namespace Tolmach
                 catch (Exception e) { module.Warn("Type skipped " + type.Name + ": " + e.GetType().Name); continue; }
                 foreach (MethodBase method in methods)
                 {
-                    try { InstallMethod(harmony, module, type, method, seen); }
+                    try { InstallMethod(harmony, module, type, method, seen, screen); }
                     catch (Exception e) { module.Warn("UI adapter skipped " + type.FullName + "." + method.Name + ": " + e.GetType().Name); }
                 }
             }
@@ -108,7 +152,7 @@ namespace Tolmach
         }
         // A literal may start with a line break; warnings show control characters escaped.
         private static string Shown(string value) { return value.Replace("\r", "\\r").Replace("\n", "\\n").Replace("\t", "\\t"); }
-        private static void InstallMethod(Harmony harmony, Module module, Type type, MethodBase method, HashSet<string> seen)
+        private static void InstallMethod(Harmony harmony, Module module, Type type, MethodBase method, HashSet<string> seen, BodyScreen screen)
         {
             if (!RuntimeAccess.ManagedBody(method)) return;
             module.ScannedMethods++;
@@ -123,31 +167,37 @@ namespace Tolmach
             if (specs.Length == 0 && configs.Length == 0 && !result && !displayText) return;
             bool literal = false, sink = false, config = false;
             List<CodeInstruction> original = null;
-            try
+            // Without a literal or config rule only a display call can make this method patched, and a body that
+            // names no sink method cannot hold one: its instructions are not worth reading with Harmony.
+            bool read = specs.Length != 0 || configs.Length != 0 || (displayText && (screen == null || screen.MayCallSink(method)));
+            if (read)
             {
-                original = PatchProcessor.GetOriginalInstructions(method, ScanGenerator());
-                // A literal rule names a method, and overloads share the name: only a body that holds
-                // one of its values gets the literal transpiler, so the others are neither patched nor reported.
-                foreach (CodeInstruction instruction in original)
+                try
                 {
-                    string text = instruction.opcode == OpCodes.Ldstr ? instruction.operand as string : null;
-                    if (text == null) continue;
-                    foreach (LiteralSpec spec in specs)
-                        if (spec.values.ContainsKey(text)) { literal = true; seen.Add(LiteralKey(spec, text)); }
+                    original = PatchProcessor.GetOriginalInstructions(method, ScanGenerator());
+                    // A literal rule names a method, and overloads share the name: only a body that holds
+                    // one of its values gets the literal transpiler, so the others are neither patched nor reported.
+                    foreach (CodeInstruction instruction in original)
+                    {
+                        string text = instruction.opcode == OpCodes.Ldstr ? instruction.operand as string : null;
+                        if (text == null) continue;
+                        foreach (LiteralSpec spec in specs)
+                            if (spec.values.ContainsKey(text)) { literal = true; seen.Add(LiteralKey(spec, text)); }
+                    }
+                    sink = displayText && original.Any(delegate(CodeInstruction instruction) { return Relevant(instruction, module, method); });
+                    // Like a literal rule, a config text rule patches only the overload that reads a string config value.
+                    config = configs.Length != 0 && original.Any(ConfigRead);
+                    if (config) foreach (LiteralSpec spec in configs) seen.Add(ConfigKey(spec));
                 }
-                sink = displayText && original.Any(delegate(CodeInstruction instruction) { return Relevant(instruction, module, method); });
-                // Like a literal rule, a config text rule patches only the overload that reads a string config value.
-                config = configs.Length != 0 && original.Any(ConfigRead);
-                if (config) foreach (LiteralSpec spec in configs) seen.Add(ConfigKey(spec));
-            }
-            catch (Exception e)
-            {
-                module.Warn("IL inspection skipped " + type.Name + "." + method.Name + ": " + e.GetType().Name);
-                // Without the body the rule cannot be narrowed to an overload: try it as named.
-                literal = specs.Length != 0;
-                foreach (LiteralSpec spec in specs) foreach (string value in spec.values.Keys) seen.Add(LiteralKey(spec, value));
-                config = configs.Length != 0;
-                foreach (LiteralSpec spec in configs) seen.Add(ConfigKey(spec));
+                catch (Exception e)
+                {
+                    module.Warn("IL inspection skipped " + type.Name + "." + method.Name + ": " + e.GetType().Name);
+                    // Without the body the rule cannot be narrowed to an overload: try it as named.
+                    literal = specs.Length != 0;
+                    foreach (LiteralSpec spec in specs) foreach (string value in spec.values.Keys) seen.Add(LiteralKey(spec, value));
+                    config = configs.Length != 0;
+                    foreach (LiteralSpec spec in configs) seen.Add(ConfigKey(spec));
+                }
             }
             if (site != null && !result && !sink)
                 module.Warn("Composed site has no display call or string result: " + type.FullName + "." + method.Name);
@@ -211,7 +261,7 @@ namespace Tolmach
         }
         internal static bool DisplayField(FieldInfo f, Module m)
         {
-            if (f.FieldType != typeof(string) || f.DeclaringType == null) return false;
+            if (f.FieldType != typeof(string) || f.DeclaringType == null || !DisplayFieldNames.Contains(f.Name)) return false;
             string type = f.DeclaringType.FullName;
             return (m.id == "ExpertExplorer" && type == "MessageHud+UnlockMsg" && (f.Name == "m_topic" || f.Name == "m_description")) ||
                    (m.id == "SpeedyPaths" && type == "StatusEffect" && f.Name == "m_name");
@@ -224,18 +274,8 @@ namespace Tolmach
             if (parameters.Any(delegate(ParameterInfo p) { return p.ParameterType.IsByRef || p.ParameterType.IsPointer; })) return selected;
             string type = method.DeclaringType.FullName;
             string name = method.Name;
-            bool recognized = false;
-            if ((type == "UnityEngine.GUI" || type == "UnityEngine.GUILayout") && GuiMethods.Contains(name)) recognized = true;
-            if (type == "UnityEngine.GUIContent" && (method.IsConstructor || name == "set_text" || name == "set_tooltip")) recognized = true;
-            if ((type == "UnityEngine.UI.Text" || type == "TMPro.TMP_Text" || type == "TMPro.TextMeshProUGUI" || type == "TMPro.TextMeshPro") &&
-                (name == "set_text" || name == "SetText")) recognized = true;
-            if ((type == "Character" || type == "Player" || type == "MessageHud" || type == "Hud") && (name == "Message" || name == "ShowMessage")) recognized = true;
-            // Chat log lines are declared on Terminal and in these mods carry console command
-            // output, which this pack deliberately leaves untranslated.
-            if (type == "Chat" && (name == "SetNpcText" || name == "AddInworldText")) recognized = true;
-            // AddPin/DiscoverLocation create persistent data, not display text. Never translate their arguments.
-            if ((type == "Localization" && name == "Localize") || (type == "Jotunn.Entities.CustomLocalization" && name == "TryTranslate")) recognized = true;
-            if (!recognized) return selected;
+            HashSet<string> sinkNames;
+            if (!SinkMethods.TryGetValue(type, out sinkNames) || !sinkNames.Contains(method.IsConstructor ? Constructor : name)) return selected;
             for (int i = 0; i < parameters.Length; i++)
             {
                 Type p = parameters[i].ParameterType;
@@ -254,7 +294,7 @@ namespace Tolmach
         {
             if (module == null || module.id != "PortalPreview" || caller == null || caller.DeclaringType == null ||
                 caller.DeclaringType.FullName != "PortalPreview.FrozenPortals+<>c" || !caller.Name.StartsWith("<Initialize>b__", StringComparison.Ordinal) ||
-                sink.DeclaringType == null || sink.DeclaringType.FullName != "Terminal" || sink.Name != "AddString" || sink.IsStatic) return false;
+                sink.DeclaringType == null || sink.DeclaringType.FullName != "Terminal" || sink.Name != ScopedSinkName || sink.IsStatic) return false;
             ParameterInfo[] parameters = sink.GetParameters();
             return parameters.Length == 1 && parameters[0].ParameterType == typeof(string);
         }

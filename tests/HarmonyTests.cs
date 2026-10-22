@@ -68,7 +68,7 @@ namespace Tolmach.Tests
             FixturePlugin.View.Draw();
             Assert.That(UnityEngine.GUI.LastText, Is.EqualTo("Цена"));
         }
-        private static bool ReachesDisplay(CodeInstruction instruction, Module module, MethodBase caller)
+        internal static bool ReachesDisplay(CodeInstruction instruction, Module module, MethodBase caller)
         {
             MethodBase call = instruction.operand as MethodBase;
             if (call != null && (instruction.opcode == System.Reflection.Emit.OpCodes.Call || instruction.opcode == System.Reflection.Emit.OpCodes.Callvirt || instruction.opcode == System.Reflection.Emit.OpCodes.Newobj))

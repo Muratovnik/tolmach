@@ -12,8 +12,8 @@
 - Установленная Valheim: `valheim_Data/Managed/UnityEngine.dll` и
   `UnityEngine.CoreModule.dll`; тестам нужен ещё `UnityEngine.AudioModule.dll`, только
   для компиляции.
-- Профиль менеджера модов с BepInEx 5 и JsonDotNET: `BepInEx.dll`, `0Harmony.dll` и
-  `Newtonsoft.Json.dll` 13.x. Ссылки на эти файлы заданы в `build/RuntimeReferences.props`.
+- Профиль менеджера модов с BepInEx 5 и JsonDotNET: `BepInEx.dll`, `0Harmony.dll`,
+  `Mono.Cecil.dll` и `Newtonsoft.Json.dll` 13.x. Ссылки на эти файлы заданы в `build/RuntimeReferences.props`.
 - Python 3.10+ для проверки данных.
 - Для выпуска: Python 3.11+, [uv](https://docs.astral.sh/uv/) и GitHub CLI 2.98+ с
   правом записи в репозиторий. release-kit 0.33.0 закреплён в `.github/relkit.pyz`.
