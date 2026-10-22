@@ -102,8 +102,14 @@ namespace Tolmach
                 // once, and the fill-only AddWord guard must already know this key so a
                 // third-party Russian word in the game table is not replaced.
                 LocalizationBridge.RegisterNativeKey(m, key, en, ru);
-                if (setter != null) setter.Invoke(record, new object[] { ru });
-                else m.Warn("LocalizeKey.Russian API missing for " + type.FullName + "; global key fallback only.");
+                // The setter writes through Localization.instance, which builds the game's Localization when it
+                // does not exist yet. From a plugin's Awake that is too early: on a first start, with no language
+                // chosen, the game's constructor throws (its platform is not up) and the key is lost until the next
+                // refresh anyway; on later starts the construction cost moves from the game into the plugin phase.
+                // The key is registered above, so the game table gets it when the game builds its Localization;
+                // the first refresh after that runs the setter.
+                if (setter == null) m.Warn("LocalizeKey.Russian API missing for " + type.FullName + "; global key fallback only.");
+                else if (LocalizationBridge.Main != null) setter.Invoke(record, new object[] { ru });
                 if (isNew) m.NativeWords++;
             }
         }

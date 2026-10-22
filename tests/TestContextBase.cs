@@ -94,7 +94,7 @@ namespace Tolmach.Tests
             ContainerNameDisplay.Reset();
             NameScene.instance = null;
             BalrondHumanoidRandomizer.Launch.itemSetBuilder = new BalrondHumanoidRandomizer.ItemSetBuilder();
-            Localization.ResetForTests(); Minimap.ResetForTests(); FixturePlugin.LocalizeKey.ResetForTests();
+            Localization.ResetForTests(); Minimap.ResetForTests(); FixturePlugin.LocalizeKey.ResetForTests(); FixtureEager.LocalizeKey.ResetForTests();
         }
         // A test plugin whose code lives in the given namespace of this assembly.
         internal static Module FixtureModule(string id, string ns)

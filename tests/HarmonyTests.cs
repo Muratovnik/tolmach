@@ -735,6 +735,34 @@ namespace Tolmach.Tests
             Assert.That(main.Translate("item_beetleprotein"), Is.EqualTo("Протеин из другого перевода"), "Russian already shown is kept.");
             Assert.That(m.NativeWords, Is.EqualTo(0), "The mod's own words are not counted as added by Tolmach.");
         }
+        [TestCase(true)]
+        [TestCase(false)]
+        public void NativeLocalizeKeyWaitsForTheGameLocalizationInsteadOfBuildingItFromAwake(bool platformNotReady)
+        {
+            // A first start has no language yet: the game's own constructor then throws until its platform is up.
+            // Either way the plugin must not be the one that builds the game's Localization.
+            Module m = FixtureModule("skills", "FixtureEager");
+            m.texts["Fermenting"] = "Брожение";
+            Activate(m);
+            Localization.SelectedLanguage = "Russian";
+            Localization.PlatformNotReady = platformNotReady;
+            InstallBridge(() => "Russian");
+            FixtureEager.LocalizeKey skill = new FixtureEager.LocalizeKey("$skill_fermenting");
+            skill.Localizations["English"] = "Fermenting";
+            NativeAdapters.Refresh();
+            Assert.That(Localization.HasInstance, Is.False, "The refresh did not construct the game's Localization.");
+            Assert.That(m.Warnings, Is.Empty, "No registration failed.");
+            Assert.That(skill.Localizations.ContainsKey("Russian"), Is.False, "The mod's registry is written when the game's table exists.");
+            Assert.That(m.words["skill_fermenting"], Is.EqualTo("Брожение"), "The key is known to Tolmach already.");
+            Assert.That(m.NativeWords, Is.EqualTo(1));
+            Localization.PlatformNotReady = false;
+            Localization main = Localization.instance; // the game builds it when it needs it
+            NativeAdapters.Refresh();
+            Assert.That(skill.Localizations["Russian"], Is.EqualTo("Брожение"), "The next refresh registers the word in the mod's own registry.");
+            Assert.That(main.Translate("skill_fermenting"), Is.EqualTo("Брожение"));
+            Assert.That(m.NativeWords, Is.EqualTo(1), "The key is counted once.");
+            Assert.That(m.Warnings, Is.Empty);
+        }
         [Test]
         public void OreMinesResetNoticeIsTranslatedInChatLogAndBubble()
         {

@@ -69,6 +69,9 @@ public sealed class Localization
     internal static string SelectedLanguage = "English";
     // LocalizationCache: LoadCSV inside SetupLanguage hands a new instance the cached main dictionary.
     internal static bool CacheSharesMainTable;
+    // The game's constructor reads the platform's local user when no language was chosen yet, and the platform
+    // is not up while plugins load: a first start throws a NullReferenceException from Awake.
+    internal static bool PlatformNotReady;
     private static Localization m_instance;
     private Dictionary<string, string> m_translations = new Dictionary<string, string>();
     private readonly LruCache m_cache = new LruCache();
@@ -82,6 +85,7 @@ public sealed class Localization
     private Localization()
     {
         SetupLanguage("English");
+        if (PlatformNotReady) throw new NullReferenceException("Localization.SetLanguageFromLocale: no local user yet.");
         SetupLanguage(SelectedLanguage);
     }
     // Mods (SkillManager) construct extra instances; the constructor still loads the player's language.
@@ -93,7 +97,7 @@ public sealed class Localization
         extra.m_translations = instance.m_translations;
         return extra;
     }
-    internal static void ResetForTests() { m_instance = null; SelectedLanguage = "English"; CacheSharesMainTable = false; Resources.Clear(); }
+    internal static void ResetForTests() { m_instance = null; SelectedLanguage = "English"; CacheSharesMainTable = false; PlatformNotReady = false; Resources.Clear(); }
     internal bool SharesTableWith(Localization other) { return ReferenceEquals(m_translations, other.m_translations); }
     // A mod's SetupLanguage postfix writing straight into the dictionary, bypassing AddWord.
     internal void WriteTableForTests(string key, string text) { m_translations[key] = text; }
@@ -269,6 +273,27 @@ namespace FixturePlugin
             Localizations[lang] = value;
             if (Localization.HasInstance && Localization.instance.GetSelectedLanguage() == lang)
                 Localization.instance.AddWord(Key, value);
+            return this;
+        }
+        internal static void ResetForTests() { keys.Clear(); }
+    }
+}
+
+namespace FixtureEager
+{
+    // SkillManager's LocalizeKey asks Localization.instance for every registration, which builds the game's
+    // Localization when nothing did yet (FixturePlugin.LocalizeKey only looks at an existing one).
+    internal sealed class LocalizeKey
+    {
+        private static readonly List<LocalizeKey> keys = new List<LocalizeKey>();
+        public readonly string Key;
+        public readonly Dictionary<string, string> Localizations = new Dictionary<string, string>();
+        public LocalizeKey(string key) { Key = key.Replace("$", ""); keys.Add(this); }
+        public LocalizeKey Russian(string key) { return addForLang("Russian", key); }
+        private LocalizeKey addForLang(string lang, string value)
+        {
+            Localizations[lang] = value;
+            if (Localization.instance.GetSelectedLanguage() == lang) Localization.instance.AddWord(Key, value);
             return this;
         }
         internal static void ResetForTests() { keys.Clear(); }
